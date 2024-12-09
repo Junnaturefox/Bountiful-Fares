@@ -45,7 +45,7 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     private static final int[] BOTTOM_SLOTS = new int[]{1};
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
-    protected final PropertyDelegate propertyDelegate;
+    public final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 80;
     public GristmillBlockEntity(BlockPos pos, BlockState state) {
@@ -120,11 +120,11 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
         }
         if (blockEntity.canInsertOutputSlot() && blockEntity.hasRecipe()) {
             blockEntity.increaseCraftingProgress();
-            markDirty(world, pos, state);
             if (blockEntity.hasCraftingFinished()) {
                 blockEntity.craftItem();
                 blockEntity.resetProgress();
             }
+            markDirty(world, pos, state);
         } else {
             blockEntity.decreaseCraftingProgress();
         }
@@ -136,10 +136,10 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
 
     private void craftItem() {
         Optional<RecipeEntry<MillingRecipe>> recipe = getCurrentRecipe();
-        BountifulFares.LOGGER.info(recipe.toString() + recipe.get().value().getIngredient());
         this.removeStack(INPUT_SLOT, 1);
-        this.setStack(OUTPUT_SLOT, new ItemStack(this.inventory.get(0).getItem(),
-                (this.inventory.get(0).getCount() + recipe.get().value().getOutput().getCount())));
+        int i = recipe.get().value().getOutput().getCount();
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getOutput().getItem(),
+                (this.inventory.get(1).isEmpty() ? i : this.inventory.get(1).getCount() + i)));
     }
 
     private boolean hasCraftingFinished() {
@@ -156,10 +156,8 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     }
     private boolean hasRecipe() {
         Optional<RecipeEntry<MillingRecipe>> recipe = getCurrentRecipe();
-
         if (recipe.isEmpty()) return false;
         ItemStack output = recipe.get().value().getOutput();
-
         return canInsertAmountIntoOutputSlot(output.getCount())
                 && canInsertItemIntoOutputSlot(output);
     }
@@ -184,11 +182,7 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     }
 
     private Optional<RecipeEntry<MillingRecipe>> getCurrentRecipe() {
-        SimpleInventory inventory = new SimpleInventory(this.size());
-        for (int i = 0; i < this.size(); i++) {
-            inventory.setStack(i, this.getStack(i));
-        }
-        return Objects.requireNonNull(this.getWorld()).getRecipeManager().getFirstMatch(BFRecipes.MILLING, new SingleStackRecipeInput(inventory.getStack(0)), this.world);
+        return Objects.requireNonNull(this.getWorld()).getRecipeManager().getFirstMatch(BFRecipes.MILLING, new SingleStackRecipeInput(this.inventory.get(INPUT_SLOT)), this.world);
     }
 
     private boolean canInsertOutputSlot() {

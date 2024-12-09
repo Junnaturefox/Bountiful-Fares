@@ -18,13 +18,13 @@ public class GristmillScreenHandler extends ScreenHandler {
     public final GristmillBlockEntity blockEntity;
 
     public boolean isCrafting() {
-        return this.blockEntity.getProgress() > 0;
+        return true;
     }
 
     public int getScaledProgress() {
-        int progress = this.blockEntity.getProgress();
-        int maxProgress = this.blockEntity.getMaxProgress();
-        int progressArrowSize = 34;
+        int progress = this.blockEntity.propertyDelegate.get(0);
+        int maxProgress = this.blockEntity.propertyDelegate.get(0);
+        int progressArrowSize = 35;
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }

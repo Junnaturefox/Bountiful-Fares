@@ -110,6 +110,7 @@ public class MillingRecipe implements Recipe<RecipeInput> {
 
     public static class Serializer implements RecipeSerializer<MillingRecipe> {
         private final MillingRecipe.RecipeFactory<MillingRecipe> recipeFactory;
+        public static final Serializer INSTANCE = new Serializer(MillingRecipe::new);
         public final MapCodec<MillingRecipe> CODEC;
         public final PacketCodec<RegistryByteBuf, MillingRecipe> PACKET_CODEC;
 
