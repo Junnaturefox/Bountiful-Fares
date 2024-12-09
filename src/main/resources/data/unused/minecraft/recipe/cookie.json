@@ -14,7 +14,7 @@
   ],
   "result": {
     "count": 8,
-    "item": "minecraft:cookie"
+    "id": "minecraft:cookie"
   },
   "show_notification": true
 }

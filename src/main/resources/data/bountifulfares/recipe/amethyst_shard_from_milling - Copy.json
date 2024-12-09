@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:milling",
+  "type": "bountifulfares:milling/milling",
   "ingredient": {
     "item": "minecraft:amethyst_block"
   },

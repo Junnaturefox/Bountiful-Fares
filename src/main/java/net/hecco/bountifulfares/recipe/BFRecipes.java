@@ -17,11 +17,13 @@ public class BFRecipes {
         });
     }
 
-    public static final RecipeSerializer<MillingRecipe> MILLING_SERIALIZER = registerSerializer("milling", new MillingRecipe.Serializer(MillingRecipe::new));
+    public static final RecipeSerializer<MillingRecipe> MILLING_SERIALIZER = registerSerializer("milling",
+            new MillingRecipe.Serializer(MillingRecipe::new));
 
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
         return Registry.register(Registries.RECIPE_SERIALIZER, id, serializer);
     }
+
     public static void registerRecipes() {
     }
 }

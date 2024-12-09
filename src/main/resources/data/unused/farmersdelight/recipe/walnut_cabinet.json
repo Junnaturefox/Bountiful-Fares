@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "D": {
-      "item": "bountifulfares:hoary_trapdoor"
+      "item": "bountifulfares:walnut_trapdoor"
     },
     "_": {
-      "item": "bountifulfares:hoary_slab"
+      "item": "bountifulfares:walnut_slab"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     "___"
   ],
   "result": {
-    "item": "farmersdelight:hoary_cabinet"
+    "id": "farmersdelight:walnut_cabinet"
   },
   "show_notification": true
 }
