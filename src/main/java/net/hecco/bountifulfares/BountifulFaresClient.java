@@ -21,10 +21,13 @@ import net.hecco.bountifulfares.networking.BFMessages;
 import net.hecco.bountifulfares.particle.BFParticles;
 import net.hecco.bountifulfares.particle.FlourCloudParticle;
 import net.hecco.bountifulfares.particle.PrismarineBlossomParticle;
+import net.hecco.bountifulfares.screen.BFScreenHandlers;
+import net.hecco.bountifulfares.screen.GristmillScreen;
 import net.hecco.bountifulfares.trellis.BFTrellises;
 import net.hecco.bountifulfares.util.BFWoodTypes;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
@@ -305,7 +308,7 @@ public class BountifulFaresClient implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos)
                 : FoliageColors.getDefaultColor(), BFBlocks.HANGING_WALNUTS);
 
-//        HandledScreens.register(BFScreenHandlers.GRISTMILL_SCREEN_HANDLER, GristmillScreen::new);
+        HandledScreens.register(BFScreenHandlers.GRISTMILL_SCREEN_HANDLER, GristmillScreen::new);
         EntityRendererRegistry.register(BFEntities.THROWN_FLOUR_PROJECTILE, FlyingItemEntityRenderer::new);
         ParticleFactoryRegistry.getInstance().register(BFParticles.FLOUR_CLOUD_PARTICLE, FlourCloudParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(BFParticles.PRISMARINE_BLOSSOM_PARTICLE, PrismarineBlossomParticle.Factory::new);

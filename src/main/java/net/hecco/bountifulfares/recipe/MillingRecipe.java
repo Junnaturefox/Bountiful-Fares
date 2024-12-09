@@ -2,11 +2,14 @@ package net.hecco.bountifulfares.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.mojang.datafixers.Products;
 import com.mojang.datafixers.kinds.Applicative;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -22,18 +25,27 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import java.util.Objects;
 
 public class MillingRecipe implements Recipe<RecipeInput> {
 
     private final Identifier id;
     private final ItemStack output;
-    private final DefaultedList<Ingredient> recipeItems;
+    private final Ingredient ingredient;
 
-    public MillingRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    public MillingRecipe(Identifier id, ItemStack output, Ingredient input) {
         this.id = id;
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.ingredient = input;
+    }
+
+    public MillingRecipe(Ingredient ingredient, ItemStack itemStack) {
+        this.id = Identifier.of(BountifulFares.MOD_ID, "milling");
+        this.output = itemStack;
+        this.ingredient = ingredient;
     }
 
     @Override
@@ -41,7 +53,7 @@ public class MillingRecipe implements Recipe<RecipeInput> {
         if (world.isClient()) {
             return false;
         }
-        return recipeItems.get(0).test(input.getStackInSlot(0));
+        return ingredient.test(input.getStackInSlot(0));
     }
 
     @Override
@@ -77,14 +89,17 @@ public class MillingRecipe implements Recipe<RecipeInput> {
         return BFRecipes.MILLING;
     }
 
-    @Override
-    public DefaultedList<Ingredient> getIngredients() {
-        return this.recipeItems;
+    public Ingredient getIngredient() {
+        return this.ingredient;
     }
 
     @Override
     public ItemStack createIcon() {
         return new ItemStack(BFBlocks.GRISTMILL);
+    }
+
+    public interface RecipeFactory<T extends MillingRecipe> {
+        T create(Ingredient ingredient, ItemStack result);
     }
 
     public static class Type<T extends MillingRecipe> implements RecipeType<T> {
@@ -94,54 +109,44 @@ public class MillingRecipe implements Recipe<RecipeInput> {
     }
 
     public static class Serializer implements RecipeSerializer<MillingRecipe> {
-        public static final String ID = "milling";
+        private final MillingRecipe.RecipeFactory<MillingRecipe> recipeFactory;
+        public final MapCodec<MillingRecipe> CODEC;
+        public final PacketCodec<RegistryByteBuf, MillingRecipe> PACKET_CODEC;
 
+        public MillingRecipe create(Ingredient ingredient, ItemStack result) {
+            return this.recipeFactory.create(ingredient, result);
+        }
 
-//        @Override
-//        public MillingRecipe read(Identifier id, JsonObject json) {
-//            ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
-//
-//            JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-//            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
-//
-//            for (int i = 0; i < inputs.size(); i++) {
-//                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
-//            }
-//
-//            return new MillingRecipe(id, output, inputs);
-//        }
-//
-//        @Override
-//        public MillingRecipe read(Identifier id, PacketByteBuf buf) {
-//            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
-//
-//            for (int i = 0; i < inputs.size(); i++) {
-//                inputs.set(i, Ingredient.fromPacket(buf));
-//            }
-//
-//            ItemStack output = buf.readItemStack();
-//            return new MillingRecipe(id, output, inputs);
-//        }
-//
-//
-//
-//        @Override
-//        public void write(PacketByteBuf buf, MillingRecipe recipe) {
-//            buf.writeInt(recipe.getIngredients().size());
-//            for (Ingredient ing : recipe.getIngredients()) {
-//                ing.write(buf);
-//            }
-//            buf.writeItemStack(recipe.getOutput(null));
-//        }
+        public Serializer(MillingRecipe.RecipeFactory<MillingRecipe> recipeFactory) {
+            this.CODEC = RecordCodecBuilder.mapCodec((instance) ->
+                    instance.group(Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient")
+                            .forGetter((recipe) -> recipe.ingredient),
+                            ItemStack.VALIDATED_UNCOUNTED_CODEC.fieldOf("result")
+                                    .forGetter((recipe) -> recipe.output))
+                            .apply(instance, recipeFactory::create));
+            this.PACKET_CODEC = PacketCodec.ofStatic(this::write, this::read);
+            this.recipeFactory = recipeFactory;
+        }
 
+        public MillingRecipe read(RegistryByteBuf buf) {
+            Ingredient ingredient = Ingredient.PACKET_CODEC.decode(buf);
+            ItemStack itemStack = ItemStack.PACKET_CODEC.decode(buf);
+            return this.recipeFactory.create(ingredient, itemStack);
+        }
+
+        public void write(RegistryByteBuf buf, MillingRecipe recipe) {
+            Ingredient.PACKET_CODEC.encode(buf, recipe.ingredient);
+            ItemStack.PACKET_CODEC.encode(buf, recipe.output);
+        }
         @Override
         public MapCodec<MillingRecipe> codec() {
-            return null;
+            return CODEC;
         }
+
 
         @Override
         public PacketCodec<RegistryByteBuf, MillingRecipe> packetCodec() {
-            return null;
+            return PACKET_CODEC;
         }
     }
 }

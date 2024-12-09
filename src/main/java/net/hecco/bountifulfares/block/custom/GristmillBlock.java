@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.hecco.bountifulfares.block.entity.GreenTeaCandleBlockEntity;
 import net.hecco.bountifulfares.block.entity.GristmillBlockEntity;
 import net.hecco.bountifulfares.block.entity.BFBlockEntities;
 import net.hecco.bountifulfares.sounds.BFSounds;
@@ -88,8 +87,7 @@ public class GristmillBlock extends BlockWithEntity implements BlockEntityProvid
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = ((GristmillBlockEntity) world.getBlockEntity(pos));
-
+            NamedScreenHandlerFactory screenHandlerFactory = (NamedScreenHandlerFactory) world.getBlockEntity(pos);
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
             }
@@ -111,8 +109,13 @@ public class GristmillBlock extends BlockWithEntity implements BlockEntityProvid
     }
 
     @Nullable
+    protected static <T extends BlockEntity> BlockEntityTicker<T> validateTicker(World world, BlockEntityType<T> givenType) {
+        return world.isClient ? null : validateTicker(givenType, (BlockEntityType<? extends GristmillBlockEntity>) BFBlockEntities.GRISTMILL_BLOCK_ENTITY, GristmillBlockEntity::tick);
+    }
+
+    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, BFBlockEntities.GRISTMILL_BLOCK_ENTITY, GristmillBlockEntity::tick);
+        return validateTicker(world, type);
     }
 }
