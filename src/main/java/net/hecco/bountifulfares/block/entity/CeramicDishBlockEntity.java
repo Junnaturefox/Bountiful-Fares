@@ -38,6 +38,18 @@ public class CeramicDishBlockEntity extends DyeableBlockEntity implements Implem
         return this.getStack(0).isEmpty();
     }
 
+    @Override
+    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
+        Inventories.writeNbt(nbt, inventory, registryLookup);
+        super.writeNbt(nbt, registryLookup);
+    }
+
+    @Override
+    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
+        Inventories.readNbt(nbt, inventory, registryLookup);
+        super.readNbt(nbt, registryLookup);
+    }
+
     public void insertItem(ItemStack item) {
         assert world != null;
         if (!world.isClient()) {

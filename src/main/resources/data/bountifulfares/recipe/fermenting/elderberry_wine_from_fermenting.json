@@ -1,0 +1,11 @@
+{
+  "type": "bountifulfares:fermenting",
+  "ingredient": {
+    "item": "bountifulfares:elderberries"
+  },
+  "result": {
+    "id": "bountifulfares:elderberry_wine_bottle"
+  },
+  "particle_color": 13803457
+}
+

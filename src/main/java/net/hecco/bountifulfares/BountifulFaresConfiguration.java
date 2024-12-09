@@ -18,6 +18,7 @@ public class BountifulFaresConfiguration {
     private boolean enableFlourThrowing = true;
     private int flourThrowingCooldown = 0;
     private boolean restorationHeartOverlay = true;
+    private boolean fermentationBubbleParticles = true;
     private boolean enableLapisberrySeeds = true;
     private boolean enableHoarySeeds = true;
     private boolean enableElderGuardianSpongekinSeeds = true;
@@ -100,6 +101,14 @@ public class BountifulFaresConfiguration {
 
     public void setRestorationHeartOverlay(boolean bool) {
         restorationHeartOverlay = bool;
+    }
+
+    public boolean isFermentationBubbleParticles() {
+        return fermentationBubbleParticles;
+    }
+
+    public void setFermentationBubbleParticles(boolean bool) {
+        fermentationBubbleParticles = bool;
     }
 
     public boolean isEnableFlourThrowing() {

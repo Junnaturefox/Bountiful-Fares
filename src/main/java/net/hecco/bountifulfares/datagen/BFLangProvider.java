@@ -269,8 +269,8 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "painting.bountifulfares.unpleasant_tiles.title", "Unpleasant Tiles");
         generate(translationBuilder, "painting.bountifulfares.unpleasant_tiles.author", "Hecco");
 
-        generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.glass_bottle", "Use a Glass Bottle to Collect This");
-        generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.jar", "Use a Jar to Collect This");
+        generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.minecraft:glass_bottle", "Use a Glass Bottle to Collect This");
+        generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.minecraft:jar", "Use a Jar to Collect This");
 
         generate(translationBuilder, "advancement.bountifulfares.bountiful_fares", "Bountiful Fares");
         generate(translationBuilder, "advancement.bountifulfares.bountiful_fares.description", "The world is filled with more food!");
@@ -282,7 +282,6 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.obtain_feldspar.description", "Collect Feldspar from milling stones");
 
         generate(translationBuilder, "advancement.bountifulfares.obtain_ceramic_tiles", "Roy G Biv");
-        // More than 50 Shades,
         generate(translationBuilder, "advancement.bountifulfares.obtain_ceramic_tiles.description", "Craft Ceramic Tiles");
 
         generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch", "Mulchmaxxer");
@@ -372,6 +371,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.spongekin_seeds_guardian", "Guardians drop Spongekin Seeds");
         generate(translationBuilder, "config.bountifulfares.milling_time", "Gristmill milling time, in seconds");
         generate(translationBuilder, "config.bountifulfares.fermentation_time", "Fermentation time, in seconds");
+        generate(translationBuilder, "config.bountifulfares.fermentation_bubble_particles", "Fermentation Vessels emit bubble particles");
         generate(translationBuilder, "config.bountifulfares.infused_candle_radius", "Size of area where Infused Candles give effects");
 //        generate(translationBuilder, "config.bountifulfares.bountiful_painting", "Allow \"Bountiful\" painting to be placed");
 //        generate(translationBuilder, "config.bountifulfares.citrus_dish_painting", "Allow \"Citrus Dish\" painting to be placed");

@@ -1,9 +1,0 @@
-{
-  "type": "bountifulfares:milling/milling",
-  "ingredient": {
-    "item": "minecraft:amethyst_block"
-  },
-  "result": {
-    "id": "minecraft:amethyst_shard"
-  }
-}

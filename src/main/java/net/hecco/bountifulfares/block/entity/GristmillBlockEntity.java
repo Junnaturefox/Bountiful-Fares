@@ -108,7 +108,6 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, GristmillBlockEntity blockEntity) {
-        BountifulFares.LOGGER.info("progress" + blockEntity.progress);
         if (blockEntity.maxProgress != (BountifulFares.CONFIG.getMillingTime() * 20)) {
             blockEntity.maxProgress = BountifulFares.CONFIG.getMillingTime() * 20;
         }
@@ -119,10 +118,7 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
         if (state.get(millingState) && !blockEntity.hasRecipe() && blockEntity.progress != 0) {
             world.setBlockState(pos, state.with(millingState, false));
         }
-        List<RecipeEntry<MillingRecipe>> var4 = world.getRecipeManager().getAllMatches(BFRecipes.MILLING, new SingleStackRecipeInput(blockEntity.inventory.get(0)), world);
-        BountifulFares.LOGGER.info("" + blockEntity.canInsertOutputSlot() + " " + blockEntity.hasRecipe() + " " + var4.toString());
         if (blockEntity.canInsertOutputSlot() && blockEntity.hasRecipe()) {
-            BountifulFares.LOGGER.info("true");
             blockEntity.increaseCraftingProgress();
             markDirty(world, pos, state);
             if (blockEntity.hasCraftingFinished()) {
@@ -202,7 +198,7 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
 
     @Override
     public GristmillPayload getScreenOpeningData(ServerPlayerEntity player) {
-        return new GristmillPayload(this.pos);
+        return new GristmillPayload(this.pos, this.progress);
     }
 
     @Override

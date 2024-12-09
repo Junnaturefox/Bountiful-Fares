@@ -4,7 +4,9 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3f;
 
 import java.util.Map;
 
@@ -13,6 +15,7 @@ public class FermentationRecipes {
     private static final Map<Item, Item> INPUT_TO_REMAINDER = Maps.newHashMap();
     private static final Map<Item, Item> OUTPUT_TO_COLLECTOR = Maps.newHashMap();
     private static final Map<Item, Integer> OUTPUT_TO_COUNT = Maps.newHashMap();
+    private static final Map<Item, Vector3f> INPUT_TO_COLOR = Maps.newHashMap();
 
 //    Remainders are items that are left behind when inputting an item into a Fermentation Vessel, for example, bottles from Honey Bottles.
 
@@ -27,7 +30,7 @@ public class FermentationRecipes {
 //        INPUT_TO_OUTPUT.put(input, output);
 //    }
 
-    public static void addRecipe(Item input, @Nullable Item remainder, Item output, @Nullable Item collector, @Nullable Integer resultCount) {
+    public static void addRecipe(Item input, @Nullable Item remainder, Item output, @Nullable Item collector, @Nullable Integer resultCount, int particleColor) {
         INPUT_TO_OUTPUT.put(input, output);
         if (remainder != null) {
             INPUT_TO_REMAINDER.put(input, remainder);
@@ -38,6 +41,7 @@ public class FermentationRecipes {
         if (resultCount != null) {
             OUTPUT_TO_COUNT.put(output, resultCount);
         }
+        INPUT_TO_COLOR.put(input, Vec3d.unpackRgb(particleColor).toVector3f());
     }
     public static Item getOutputFromInput(Item input) {
         return (INPUT_TO_OUTPUT.get(input));
@@ -54,5 +58,8 @@ public class FermentationRecipes {
 
     public static Integer getOutputCount(Item output) {
         return OUTPUT_TO_COUNT.getOrDefault(output, 1);
+    }
+    public static Vector3f getParticleColorFromInput(Item input) {
+        return INPUT_TO_COLOR.getOrDefault(input, Vec3d.unpackRgb(16777215).toVector3f());
     }
 }

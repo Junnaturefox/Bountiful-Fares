@@ -16,9 +16,9 @@ import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
 import net.hecco.bountifulfares.entity.BFEntities;
-import net.hecco.bountifulfares.item.custom.ArtisanBrushItem;
 import net.hecco.bountifulfares.networking.BFMessages;
 import net.hecco.bountifulfares.particle.BFParticles;
+import net.hecco.bountifulfares.particle.FermentedBubbleParticle;
 import net.hecco.bountifulfares.particle.FlourCloudParticle;
 import net.hecco.bountifulfares.particle.PrismarineBlossomParticle;
 import net.hecco.bountifulfares.screen.BFScreenHandlers;
@@ -37,13 +37,10 @@ import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.FoliageColors;
 import net.minecraft.world.biome.GrassColors;
 
 import java.util.Objects;
-
-import static net.hecco.bountifulfares.item.BFItems.ARTISAN_BRUSH;
 
 public class BountifulFaresClient implements ClientModInitializer {
     @Override
@@ -310,8 +307,9 @@ public class BountifulFaresClient implements ClientModInitializer {
 
         HandledScreens.register(BFScreenHandlers.GRISTMILL_SCREEN_HANDLER, GristmillScreen::new);
         EntityRendererRegistry.register(BFEntities.THROWN_FLOUR_PROJECTILE, FlyingItemEntityRenderer::new);
-        ParticleFactoryRegistry.getInstance().register(BFParticles.FLOUR_CLOUD_PARTICLE, FlourCloudParticle.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(BFParticles.PRISMARINE_BLOSSOM_PARTICLE, PrismarineBlossomParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(BFParticles.FLOUR_CLOUD, FlourCloudParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(BFParticles.PRISMARINE_BLOSSOM, PrismarineBlossomParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(BFParticles.FERMENTED_BUBBLE, FermentedBubbleParticle.Factory::new);
 
         ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : FoliageColors.getDefaultColor()), BFBlocks.WILD_POTATOES, BFBlocks.WILD_CARROTS, BFBlocks.WILD_BEETROOTS, BFBlocks.WILD_LEEKS, BFBlocks.WILD_MAIZE, BFBlocks.WILD_PASSION_FRUIT_VINE, BFBlocks.WILD_ELDERBERRY_VINE);
 

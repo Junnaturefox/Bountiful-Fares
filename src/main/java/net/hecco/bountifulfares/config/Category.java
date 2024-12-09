@@ -6,42 +6,6 @@ import net.hecco.bountifulfares.BountifulFares;
 
 @Environment(value= EnvType.CLIENT)
 public enum Category {
-
-//    CLIENT("config.bountifulfares.category.client", false,
-//            Entry.booleanEntry("config.bountifulfares.item_guide_tooltips", () -> BountifulFares.CONFIG.isEnableItemGuideTooltips(),
-//                    newValue -> BountifulFares.CONFIG.setEnableItemGuideTooltips(newValue), true)),
-
-
-//    PAINTINGS("config.bountifulfares.category.paintings", true,
-//            Entry.booleanEntry("config.bountifulfares.bountiful_painting", () -> BountifulFares.CONFIG.isEnableBountifulPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableBountifulPainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.citrus_dish_painting", () -> BountifulFares.CONFIG.isEnableCitrusDishPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableCitrusDishPainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.hazel_floret_painting", () -> BountifulFares.CONFIG.isEnableHazelFloretPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableHazelFloretPainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.violet_floret_painting", () -> BountifulFares.CONFIG.isEnableVioletFloretPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableVioletFloretPainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.why_blue_painting", () -> BountifulFares.CONFIG.isEnableWhyBluePainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableWhyBluePainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.ruminer_painting", () -> BountifulFares.CONFIG.isEnableRuminerPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableRuminerPainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.phylogenesis_painting", () -> BountifulFares.CONFIG.isEnablePhylogenesisPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnablePhylogenesisPainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.escalade_painting", () -> BountifulFares.CONFIG.isEnableEscaladePainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableEscaladePainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.aquaculture_painting", () -> BountifulFares.CONFIG.isEnableAquaculturePainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableAquaculturePainting(newValue), true, "config.bountifulfares.restart_warning"),
-//
-//            Entry.booleanEntry("config.bountifulfares.unpleasant_tiles_painting", () -> BountifulFares.CONFIG.isEnableUnpleasantTilesPainting(),
-//                    newValue -> BountifulFares.CONFIG.setEnableUnpleasantTilesPainting(newValue), true, "config.bountifulfares.restart_warning")),
     GAMEPLAY("config.bountifulfares.category.gameplay", false,
             Entry.integerEntry("config.bountifulfares.milling_time", () -> BountifulFares.CONFIG.getMillingTime(),
                     newValue -> BountifulFares.CONFIG.setMillingTime(newValue), 4, 1, 10),
@@ -108,11 +72,15 @@ public enum Category {
                     newValue -> BountifulFares.CONFIG.setGenerateForestTeaShrubs(newValue), false, "config.bountifulfares.restart_warning"),
 
             Entry.booleanEntry("config.bountifulfares.forest_walnut_trees", () -> BountifulFares.CONFIG.isGenerateForestWalnutTrees(),
-                    newValue -> BountifulFares.CONFIG.setGenerateForestWalnutTrees(newValue), false, "config.bountifulfares.restart_warning")),
+                    newValue -> BountifulFares.CONFIG.setGenerateForestWalnutTrees(newValue), false, "config.bountifulfares.restart_warning")
+    ),
 
     CLIENT("config.bountifulfares.category.client", false,
+            Entry.booleanEntry("config.bountifulfares.fermentation_bubble_particles", () -> BountifulFares.CONFIG.isFermentationBubbleParticles(),
+                    newValue -> BountifulFares.CONFIG.setFermentationBubbleParticles(newValue), true),
             Entry.booleanEntry("config.bountifulfares.restoration_overlay", () -> BountifulFares.CONFIG.isRestorationHeartOverlay(),
-                    newValue -> BountifulFares.CONFIG.setRestorationHeartOverlay(newValue), true)),
+                    newValue -> BountifulFares.CONFIG.setRestorationHeartOverlay(newValue), true)
+    ),
     MINT("config.bountifulfares.category.mint", true,
             Entry.booleanEntry("config.bountifulfares.honeysuckle_to_banana_dye", () -> BountifulFares.CONFIG.isHoneysuckleToBananaDye(),
                     newValue -> BountifulFares.CONFIG.setHoneysuckleToBananaDye(newValue), true, "config.bountifulfares.restart_warning")),

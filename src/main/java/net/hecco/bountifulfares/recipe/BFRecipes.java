@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class BFRecipes {
     public static final RecipeType<MillingRecipe> MILLING = register("milling");
+    public static final RecipeType<FermentationRecipe> FERMENTING = register("fermenting");
 
     public static <T extends Recipe<?>> RecipeType<T> register(final String id) {
         return Registry.register(Registries.RECIPE_TYPE, Identifier.of(BountifulFares.MOD_ID, id), new RecipeType<T>(){
@@ -20,8 +21,11 @@ public class BFRecipes {
     public static final RecipeSerializer<MillingRecipe> MILLING_SERIALIZER = registerSerializer("milling",
             new MillingRecipe.Serializer(MillingRecipe::new));
 
+    public static final RecipeSerializer<FermentationRecipe> FERMENTING_SERIALIZER = registerSerializer("fermenting",
+            new FermentationRecipe.Serializer(FermentationRecipe::new));
+
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
-        return Registry.register(Registries.RECIPE_SERIALIZER, id, serializer);
+        return Registry.register(Registries.RECIPE_SERIALIZER, Identifier.of(BountifulFares.MOD_ID, id), serializer);
     }
 
     public static void registerRecipes() {

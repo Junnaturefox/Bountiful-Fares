@@ -1,0 +1,10 @@
+{
+  "type": "bountifulfares:fermenting",
+  "ingredient": {
+    "item": "bountifulfares:lemon"
+  },
+  "result": {
+    "id": "bountifulfares:citrus_essence"
+  },
+  "particle_color": 15200149
+}

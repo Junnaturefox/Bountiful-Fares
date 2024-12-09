@@ -1,0 +1,12 @@
+{
+  "type": "bountifulfares:fermenting",
+  "ingredient": {
+    "item": "minecraft:apple"
+  },
+  "result": {
+    "id": "bountifulfares:apple_cider_jar"
+  },
+  "particle_color": 16771237
+}
+
+

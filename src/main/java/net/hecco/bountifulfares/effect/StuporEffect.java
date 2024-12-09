@@ -10,32 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StuporEffect extends StatusEffect {
+    public static final List<StatusEffect> EFFECTS_BLACKLIST = List.of(
+            StatusEffects.CONDUIT_POWER.value(),
+            StatusEffects.HERO_OF_THE_VILLAGE.value(),
+            StatusEffects.BAD_OMEN.value(),
+            StatusEffects.RAID_OMEN.value(),
+            StatusEffects.TRIAL_OMEN.value());
     protected StuporEffect(StatusEffectCategory category, int color) {
         super(category, color);
-    }
-
-    @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        List<StatusEffectInstance> effectsToRemove = new ArrayList<>();
-
-        for (StatusEffectInstance effect : entity.getStatusEffects()) {
-            // goes through each effect that shouldn't be affected, and adds it to a list to be removed
-            if (effect.getEffectType() != this) {
-                if (effect.getEffectType() != StatusEffects.HERO_OF_THE_VILLAGE && effect.getEffectType() != StatusEffects.BAD_OMEN) {
-                    effectsToRemove.add(effect);
-                }
-            }
-        }
-        for (StatusEffectInstance effect : effectsToRemove) {
-            // Remove the specified effects
-            entity.removeStatusEffect(effect.getEffectType());
-        }
-        super.applyUpdateEffect(entity, amplifier);
-        return true;
-    }
-
-    @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return true;
     }
 }

@@ -1002,6 +1002,7 @@
   "config.bountifulfares.category.paintings": "Paintings",
   "config.bountifulfares.category.world": "World",
   "config.bountifulfares.chamomile_to_beige_dye": "Chamomile Flowers craft into Beige Dye",
+  "config.bountifulfares.fermentation_bubble_particles": "Fermentation Vessels emit bubble particles",
   "config.bountifulfares.fermentation_time": "Fermentation time, in seconds",
   "config.bountifulfares.flour_throwing": "Flour can be thrown",
   "config.bountifulfares.flour_throwing_cooldown": "Flour throwing cooldown, in ticks",

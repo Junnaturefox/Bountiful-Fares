@@ -8,6 +8,7 @@
     "GuiMixin",
     "ItemRendererAccessor",
     "ItemRendererMixin",
+    "LivingEntityMixin",
     "ModelLoaderMixin",
     "WolfEntityMixin"
   ],
@@ -16,10 +17,6 @@
   },
   "client": [
     "BlockDustParticleMixin",
-    //    "GuiMixin",
-    //    "ItemRendererAccessor",
-    //    "ItemRendererMixin",
-    //    "ModelLoaderMixin",
     "ParticleColorAccessor"
   ]
 }
