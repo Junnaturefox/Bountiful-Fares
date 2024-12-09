@@ -29,13 +29,17 @@ public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
         int y = (height - backgroundHeight) / 2;
 
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-
         renderProgressArrow(context, x, y);
     }
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 69, y + 36, 176, 0, handler.getScaledProgress(), 16);
+            BountifulFares.LOGGER.info("true");
+            BountifulFares.LOGGER.info("" + handler.getScaledProgress());
+            //TODO: Fix progress arrow
+            context.drawTexture(TEXTURE, x + 69, y + 35, 176, 0, handler.getScaledProgress(), 14);
+//            context.drawTexture(TEXTURE, x + 69, y + 36, 176 + handler.getScaledProgress(), 0, handler.getScaledProgress(), 16);
+
         }
     }
 

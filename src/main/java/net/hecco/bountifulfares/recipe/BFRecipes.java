@@ -21,7 +21,7 @@ public class BFRecipes {
             new MillingRecipe.Serializer(MillingRecipe::new));
 
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
-        return Registry.register(Registries.RECIPE_SERIALIZER, id, serializer);
+        return Registry.register(Registries.RECIPE_SERIALIZER, Identifier.of(BountifulFares.MOD_ID, id), serializer);
     }
 
     public static void registerRecipes() {
