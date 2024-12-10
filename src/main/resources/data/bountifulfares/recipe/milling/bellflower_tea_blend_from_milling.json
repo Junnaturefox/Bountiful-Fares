@@ -1,0 +1,9 @@
+{
+  "type": "bountifulfares:milling",
+  "ingredient": {
+    "item": "bountifulfares:violet_bellflower"
+  },
+  "result": {
+    "id": "bountifulfares:bellflower_tea_blend"
+  }
+}

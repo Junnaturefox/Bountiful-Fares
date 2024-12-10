@@ -88,9 +88,9 @@ public class CeramicDishBlock extends Block implements BlockEntityProvider, Wate
         if (world.getBlockEntity(pos) instanceof CeramicDishBlockEntity blockEntity) {
             ItemStack itemStack = player.getStackInHand(player.getActiveHand());
             ItemStack stack = blockEntity.getStack(0);
-            if (itemStack.isOf(BFItems.ARTISAN_BRUSH) && itemStack.getComponents().contains(DataComponentTypes.DYED_COLOR)) {
+            if (itemStack.isOf(BFItems.ARTISAN_BRUSH) && itemStack.getComponents().contains(DataComponentTypes.DYED_COLOR) && blockEntity.getStack(0).isEmpty()) {
                 int brushColor = itemStack.getComponents().get(DataComponentTypes.DYED_COLOR).rgb();
-                world.removeBlock(pos, false);
+                world.removeBlock(pos, true);
                 world.setBlockState(pos, this.getStateWithProperties(state));
                 blockEntity.insertItem(stack);
                 world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1.0F, 0.8F + (world.random.nextFloat() / 3));
@@ -101,7 +101,7 @@ public class CeramicDishBlock extends Block implements BlockEntityProvider, Wate
 
                 }
             } else if (BountifulFares.isModLoaded(BountifulFares.ARTS_AND_CRAFTS_MOD_ID)) {
-                if (CompatUtil.isItemPaintbrush(item.getItem())) {
+                if (CompatUtil.isItemPaintbrush(item.getItem()) && blockEntity.getStack(0).isEmpty()) {
                     int brushColor = CompatUtil.getIntColorFromPaintbrush(item.getItem());
                     if (brushColor != 1) {
                         world.removeBlock(pos, false);

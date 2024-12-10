@@ -4,6 +4,8 @@ import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.BFBlocks;
 import net.hecco.bountifulfares.effect.BFEffects;
 import net.hecco.bountifulfares.item.custom.*;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -76,7 +78,7 @@ public class BFItems {
 
 
 
-    public static final Item ARTISAN_BRUSH = registerItem("artisan_brush", new ArtisanBrushItem(new Item.Settings().maxCount(1)));
+    public static final Item ARTISAN_BRUSH = registerItem("artisan_brush", new ArtisanBrushItem(new Item.Settings().maxCount(1).component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(ArtisanBrushItem.DEFAULT_COLOR, true))));
     public static final Item JAR = registerItem("jar", new Item(new Item.Settings().maxCount(16)));
     public static final Item APPLE_COMPOTE_JAR = registerItem("apple_compote_jar", new EdibleJarItem(new Item.Settings().maxCount(16).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
     public static final Item ORANGE_COMPOTE_JAR = registerItem("orange_compote_jar", new EdibleJarItem(new Item.Settings().maxCount(16).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));

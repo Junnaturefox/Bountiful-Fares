@@ -52,18 +52,14 @@ public class CeramicDishBlockEntity extends DyeableBlockEntity implements Implem
 
     public void insertItem(ItemStack item) {
         assert world != null;
-        if (!world.isClient()) {
-            this.setStack(0, item.copyWithCount(1));
-            markDirty();
-        }
+        this.setStack(0, item.copyWithCount(1));
+        markDirty();
     }
 
     public void removeItem() {
         assert world != null;
-        if (!world.isClient()) {
-            this.setStack(0, Items.AIR.getDefaultStack());
-            markDirty();
-        }
+        this.setStack(0, Items.AIR.getDefaultStack());
+        markDirty();
     }
 
     public static int getColor(BlockView world, BlockPos pos){

@@ -16,6 +16,8 @@ import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
 import net.hecco.bountifulfares.entity.BFEntities;
+import net.hecco.bountifulfares.item.BFItems;
+import net.hecco.bountifulfares.item.custom.ArtisanBrushItem;
 import net.hecco.bountifulfares.networking.BFMessages;
 import net.hecco.bountifulfares.particle.BFParticles;
 import net.hecco.bountifulfares.particle.FermentedBubbleParticle;
@@ -37,10 +39,14 @@ import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.math.ColorHelper;
 import net.minecraft.world.biome.FoliageColors;
 import net.minecraft.world.biome.GrassColors;
 
 import java.util.Objects;
+
+import static net.hecco.bountifulfares.item.BFItems.ARTISAN_BRUSH;
 
 public class BountifulFaresClient implements ClientModInitializer {
     @Override
@@ -254,12 +260,12 @@ public class BountifulFaresClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.POTTED_PALM_FROND, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.COCONUT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.PALM_SAPLING, RenderLayer.getCutout());
-//        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-//            if (stack.getComponents().contains(DataComponentTypes.DYED_COLOR) && tintIndex == 0) {
-//                return Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.DYED_COLOR)).rgb();
-//            }
-//            return ArtisanBrushItem.DEFAULT_COLOR;
-//        }, ARTISAN_BRUSH);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            if (stack.getComponents().contains(DataComponentTypes.DYED_COLOR) && tintIndex == 0) {
+                return ColorHelper.Argb.fullAlpha(Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.DYED_COLOR)).rgb());
+            }
+            return ArtisanBrushItem.DEFAULT_COLOR;
+        }, ARTISAN_BRUSH);
         registerBlockColor(BFBlocks.CERAMIC_TILES);
         registerBlockColor(BFBlocks.CERAMIC_TILE_STAIRS);
         registerBlockColor(BFBlocks.CERAMIC_TILE_SLAB);
@@ -313,7 +319,10 @@ public class BountifulFaresClient implements ClientModInitializer {
 
         ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : FoliageColors.getDefaultColor()), BFBlocks.WILD_POTATOES, BFBlocks.WILD_CARROTS, BFBlocks.WILD_BEETROOTS, BFBlocks.WILD_LEEKS, BFBlocks.WILD_MAIZE, BFBlocks.WILD_PASSION_FRUIT_VINE, BFBlocks.WILD_ELDERBERRY_VINE);
 
-//        ModelPredicateProviderRegistry.register(ARTISAN_BRUSH, Identifier.ofVanilla("dyed"), (itemStack, clientWorld, livingEntity, seed) -> itemStack.getComponents().contains(DataComponentTypes.DYED_COLOR) ? 0.0F : 1.0F);
+        ModelPredicateProviderRegistry.register(
+                ARTISAN_BRUSH, Identifier.of(BountifulFares.MOD_ID, "dyed"),
+                (itemStack, clientWorld, livingEntity, seed) ->
+                        Objects.requireNonNull(itemStack.getComponents().get(DataComponentTypes.DYED_COLOR)).rgb() != ArtisanBrushItem.DEFAULT_COLOR ? 1.0F : 0.0F);
 
         for (Block block : BFTrellises.TRELLIS_RENDER_CUTOUT) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());

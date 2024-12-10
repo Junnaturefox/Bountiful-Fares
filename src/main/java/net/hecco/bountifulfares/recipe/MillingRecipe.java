@@ -122,7 +122,7 @@ public class MillingRecipe implements Recipe<RecipeInput> {
             this.CODEC = RecordCodecBuilder.mapCodec((instance) ->
                     instance.group(Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient")
                             .forGetter((recipe) -> recipe.ingredient),
-                            ItemStack.VALIDATED_UNCOUNTED_CODEC.fieldOf("result")
+                            ItemStack.VALIDATED_CODEC.fieldOf("result")
                                     .forGetter((recipe) -> recipe.output))
                             .apply(instance, recipeFactory::create));
             this.PACKET_CODEC = PacketCodec.ofStatic(this::write, this::read);

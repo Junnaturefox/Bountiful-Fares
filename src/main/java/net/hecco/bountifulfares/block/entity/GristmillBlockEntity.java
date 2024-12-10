@@ -137,9 +137,10 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     private void craftItem() {
         Optional<RecipeEntry<MillingRecipe>> recipe = getCurrentRecipe();
         this.removeStack(INPUT_SLOT, 1);
-        int i = recipe.get().value().getOutput().getCount();
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getOutput().getItem(),
-                (this.inventory.get(1).isEmpty() ? i : this.inventory.get(1).getCount() + i)));
+        BountifulFares.LOGGER.info("" + recipe.get().value().getOutput());
+        ItemStack i = recipe.get().value().getOutput();
+        i.increment(inventory.get(OUTPUT_SLOT).getCount());
+        this.setStack(OUTPUT_SLOT, i);
     }
 
     private boolean hasCraftingFinished() {
