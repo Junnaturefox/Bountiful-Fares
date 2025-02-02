@@ -106,6 +106,19 @@ public class FermentationVesselBlock extends BlockWithEntity implements Waterlog
             }
             return ActionResult.SUCCESS;
 
+        } else if (itemStack.isOf(Items.WATER_BUCKET) && state.get(FERMENTATION_STAGE) == FermentationStage.EMPTY) {
+            world.setBlockState(pos, state.with(FERMENTATION_STAGE, FermentationStage.WATER), 2);
+            world.playSound(null, pos, BFSounds.FERMENTATION_VESSEL_FILL, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat()/3);
+            if (!player.isCreative()) {
+                itemStack.decrement(1);
+            }
+            if (itemStack.isEmpty() && !player.isCreative()) {
+                player.setStackInHand(player.getActiveHand(), new ItemStack(Items.BUCKET));
+            } else if (!player.getInventory().insertStack(new ItemStack(Items.BUCKET))) {
+                player.dropItem(new ItemStack(Items.BUCKET), false);
+            }
+            return ActionResult.SUCCESS;
+
         } else if (world.getBlockEntity(pos) instanceof FermentationVesselBlockEntity entity) {
             if (getCurrentRecipe(world, itemStack).isPresent() && state.get(FERMENTATION_STAGE) == FermentationStage.WATER) {
                 if (entity.canInsertItem()) {

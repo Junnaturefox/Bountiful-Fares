@@ -236,10 +236,10 @@ public class BFItemGroupAdditions {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
             entries.addAfter(Items.LEAD, BFItems.SUN_HAT);
             entries.addAfter(Items.BRUSH, BFItems.ARTISAN_BRUSH);
-//            entries.addAfter(Items.BAMBOO_CHEST_RAFT, BFItems.WALNUT_BOAT);
-//            entries.addAfter(BFItems.WALNUT_BOAT, BFItems.WALNUT_CHEST_BOAT);
-//            entries.addAfter(BFItems.WALNUT_CHEST_BOAT, BFItems.HOARY_BOAT);
-//            entries.addAfter(BFItems.HOARY_BOAT, BFItems.HOARY_CHEST_BOAT);
+            entries.addAfter(Items.BAMBOO_CHEST_RAFT, BFItems.WALNUT_BOAT);
+            entries.addAfter(BFItems.WALNUT_BOAT, BFItems.WALNUT_CHEST_BOAT);
+            entries.addAfter(BFItems.WALNUT_CHEST_BOAT, BFItems.HOARY_BOAT);
+            entries.addAfter(BFItems.HOARY_BOAT, BFItems.HOARY_CHEST_BOAT);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {

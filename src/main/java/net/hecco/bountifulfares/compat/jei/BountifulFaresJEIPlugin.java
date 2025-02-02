@@ -18,34 +18,34 @@ import net.minecraft.util.Identifier;
 
 import java.util.List;
 
-public class BountifulFaresJEIPlugin implements IModPlugin {
-    public static final RecipeType<MillingRecipe> MILLING =
-            RecipeType.create(BountifulFares.MOD_ID, "milling", MillingRecipe.class);
-    @Override
-    public Identifier getPluginUid() {
-        return Identifier.of(BountifulFares.MOD_ID);
-    }
-
-    @Override
-    public void registerCategories(IRecipeCategoryRegistration registration) {
-        IModPlugin.super.registerCategories(registration);
-        registration.addRecipeCategories(new MillingRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-    }
-
-    @Override
-    public void registerRecipes(IRecipeRegistration registration) {
-        RecipeManager recipeManager;
-        if (MinecraftClient.getInstance().world != null) {
-            recipeManager = MinecraftClient.getInstance().world.getRecipeManager();
-        } else {
-            throw new NullPointerException("World must not be null to get recipes.");
-        }
-
-        registration.addRecipes(MILLING, recipeManager.listAllOfType(BFRecipes.MILLING).stream().map(RecipeEntry::value).toList());
-    }
-
-    @Override
-    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(BFBlocks.GRISTMILL), MILLING);
-    }
-}
+//public class BountifulFaresJEIPlugin implements IModPlugin {
+//    public static final RecipeType<MillingRecipe> MILLING =
+//            RecipeType.create(BountifulFares.MOD_ID, "milling", MillingRecipe.class);
+//    @Override
+//    public Identifier getPluginUid() {
+//        return Identifier.of(BountifulFares.MOD_ID);
+//    }
+//
+//    @Override
+//    public void registerCategories(IRecipeCategoryRegistration registration) {
+//        IModPlugin.super.registerCategories(registration);
+//        registration.addRecipeCategories(new MillingRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+//    }
+//
+//    @Override
+//    public void registerRecipes(IRecipeRegistration registration) {
+//        RecipeManager recipeManager;
+//        if (MinecraftClient.getInstance().world != null) {
+//            recipeManager = MinecraftClient.getInstance().world.getRecipeManager();
+//        } else {
+//            throw new NullPointerException("World must not be null to get recipes.");
+//        }
+//
+//        registration.addRecipes(MILLING, recipeManager.listAllOfType(BFRecipes.MILLING).stream().map(RecipeEntry::value).toList());
+//    }
+//
+//    @Override
+//    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+//        registration.addRecipeCatalyst(new ItemStack(BFBlocks.GRISTMILL), MILLING);
+//    }
+//}

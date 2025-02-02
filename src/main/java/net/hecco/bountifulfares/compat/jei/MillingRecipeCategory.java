@@ -24,42 +24,42 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class MillingRecipeCategory implements IRecipeCategory<MillingRecipe> {
-    private final IDrawable icon;
-    public MillingRecipeCategory(IGuiHelper guiHelper) {
-        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BFBlocks.GRISTMILL));
-    }
-    @Override
-    public RecipeType<MillingRecipe> getRecipeType() {
-        return BountifulFaresJEIPlugin.MILLING;
-    }
-
-    @Override
-    public @NotNull Text getTitle() {
-        return Text.translatable("bountifulfares.milling");
-    }
-
-    @Override
-    public @Nullable IDrawable getIcon() {
-        return icon;
-    }
-
-    @Override
-    public @Nullable Identifier getRegistryName(MillingRecipe recipe) {
-        return Identifier.of(BountifulFares.MOD_ID, "milling");
-    }
-
-    @Override
-    public void setRecipe(IRecipeLayoutBuilder iRecipeLayoutBuilder, MillingRecipe millingRecipe, IFocusGroup iFocusGroup) {
-        ItemStack inputStack = millingRecipe.getOutput();
-        Ingredient resultStack = millingRecipe.getIngredient();
-
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT, 40, 10).addItemStack(inputStack);
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.OUTPUT, 70, 10).addItemStack(resultStack.getMatchingStacks()[0]);
-    }
-
-    @Override
-    public void draw(MillingRecipe recipe, IRecipeSlotsView recipeSlotsView, DrawContext guiGraphics, double mouseX, double mouseY) {
-        IRecipeCategory.super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
-    }
-}
+//public class MillingRecipeCategory implements IRecipeCategory<MillingRecipe> {
+//    private final IDrawable icon;
+//    public MillingRecipeCategory(IGuiHelper guiHelper) {
+//        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BFBlocks.GRISTMILL));
+//    }
+//    @Override
+//    public RecipeType<MillingRecipe> getRecipeType() {
+//        return BountifulFaresJEIPlugin.MILLING;
+//    }
+//
+//    @Override
+//    public @NotNull Text getTitle() {
+//        return Text.translatable("bountifulfares.milling");
+//    }
+//
+//    @Override
+//    public @Nullable IDrawable getIcon() {
+//        return icon;
+//    }
+//
+//    @Override
+//    public @Nullable Identifier getRegistryName(MillingRecipe recipe) {
+//        return Identifier.of(BountifulFares.MOD_ID, "milling");
+//    }
+//
+//    @Override
+//    public void setRecipe(IRecipeLayoutBuilder iRecipeLayoutBuilder, MillingRecipe millingRecipe, IFocusGroup iFocusGroup) {
+//        ItemStack inputStack = millingRecipe.getOutput();
+//        Ingredient resultStack = millingRecipe.getIngredient();
+//
+//        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT, 40, 10).addItemStack(inputStack);
+//        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.OUTPUT, 70, 10).addItemStack(resultStack.getMatchingStacks()[0]);
+//    }
+//
+//    @Override
+//    public void draw(MillingRecipe recipe, IRecipeSlotsView recipeSlotsView, DrawContext guiGraphics, double mouseX, double mouseY) {
+//        IRecipeCategory.super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
+//    }
+//}

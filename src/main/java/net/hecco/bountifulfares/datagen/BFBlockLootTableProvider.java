@@ -354,7 +354,12 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
                 .pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F))
                         .conditionally(this.createSilkTouchCondition())
                         .with(this.applyExplosionDecay(BFBlocks.GRASSY_DIRT, ItemEntry.builder(BFBlocks.GRASSY_DIRT)))));
-
+        addDrop(BFBlocks.TEA_SHRUB, LootTable.builder()
+                .pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F))
+                        .conditionally(BlockStatePropertyLootCondition.builder(BFBlocks.TEA_SHRUB)
+                                .properties(StatePredicate.Builder.create().exactMatch(TeaShrubBlock.BERRIES, true)))
+                        .with(this.applyExplosionDecay(BFBlocks.TEA_SHRUB, ItemEntry.builder(BFItems.TEA_BERRIES)))
+        ));
 
         addDrop(BFBlocks.PALM_MULCH, LootTable.builder()
                 .pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F))

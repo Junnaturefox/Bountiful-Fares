@@ -1,0 +1,121 @@
+# Version 1.3.0 - 1.21.1 and 1.20.1 only
+
+## Fixes
+- Added missing Ebullience effect description
+- Fixed Restoration effect not working as intended
+- Artisan Brushes now use the handheld item model
+- Fixed Fermentation Vessels not being able to be opened after reloading a world
+- Fixed Fermenting progress being reset after reloading a world
+- Added missing loot tables for potted plants
+- Fixed Spongekins growing from Spongekin Stems way too quickly
+- Fixed “obtain_spongekin” advancement requirements
+- Fixed excessivebuilding compat slab and stair recipes
+- Fixed the arrow in the Gristmill gui being slightly offset
+- Fixed some drink items playing eat sounds
+- Fixed Grassy Dirt bottom texture
+- Added undying recipes for Ceramic Doors and Trapdoors
+- Fixed Sun Hat model changing in the gui when in the head slot
+- Added missing loot table for Spongekin Stems
+- Fixed Grassy Dirt particles being tinted
+- Made blocks that should be flammable actually flammable
+- Fixed bowl not stacking with others on eating the final stew item in a stack
+- Added missing recipes for Walnut Wood
+
+## Compatibility
+- Added compatibility with Arts and Crafts - if installed:
+    - Added Cork Trellises and Pickets
+    - Paintbrushes can dye Ceramic Tile blocks
+    - Added compatibility with dyed Flower Pots
+- Added compatibility with Excessive Building - if installed:
+    - Added Ancient and Gloom Trellis variants
+    - Added Ancient and Gloom Picket variants
+    - Added chiseled and mosaic variants of Walnut and Hoary Planks
+    - Added Walnut and Hoary Ladders
+    - Added vertical stair variants for many blocks
+    - Ancient Fruit can be eaten from Ceramic Dishes
+    - Added Walnut and Coconut Mulch Brick block sets
+
+## Tweaks
+- Added “Client” config category
+- Added an option in the config to change the radius where effects are given from Infused Candles
+- Added a Restoration heart overlay
+    - Can be disabled in the config
+- Walnut Mulch Blocks can now also be fed to Wolves
+- Updated fr_ca translations
+- Added pl_pl (Polish) translations
+- Walnut Cookie recipe now creates 4 cookies instead of 8
+- Added config option to disable flour throwing
+- Decreased the amount of hunger regained from candied fruit
+- Added Amethyst Shard from Amethyst Block milling recipe
+- Added Sugar from Sugarcane milling recipe
+- Added recipes for Diorite and Granite using Feldspar, in place of Quartz
+- Mulch blocks now slightly decrease fall damage when landed on
+- Retextured most ceramic block textures
+- Piglins now are distracted by Golden Apple Blocks
+- Fruit leaves are now biome tinted
+- Retextured Stripped Fruit Logs
+- Reworked Fruit Logs
+    - Fruit Logs can now connect to each other similarly to Chorus Plants
+    - Any leaf type can now be used to “leaflog” a log, instead of just the matching type
+- Removed “Bountiful” painting
+- Removed config options for disabling paintings
+    - Due to paintings being datadriven since 1.21, there isn't an easy way to individually enable/disable paintings without a lot of datapacks.
+- Added an option in the config to add a cooldown to throwing flour
+- Short Grass can now be made by using Grass Seeds on Grass Blocks
+- Tweaked the recipes for candied fruit, now requiring 4 sugar
+- The following effects now cannot be modified by Acidity:
+    - Instant Health
+    - Instant Damage
+    - Invisibility
+    - Night Vision
+    - Blindness
+    - Conduit Power
+    - Darkness
+    - Fire Resistance
+    - Water Breathing
+    - Glowing
+    - Raid Omen
+    - Trial Omen
+    - Oozing
+    - Wind Charging
+    - Infested
+    - Weaving
+    - (effects without amplifiers or effects relating to bad omen cannot be affected by Acidic)
+- The following effects now cannot be removed by Stupor:
+    - Conduit Power
+    - Hero of the Village
+    - Bad Omen
+    - Raid Omen
+    - Trial Omen
+- Fermentation Vessels will now emit bubble particles while fermenting
+    - The color of the particles depends on the contents
+    - Fermentation recipes can specify this color
+    - Can be disabled in the config
+- Fermentation recipes are now datadriven
+    - Item remainders (bottles, jars, buckets, bowls) are automatically utilized when needed
+- Updated Gristmill GUI
+
+## New Content
+- Added Palm Trees
+    - A new type of fruit tree
+    - Generates on Beaches and near water in Deserts
+    - Made up of Palm Logs, Palm Crowns, and Palm Fronds
+        - Like other fruit logs, Palm Logs cannot be made into planks
+        - Palm Fronds can be placed on top or on the side of blocks, and up to 3 can be placed in a block to increase its size
+        - Milling Palm Fronds creates Palm Mulch
+            - Acts similarly to Walnut Mulch
+            - Can be placed in layers or crafted into a block
+            - Can be fed to Wolves for an advancement
+    - Coconuts can grow on the side of Palm Crown blocks
+        - Has 6 stages of growth
+        - When broken on the last stage by hand, removing the supporting block, or hitting it with a projectile, the coconut will fall
+        - Will damage entities it lands on
+        - If a falling coconut lands on Pointed Dripstone, it will drop 2 Coconut Halves instead of itsself.
+        - Added a block tag which holds what blocks can break Coconuts
+- Added Coconuts
+    - Can be crafted into halves, which can be eaten or used in recipes
+        - Added Coconut Stew, Coconut Crusted Cod, and Coconut Cake food items
+    - Coconuts can be milled in a Gristmill to create Coconut Coir items
+        - Can be used in place of wheat to create Mud Bricks
+        - Can be packed into Coir blocks and bricks
+        - Can be made into Carpets

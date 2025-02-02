@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
@@ -15,6 +16,7 @@ import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlock
 import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
+import net.hecco.bountifulfares.entity.BFBoats;
 import net.hecco.bountifulfares.entity.BFEntities;
 import net.hecco.bountifulfares.item.BFItems;
 import net.hecco.bountifulfares.item.custom.ArtisanBrushItem;
@@ -291,8 +293,8 @@ public class BountifulFaresClient implements ClientModInitializer {
         TexturedRenderLayers.SIGN_TYPE_TEXTURES.put(BFWoodTypes.WALNUT, TexturedRenderLayers.getSignTextureId(BFWoodTypes.WALNUT));
         BlockEntityRendererFactories.register(BFBlockEntities.MOD_SIGN_BLOCK_ENTITY, SignBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(BFBlockEntities.MOD_HANGING_SIGN_BLOCK_ENTITY, HangingSignBlockEntityRenderer::new);
-//        TerraformBoatClientHelper.registerModelLayers(BFBoats.HOARY_BOAT_ID, false);
-//        TerraformBoatClientHelper.registerModelLayers(BFBoats.WALNUT_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(BFBoats.HOARY_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(BFBoats.WALNUT_BOAT_ID, false);
 
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos)
                 : GrassColors.getDefaultColor(), BFBlocks.CHAMOMILE_FLOWERS, BFBlocks.GRASSY_DIRT);
@@ -322,7 +324,7 @@ public class BountifulFaresClient implements ClientModInitializer {
         ModelPredicateProviderRegistry.register(
                 ARTISAN_BRUSH, Identifier.of(BountifulFares.MOD_ID, "dyed"),
                 (itemStack, clientWorld, livingEntity, seed) ->
-                        Objects.requireNonNull(itemStack.getComponents().get(DataComponentTypes.DYED_COLOR)).rgb() != ArtisanBrushItem.DEFAULT_COLOR ? 1.0F : 0.0F);
+                        itemStack.getComponents().get(DataComponentTypes.DYED_COLOR) != null ? 1.0F : 0.0F);
 
         for (Block block : BFTrellises.TRELLIS_RENDER_CUTOUT) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
@@ -340,8 +342,8 @@ public class BountifulFaresClient implements ClientModInitializer {
     private void registerItemColor(Item item) {
 //        Registers tint for ceramic items
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-            if (stack.getComponents().contains(DataComponentTypes.DYED_COLOR) && tintIndex == 0) {
-                return Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.DYED_COLOR)).rgb();
+            if (stack.getComponents().get(DataComponentTypes.DYED_COLOR) != null && tintIndex == 0) {
+                return stack.getComponents().get(DataComponentTypes.DYED_COLOR).rgb();
             }
             return DyeableBlockEntity.DEFAULT_COLOR;
         },item);

@@ -1086,6 +1086,8 @@
   "item.bountifulfares.green_tea_blend": "Green Tea Blend",
   "item.bountifulfares.green_tea_bottle": "Green Tea Bottle",
   "item.bountifulfares.hoary_apple": "Hoary Apple",
+  "item.bountifulfares.hoary_boat": "Hoary Boat",
+  "item.bountifulfares.hoary_chest_boat": "Hoary Chest Boat",
   "item.bountifulfares.hoary_cider_jar": "Hoary Cider Jar",
   "item.bountifulfares.hoary_compote_jar": "Hoary Compote Jar",
   "item.bountifulfares.hoary_seeds": "Hoary Seeds",
@@ -1128,6 +1130,8 @@
   "item.bountifulfares.torchflower_tea_blend": "Torchflower Tea Blend",
   "item.bountifulfares.torchflower_tea_bottle": "Torchflower Tea Bottle",
   "item.bountifulfares.walnut": "Walnut",
+  "item.bountifulfares.walnut_boat": "Walnut Boat",
+  "item.bountifulfares.walnut_chest_boat": "Walnut Chest Boat",
   "item.bountifulfares.walnut_cookie": "Walnut Cookie",
   "item.bountifulfares.warped_chow": "Warped Chow",
   "item.minecraft.lingering_potion.effect.bountifulfares.acidic": "Lingering Potion of Acidity",
@@ -1184,6 +1188,6 @@
   "subtitles.entity.flour.land": "Flour billows",
   "subtitles.entity.flour.throw": "Flour flies",
   "tooltip.bountifulfares.dyeable": "Dyeable",
-  "warning.bountifulfares.fermentation_vessel.glass_bottle": "Use a Glass Bottle to Collect This",
-  "warning.bountifulfares.fermentation_vessel.jar": "Use a Jar to Collect This"
+  "warning.bountifulfares.fermentation_vessel.minecraft:glass_bottle": "Use a Glass Bottle to Collect This",
+  "warning.bountifulfares.fermentation_vessel.minecraft:jar": "Use a Jar to Collect This"
 }

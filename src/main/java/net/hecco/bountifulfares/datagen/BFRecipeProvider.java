@@ -11,6 +11,7 @@ import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
 import net.hecco.bountifulfares.compat.twigs.TwigsBlocks;
+import net.hecco.bountifulfares.datagen.recipe.MillingRecipeBuilder;
 import net.hecco.bountifulfares.item.BFItems;
 import net.hecco.bountifulfares.trellis.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
@@ -795,7 +796,9 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerJackOStrawRecipes(exporter, DyeDepotBlocks.NAVY_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "navy_wool")), "dye_depot");
         offerJackOStrawRecipes(exporter, DyeDepotBlocks.INDIGO_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "indigo_wool")), "dye_depot");
 
-
+        MillingRecipeBuilder.create(Items.WHEAT, BFItems.FLOUR, 2)
+                .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
+                .offerTo(exporter);
 //        offerTeaBlendMillingRecipe(exporter, ModItems.GREEN_TEA_BLEND, ModItems.TEA_LEAVES);
 //        offerTeaBlendMillingRecipe(exporter, ModItems.BLACK_TEA_BLEND, ModItems.DRIED_TEA_LEAVES);
 //        offerTeaBlendMillingRecipe(exporter, ModItems.CHAMOMILE_TEA_BLEND, ModBlocks.CHAMOMILE_FLOWERS);

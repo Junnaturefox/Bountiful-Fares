@@ -103,8 +103,8 @@ public class BFItemGroups {
                         entries.add(BFBlocks.HOARY_BUTTON);
                         entries.add(BFItems.HOARY_SIGN);
                         entries.add(BFItems.HOARY_HANGING_SIGN);
-//                        entries.add(BFItems.HOARY_BOAT);
-//                        entries.add(BFItems.HOARY_CHEST_BOAT);
+                        entries.add(BFItems.HOARY_BOAT);
+                        entries.add(BFItems.HOARY_CHEST_BOAT);
                         entries.add(FarmersDelightBlocks.HOARY_CABINET);
                         entries.add(ExcessiveBuildingBlocks.CHISELED_HOARY_PLANKS);
                         entries.add(ExcessiveBuildingBlocks.HOARY_MOSAIC);
@@ -133,8 +133,8 @@ public class BFItemGroups {
                         entries.add(BFBlocks.WALNUT_BUTTON);
                         entries.add(BFItems.WALNUT_SIGN);
                         entries.add(BFItems.WALNUT_HANGING_SIGN);
-//                        entries.add(BFItems.WALNUT_BOAT);
-//                        entries.add(BFItems.WALNUT_CHEST_BOAT);
+                        entries.add(BFItems.WALNUT_BOAT);
+                        entries.add(BFItems.WALNUT_CHEST_BOAT);
                         entries.add(FarmersDelightBlocks.WALNUT_CABINET);
                         entries.add(ExcessiveBuildingBlocks.CHISELED_WALNUT_PLANKS);
                         entries.add(ExcessiveBuildingBlocks.WALNUT_MOSAIC);

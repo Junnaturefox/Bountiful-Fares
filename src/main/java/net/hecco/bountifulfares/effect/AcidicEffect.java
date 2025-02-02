@@ -13,6 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AcidicEffect extends StatusEffect {
+    //TODO: Fix acidic effect
     private final List<StatusEffectInstance> affectedEffects;
     public static final List<StatusEffect> EFFECTS_BLACKLIST = List.of(
             StatusEffects.INSTANT_HEALTH.value(),

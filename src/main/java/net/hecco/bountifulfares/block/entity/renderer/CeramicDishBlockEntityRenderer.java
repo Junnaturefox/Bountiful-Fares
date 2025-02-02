@@ -26,7 +26,6 @@ public class CeramicDishBlockEntityRenderer implements BlockEntityRenderer<Ceram
     @Override
     public void render(CeramicDishBlockEntity entity, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light, int overlay) {
-//        TODO: Fix item renderer
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         ItemStack itemStack = entity.getRenderStack();
         matrices.push();

@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
+import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.CookingRecipeCategory;
 import net.minecraft.recipe.input.RecipeInput;
@@ -25,6 +26,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -42,9 +44,9 @@ public class MillingRecipe implements Recipe<RecipeInput> {
         this.ingredient = input;
     }
 
-    public MillingRecipe(Ingredient ingredient, ItemStack itemStack) {
+    public MillingRecipe(Ingredient ingredient, ItemStack itemStack, int count) {
         this.id = Identifier.of(BountifulFares.MOD_ID, "milling");
-        this.output = itemStack;
+        this.output = itemStack.copyWithCount(count);
         this.ingredient = ingredient;
     }
 
@@ -99,7 +101,7 @@ public class MillingRecipe implements Recipe<RecipeInput> {
     }
 
     public interface RecipeFactory<T extends MillingRecipe> {
-        T create(Ingredient ingredient, ItemStack result);
+        T create(Ingredient ingredient, ItemStack result, int count);
     }
 
     public static class Type<T extends MillingRecipe> implements RecipeType<T> {
@@ -114,16 +116,20 @@ public class MillingRecipe implements Recipe<RecipeInput> {
         public final MapCodec<MillingRecipe> CODEC;
         public final PacketCodec<RegistryByteBuf, MillingRecipe> PACKET_CODEC;
 
-        public MillingRecipe create(Ingredient ingredient, ItemStack result) {
-            return this.recipeFactory.create(ingredient, result);
+        public MillingRecipe create(Ingredient ingredient, ItemStack result, int count) {
+            return this.recipeFactory.create(ingredient, result, count);
         }
 
         public Serializer(MillingRecipe.RecipeFactory<MillingRecipe> recipeFactory) {
             this.CODEC = RecordCodecBuilder.mapCodec((instance) ->
-                    instance.group(Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient")
-                            .forGetter((recipe) -> recipe.ingredient),
-                            ItemStack.VALIDATED_CODEC.fieldOf("result")
-                                    .forGetter((recipe) -> recipe.output))
+                    instance.group(
+                            Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient")
+                                    .forGetter((recipe) -> recipe.ingredient),
+                            ItemStack.VALIDATED_UNCOUNTED_CODEC.fieldOf("result")
+                                    .forGetter((recipe) -> recipe.output),
+                            Codecs.rangedInt(1, 99).fieldOf("result_count")
+                                    .forGetter((recipe) -> recipe.output.getCount())
+                            )
                             .apply(instance, recipeFactory::create));
             this.PACKET_CODEC = PacketCodec.ofStatic(this::write, this::read);
             this.recipeFactory = recipeFactory;
@@ -132,12 +138,14 @@ public class MillingRecipe implements Recipe<RecipeInput> {
         public MillingRecipe read(RegistryByteBuf buf) {
             Ingredient ingredient = Ingredient.PACKET_CODEC.decode(buf);
             ItemStack itemStack = ItemStack.PACKET_CODEC.decode(buf);
-            return this.recipeFactory.create(ingredient, itemStack);
+            int count = PacketCodecs.INTEGER.decode(buf);
+            return this.recipeFactory.create(ingredient, itemStack, count);
         }
 
         public void write(RegistryByteBuf buf, MillingRecipe recipe) {
             Ingredient.PACKET_CODEC.encode(buf, recipe.ingredient);
             ItemStack.PACKET_CODEC.encode(buf, recipe.output);
+            PacketCodecs.INTEGER.encode(buf, recipe.output.getCount());
         }
         @Override
         public MapCodec<MillingRecipe> codec() {
