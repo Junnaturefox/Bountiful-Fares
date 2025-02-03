@@ -2,16 +2,27 @@ package net.hecco.bountifulfares.item.custom;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
-public class AirTimeIncreasingItem extends Item {
+import java.util.List;
+
+public class AirTimeIncreasingItem extends EffectFoodItem {
     public static int airTickIncrease;
     public AirTimeIncreasingItem(int airTickIncrease, Settings settings) {
-        super(settings);
+        super(List.of(), settings);
+        AirTimeIncreasingItem.airTickIncrease = airTickIncrease;
+    }
+    public AirTimeIncreasingItem(List<StatusEffectInstance> effects, int airTickIncrease, Settings settings) {
+        super(effects, settings);
         AirTimeIncreasingItem.airTickIncrease = airTickIncrease;
     }
 
@@ -31,5 +42,14 @@ public class AirTimeIncreasingItem extends Item {
             user.setAir(maxAir);
         }
         return super.finishUsing(stack, world, user);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
+        tooltip.add(ScreenTexts.EMPTY);
+        tooltip.add(Text.translatable("tooltip.bountifulfares.when_eaten").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("+" + airTickIncrease/20 + " ").append(Text.translatable("tooltip.bountifulfares.air_time")).formatted(Formatting.BLUE));
+
     }
 }

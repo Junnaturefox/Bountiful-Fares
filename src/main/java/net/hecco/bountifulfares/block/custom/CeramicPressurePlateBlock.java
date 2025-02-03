@@ -47,7 +47,7 @@ public class CeramicPressurePlateBlock extends AbstractPressurePlateBlock implem
 
     @Override
     protected int getTickRate() {
-        return 2;
+        return 4;
     }
 
     protected int getRedstoneOutput(BlockState state) {

@@ -1,18 +1,30 @@
 package net.hecco.bountifulfares.item.custom;
 
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class StackableBowlFoodItem extends Item {
+    public List<StatusEffectInstance> effects;
+
     public StackableBowlFoodItem(Item.Settings settings) {
         super(settings);
+    }
+    public StackableBowlFoodItem(List<StatusEffectInstance> effects, Item.Settings settings) {
+        super(settings);
+        this.effects = effects;
     }
 
     @Override
@@ -31,5 +43,13 @@ public class StackableBowlFoodItem extends Item {
             }
 
             return stack;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
+        if (effects != null && !effects.isEmpty()) {
+            PotionContentsComponent.buildTooltip(effects, tooltip::add, 1.0F, context.getUpdateTickRate());
+        }
     }
 }

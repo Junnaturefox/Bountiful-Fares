@@ -20,7 +20,7 @@ public class BFEffects {
 
     public static final RegistryEntry<StatusEffect> ENRICHMENT = registerStatusEffect("enrichment", new EnrichmentEffect(StatusEffectCategory.BENEFICIAL, 0xffd48f)
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, Identifier.of(BountifulFares.MOD_ID, "effect.speed"), 0.08, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
-            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, Identifier.of(BountifulFares.MOD_ID, "effect.attack_speed"), 0.15, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+            .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, Identifier.of(BountifulFares.MOD_ID, "effect.attack_speed"), 0.08, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
             .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, Identifier.of(BountifulFares.MOD_ID, "effect.attack"), 0.2, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
             .addAttributeModifier(EntityAttributes.GENERIC_LUCK, Identifier.of(BountifulFares.MOD_ID, "effect.luck"), 1.0, EntityAttributeModifier.Operation.ADD_VALUE)
     );

@@ -41,10 +41,13 @@
 - Added a Restoration heart overlay
     - Can be disabled in the config
 - Walnut Mulch Blocks can now also be fed to Wolves
+- Increased press time of Ceramic Pressure Plates slightly
 - Updated fr_ca translations
 - Added pl_pl (Polish) translations
 - Walnut Cookie recipe now creates 4 cookies instead of 8
 - Added config option to disable flour throwing
+- Added effect tooltips to foods that give effects
+- Added effect tooltips to infused candles
 - Decreased the amount of hunger regained from candied fruit
 - Added Amethyst Shard from Amethyst Block milling recipe
 - Added Sugar from Sugarcane milling recipe

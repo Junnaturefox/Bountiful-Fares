@@ -56,8 +56,7 @@ public class CeramicButtonBlock extends ButtonBlock implements DyeableCeramicBlo
                 return ActionResult.SUCCESS;
 
             }
-        }
-        if (BountifulFares.isModLoaded(BountifulFares.ARTS_AND_CRAFTS_MOD_ID)) {
+        } else if (BountifulFares.isModLoaded(BountifulFares.ARTS_AND_CRAFTS_MOD_ID)) {
             Item item = player.getStackInHand(player.getActiveHand()).getItem();
             if (CompatUtil.isItemPaintbrush(item)) {
                 int brushColor = CompatUtil.getIntColorFromPaintbrush(item);
@@ -72,6 +71,13 @@ public class CeramicButtonBlock extends ButtonBlock implements DyeableCeramicBlo
 
                     }
                 }
+            }
+        } else {
+            if (state.get(POWERED)) {
+                return ActionResult.CONSUME;
+            } else {
+                this.powerOn(state, world, pos, player);
+                return ActionResult.success(world.isClient);
             }
         }
         return ActionResult.PASS;

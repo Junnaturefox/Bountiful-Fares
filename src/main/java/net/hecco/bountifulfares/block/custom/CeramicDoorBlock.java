@@ -160,7 +160,9 @@ public class CeramicDoorBlock extends DoorBlock implements DyeableCeramicBlockIn
         world.setBlockState(pos.up(), state.with(HALF, DoubleBlockHalf.UPPER), 3);
         if (world.getBlockEntity(pos.up()) instanceof DyeableCeramicBlockEntity entity) {
             DyeableCeramicBlockItem thisEntity = (DyeableCeramicBlockItem) itemStack.getItem();
-            entity.color = thisEntity.getComponents().get(DataComponentTypes.DYED_COLOR).rgb();
+            if (thisEntity.getComponents().get(DataComponentTypes.DYED_COLOR) != null) {
+                entity.color = thisEntity.getComponents().get(DataComponentTypes.DYED_COLOR).rgb();
+            }
             entity.markDirty();
         }
     }

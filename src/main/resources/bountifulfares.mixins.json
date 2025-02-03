@@ -16,7 +16,5 @@
     "defaultRequire": 1
   },
   "client": [
-    "BlockDustParticleMixin",
-    "ParticleColorAccessor"
   ]
 }

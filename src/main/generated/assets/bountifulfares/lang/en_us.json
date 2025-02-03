@@ -1019,6 +1019,7 @@
   "config.bountifulfares.milling_time": "Gristmill milling time, in seconds",
   "config.bountifulfares.orange_trees": "Generate Orange Trees",
   "config.bountifulfares.palm_trees": "Generate Palm Trees",
+  "config.bountifulfares.particle_tint_override": "Remove particle tint for some blocks",
   "config.bountifulfares.plum_trees": "Generate Plum Trees",
   "config.bountifulfares.rename_items_to_match_dyes": "Rename dyed items to match Dye Depot's override pack",
   "config.bountifulfares.restart_warning": "Requires a restart to apply changes",
@@ -1030,6 +1031,7 @@
   "config.bountifulfares.wild_carrots": "Generate Wild Carrots",
   "config.bountifulfares.wild_potatoes": "Generate Wild Potatoes",
   "config.bountifulfares.wild_wheat": "Generate Wild Wheat",
+  "config.subterrous.particle_tint_override_msg": "Disable this if it is causing issues.",
   "death.attack.falling_coconut": "%1$s was bonked too hard",
   "effect.bountifulfares.acidic": "Acidic",
   "effect.bountifulfares.acidic.description": "Increases the amplifier of all other effects applied. Reverts after Acidic is removed.",
@@ -1187,7 +1189,11 @@
   "subtitles.block.hanging_fruit.pick": "Fruit pops",
   "subtitles.entity.flour.land": "Flour billows",
   "subtitles.entity.flour.throw": "Flour flies",
+  "tooltip.bountifulfares.air_time": "Underwater air time",
   "tooltip.bountifulfares.dyeable": "Dyeable",
+  "tooltip.bountifulfares.removes": "Removes:",
+  "tooltip.bountifulfares.when_eaten": "When eaten:",
+  "tooltip.bountifulfares.when_lit": "When lit:",
   "warning.bountifulfares.fermentation_vessel.minecraft:glass_bottle": "Use a Glass Bottle to Collect This",
   "warning.bountifulfares.fermentation_vessel.minecraft:jar": "Use a Jar to Collect This"
 }

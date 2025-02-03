@@ -2,17 +2,29 @@ package net.hecco.bountifulfares.item.custom;
 
 import net.hecco.bountifulfares.item.BFItems;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class EdibleJarItem extends Item {
+    public List<StatusEffectInstance> effects;
     public EdibleJarItem(Settings settings) {
         super(settings);
+    }
+    public EdibleJarItem(List<StatusEffectInstance> effects, Settings settings) {
+        super(settings);
+        this.effects = effects;
     }
 
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
@@ -33,6 +45,14 @@ public class EdibleJarItem extends Item {
             }
 
             return stack;
+        }
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
+        if (!effects.isEmpty()) {
+            PotionContentsComponent.buildTooltip(effects, tooltip::add, 1.0F, context.getUpdateTickRate());
         }
     }
 }

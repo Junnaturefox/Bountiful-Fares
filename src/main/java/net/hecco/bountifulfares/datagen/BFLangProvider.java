@@ -242,6 +242,10 @@ public class BFLangProvider extends FabricLanguageProvider {
 
 
         generate(translationBuilder, "tooltip.bountifulfares.dyeable", "Dyeable");
+        generate(translationBuilder, "tooltip.bountifulfares.when_lit", "When lit:");
+        generate(translationBuilder, "tooltip.bountifulfares.removes", "Removes:");
+        generate(translationBuilder, "tooltip.bountifulfares.when_eaten", "When eaten:");
+        generate(translationBuilder, "tooltip.bountifulfares.air_time", "Underwater air time");
 
 
         generate(translationBuilder, "painting.bountifulfares.bountiful.title", "Bountiful");
@@ -365,6 +369,8 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.flour_throwing", "Flour can be thrown");
         generate(translationBuilder, "config.bountifulfares.flour_throwing_cooldown", "Flour throwing cooldown, in ticks");
         generate(translationBuilder, "config.bountifulfares.restoration_overlay", "Restoration effect changes health icons");
+        generate(translationBuilder, "config.bountifulfares.particle_tint_override", "Remove particle tint for some blocks");
+        generate(translationBuilder, "config.subterrous.particle_tint_override_msg", "Disable this if it is causing issues.");
         generate(translationBuilder, "config.bountifulfares.lapisberry_seeds", "Sniffers can dig up Lapisberry Seeds");
         generate(translationBuilder, "config.bountifulfares.hoary_seeds", "Sniffers can dig up Hoary Seeds");
         generate(translationBuilder, "config.bountifulfares.spongekin_seeds_elder_guardian", "Elder Guardians drop Spongekin Seeds");

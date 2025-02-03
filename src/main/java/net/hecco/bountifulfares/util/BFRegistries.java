@@ -202,6 +202,8 @@ public class BFRegistries {
     public static void registerStrippables() {
         register(BFBlocks.APPLE_LOG, BFBlocks.STRIPPED_APPLE_LOG);
         register(BFBlocks.APPLE_WOOD, BFBlocks.STRIPPED_APPLE_WOOD);
+        register(BFBlocks.GOLDEN_APPLE_LOG, BFBlocks.STRIPPED_APPLE_LOG);
+        register(BFBlocks.GOLDEN_APPLE_WOOD, BFBlocks.STRIPPED_APPLE_WOOD);
         register(BFBlocks.ORANGE_LOG, BFBlocks.STRIPPED_ORANGE_LOG);
         register(BFBlocks.ORANGE_WOOD, BFBlocks.STRIPPED_ORANGE_WOOD);
         register(BFBlocks.LEMON_LOG, BFBlocks.STRIPPED_LEMON_LOG);

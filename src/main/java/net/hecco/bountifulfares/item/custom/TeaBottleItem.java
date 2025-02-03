@@ -1,19 +1,26 @@
 package net.hecco.bountifulfares.item.custom;
 
+import net.hecco.bountifulfares.effect.BFEffects;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.screen.ScreenTexts;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -21,11 +28,16 @@ import net.minecraft.world.World;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TeaBottleItem extends Item {
-    public TeaBottleItem(Settings settings) {
+    protected List<StatusEffectInstance> removedEffects;
+
+    public TeaBottleItem(List<StatusEffectInstance> removedEffects, Settings settings) {
         super(settings);
+        this.removedEffects = removedEffects;
     }
+
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         super.finishUsing(stack, world, user);
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
@@ -67,5 +79,16 @@ public class TeaBottleItem extends Item {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         return ItemUsage.consumeHeldItem(world, user, hand);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
+        PotionContentsComponent.buildTooltip(List.of(new StatusEffectInstance(BFEffects.EBULLIENCE, 1800, 0, true, true)), tooltip::add, 1.0F, context.getUpdateTickRate());
+        tooltip.add(ScreenTexts.EMPTY);
+        tooltip.add(Text.translatable("tooltip.bountifulfares.removes").formatted(Formatting.GRAY));
+        for (StatusEffectInstance effect : removedEffects) {
+            tooltip.add(Text.translatable(effect.getTranslationKey().formatted(effect.getEffectType().value().getCategory().getFormatting())).formatted(Formatting.RED));
+        }
     }
 }
