@@ -84,7 +84,7 @@ public class TeaBottleItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
-        PotionContentsComponent.buildTooltip(List.of(new StatusEffectInstance(BFEffects.EBULLIENCE, 1800, 0, true, true)), tooltip::add, 1.0F, context.getUpdateTickRate());
+        PotionContentsComponent.buildTooltip(List.of(new StatusEffectInstance(BFEffects.EBULLIENCE, 3600, 0, true, true)), tooltip::add, 1.0F, context.getUpdateTickRate());
         tooltip.add(ScreenTexts.EMPTY);
         tooltip.add(Text.translatable("tooltip.bountifulfares.removes").formatted(Formatting.GRAY));
         for (StatusEffectInstance effect : removedEffects) {

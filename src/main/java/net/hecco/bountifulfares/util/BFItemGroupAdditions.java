@@ -81,6 +81,12 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.PLUM_LOG, BFBlocks.PLUM_WOOD);
             entries.addAfter(BFBlocks.PLUM_WOOD, BFBlocks.STRIPPED_PLUM_LOG);
             entries.addAfter(BFBlocks.STRIPPED_PLUM_LOG, BFBlocks.STRIPPED_PLUM_WOOD);
+            entries.addAfter(BFBlocks.STRIPPED_PLUM_WOOD, BFBlocks.PALM_LOG);
+            entries.addAfter(BFBlocks.PALM_LOG, BFBlocks.PALM_WOOD);
+            entries.addAfter(BFBlocks.PALM_WOOD, BFBlocks.STRIPPED_PALM_LOG);
+            entries.addAfter(BFBlocks.STRIPPED_PALM_LOG, BFBlocks.STRIPPED_PALM_WOOD);
+            entries.addAfter(BFBlocks.STRIPPED_PALM_WOOD, BFBlocks.GOLDEN_APPLE_LOG);
+            entries.addAfter(BFBlocks.GOLDEN_APPLE_LOG, BFBlocks.GOLDEN_APPLE_WOOD);
 //            entries.addAfter(BFBlocks.STRIPPED_PLUM_WOOD, TrellisUtil.getTrellisFromVariant(ModTrellises.OAK));
 //            TrellisVariant prevTrellis = ModTrellises.OAK;
 //            for (TrellisVariant trellis : TrellisVariants.TrellisVariants) {
@@ -96,8 +102,16 @@ public class BFItemGroupAdditions {
 //            }
             entries.addAfter(BFBlocks.STRIPPED_PLUM_WOOD, BFBlocks.WALNUT_MULCH);
             entries.addAfter(BFBlocks.WALNUT_MULCH, BFBlocks.WALNUT_MULCH_BLOCK);
-            entries.addAfter(Items.DARK_PRISMARINE, BFBlocks.PRISMARINE_BLOSSOM);
-            entries.addAfter(Items.PURPUR_SLAB, BFBlocks.FELDSPAR_BLOCK);
+            entries.addAfter(BFBlocks.WALNUT_MULCH_BLOCK, BFBlocks.PALM_MULCH);
+            entries.addAfter(BFBlocks.PALM_MULCH, BFBlocks.PALM_MULCH_BLOCK);
+            entries.addAfter(BFBlocks.PALM_MULCH_BLOCK, BFBlocks.PACKED_COCONUT_COIR);
+            entries.addAfter(BFBlocks.PACKED_COCONUT_COIR, BFBlocks.COIR_CARPET);
+            entries.addAfter(BFBlocks.COIR_CARPET, BFBlocks.COIR_BRICKS);
+            entries.addAfter(BFBlocks.COIR_BRICKS, BFBlocks.COIR_BRICK_STAIRS);
+            entries.addAfter(BFBlocks.COIR_BRICK_STAIRS, BFBlocks.COIR_BRICK_SLAB);
+            entries.addAfter(BFBlocks.COIR_BRICK_SLAB, BFBlocks.COIR_BRICK_WALL);
+            entries.addAfter(Items.DARK_PRISMARINE_SLAB, BFBlocks.PRISMARINE_BLOSSOM);
+            entries.addAfter(BFBlocks.PRISMARINE_BLOSSOM, BFBlocks.FELDSPAR_BLOCK);
             entries.addAfter(BFBlocks.FELDSPAR_BLOCK, BFBlocks.CUT_FELDSPAR_BLOCK);
             entries.addAfter(BFBlocks.CUT_FELDSPAR_BLOCK, BFBlocks.FELDSPAR_BRICKS);
             entries.addAfter(BFBlocks.FELDSPAR_BRICKS, BFBlocks.FELDSPAR_BRICK_STAIRS);
@@ -115,6 +129,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.CERAMIC_DOOR, BFBlocks.CERAMIC_TRAPDOOR);
             entries.addAfter(BFBlocks.CERAMIC_TRAPDOOR, BFBlocks.CERAMIC_PRESSURE_PLATE);
             entries.addAfter(BFBlocks.CERAMIC_PRESSURE_PLATE, BFBlocks.CERAMIC_BUTTON);
+            entries.addAfter(Blocks.IRON_BARS, BFBlocks.IRON_RAILING);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
@@ -123,6 +138,8 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.APPLE_LOG, BFBlocks.ORANGE_LOG);
             entries.addAfter(BFBlocks.ORANGE_LOG, BFBlocks.LEMON_LOG);
             entries.addAfter(BFBlocks.LEMON_LOG, BFBlocks.PLUM_LOG);
+            entries.addAfter(BFBlocks.PLUM_LOG, BFBlocks.PALM_LOG);
+            entries.addAfter(BFBlocks.PALM_LOG, BFBlocks.PALM_CROWN);
             entries.addAfter(Items.CHERRY_LOG, BFBlocks.WALNUT_LOG);
             entries.addAfter(BFBlocks.WALNUT_LOG, BFBlocks.HOARY_LOG);
             entries.addAfter(Items.FLOWERING_AZALEA_LEAVES, BFBlocks.APPLE_LEAVES);
@@ -133,14 +150,18 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.LEMON_LEAVES, BFBlocks.FLOWERING_LEMON_LEAVES);
             entries.addAfter(BFBlocks.FLOWERING_LEMON_LEAVES, BFBlocks.PLUM_LEAVES);
             entries.addAfter(BFBlocks.PLUM_LEAVES, BFBlocks.FLOWERING_PLUM_LEAVES);
-            entries.addAfter(BFBlocks.FLOWERING_PLUM_LEAVES, BFBlocks.WALNUT_LEAVES);
+            entries.addAfter(BFBlocks.FLOWERING_PLUM_LEAVES, BFBlocks.GOLDEN_APPLE_LEAVES);
+            entries.addAfter(BFBlocks.GOLDEN_APPLE_LEAVES, BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES);
+            entries.addAfter(BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES, BFBlocks.WALNUT_LEAVES);
             entries.addAfter(BFBlocks.WALNUT_LEAVES, BFBlocks.HOARY_LEAVES);
+            entries.addAfter(BFBlocks.HOARY_LEAVES, BFItems.PALM_FROND);
             entries.addAfter(Items.CHERRY_SAPLING, BFBlocks.APPLE_SAPLING);
             entries.addAfter(BFBlocks.APPLE_SAPLING, BFBlocks.ORANGE_SAPLING);
             entries.addAfter(BFBlocks.ORANGE_SAPLING, BFBlocks.LEMON_SAPLING);
             entries.addAfter(BFBlocks.LEMON_SAPLING, BFBlocks.PLUM_SAPLING);
             entries.addAfter(BFBlocks.PLUM_SAPLING, BFBlocks.HOARY_APPLE_SAPLING);
             entries.addAfter(BFBlocks.HOARY_APPLE_SAPLING, BFBlocks.WALNUT_SAPLING);
+            entries.addAfter(Blocks.FLOWERING_AZALEA, BFItems.COCONUT);
             entries.addAfter(Items.SNIFFER_EGG, BFBlocks.WILD_WHEAT);
             entries.addAfter(BFBlocks.WILD_WHEAT, BFBlocks.WILD_CARROTS);
             entries.addAfter(BFBlocks.WILD_CARROTS, BFBlocks.WILD_POTATOES);
@@ -174,6 +195,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.BELLFLOWER_CANDLE, BFBlocks.TORCHFLOWER_CANDLE);
             entries.addAfter(BFBlocks.TORCHFLOWER_CANDLE, BFBlocks.WALNUT_CANDLE);
             entries.addAfter(BFBlocks.WALNUT_CANDLE, BFBlocks.FERMENTATION_VESSEL);
+            entries.addAfter(BFBlocks.FERMENTATION_VESSEL, BFBlocks.COCONUT_CANDLE);
             entries.addAfter(Blocks.COMPOSTER, TrellisUtil.getTrellisFromVariant(BFTrellises.OAK));
             TrellisVariant prevTrellis = BFTrellises.OAK;
             for (TrellisVariant trellis : TrellisUtil.TrellisVariants) {
@@ -295,6 +317,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.GLOW_BERRY_TART, BFBlocks.SWEET_BERRY_TART);
             entries.addAfter(BFBlocks.SWEET_BERRY_TART, BFBlocks.LAPISBERRY_TART);
             entries.addAfter(Items.CAKE, BFBlocks.COCOA_CAKE);
+            entries.addAfter(BFBlocks.COCOA_CAKE, BFBlocks.COCONUT_CAKE);
             entries.addAfter(Items.PUMPKIN_PIE, BFBlocks.APPLE_PIE);
             entries.addAfter(BFBlocks.APPLE_PIE, BFBlocks.ORANGE_PIE);
             entries.addAfter(BFBlocks.ORANGE_PIE, BFBlocks.LEMON_PIE);
@@ -316,9 +339,11 @@ public class BFItemGroupAdditions {
             entries.addAfter(Items.RABBIT_STEW, BFItems.LEEK_STEW);
             entries.addAfter(BFItems.LEEK_STEW, BFItems.FISH_STEW);
             entries.addAfter(BFItems.FISH_STEW, BFItems.APPLE_STEW);
-            entries.addAfter(BFItems.APPLE_STEW, BFItems.STONE_STEW);
+            entries.addAfter(BFItems.APPLE_STEW, BFItems.COCONUT_STEW);
+            entries.addAfter(BFItems.COCONUT_STEW, BFItems.STONE_STEW);
             entries.addAfter(BFItems.STONE_STEW, BFItems.BOUNTIFUL_STEW);
             entries.addAfter(BFItems.BOUNTIFUL_STEW, BFItems.PASSION_GLAZED_SALMON);
+            entries.addAfter(BFItems.PASSION_GLAZED_SALMON, BFItems.COCONUT_CRUSTED_COD);
             entries.addAfter(BFItems.PASSION_GLAZED_SALMON, BFItems.CRUSTED_BEEF);
             entries.addAfter(BFItems.CRUSTED_BEEF, BFItems.CRIMSON_CHOW);
             entries.addAfter(BFItems.CRIMSON_CHOW, BFItems.WARPED_CHOW);
@@ -337,7 +362,10 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.CERAMIC_CLAY, BFItems.CERAMIC_TILE);
             entries.addAfter(Items.BOWL, BFBlocks.CERAMIC_DISH);
             entries.addAfter(BFBlocks.CERAMIC_DISH, BFItems.JAR);
-            entries.addAfter(Items.FIREWORK_STAR, BFItems.TEA_LEAVES);
+            entries.addAfter(Items.FIREWORK_STAR, BFItems.COCONUT);
+            entries.addAfter(BFItems.COCONUT, BFItems.COCONUT_HALF);
+            entries.addAfter(BFItems.COCONUT_HALF, BFItems.COCONUT_COIR);
+            entries.addAfter(BFItems.COCONUT_COIR, BFItems.TEA_LEAVES);
             entries.addAfter(BFItems.TEA_LEAVES, BFItems.DRIED_TEA_LEAVES);
             entries.addAfter(BFItems.DRIED_TEA_LEAVES, BFItems.GREEN_TEA_BLEND);
             entries.addAfter(BFItems.GREEN_TEA_BLEND, BFItems.BLACK_TEA_BLEND);
