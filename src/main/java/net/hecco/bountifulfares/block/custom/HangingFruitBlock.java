@@ -44,7 +44,7 @@ public class HangingFruitBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (!HangingFruitBlock.isFullyGrown(state) && random.nextFloat() < 0.2) {
+        if (!HangingFruitBlock.isFullyGrown(state) && random.nextFloat() < 0.1) {
             world.setBlockState(pos, state.cycle(AGE), Block.NOTIFY_LISTENERS);
         }
     }

@@ -56,6 +56,7 @@
 - Retextured most ceramic block textures
 - Piglins now are distracted by Golden Apple Blocks
 - Fruit leaves are now biome tinted
+- Decreased the rate of growth of fruit on trees
 - Retextured Stripped Fruit Logs
 - Reworked Fruit Logs
     - Fruit Logs can now connect to each other similarly to Chorus Plants
@@ -99,6 +100,8 @@
 - Updated Gristmill GUI
 
 ## New Content
+- Added Iron Railings
+    - A variant of Iron Bars, similar to pickets
 - Added Palm Trees
     - A new type of fruit tree
     - Generates on Beaches and near water in Deserts
@@ -122,3 +125,14 @@
         - Can be used in place of wheat to create Mud Bricks
         - Can be packed into Coir blocks and bricks
         - Can be made into Carpets
+- Added Golden Apple Trees
+    - Can be found naturally in a secret room inside Woodland Mansions
+    - Saplings can be found in another secret room inside Woodland Mansions
+    - Golden Apple Saplings can be grown into Golden Apple Trees
+        - Golden Apple Trees are made up of flowering and normal Golden Apple Leaves and Golden Apple Logs
+            - Golden Apple Leaves will not drop saplings when broken
+        - Below the leaves, a Golden Apple fruit can spawn
+            - Has 6 stages of growth, and grows much slower compared to other fruit
+            - If not in an environment with a light level of 8 or lower, Golden Apples will not grow
+            - If exposed for a while, they will become withered and cannot be regrown. They will also not drop anything when broken
+            - Unlike other fruit trees, leaves cannot be bonemealed to produce more fruit

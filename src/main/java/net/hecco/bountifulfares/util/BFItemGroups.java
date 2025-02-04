@@ -85,6 +85,7 @@ public class BFItemGroups {
                         entries.add(BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES);
                         entries.add(Items.GOLDEN_APPLE);
                         entries.add(BFBlocks.GOLDEN_APPLE_BLOCK);
+                        entries.add(BFBlocks.GOLDEN_APPLE_SAPLING);
                         entries.add(BFBlocks.HOARY_APPLE_SAPLING);
                         entries.add(BFBlocks.HOARY_LOG);
                         entries.add(BFBlocks.HOARY_WOOD);

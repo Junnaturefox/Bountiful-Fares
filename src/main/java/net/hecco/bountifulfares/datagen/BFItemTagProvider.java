@@ -38,6 +38,7 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .addTag(BFItemTags.ORANGE_LEAVES)
                 .addTag(BFItemTags.LEMON_LEAVES)
                 .addTag(BFItemTags.PLUM_LEAVES)
+                .addTag(BFItemTags.GOLDEN_APPLE_LEAVES)
                 .add(BFBlocks.HOARY_LEAVES.asItem())
                 .add(BFBlocks.WALNUT_LEAVES.asItem());
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
@@ -47,7 +48,8 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .addTag(BFItemTags.PLUM_LOGS)
                 .addTag(BFItemTags.HOARY_LOGS)
                 .addTag(BFItemTags.WALNUT_LOGS)
-                .addTag(BFItemTags.PALM_LOGS);
+                .addTag(BFItemTags.PALM_LOGS)
+                .addTag(BFItemTags.GOLDEN_APPLE_LOGS);
         getOrCreateTagBuilder(ItemTags.PLANKS).add(BFBlocks.HOARY_PLANKS.asItem(), BFBlocks.WALNUT_PLANKS.asItem());
         getOrCreateTagBuilder(ItemTags.WOODEN_BUTTONS).add(BFBlocks.HOARY_BUTTON.asItem(), BFBlocks.WALNUT_BUTTON.asItem());
         getOrCreateTagBuilder(ItemTags.WOODEN_DOORS).add(BFBlocks.HOARY_DOOR.asItem(), BFBlocks.WALNUT_DOOR.asItem());
@@ -70,7 +72,9 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(BFBlocks.COCONUT_CANDLE.asItem());
 
         getOrCreateTagBuilder(ItemTags.PIGLIN_LOVED)
-                .add(BFBlocks.GOLDEN_APPLE_BLOCK.asItem());
+                .add(BFBlocks.GOLDEN_APPLE_BLOCK.asItem())
+                .add(BFBlocks.GOLDEN_APPLE_LEAVES.asItem())
+                .add(BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES.asItem());
 
         getOrCreateTagBuilder(ItemTags.DYEABLE)
                 .add(BFBlocks.CERAMIC_TILES.asItem())
@@ -101,6 +105,7 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(BFItemTags.ORANGE_LEAVES).add(BFBlocks.ORANGE_LEAVES.asItem(), BFBlocks.FLOWERING_ORANGE_LEAVES.asItem());
         getOrCreateTagBuilder(BFItemTags.LEMON_LEAVES).add(BFBlocks.LEMON_LEAVES.asItem(), BFBlocks.FLOWERING_LEMON_LEAVES.asItem());
         getOrCreateTagBuilder(BFItemTags.PLUM_LEAVES).add(BFBlocks.PLUM_LEAVES.asItem(), BFBlocks.FLOWERING_PLUM_LEAVES.asItem());
+        getOrCreateTagBuilder(BFItemTags.GOLDEN_APPLE_LEAVES).add(BFBlocks.GOLDEN_APPLE_LEAVES.asItem(), BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES.asItem());
         getOrCreateTagBuilder(BFItemTags.APPLE_LOGS)
                 .add(BFBlocks.APPLE_LOG.asItem())
                 .add(BFBlocks.STRIPPED_APPLE_LOG.asItem())
@@ -137,6 +142,10 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(BFBlocks.PALM_WOOD.asItem())
                 .add(BFBlocks.STRIPPED_PALM_WOOD.asItem())
         ;
+        getOrCreateTagBuilder(BFItemTags.GOLDEN_APPLE_LOGS)
+                .add(BFBlocks.GOLDEN_APPLE_LOG.asItem())
+                .add(BFBlocks.GOLDEN_APPLE_WOOD.asItem())
+        ;
         getOrCreateTagBuilder(BFItemTags.WALNUT_LOGS)
                 .add(BFBlocks.WALNUT_LOG.asItem())
                 .add(BFBlocks.STRIPPED_WALNUT_LOG.asItem())
@@ -145,8 +154,7 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
         ;
         getOrCreateTagBuilder(BFItemTags.FRUIT_LOGS)
                 .addTag(BFItemTags.APPLE_LOGS)
-                .add(BFBlocks.GOLDEN_APPLE_LOG.asItem())
-                .add(BFBlocks.GOLDEN_APPLE_WOOD.asItem())
+                .addTag(BFItemTags.GOLDEN_APPLE_LOGS)
                 .addTag(BFItemTags.ORANGE_LOGS)
                 .addTag(BFItemTags.LEMON_LOGS)
                 .addTag(BFItemTags.PLUM_LOGS)

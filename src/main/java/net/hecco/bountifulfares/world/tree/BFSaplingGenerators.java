@@ -41,6 +41,13 @@ public class BFSaplingGenerators {
             Optional.empty(),
             Optional.empty(),
             Optional.empty());
+    public static final SaplingGenerator GOLDEN_APPLE_SAPLING_GENERATOR = new SaplingGenerator("golden_apple", 0f,
+            Optional.empty(),
+            Optional.empty(),
+            Optional.of(BFConfiguredFeatures.GOLDEN_APPLE_KEY),
+            Optional.empty(),
+            Optional.empty(),
+            Optional.empty());
     public static final SaplingGenerator HOARY_SAPLING_GENERATOR = new SaplingGenerator("hoary", 0f,
             Optional.empty(),
             Optional.empty(),

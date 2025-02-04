@@ -311,7 +311,6 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.FLOWERING_ORANGE_LEAVES)
                 .add(BFBlocks.FLOWERING_LEMON_LEAVES)
                 .add(BFBlocks.FLOWERING_PLUM_LEAVES)
-                .add(BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES)
         ;
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS).add(BFBlocks.GOLDEN_APPLE_BLOCK);
         getOrCreateTagBuilder(BlockTags.CROPS).add(BFBlocks.HOARY_APPLE_SAPLING_CROP, BFBlocks.MAIZE_CROP, BFBlocks.LEEKS);
@@ -323,6 +322,7 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                         BFBlocks.POTTED_ORANGE_SAPLING,
                         BFBlocks.POTTED_LEMON_SAPLING,
                         BFBlocks.POTTED_PLUM_SAPLING,
+                        BFBlocks.POTTED_GOLDEN_APPLE_SAPLING,
                         BFBlocks.WALNUT_SAPLING,
                         BFBlocks.POTTED_PALM_FROND,
                         BFBlocks.POTTED_HONEYSUCKLE,
@@ -341,6 +341,7 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.WALNUT_LEAVES);
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .addTag(BFBlockTags.APPLE_LOGS)
+                .addTag(BFBlockTags.GOLDEN_APPLE_LOGS)
                 .addTag(BFBlockTags.ORANGE_LOGS)
                 .addTag(BFBlockTags.LEMON_LOGS)
                 .addTag(BFBlockTags.PLUM_LOGS)
@@ -387,11 +388,16 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BFBlockTags.ORANGE_LEAVES).add(BFBlocks.ORANGE_LEAVES, BFBlocks.FLOWERING_ORANGE_LEAVES);
         getOrCreateTagBuilder(BFBlockTags.LEMON_LEAVES).add(BFBlocks.LEMON_LEAVES, BFBlocks.FLOWERING_LEMON_LEAVES);
         getOrCreateTagBuilder(BFBlockTags.PLUM_LEAVES).add(BFBlocks.PLUM_LEAVES, BFBlocks.FLOWERING_PLUM_LEAVES);
+        getOrCreateTagBuilder(BFBlockTags.GOLDEN_APPLE_LEAVES).add(BFBlocks.GOLDEN_APPLE_LEAVES, BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES);
         getOrCreateTagBuilder(BFBlockTags.APPLE_LOGS)
                 .add(BFBlocks.APPLE_LOG)
                 .add(BFBlocks.STRIPPED_APPLE_LOG)
                 .add(BFBlocks.APPLE_WOOD)
                 .add(BFBlocks.STRIPPED_APPLE_WOOD)
+        ;
+        getOrCreateTagBuilder(BFBlockTags.GOLDEN_APPLE_LOGS)
+                .add(BFBlocks.GOLDEN_APPLE_LOG)
+                .add(BFBlocks.GOLDEN_APPLE_WOOD)
         ;
         getOrCreateTagBuilder(BFBlockTags.ORANGE_LOGS)
                 .add(BFBlocks.ORANGE_LOG)
@@ -558,6 +564,7 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.ORANGE_SAPLING)
                 .add(BFBlocks.LEMON_SAPLING)
                 .add(BFBlocks.PLUM_SAPLING)
+                .add(BFBlocks.GOLDEN_APPLE_SAPLING)
                 .add(BFBlocks.HOARY_APPLE_SAPLING)
                 .add(BFBlocks.WALNUT_SAPLING)
         ;

@@ -47,6 +47,8 @@ public class BFModelProvider extends FabricModelProvider {
         coirBrickTexturePool.wall(BFBlocks.COIR_BRICK_WALL);
         blockStateModelGenerator.registerWoolAndCarpet(BFBlocks.PACKED_COCONUT_COIR, BFBlocks.COIR_CARPET);
 
+        blockStateModelGenerator.registerFlowerPotPlant(BFBlocks.GOLDEN_APPLE_SAPLING, BFBlocks.POTTED_GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         registerPicketsModels(blockStateModelGenerator, BFBlocks.OAK_PICKETS);
         registerPicketsModels(blockStateModelGenerator, BFBlocks.SPRUCE_PICKETS);
         registerPicketsModels(blockStateModelGenerator, BFBlocks.BIRCH_PICKETS);

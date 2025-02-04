@@ -14,6 +14,7 @@ public class BFBlockTags {
     public static final TagKey<Block> ORANGE_LEAVES = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "orange_leaves"));
     public static final TagKey<Block> LEMON_LEAVES = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "lemon_leaves"));
     public static final TagKey<Block> PLUM_LEAVES = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "plum_leaves"));
+    public static final TagKey<Block> GOLDEN_APPLE_LEAVES = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "golden_apple_leaves"));
     public static final TagKey<Block> APPLE_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "apple_logs"));
     public static final TagKey<Block> ORANGE_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "orange_logs"));
     public static final TagKey<Block> LEMON_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "lemon_logs"));
@@ -21,6 +22,7 @@ public class BFBlockTags {
     public static final TagKey<Block> WALNUT_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "walnut_logs"));
     public static final TagKey<Block> HOARY_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "hoary_logs"));
     public static final TagKey<Block> PALM_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "palm_logs"));
+    public static final TagKey<Block> GOLDEN_APPLE_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "golden_apple_logs"));
     public static final TagKey<Block> JACK_O_STRAWS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "jack_o_straws"));
 
     public static final TagKey<Block> CERAMIC_TILES = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "ceramic_tiles"));

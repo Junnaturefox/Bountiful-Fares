@@ -14,6 +14,7 @@ import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import java.util.List;
 
 public class ElderberryTreeDecorator extends TreeDecorator {
+//    TODO: change elderberry and passionfruit to use features
     public static final MapCodec<ElderberryTreeDecorator> CODEC = Codec.floatRange(0.0F, 1.0F).fieldOf("probability").xmap(ElderberryTreeDecorator::new, (decorator) -> decorator.probability);
 
     private final float probability;

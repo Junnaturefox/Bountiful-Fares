@@ -89,6 +89,13 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(BFBlocks.FLOWERING_LEMON_LEAVES, leavesDrops(BFBlocks.FLOWERING_LEMON_LEAVES, BFBlocks.LEMON_SAPLING, FLOWERING_FRUIT_SAPLING_DROP_CHANCE));
         addDrop(BFBlocks.PLUM_LEAVES, leavesDrops(BFBlocks.PLUM_LEAVES, BFBlocks.PLUM_SAPLING, FRUIT_SAPLING_DROP_CHANCE));
         addDrop(BFBlocks.FLOWERING_PLUM_LEAVES, leavesDrops(BFBlocks.FLOWERING_PLUM_LEAVES, BFBlocks.PLUM_SAPLING, FLOWERING_FRUIT_SAPLING_DROP_CHANCE));
+        addDrop(BFBlocks.GOLDEN_APPLE_LEAVES, LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F))
+                .conditionally(this.createWithShearsOrSilkTouchCondition())
+                .with(ItemEntry.builder(BFBlocks.GOLDEN_APPLE_LEAVES))));
+        addDrop(BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES, LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F))
+                .conditionally(this.createWithShearsOrSilkTouchCondition())
+                .with(ItemEntry.builder(BFBlocks.FLOWERING_GOLDEN_APPLE_LEAVES))));
+
         addDrop(BFBlocks.HOARY_APPLE_SAPLING_CROP, BFItems.HOARY_SEEDS);
         addDrop(BFBlocks.HOARY_SLAB, slabDrops(BFBlocks.HOARY_SLAB));
         addDrop(BFBlocks.HOARY_DOOR, doorDrops(BFBlocks.HOARY_DOOR));
@@ -347,6 +354,8 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         hangingFruitDrops(BFBlocks.HANGING_LEMON, BFItems.LEMON);
         hangingFruitDrops(BFBlocks.HANGING_PLUM, BFItems.PLUM);
         hangingFruitDrops(BFBlocks.HANGING_HOARY_APPLE, BFItems.HOARY_APPLE);
+        hangingFruitDrops(BFBlocks.HANGING_GOLDEN_APPLE, Items.GOLDEN_APPLE);
+        usedBlocks.add(BFBlocks.HANGING_WITHERED_GOLDEN_APPLE);
         addDrop(BFBlocks.GRASSY_DIRT, LootTable.builder()
                 .pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F))
                         .conditionally(this.createWithoutSilkTouchCondition())
@@ -432,6 +441,7 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(BFBlocks.POTTED_WALNUT_SAPLING);
         addPottedPlantDrops(BFBlocks.POTTED_VIOLET_BELLFLOWER);
         addPottedPlantDrops(BFBlocks.POTTED_PALM_FROND);
+        addPottedPlantDrops(BFBlocks.POTTED_GOLDEN_APPLE_SAPLING);
         addDrop(BFBlocks.PALM_SAPLING, BFItems.COCONUT);
 
 

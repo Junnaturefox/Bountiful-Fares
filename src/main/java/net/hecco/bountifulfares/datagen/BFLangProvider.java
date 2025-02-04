@@ -64,6 +64,8 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, BFBlocks.HANGING_ORANGE, "Orange");
         generate(translationBuilder, BFBlocks.HANGING_LEMON, "Lemon");
         generate(translationBuilder, BFBlocks.HANGING_PLUM, "Plum");
+        generate(translationBuilder, BFBlocks.HANGING_GOLDEN_APPLE, "Golden Apple");
+        generate(translationBuilder, BFBlocks.HANGING_WITHERED_GOLDEN_APPLE, "Withered Golden Apple");
 
 
 
