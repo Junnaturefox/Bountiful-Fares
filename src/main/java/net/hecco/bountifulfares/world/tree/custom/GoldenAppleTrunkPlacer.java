@@ -48,7 +48,6 @@ public class GoldenAppleTrunkPlacer extends TrunkPlacer {
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config) {
         List<FoliagePlacer.TreeNode> nodes = new ArrayList<>();
         int baseHeight = this.height + random.nextBetween(0, 1);
-        int secondHeight = random.nextBetween(2, 2);
         Direction firstBranchDir = Direction.Type.HORIZONTAL.random(random);
         for (int i = 0; i <= baseHeight; i++) {
             replacer.accept(startPos.up(i), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
@@ -70,26 +69,24 @@ public class GoldenAppleTrunkPlacer extends TrunkPlacer {
                 .with(FruitLogBlock.UP, true)
                 .with(FruitLogBlock.DOWN, true));
         nodes.add(new FoliagePlacer.TreeNode(startPos.up(baseHeight + 1).offset(firstBranchDir, 2), 2, false));
-        for (int i = 1; i < secondHeight; i++) {
-            replacer.accept(startPos.up(baseHeight + i), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
-                    .with(FruitLogBlock.AXIS, Direction.Axis.Y)
-                    .with(FruitLogBlock.UP, true)
-                    .with(FruitLogBlock.DOWN, true)
-                    .with(FruitLogBlock.DIRECTION_TO_PROPERTY.get(firstBranchDir), true));
-        }
-        replacer.accept(startPos.up(baseHeight + secondHeight-1).offset(firstBranchDir.getOpposite()), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
+        replacer.accept(startPos.up(baseHeight + 1), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
+                .with(FruitLogBlock.AXIS, Direction.Axis.Y)
+                .with(FruitLogBlock.UP, true)
+                .with(FruitLogBlock.DOWN, true)
+                .with(FruitLogBlock.DIRECTION_TO_PROPERTY.get(firstBranchDir.getOpposite()), true));
+        replacer.accept(startPos.up(baseHeight + 1).offset(firstBranchDir.getOpposite()), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
                 .with(FruitLogBlock.AXIS, firstBranchDir.getAxis())
                 .with(FruitLogBlock.DIRECTION_TO_PROPERTY.get(firstBranchDir), true)
                 .with(FruitLogBlock.DIRECTION_TO_PROPERTY.get(firstBranchDir.getOpposite()), true));
-        replacer.accept(startPos.up(baseHeight + secondHeight-1).offset(firstBranchDir.getOpposite(), 2), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
+        replacer.accept(startPos.up(baseHeight + 1).offset(firstBranchDir.getOpposite(), 2), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
                 .with(FruitLogBlock.AXIS, Direction.Axis.Y)
                 .with(FruitLogBlock.UP, true)
                 .with(FruitLogBlock.DIRECTION_TO_PROPERTY.get(firstBranchDir.getOpposite()), true));
-        replacer.accept(startPos.up(baseHeight + secondHeight).offset(firstBranchDir.getOpposite(), 2), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
+        replacer.accept(startPos.up(baseHeight + 2).offset(firstBranchDir.getOpposite(), 2), BFBlocks.GOLDEN_APPLE_LOG.getDefaultState()
                 .with(FruitLogBlock.AXIS, Direction.Axis.Y)
                 .with(FruitLogBlock.UP, true)
                 .with(FruitLogBlock.DOWN, true));
-        nodes.add(new FoliagePlacer.TreeNode(startPos.up(baseHeight + secondHeight).offset(firstBranchDir.getOpposite(), 2), 2, false));
+        nodes.add(new FoliagePlacer.TreeNode(startPos.up(baseHeight + 2).offset(firstBranchDir.getOpposite(), 2), 2, false));
         return nodes;
     }
 }

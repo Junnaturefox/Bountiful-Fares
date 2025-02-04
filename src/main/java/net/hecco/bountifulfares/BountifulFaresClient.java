@@ -21,10 +21,7 @@ import net.hecco.bountifulfares.entity.BFEntities;
 import net.hecco.bountifulfares.item.BFItems;
 import net.hecco.bountifulfares.item.custom.ArtisanBrushItem;
 import net.hecco.bountifulfares.networking.BFMessages;
-import net.hecco.bountifulfares.particle.BFParticles;
-import net.hecco.bountifulfares.particle.FermentedBubbleParticle;
-import net.hecco.bountifulfares.particle.FlourCloudParticle;
-import net.hecco.bountifulfares.particle.PrismarineBlossomParticle;
+import net.hecco.bountifulfares.particle.*;
 import net.hecco.bountifulfares.screen.BFScreenHandlers;
 import net.hecco.bountifulfares.screen.GristmillScreen;
 import net.hecco.bountifulfares.trellis.BFTrellises;
@@ -164,6 +161,7 @@ public class BountifulFaresClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.GOLDEN_APPLE_LOG, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.GOLDEN_APPLE_WOOD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HANGING_GOLDEN_APPLE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HANGING_WITHERED_GOLDEN_APPLE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.GOLDEN_APPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HOARY_APPLE_SAPLING_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HOARY_APPLE_SAPLING, RenderLayer.getCutout());
@@ -310,6 +308,7 @@ public class BountifulFaresClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(BFParticles.FLOUR_CLOUD, FlourCloudParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(BFParticles.PRISMARINE_BLOSSOM, PrismarineBlossomParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(BFParticles.FERMENTED_BUBBLE, FermentedBubbleParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(BFParticles.GOLDEN_PETAL, GoldenPetalParticle.Factory::new);
 
         ColorProviderRegistry.BLOCK.register(((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : FoliageColors.getDefaultColor()), BFBlocks.WILD_POTATOES, BFBlocks.WILD_CARROTS, BFBlocks.WILD_BEETROOTS, BFBlocks.WILD_LEEKS, BFBlocks.WILD_MAIZE, BFBlocks.WILD_PASSION_FRUIT_VINE, BFBlocks.WILD_ELDERBERRY_VINE);
 
