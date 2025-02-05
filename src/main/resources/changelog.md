@@ -108,6 +108,7 @@
     - Made up of Palm Logs, Palm Crowns, and Palm Fronds
         - Like other fruit logs, Palm Logs cannot be made into planks
         - Palm Fronds can be placed on top or on the side of blocks, and up to 3 can be placed in a block to increase its size
+        - Palm Fronds can be potted in a Flower Pot
         - Milling Palm Fronds creates Palm Mulch
             - Acts similarly to Walnut Mulch
             - Can be placed in layers or crafted into a block

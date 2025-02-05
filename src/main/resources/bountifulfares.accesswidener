@@ -3,3 +3,6 @@ accessWidener   v1  named
 accessible class net/minecraft/client/gui/hud/InGameHud$HeartType
 
 accessible field net/minecraft/loot/LootTable pools Ljava/util/List;
+
+accessible class net/minecraft/structure/WoodlandMansionGenerator$FirstFloorRoomPool
+accessible class net/minecraft/structure/WoodlandMansionGenerator$SecondFloorRoomPool

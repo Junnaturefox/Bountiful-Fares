@@ -10,7 +10,9 @@
     "ItemRendererMixin",
     "LivingEntityMixin",
     "ModelLoaderMixin",
-    "WolfEntityMixin"
+    "WolfEntityMixin",
+    "WoodlandMansionFirstFloorMixin",
+    "WoodlandMansionSecondFloorMixin"
   ],
   "injectors": {
     "defaultRequire": 1

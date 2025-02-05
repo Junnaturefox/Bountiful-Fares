@@ -1,10 +1,6 @@
 package net.hecco.bountifulfares.compat.jei;
 
-import mezz.jei.api.IModPlugin;
-import mezz.jei.api.recipe.RecipeType;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.BFBlocks;
 import net.hecco.bountifulfares.item.BFItems;

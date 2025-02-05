@@ -163,6 +163,7 @@ public class BountifulFaresClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HANGING_GOLDEN_APPLE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HANGING_WITHERED_GOLDEN_APPLE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.GOLDEN_APPLE_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.POTTED_GOLDEN_APPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HOARY_APPLE_SAPLING_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.HOARY_APPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.POTTED_WALNUT_SAPLING, RenderLayer.getCutout());
