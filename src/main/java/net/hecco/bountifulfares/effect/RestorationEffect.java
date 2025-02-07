@@ -7,7 +7,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class RestorationEffect extends StatusEffect {
     private float regenMax;
-    protected RestorationEffect(StatusEffectCategory category, int color) {
+    public RestorationEffect(StatusEffectCategory category, int color) {
         super(category, color);
         this.regenMax = 0;
     }

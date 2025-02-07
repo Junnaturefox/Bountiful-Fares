@@ -36,7 +36,9 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
     public static boolean canBeLit;
 
     public static final VoxelShape[] SHAPES = new VoxelShape[] {
-            Block.createCuboidShape(5.5, 0, 5.5, 10.5, 4, 10.5)
+            Block.createCuboidShape(5.5, 0, 5.5, 10.5, 4, 10.5),
+            Block.createCuboidShape(3, 0, 4, 13, 4, 12),
+            Block.createCuboidShape(2.5, 0, 2.5, 13.5, 4, 13.5)
     };
 
     public CoconutCandleBlock(Settings settings) {
@@ -47,7 +49,7 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPES[0];
+        return SHAPES[state.get(CANDLES) - 1];
     }
 
     @Override
@@ -133,7 +135,19 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
         if (!state.get(LIT)) {
             return;
         }
-        spawnCandleParticles(world, new Vec3d(pos.getX()+0.5, pos.getY()+0.3, pos.getZ()+0.5), random);
+        if (state.get(CANDLES) == 1) {
+            spawnCandleParticles(world, new Vec3d(pos.getX()+0.5, pos.getY()+0.3, pos.getZ()+0.5), random);
+        } else if (state.get(CANDLES) == 2) {
+            spawnCandleParticles(world, new Vec3d(pos.getX() + 0.65625, pos.getY() + 0.3, pos.getZ() + 0.59375), random);
+            spawnCandleParticles(world, new Vec3d(pos.getX() + 0.3125, pos.getY() + 0.2375, pos.getZ() + 0.34375), random);
+        } else {
+            spawnCandleParticles(world, new Vec3d(pos.getX()+0.6875, pos.getY()+0.3, pos.getZ()+0.6875), random);
+            spawnCandleParticles(world, new Vec3d(pos.getX()+0.625, pos.getY()+0.2375, pos.getZ()+0.28125), random);
+            spawnCandleParticles(world, new Vec3d(pos.getX()+0.28125, pos.getY()+0.2375, pos.getZ()+0.53125), random);
+        }
+        if (random.nextFloat() < 0.17f) {
+            world.playSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_CANDLE_AMBIENT, SoundCategory.BLOCKS, 1.0f + random.nextFloat(), random.nextFloat() * 0.7f + 0.3f, false);
+        }
     }
 
     public static boolean canBeLit(BlockState state) {
@@ -149,9 +163,6 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
         float f = random.nextFloat();
         if (f < 0.3f) {
             world.addParticle(ParticleTypes.SMOKE, vec3d.x, vec3d.y, vec3d.z, 0.0, 0.0, 0.0);
-            if (f < 0.17f) {
-                world.playSound(vec3d.x + 0.5, vec3d.y + 0.5, vec3d.z + 0.5, SoundEvents.BLOCK_CANDLE_AMBIENT, SoundCategory.BLOCKS, 1.0f + random.nextFloat(), random.nextFloat() * 0.7f + 0.3f, false);
-            }
         }
         world.addParticle(ParticleTypes.SMALL_FLAME, vec3d.x, vec3d.y, vec3d.z, 0.0, 0.0, 0.0);
     }

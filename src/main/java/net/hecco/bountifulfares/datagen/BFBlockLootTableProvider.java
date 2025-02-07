@@ -22,6 +22,7 @@ import net.hecco.bountifulfares.trellis.trellis_parts.VineCrop;
 import net.minecraft.block.BeetrootsBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CandleBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -31,6 +32,7 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.EmptyEntry;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
@@ -41,6 +43,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
@@ -425,6 +428,13 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
                                 .properties(StatePredicate.Builder.create().exactMatch(WallPalmFrondBlock.SIZE, 2)))
                         .with(this.applyExplosionDecay(BFBlocks.WALL_PALM_FROND, ItemEntry.builder(BFItems.PALM_FROND))))
         );
+        addDrop(BFBlocks.COCONUT_CANDLE, LootTable.builder()
+                .pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1.0F))
+                        .with(this.applyExplosionDecay(BFBlocks.COCONUT_CANDLE, ItemEntry.builder(BFBlocks.COCONUT_CANDLE)
+                                .apply(List.of(2, 3), (candles) -> SetCountLootFunction.builder(ConstantLootNumberProvider.create((float)candles))
+                                        .conditionally(BlockStatePropertyLootCondition.builder(BFBlocks.COCONUT_CANDLE)
+                                                .properties(StatePredicate.Builder.create().exactMatch(CoconutCandleBlock.CANDLES, candles))))))));
         addPottedPlantDrops(BFBlocks.POTTED_HONEYSUCKLE);
         addPottedPlantDrops(BFBlocks.POTTED_APPLE_SAPLING);
         addPottedPlantDrops(BFBlocks.POTTED_ORANGE_SAPLING);

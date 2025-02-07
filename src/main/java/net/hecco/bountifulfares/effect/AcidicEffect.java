@@ -35,7 +35,7 @@ public class AcidicEffect extends StatusEffect {
             StatusEffects.WIND_CHARGED.value(),
             StatusEffects.INFESTED.value(),
             StatusEffects.WEAVING.value());
-    protected AcidicEffect(StatusEffectCategory category, int color) {
+    public AcidicEffect(StatusEffectCategory category, int color) {
         super(category, color);
         this.affectedEffects = new ArrayList<>();
     }

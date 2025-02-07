@@ -16,7 +16,7 @@ public class StuporEffect extends StatusEffect {
             StatusEffects.BAD_OMEN.value(),
             StatusEffects.RAID_OMEN.value(),
             StatusEffects.TRIAL_OMEN.value());
-    protected StuporEffect(StatusEffectCategory category, int color) {
+    public StuporEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
 }

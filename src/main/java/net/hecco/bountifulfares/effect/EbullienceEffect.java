@@ -6,7 +6,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class EbullienceEffect extends StatusEffect {
-    protected EbullienceEffect(StatusEffectCategory category, int color) {
+    public EbullienceEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
 
