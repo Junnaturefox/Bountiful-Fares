@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.block.custom;
 
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;

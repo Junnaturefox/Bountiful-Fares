@@ -1,37 +1,5 @@
 package net.hecco.bountifulfares.block.entity.compat;
 
-import net.hecco.bountifulfares.compat.farmersdelight.CabinetBlock;
-import net.hecco.bountifulfares.block.entity.BFBlockEntities;
-import net.hecco.bountifulfares.sounds.BFSounds;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.LootableContainerBlockEntity;
-import net.minecraft.block.entity.ViewerCountManager;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.listener.ClientPlayPacketListener;
-import net.minecraft.network.packet.Packet;
-import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.screen.GenericContainerScreenHandler;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
-import net.minecraft.world.World;
-import net.minecraft.text.Text;
-import net.minecraft.world.tick.OrderedTick;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Objects;
-
 //public class CabinetBlockEntity extends LootableContainerBlockEntity {
 //    private static final int MAX_INVENTORY_SIZE = 27;
 //

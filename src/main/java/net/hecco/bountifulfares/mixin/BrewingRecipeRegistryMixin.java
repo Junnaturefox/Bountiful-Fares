@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.mixin;
 
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.potion.BFPotions;
+import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.content.BFPotions;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.BrewingRecipeRegistry;

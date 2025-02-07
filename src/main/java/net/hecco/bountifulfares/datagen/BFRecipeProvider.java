@@ -3,7 +3,7 @@ package net.hecco.bountifulfares.datagen;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
@@ -12,10 +12,10 @@ import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
 import net.hecco.bountifulfares.compat.twigs.TwigsBlocks;
 import net.hecco.bountifulfares.datagen.recipe.MillingRecipeBuilder;
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.trellis.BFTrellises;
+import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
-import net.hecco.bountifulfares.util.BFItemTags;
+import net.hecco.bountifulfares.registry.util.BFItemTags;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -643,8 +643,11 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerPicketsRecipe(exporter, BFBlocks.HOARY_PICKETS, BFBlocks.HOARY_PLANKS);
         offerPicketsRecipe(exporter, BFBlocks.CRIMSON_PICKETS, Items.CRIMSON_PLANKS);
         offerPicketsRecipe(exporter, BFBlocks.WARPED_PICKETS, Items.WARPED_PLANKS);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BFBlocks.IRON_RAILING, 8).input('#', Items.IRON_INGOT).input('S', Items.IRON_NUGGET)
-                .pattern("#S#").criterion("has_iron", conditionsFromItem(Items.IRON_INGOT)).offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BFBlocks.IRON_RAILING, 8)
+                .input('#', Items.IRON_INGOT)
+                .input('S', Items.IRON_NUGGET)
+                .pattern("#S#")
+                .criterion("has_iron", conditionsFromItem(Items.IRON_INGOT)).offerTo(exporter);
 
         offerPicketsRecipe(exporter, MintBlocks.WINTERGREEN_PICKETS, Identifier.of(ELS_AND_LS_DYES_MOD_ID, "wintergreen_planks"));
         offerPicketsRecipe(exporter, ExcessiveBuildingBlocks.ANCIENT_PICKETS, Identifier.of(EXCESSIVE_BUILDING_MOD_ID, "ancient_planks"));

@@ -2,7 +2,6 @@ package net.hecco.bountifulfares.compat.twigs;
 
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.util.BFBlockTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;

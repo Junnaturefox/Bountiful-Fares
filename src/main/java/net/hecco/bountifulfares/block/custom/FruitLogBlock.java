@@ -1,7 +1,5 @@
 package net.hecco.bountifulfares.block.custom;
 
-import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
@@ -16,7 +14,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;

@@ -2,9 +2,9 @@ package net.hecco.bountifulfares.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.util.BFItemTags;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.util.BFItemTags;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;

@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.hecco.bountifulfares.particle.BFParticles;
+import net.hecco.bountifulfares.registry.content.BFParticles;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

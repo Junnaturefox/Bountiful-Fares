@@ -4,8 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.hecco.bountifulfares.datagen.*;
 import net.hecco.bountifulfares.datagen.BFLangProvider;
-import net.hecco.bountifulfares.world.BFConfiguredFeatures;
-import net.hecco.bountifulfares.world.BFPlacedFeatures;
+import net.hecco.bountifulfares.registry.misc.BFConfiguredFeatures;
+import net.hecco.bountifulfares.registry.misc.BFPlacedFeatures;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 

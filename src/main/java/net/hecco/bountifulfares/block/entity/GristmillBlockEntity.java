@@ -1,11 +1,10 @@
 package net.hecco.bountifulfares.block.entity;
 
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.GristmillBlock;
 import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
-import net.hecco.bountifulfares.recipe.BFRecipes;
+import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.hecco.bountifulfares.recipe.MillingRecipe;
 import net.hecco.bountifulfares.screen.GristmillScreenHandler;
 import net.minecraft.block.BlockState;
@@ -14,7 +13,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
-import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.*;
@@ -25,14 +23,12 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 

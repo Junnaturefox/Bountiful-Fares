@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.item.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.block.entity.DyeableBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
@@ -17,7 +17,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ColorHelper;
 import net.minecraft.world.World;
 
 import java.util.List;

@@ -1,11 +1,10 @@
 package net.hecco.bountifulfares;
 
-import net.hecco.bountifulfares.compat.BFCompat;
+import net.hecco.bountifulfares.registry.misc.BFCompat;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 

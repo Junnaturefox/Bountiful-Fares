@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.hecco.bountifulfares.item.BFItems;
+import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,7 +15,6 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;

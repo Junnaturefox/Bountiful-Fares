@@ -2,8 +2,8 @@ package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;

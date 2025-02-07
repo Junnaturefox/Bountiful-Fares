@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.trellis.trellis_parts;
 
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;

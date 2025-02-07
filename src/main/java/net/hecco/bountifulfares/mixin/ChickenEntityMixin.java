@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.mixin;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
-import net.hecco.bountifulfares.item.BFItems;
+import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.mob.PathAwareEntity;

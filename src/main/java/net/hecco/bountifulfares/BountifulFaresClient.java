@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.block.entity.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.DyeableBlockEntity;
 import net.hecco.bountifulfares.block.entity.renderer.CeramicDishBlockEntityRenderer;
@@ -16,16 +16,16 @@ import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlock
 import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
-import net.hecco.bountifulfares.entity.BFBoats;
-import net.hecco.bountifulfares.entity.BFEntities;
-import net.hecco.bountifulfares.item.BFItems;
+import net.hecco.bountifulfares.registry.content.BFBoats;
+import net.hecco.bountifulfares.registry.content.BFEntities;
 import net.hecco.bountifulfares.item.custom.ArtisanBrushItem;
 import net.hecco.bountifulfares.networking.BFMessages;
 import net.hecco.bountifulfares.particle.*;
-import net.hecco.bountifulfares.screen.BFScreenHandlers;
+import net.hecco.bountifulfares.registry.content.BFParticles;
+import net.hecco.bountifulfares.registry.misc.BFScreenHandlers;
 import net.hecco.bountifulfares.screen.GristmillScreen;
-import net.hecco.bountifulfares.trellis.BFTrellises;
-import net.hecco.bountifulfares.util.BFWoodTypes;
+import net.hecco.bountifulfares.registry.content.BFTrellises;
+import net.hecco.bountifulfares.registry.util.BFWoodTypes;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -45,7 +45,7 @@ import net.minecraft.world.biome.GrassColors;
 
 import java.util.Objects;
 
-import static net.hecco.bountifulfares.item.BFItems.ARTISAN_BRUSH;
+import static net.hecco.bountifulfares.registry.content.BFItems.ARTISAN_BRUSH;
 
 public class BountifulFaresClient implements ClientModInitializer {
     @Override

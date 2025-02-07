@@ -1,11 +1,10 @@
 package net.hecco.bountifulfares.compat.mint;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
 import net.hecco.bountifulfares.compat.block.CompatJackOStrawBlock;
 import net.hecco.bountifulfares.compat.block.CompatPicketsBlock;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -17,13 +16,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import static net.hecco.bountifulfares.BountifulFares.ELS_AND_LS_DYES_MOD_ID;
-import static net.hecco.bountifulfares.block.BFBlocks.createLightLevelFromLitBlockState;
-import static net.hecco.bountifulfares.compat.BFCompat.compatBlocks;
-import static net.hecco.bountifulfares.trellis.BFTrellises.TRELLIS_RENDER_CUTOUT;
+import static net.hecco.bountifulfares.registry.content.BFBlocks.createLightLevelFromLitBlockState;
+import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
+import static net.hecco.bountifulfares.registry.content.BFTrellises.TRELLIS_RENDER_CUTOUT;
 
 public class MintBlocks {
     public static Block ACORN_JACK_O_STRAW = registerBlock("acorn_jack_o_straw", new CompatJackOStrawBlock(ELS_AND_LS_DYES_MOD_ID, AbstractBlock.Settings.create().burnable().mapColor(MapColor.YELLOW).strength(0.5F).luminance(createLightLevelFromLitBlockState(12)).instrument(NoteBlockInstrument.BASS).notSolid().nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));

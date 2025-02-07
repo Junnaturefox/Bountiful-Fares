@@ -2,25 +2,11 @@ package net.hecco.bountifulfares;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.compat.BFCompat;
-import net.hecco.bountifulfares.entity.BFEntities;
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.screen.BFScreenHandlers;
-import net.hecco.bountifulfares.trellis.BFTrellises;
+import net.hecco.bountifulfares.registry.content.*;
+import net.hecco.bountifulfares.registry.misc.*;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.block.entity.BFBlockEntities;
-import net.hecco.bountifulfares.compat.BFResourcePacks;
-import net.hecco.bountifulfares.effect.BFEffects;
-import net.hecco.bountifulfares.entity.BFBoats;
-import net.hecco.bountifulfares.particle.BFParticles;
-import net.hecco.bountifulfares.potion.BFPotions;
-import net.hecco.bountifulfares.recipe.BFRecipes;
-import net.hecco.bountifulfares.sounds.BFSounds;
-import net.hecco.bountifulfares.util.*;
-import net.hecco.bountifulfares.world.gen.BFWorldGeneration;
-import net.hecco.bountifulfares.world.tree.BFTreeDecoratorTypes;
-import net.hecco.bountifulfares.world.tree.BFTrunkPlacerTypes;
+import net.hecco.bountifulfares.registry.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -63,7 +49,8 @@ public class BountifulFares implements ModInitializer {
 		BFItemGroups.registerItemGroups();
 		BFItemGroupAdditions.registerItemGroupAdditions();
 		BFRecipes.registerRecipes();
-		BFWorldGeneration.generateModWorldGeneration();
+		BFTreeGeneration.generateTrees();
+		BFFoliageGeneration.generateFlowers();
 		BFEffects.registerEffects();
 		BFBoats.registerBoats();
 		BFLootTableModifiers.modifyLootTables();

@@ -2,7 +2,7 @@ package net.hecco.bountifulfares.item.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.entity.FlourProjectileEntity;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

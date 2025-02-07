@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.compat.twigs;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -12,8 +11,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 import static net.hecco.bountifulfares.BountifulFares.TWIGS_MOD_ID;
-import static net.hecco.bountifulfares.block.BFBlocks.createLightLevelFromLitBlockState;
-import static net.hecco.bountifulfares.compat.BFCompat.compatBlocks;
+import static net.hecco.bountifulfares.registry.content.BFBlocks.createLightLevelFromLitBlockState;
+import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class TwigsBlocks {
 

@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.AliasedBlockItem;
 

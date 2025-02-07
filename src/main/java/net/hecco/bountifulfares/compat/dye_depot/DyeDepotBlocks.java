@@ -13,8 +13,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 import static net.hecco.bountifulfares.BountifulFares.DYE_DEPOT_MOD_ID;
-import static net.hecco.bountifulfares.block.BFBlocks.createLightLevelFromLitBlockState;
-import static net.hecco.bountifulfares.compat.BFCompat.compatBlocks;
+import static net.hecco.bountifulfares.registry.content.BFBlocks.createLightLevelFromLitBlockState;
+import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class DyeDepotBlocks {
 

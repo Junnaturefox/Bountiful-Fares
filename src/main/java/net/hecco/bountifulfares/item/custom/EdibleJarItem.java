@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
-import net.hecco.bountifulfares.item.BFItems;
+import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.LivingEntity;
@@ -9,7 +9,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;

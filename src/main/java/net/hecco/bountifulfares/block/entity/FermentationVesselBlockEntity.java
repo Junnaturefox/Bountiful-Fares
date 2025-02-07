@@ -2,10 +2,9 @@ package net.hecco.bountifulfares.block.entity;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.enums.FermentationStage;
-import net.hecco.bountifulfares.particle.BFParticles;
-import net.hecco.bountifulfares.recipe.BFRecipes;
+import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.hecco.bountifulfares.recipe.FermentationRecipe;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.hecco.bountifulfares.block.custom.FermentationVesselBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -29,12 +28,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Vector3f;
 
-import javax.swing.text.html.Option;
 import java.util.Objects;
 import java.util.Optional;
 

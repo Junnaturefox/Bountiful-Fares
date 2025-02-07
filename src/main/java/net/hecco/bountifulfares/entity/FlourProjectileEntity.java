@@ -1,8 +1,9 @@
 package net.hecco.bountifulfares.entity;
 
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.particle.BFParticles;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.content.BFParticles;
+import net.hecco.bountifulfares.registry.content.BFEntities;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

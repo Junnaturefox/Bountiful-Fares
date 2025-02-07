@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.mixin;
 
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.util.BFItemTags;
+import net.hecco.bountifulfares.registry.util.BFItemTags;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

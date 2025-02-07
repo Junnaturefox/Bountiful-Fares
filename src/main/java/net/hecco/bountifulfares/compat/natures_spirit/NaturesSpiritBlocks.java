@@ -2,7 +2,7 @@ package net.hecco.bountifulfares.compat.natures_spirit;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
@@ -13,8 +13,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 import static net.hecco.bountifulfares.BountifulFares.NATURES_SPIRIT_MOD_ID;
-import static net.hecco.bountifulfares.compat.BFCompat.compatBlocks;
-import static net.hecco.bountifulfares.trellis.BFTrellises.TRELLIS_RENDER_CUTOUT;
+import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
+import static net.hecco.bountifulfares.registry.content.BFTrellises.TRELLIS_RENDER_CUTOUT;
 
 public class NaturesSpiritBlocks {
     public static final Block ASPEN_PICKETS = registerBlock("aspen_pickets", new PicketsBlock(FabricBlockSettings.copyOf(BFBlocks.OAK_PICKETS)));

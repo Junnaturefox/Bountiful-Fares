@@ -1,36 +1,20 @@
 package net.hecco.bountifulfares.recipe;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.mojang.datafixers.Products;
-import com.mojang.datafixers.kinds.Applicative;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
-import net.minecraft.inventory.SimpleInventory;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.recipe.*;
-import net.minecraft.recipe.book.CookingRecipeCategory;
 import net.minecraft.recipe.input.RecipeInput;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonHelper;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.dynamic.Codecs;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import java.util.Objects;
 
 public class MillingRecipe implements Recipe<RecipeInput> {
 

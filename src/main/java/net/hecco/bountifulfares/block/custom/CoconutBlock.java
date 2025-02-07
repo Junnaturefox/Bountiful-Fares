@@ -1,10 +1,10 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.sounds.BFSounds;
-import net.hecco.bountifulfares.util.BFBlockTags;
-import net.hecco.bountifulfares.util.BFDamageTypes;
+import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.content.BFSounds;
+import net.hecco.bountifulfares.registry.util.BFBlockTags;
+import net.hecco.bountifulfares.registry.util.BFDamageTypes;
 import net.minecraft.block.*;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.damage.DamageSource;

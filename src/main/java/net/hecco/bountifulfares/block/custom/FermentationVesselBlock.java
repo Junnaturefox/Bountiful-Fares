@@ -5,10 +5,10 @@ import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.entity.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.FermentationVesselBlockEntity;
 import net.hecco.bountifulfares.block.enums.FermentationStage;
-import net.hecco.bountifulfares.particle.BFParticles;
-import net.hecco.bountifulfares.recipe.BFRecipes;
+import net.hecco.bountifulfares.registry.content.BFParticles;
+import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.hecco.bountifulfares.recipe.FermentationRecipe;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -22,10 +22,10 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
@@ -108,7 +108,8 @@ public class FermentationVesselBlock extends BlockWithEntity implements Waterlog
 
         } else if (itemStack.isOf(Items.WATER_BUCKET) && state.get(FERMENTATION_STAGE) == FermentationStage.EMPTY) {
             world.setBlockState(pos, state.with(FERMENTATION_STAGE, FermentationStage.WATER), 2);
-            world.playSound(null, pos, BFSounds.FERMENTATION_VESSEL_FILL, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat()/3);
+            world.playSound(null, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat()/3);
+            world.playSound(null, pos, BFSounds.FERMENTATION_VESSEL_FILL, SoundCategory.BLOCKS, 0.7F, 0.8F + world.random.nextFloat()/3);
             if (!player.isCreative()) {
                 itemStack.decrement(1);
             }
@@ -125,10 +126,10 @@ public class FermentationVesselBlock extends BlockWithEntity implements Waterlog
                     entity.insertItem(itemStack.getItem().getDefaultStack());
                     world.setBlockState(pos, state.with(FERMENTATION_STAGE, FermentationStage.FERMENTING));
                     pushEntitiesUpBeforeBlockChange(state.with(FERMENTATION_STAGE, FermentationStage.WATER), state.with(FERMENTATION_STAGE, FermentationStage.FERMENTING), world, pos);
+                    Item remainder = getCurrentRecipe(world, itemStack).get().value().getIngredient().getMatchingStacks()[0].getItem().getRecipeRemainder();
                     if (!player.isCreative()) {
                         itemStack.decrement(1);
                     }
-                    Item remainder = getCurrentRecipe(world, itemStack).get().value().getIngredient().getMatchingStacks()[0].getItem().getRecipeRemainder();
                     if (remainder != null) {
                         if (itemStack.isEmpty() && !player.isCreative()) {
                             player.setStackInHand(player.getActiveHand(), new ItemStack(remainder));

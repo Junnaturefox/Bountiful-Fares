@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.compat.twigs;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.sounds.BFSounds;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

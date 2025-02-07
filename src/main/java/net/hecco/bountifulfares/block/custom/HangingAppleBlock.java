@@ -1,8 +1,8 @@
 package net.hecco.bountifulfares.block.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.sounds.BFSounds;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;

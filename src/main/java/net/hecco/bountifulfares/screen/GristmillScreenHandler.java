@@ -3,12 +3,12 @@ package net.hecco.bountifulfares.screen;
 import net.hecco.bountifulfares.block.entity.GristmillBlockEntity;
 import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
 import net.hecco.bountifulfares.block.entity.slot.GristmillOutputSlot;
+import net.hecco.bountifulfares.registry.misc.BFScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 

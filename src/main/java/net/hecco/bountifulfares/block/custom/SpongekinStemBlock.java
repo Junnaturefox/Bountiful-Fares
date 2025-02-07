@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;

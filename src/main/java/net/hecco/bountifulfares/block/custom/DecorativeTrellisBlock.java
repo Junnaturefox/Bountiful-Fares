@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.hecco.bountifulfares.trellis.BFTrellises;
+import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.trellis.trellis_parts.DecorativeVine;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
@@ -16,20 +16,16 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-import java.util.function.Function;
-
-import static net.hecco.bountifulfares.block.BFBlocks.DECORATIVE_TRELLISES_TO_PLANTS;
-import static net.hecco.bountifulfares.block.BFBlocks.PLANTS_TO_DECORATIVE_TRELLISES;
+import static net.hecco.bountifulfares.registry.content.BFBlocks.DECORATIVE_TRELLISES_TO_PLANTS;
+import static net.hecco.bountifulfares.registry.content.BFBlocks.PLANTS_TO_DECORATIVE_TRELLISES;
 
 public class DecorativeTrellisBlock extends TrellisBlock implements Fertilizable {
     private final boolean canDuplicate;

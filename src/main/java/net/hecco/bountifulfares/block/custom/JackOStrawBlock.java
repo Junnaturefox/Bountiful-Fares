@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
-import net.hecco.bountifulfares.sounds.BFSounds;
-import net.hecco.bountifulfares.util.BFItemTags;
+import net.hecco.bountifulfares.registry.content.BFSounds;
+import net.hecco.bountifulfares.registry.util.BFItemTags;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
@@ -19,7 +19,6 @@ import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;

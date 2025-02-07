@@ -7,7 +7,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-import static net.hecco.bountifulfares.block.BFBlocks.*;
+import static net.hecco.bountifulfares.registry.content.BFBlocks.*;
 
 public class BFBlockEntities {
     public static final BlockEntityType<DyeableCeramicBlockEntity> CERAMIC_TILES_BLOCK_ENTITY = Registry.register(

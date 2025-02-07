@@ -2,14 +2,14 @@ package net.hecco.bountifulfares.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
 import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
-import net.hecco.bountifulfares.item.BFItems;
-import net.hecco.bountifulfares.trellis.BFTrellises;
+import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.minecraft.data.client.*;
 

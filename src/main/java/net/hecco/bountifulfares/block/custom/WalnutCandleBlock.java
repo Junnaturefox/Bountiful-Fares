@@ -2,12 +2,11 @@ package net.hecco.bountifulfares.block.custom;
 
 import net.hecco.bountifulfares.block.entity.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.WalnutCandleBlockEntity;
-import net.hecco.bountifulfares.effect.BFEffects;
+import net.hecco.bountifulfares.registry.content.BFEffects;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;

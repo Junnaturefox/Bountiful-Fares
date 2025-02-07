@@ -2,8 +2,8 @@ package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
-import net.hecco.bountifulfares.trellis.BFTrellises;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.*;
@@ -20,7 +20,6 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -30,8 +29,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
-
-import java.util.function.Function;
 
 public class TrellisBlock extends HorizontalFacingBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;

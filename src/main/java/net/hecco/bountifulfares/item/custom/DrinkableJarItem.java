@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
-import net.hecco.bountifulfares.item.BFItems;
+import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

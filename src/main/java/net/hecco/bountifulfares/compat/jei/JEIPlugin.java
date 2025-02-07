@@ -4,7 +4,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.*;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.BFBlocks;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.jei.category.FermentingRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -18,8 +18,8 @@ public class JEIPlugin implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registration) {
         BFJEIRecipes bfRecipes = new BFJEIRecipes();
 
-        //RECIPES
-        //registration.addRecipes(BFRecipeTypes.FERMENTING, bfRecipes.getFermentationRecipes());
+//        RECIPES
+        registration.addRecipes(BFRecipeTypes.FERMENTING, bfRecipes.getFermentationRecipes());
 
         //Example of information tooltip for JEI
         //registration.addIngredientInfo(new ItemStack(BFItems.CITRUS_ESSENCE), VanillaTypes.ITEM_STACK, Text.translatable("jei.info.citrus_essence"));

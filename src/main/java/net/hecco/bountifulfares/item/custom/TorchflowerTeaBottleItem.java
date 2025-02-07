@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
-import net.hecco.bountifulfares.effect.BFEffects;
+import net.hecco.bountifulfares.registry.content.BFEffects;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
