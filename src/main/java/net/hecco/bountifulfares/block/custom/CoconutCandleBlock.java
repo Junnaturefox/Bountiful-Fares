@@ -17,6 +17,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -36,17 +37,22 @@ import org.jetbrains.annotations.Nullable;
 public class CoconutCandleBlock extends Block implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public static final BooleanProperty LIT = AbstractCandleBlock.LIT;
+    public static final IntProperty CANDLES = IntProperty.of("candles", 1, 3);
     public static boolean canBeLit;
+
+    public static final VoxelShape[] SHAPES = new VoxelShape[] {
+            Block.createCuboidShape(5.5, 0, 5.5, 10.5, 4, 10.5)
+    };
 
     public CoconutCandleBlock(Settings settings) {
         super(settings);
         canBeLit = canBeLit(getDefaultState());
-        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false).with(WATERLOGGED, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, false).with(CANDLES, 1).with(WATERLOGGED, false));
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return Block.createCuboidShape(5.5, 0, 5.5, 10.5, 4, 10.5);
+        return SHAPES[state.get(CANDLES) - 1];
     }
 
     @Override
@@ -73,9 +79,13 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
         return ActionResult.PASS;
     }
 
+    protected boolean canReplace(BlockState state, ItemPlacementContext context) {
+        return !context.shouldCancelInteraction() && context.getStack().getItem() == this.asItem() && state.get(CANDLES) < 3 || super.canReplace(state, context);
+    }
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED, LIT);
+        builder.add(CANDLES, LIT, WATERLOGGED);
     }
 
     @Override
@@ -95,13 +105,17 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
         world.playSound(null, pos, SoundEvents.BLOCK_CANDLE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
         world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     }
-
-    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
-        boolean bl = fluidState.getFluid() == Fluids.WATER;
-        return super.getPlacementState(ctx).with(WATERLOGGED, bl);
+        BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos());
+        if (blockState.isOf(this)) {
+            return blockState.cycle(CANDLES);
+        } else {
+            FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
+            boolean bl = fluidState.getFluid() == Fluids.WATER;
+            return super.getPlacementState(ctx).with(WATERLOGGED, bl);
+        }
     }
+
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
@@ -145,9 +159,5 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
             }
         }
         world.addParticle(ParticleTypes.SMALL_FLAME, vec3d.x, vec3d.y, vec3d.z, 0.0, 0.0, 0.0);
-    }
-
-    public BooleanProperty getLit() {
-        return LIT;
     }
 }
