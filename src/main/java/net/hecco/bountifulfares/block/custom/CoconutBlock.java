@@ -203,7 +203,7 @@ public class CoconutBlock extends FallingBlock implements Fertilizable {
                 world.getRegistryManager()
                         .get(RegistryKeys.DAMAGE_TYPE)
                         .entryOf(BFDamageTypes.FALLING_COCONUT));
-        if (world.getBlockState(pos).isIn(BFBlockTags.BREAKS_COCONUT) || world.getBlockState(pos.down()).isIn(BFBlockTags.BREAKS_COCONUT)) {
+        if (world.getBlockState(pos).isIn(BFBlockTags.SPLITS_COCONUTS) || world.getBlockState(pos.down()).isIn(BFBlockTags.SPLITS_COCONUTS)) {
             dropStack(world, pos, new ItemStack(BFItems.COCONUT_HALF, 2));
         } else {
             dropStack(world, pos, new ItemStack(BFItems.COCONUT));
@@ -225,7 +225,7 @@ public class CoconutBlock extends FallingBlock implements Fertilizable {
                 world.getRegistryManager()
                         .get(RegistryKeys.DAMAGE_TYPE)
                         .entryOf(BFDamageTypes.FALLING_COCONUT));
-        if (world.getBlockState(pos).isIn(BFBlockTags.BREAKS_COCONUT) || world.getBlockState(pos.down()).isIn(BFBlockTags.BREAKS_COCONUT)) {
+        if (world.getBlockState(pos).isIn(BFBlockTags.SPLITS_COCONUTS) || world.getBlockState(pos.down()).isIn(BFBlockTags.SPLITS_COCONUTS)) {
             dropStack(world, pos, new ItemStack(BFItems.COCONUT_HALF, 2));
         } else {
             dropStack(world, pos, new ItemStack(BFItems.COCONUT));

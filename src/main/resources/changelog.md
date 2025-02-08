@@ -40,18 +40,19 @@
 - Added an option in the config to change the radius where effects are given from Infused Candles
 - Added a Restoration heart overlay
     - Can be disabled in the config
+- Walnuts on trees can now be sheared to prevent them from falling
 - Walnut Mulch Blocks can now also be fed to Wolves
 - Increased press time of Ceramic Pressure Plates slightly
 - Updated fr_ca translations
 - Added pl_pl (Polish) translations
-- Walnut Cookie recipe now creates 4 cookies instead of 8
 - Added config option to disable flour throwing
 - Added effect tooltips to foods that give effects
 - Added effect tooltips to infused candles
+- Added effect tooltips to foods that increase underwater air time (Spongekin Slice, Coastal Medley)
 - Decreased the amount of hunger regained from candied fruit
 - Added Amethyst Shard from Amethyst Block milling recipe
 - Added Sugar from Sugarcane milling recipe
-- Added recipes for Diorite and Granite using Feldspar, in place of Quartz
+- Added recipes for Diorite and Granite using Feldspar in place of Quartz
 - Mulch blocks now slightly decrease fall damage when landed on
 - Retextured most ceramic block textures
 - Piglins now are distracted by Golden Apple Blocks
@@ -66,7 +67,7 @@
     - Due to paintings being datadriven since 1.21, there isn't an easy way to individually enable/disable paintings without a lot of datapacks.
 - Added an option in the config to add a cooldown to throwing flour
 - Short Grass can now be made by using Grass Seeds on Grass Blocks
-- Tweaked the recipes for candied fruit, now requiring 4 sugar
+- Tweaked some recipes
 - The following effects now cannot be modified by Acidity:
     - Instant Health
     - Instant Damage
@@ -91,12 +92,12 @@
     - Bad Omen
     - Raid Omen
     - Trial Omen
+- Fermentation recipes are now datadriven
+    - Item remainders (bottles, jars, buckets, bowls) are automatically utilized when needed
 - Fermentation Vessels will now emit bubble particles while fermenting
     - The color of the particles depends on the contents
     - Fermentation recipes can specify this color
     - Can be disabled in the config
-- Fermentation recipes are now datadriven
-    - Item remainders (bottles, jars, buckets, bowls) are automatically utilized when needed
 - Updated Gristmill GUI
 
 ## New Content
@@ -117,15 +118,16 @@
         - Has 6 stages of growth
         - When broken on the last stage by hand, removing the supporting block, or hitting it with a projectile, the coconut will fall
         - Will damage entities it lands on
-        - If a falling coconut lands on Pointed Dripstone, it will drop 2 Coconut Halves instead of itsself.
-        - Added a block tag which holds what blocks can break Coconuts
+        - If a falling coconut lands on Pointed Dripstone, it will drop 2 Coconut Halves instead of itself.
+            - Blocks that can split coconuts are determined by a block tag
 - Added Coconuts
     - Can be crafted into halves, which can be eaten or used in recipes
         - Added Coconut Stew, Coconut Crusted Cod, and Coconut Cake food items
     - Coconuts can be milled in a Gristmill to create Coconut Coir items
         - Can be used in place of wheat to create Mud Bricks
-        - Can be packed into Coir blocks and bricks
-        - Can be made into Carpets
+        - Can be packed into coir blocks and bricks
+        - Can be made into carpets
+        - Packed Coconut Coir and Coir Carpet blocks can occlude vibrations
 - Added Golden Apple Trees
     - Can be found naturally in a secret room inside Woodland Mansions
     - Saplings can be found in another secret room inside Woodland Mansions

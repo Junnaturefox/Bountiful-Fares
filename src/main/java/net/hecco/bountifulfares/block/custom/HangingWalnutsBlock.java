@@ -5,13 +5,21 @@ import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.FallingBlockEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
@@ -25,10 +33,11 @@ import net.minecraft.world.WorldView;
 public class HangingWalnutsBlock extends FallingBlock implements Fertilizable {
 
     public static final IntProperty AGE = Properties.AGE_3;
+    public static final BooleanProperty SNIPPED = BooleanProperty.of("snipped");
 
     public HangingWalnutsBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0));
+        this.setDefaultState(this.stateManager.getDefaultState().with(AGE, 0).with(SNIPPED, false));
     }
 
     @Override
@@ -44,7 +53,7 @@ public class HangingWalnutsBlock extends FallingBlock implements Fertilizable {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AGE);
+        builder.add(AGE, SNIPPED);
     }
 
 
@@ -80,6 +89,16 @@ public class HangingWalnutsBlock extends FallingBlock implements Fertilizable {
     }
 
     @Override
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (player.getStackInHand(player.getActiveHand()).isOf(Items.SHEARS) && !state.get(SNIPPED)) {
+            world.setBlockState(pos, state.with(SNIPPED, true));
+            player.getStackInHand(player.getActiveHand()).damage(1, player, LivingEntity.getSlotForHand(player.getActiveHand()));
+            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        }
+        return super.onUse(state, world, pos, player, hit);
+    }
+
+    @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         return Block.sideCoversSmallSquare(world, pos.up(), Direction.DOWN) && !world.isWater(pos)
                 || world.getBlockState(pos.up()).isOf(BFBlocks.WALNUT_LEAVES) && !world.isWater(pos);
@@ -93,8 +112,8 @@ public class HangingWalnutsBlock extends FallingBlock implements Fertilizable {
         }
     }
 
-    public static boolean canFallThrough(BlockState walnutState) {
-        if (!isFullyGrown(walnutState)) {
+    public static boolean canFallThrough(BlockState state) {
+        if (!isFullyGrown(state) || state.get(SNIPPED)) {
             return false;
         } else {
             return true;

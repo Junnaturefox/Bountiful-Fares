@@ -104,7 +104,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.WALNUT_MULCH, BFBlocks.WALNUT_MULCH_BLOCK);
             entries.addAfter(BFBlocks.WALNUT_MULCH_BLOCK, BFBlocks.PALM_MULCH);
             entries.addAfter(BFBlocks.PALM_MULCH, BFBlocks.PALM_MULCH_BLOCK);
-            entries.addAfter(BFBlocks.PALM_MULCH_BLOCK, BFBlocks.PACKED_COCONUT_COIR);
+            entries.addAfter(Blocks.MUD_BRICK_WALL, BFBlocks.PACKED_COCONUT_COIR);
             entries.addAfter(BFBlocks.PACKED_COCONUT_COIR, BFBlocks.COIR_CARPET);
             entries.addAfter(BFBlocks.COIR_CARPET, BFBlocks.COIR_BRICKS);
             entries.addAfter(BFBlocks.COIR_BRICKS, BFBlocks.COIR_BRICK_STAIRS);

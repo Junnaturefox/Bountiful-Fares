@@ -276,7 +276,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "painting.bountifulfares.unpleasant_tiles.author", "Hecco");
 
         generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.minecraft:glass_bottle", "Use a Glass Bottle to Collect This");
-        generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.minecraft:jar", "Use a Jar to Collect This");
+        generate(translationBuilder, "warning.bountifulfares.fermentation_vessel.bountifulfares:jar", "Use a Jar to Collect This");
 
         generate(translationBuilder, "advancement.bountifulfares.bountiful_fares", "Bountiful Fares");
         generate(translationBuilder, "advancement.bountifulfares.bountiful_fares.description", "The world is filled with more food!");

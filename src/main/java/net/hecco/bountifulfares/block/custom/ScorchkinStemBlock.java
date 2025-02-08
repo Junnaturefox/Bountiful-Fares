@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public class ScorchkinStemBlock extends PlantBlock implements Fertilizable {
+public class ScorchkinStemBlock extends PlantBlock {
     public static BooleanProperty ATTACHED = BooleanProperty.of("attached");
 
     public static final VoxelShape[] SHAPES = new VoxelShape[] {Block.createCuboidShape(7, 13, 7, 9, 16, 9), Block.createCuboidShape(6, 10, 6, 10, 16, 10), Block.createCuboidShape(5, 5, 5, 11, 16, 11), Block.createCuboidShape(5, 1, 5, 11, 16, 11), Block.createCuboidShape(4, 0, 4, 12, 16, 12)};
@@ -81,24 +81,6 @@ public class ScorchkinStemBlock extends PlantBlock implements Fertilizable {
         }
         return true;
     }
-
-    @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
-        return !isFullyGrown(state);
-    }
-
-    @Override
-    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-        return !isFullyGrown(state);
-    }
-
-    @Override
-    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        if (!isFullyGrown(state) && !state.get(ATTACHED)) {
-            world.setBlockState(pos, state.cycle(AGE), Block.NOTIFY_LISTENERS);
-        }
-    }
-
     public boolean shouldPropagatePrismarine(ServerWorld world, BlockPos pos) {
         return world.getBlockState(pos.down()).isOf(Blocks.SEA_LANTERN);
     }

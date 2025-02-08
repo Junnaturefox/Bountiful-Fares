@@ -113,7 +113,6 @@ public class CropTrellisBlock extends Block implements Waterloggable, Fertilizab
             player.getStackInHand(player.getActiveHand()).damage(1, player, LivingEntity.getSlotForHand(player.getActiveHand()));
             world.setBlockState(pos, state.with(SNIPPED, true));
             world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            player.getStackInHand(player.getActiveHand()).damage(1, player, LivingEntity.getSlotForHand(player.getActiveHand()));
             return ActionResult.SUCCESS;
         } else if(i != 3) {
             return ActionResult.PASS;

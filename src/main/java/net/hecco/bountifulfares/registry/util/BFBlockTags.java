@@ -31,7 +31,8 @@ public class BFBlockTags {
     public static final TagKey<Block> PICKETS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "pickets"));
     public static final TagKey<Block> GRASS_SEEDS_PLANTABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "grass_seeds_plantable_on"));
     public static final TagKey<Block> PALM_SAPLINGS_PLANTABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "palm_saplings_plantable_on"));
-    public static final TagKey<Block> BREAKS_COCONUT = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "breaks_coconut"));
+    public static final TagKey<Block> SCORCHKIN_SEEDS_PLANTABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "splits_coconuts"));
+    public static final TagKey<Block> SPLITS_COCONUTS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "splits_coconuts"));
     public static final TagKey<PaintingVariant> PAINTINGS = TagKey.of(RegistryKeys.PAINTING_VARIANT, Identifier.of(BountifulFares.MOD_ID, "bf_paintings"));
 
 }

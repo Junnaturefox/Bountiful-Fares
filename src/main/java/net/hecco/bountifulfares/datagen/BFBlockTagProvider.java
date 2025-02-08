@@ -586,7 +586,7 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.GRAVEL)
         ;
 
-        getOrCreateTagBuilder(BFBlockTags.BREAKS_COCONUT)
+        getOrCreateTagBuilder(BFBlockTags.SPLITS_COCONUTS)
                 .add(Blocks.POINTED_DRIPSTONE);
 
 
