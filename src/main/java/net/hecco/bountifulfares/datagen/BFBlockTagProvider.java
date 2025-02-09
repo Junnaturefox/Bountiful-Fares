@@ -601,6 +601,12 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.PLUM_LOG)
                 .add(BFBlocks.PLUM_WOOD)
         ;
+
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(BFBlocks.WALNUT_MULCH_BLOCK)
+                .add(BFBlocks.PALM_MULCH_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(BFBlocks.PACKED_COCONUT_COIR).add(BFBlocks.COIR_CARPET);
     }
 
     public void registerTrellisBlockTags(TrellisVariant trellis) {

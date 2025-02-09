@@ -27,10 +27,10 @@ public class DrinkableJarItem extends Item {
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
         if (stack.isEmpty()) {
-            return new ItemStack(BFItems.JAR);
+            return new ItemStack(BFItems.CUP);
         } else {
             if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
-                ItemStack itemStack = new ItemStack(BFItems.JAR);
+                ItemStack itemStack = new ItemStack(BFItems.CUP);
                 PlayerEntity playerEntity = (PlayerEntity)user;
                 if (!playerEntity.getInventory().insertStack(itemStack)) {
                     playerEntity.dropItem(itemStack, false);

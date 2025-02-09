@@ -184,7 +184,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(BFItems.CERAMIC_TILE), conditionsFromItem(BFItems.CERAMIC_TILE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.JAR, 3)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.CUP, 3)
                 .pattern("# #")
                 .pattern(" # ")
                 .input('#', BFItems.CERAMIC_CLAY)
@@ -625,10 +625,10 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerBarkBlockRecipe(exporter, BFBlocks.STRIPPED_HOARY_WOOD, BFBlocks.STRIPPED_HOARY_LOG);
         offerBarkBlockRecipe(exporter, BFBlocks.WALNUT_WOOD, BFBlocks.WALNUT_LOG);
         offerBarkBlockRecipe(exporter, BFBlocks.STRIPPED_WALNUT_WOOD, BFBlocks.STRIPPED_WALNUT_LOG);
-//        offerBoatRecipe(exporter, BFItems.HOARY_BOAT, BFBlocks.HOARY_PLANKS);
-//        offerBoatRecipe(exporter, BFItems.WALNUT_BOAT, BFBlocks.WALNUT_PLANKS);
-//        offerChestBoatRecipe(exporter, BFItems.HOARY_CHEST_BOAT, BFItems.HOARY_BOAT);
-//        offerChestBoatRecipe(exporter, BFItems.WALNUT_CHEST_BOAT, BFItems.WALNUT_BOAT);
+        offerBoatRecipe(exporter, BFItems.HOARY_BOAT, BFBlocks.HOARY_PLANKS);
+        offerBoatRecipe(exporter, BFItems.WALNUT_BOAT, BFBlocks.WALNUT_PLANKS);
+        offerChestBoatRecipe(exporter, BFItems.HOARY_CHEST_BOAT, BFItems.HOARY_BOAT);
+        offerChestBoatRecipe(exporter, BFItems.WALNUT_CHEST_BOAT, BFItems.WALNUT_BOAT);
 
         offerPicketsRecipe(exporter, BFBlocks.OAK_PICKETS, Items.OAK_PLANKS);
         offerPicketsRecipe(exporter, BFBlocks.SPRUCE_PICKETS, Items.SPRUCE_PLANKS);
@@ -1094,8 +1094,8 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, output)
                 .input(input, 2)
                 .input(BFItems.CITRUS_ESSENCE)
-                .input(BFItems.JAR)
-                .criterion(hasItem(BFItems.JAR), conditionsFromItem(BFItems.JAR))
+                .input(BFItems.CUP)
+                .criterion(hasItem(BFItems.CUP), conditionsFromItem(BFItems.CUP))
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter);
     }

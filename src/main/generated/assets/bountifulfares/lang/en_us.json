@@ -994,6 +994,7 @@
   "block.twigs.feldspar_lamp": "Feldspar Lamp",
   "block.twigs.hoary_table": "Hoary Table",
   "block.twigs.walnut_table": "Walnut Table",
+  "bountifulfares.fermenting": "Fermenting",
   "bountifulfares.milling": "Milling",
   "config.bountifulfares.apple_trees": "Generate Apple Trees",
   "config.bountifulfares.category.client": "Client",
@@ -1012,6 +1013,7 @@
   "config.bountifulfares.forest_tea_shrubs": "Generate Tea Shrubs in Forests",
   "config.bountifulfares.forest_walnut_trees": "Generate Walnut Trees in Forests",
   "config.bountifulfares.fruit_replace_when_picked": "Fruits on trees replant when picked",
+  "config.bountifulfares.golden_apple_tree_rooms": "Generate Golden Apple Trees in Woodland Mansions",
   "config.bountifulfares.hoary_seeds": "Sniffers can dig up Hoary Seeds",
   "config.bountifulfares.honeysuckle_to_amber_dye": "Honeysuckles craft into Amber Dye",
   "config.bountifulfares.honeysuckle_to_banana_dye": "Honeysuckles craft into Banana Dye",
@@ -1159,6 +1161,9 @@
   "item.minecraft.tipped_arrow.effect.bountifulfares.strong_acidic": "Arrow of Acidity",
   "item.minecraft.tipped_arrow.effect.bountifulfares.stupor": "Arrow of Stupor",
   "itemgroup.bountiful_fares": "Bountiful Fares",
+  "jei.bountifulfares.collect_using": "Collect using ",
+  "jei.bountifulfares.minutes": "Minutes",
+  "jei.bountifulfares.seconds": "Seconds",
   "pack.bountifulfares.amendments": "Bountiful Fares X Amendments",
   "pack.bountifulfares.vanilla_item_override": "Vanilla Item Texture Override",
   "painting.bountifulfares.aquaculture.author": "Hecco",
@@ -1196,6 +1201,6 @@
   "tooltip.bountifulfares.removes": "Removes:",
   "tooltip.bountifulfares.when_eaten": "When eaten:",
   "tooltip.bountifulfares.when_lit": "When lit:",
-  "warning.bountifulfares.fermentation_vessel.minecraft:glass_bottle": "Use a Glass Bottle to Collect This",
-  "warning.bountifulfares.fermentation_vessel.minecraft:jar": "Use a Jar to Collect This"
+  "warning.bountifulfares.fermentation_vessel.bountifulfares:jar": "Use a Jar to Collect This",
+  "warning.bountifulfares.fermentation_vessel.minecraft:glass_bottle": "Use a Glass Bottle to Collect This"
 }

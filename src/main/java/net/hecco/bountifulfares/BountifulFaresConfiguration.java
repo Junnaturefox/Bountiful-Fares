@@ -17,6 +17,7 @@ public class BountifulFaresConfiguration {
     private boolean fruitReplaceWhenPicked = true;
     private boolean enableFlourThrowing = true;
     private int flourThrowingCooldown = 0;
+    private boolean containerFoodsEatableOnDish = false;
     private boolean restorationHeartOverlay = true;
     private boolean fermentationBubbleParticles = true;
     private boolean enableLapisberrySeeds = true;
@@ -35,6 +36,7 @@ public class BountifulFaresConfiguration {
     private boolean generateAllFruitTreesInFlowerForest = false;
     private boolean generateForestTeaShrubs = false;
     private boolean generateForestWalnutTrees = false;
+    private boolean generateGoldenAppleTreeRooms = true;
     private int fermentationTime = 300;
     private int millingTime = 4;
     private int infusedCandleRadius = 3;
@@ -93,6 +95,14 @@ public class BountifulFaresConfiguration {
 
     public void setFruitReplaceWhenPicked(boolean bool) {
         fruitReplaceWhenPicked = bool;
+    }
+
+    public boolean isContainerFoodsEatableOnDish() {
+        return containerFoodsEatableOnDish;
+    }
+
+    public void setContainerFoodsEatableOnDish(boolean bool) {
+        containerFoodsEatableOnDish = bool;
     }
 
     public boolean isRestorationHeartOverlay() {
@@ -253,6 +263,14 @@ public class BountifulFaresConfiguration {
 
     public void setGenerateForestWalnutTrees(boolean bool) {
         generateForestWalnutTrees = bool;
+    }
+
+    public boolean isGenerateGoldenAppleTreeRooms() {
+        return generateGoldenAppleTreeRooms;
+    }
+
+    public void setGenerateGoldenAppleTreeRooms(boolean bool) {
+        generateGoldenAppleTreeRooms = bool;
     }
 
     public int getFermentationTime() {

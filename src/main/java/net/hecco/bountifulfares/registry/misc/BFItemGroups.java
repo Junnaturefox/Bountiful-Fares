@@ -1,4 +1,4 @@
-package net.hecco.bountifulfares.registry.util;
+package net.hecco.bountifulfares.registry.misc;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.hecco.bountifulfares.BountifulFares;
@@ -12,6 +12,7 @@ import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
 import net.hecco.bountifulfares.compat.twigs.TwigsBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
+import net.hecco.bountifulfares.registry.util.BFBlockTags;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.hecco.bountifulfares.registry.content.BFPotions;
@@ -377,7 +378,7 @@ public class BFItemGroups {
                         entries.add(BFItems.ELDERBERRY_WINE_BOTTLE);
                         entries.add(BFItems.LAPISBERRY_WINE_BOTTLE);
                         entries.add(BFItems.MEAD_BOTTLE);
-                        entries.add(BFItems.JAR);
+                        entries.add(BFItems.CUP);
                         entries.add(BFItems.APPLE_CIDER_JAR);
                         entries.add(BFItems.PLUM_CIDER_JAR);
                         entries.add(BFItems.HOARY_CIDER_JAR);

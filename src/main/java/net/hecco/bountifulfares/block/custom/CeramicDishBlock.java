@@ -122,38 +122,42 @@ public class CeramicDishBlock extends Block implements BlockEntityProvider, Wate
                     blockEntity.removeItem();
                     blockEntity.markDirty();
                     return ActionResult.SUCCESS;
-                } else if (stack.isIn(BFItemTags.EATABLE_ON_DISH) && stack.getComponents().contains(DataComponentTypes.FOOD)) {
-                    boolean shouldIgnore = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).canAlwaysEat();
+                } else if (canEatOnDish(stack)) {
+                    boolean shouldIgnore = stack.getComponents().get(DataComponentTypes.FOOD).canAlwaysEat();
                     if (player.canConsume(shouldIgnore)) {
-                        int hunger = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).nutrition();
-                        float sat = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).saturation();
-                        List<FoodComponent.StatusEffectEntry> effects = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).effects();
-                        player.getHungerManager().add(hunger, sat);
-                        world.playSound(null, pos, SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.BLOCKS, 0.5f, 0.8f + world.random.nextFloat());
+//                        int hunger = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).nutrition();
+//                        float sat = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).saturation();
+//                        List<FoodComponent.StatusEffectEntry> effects = Objects.requireNonNull(stack.getComponents().get(DataComponentTypes.FOOD)).effects();
+//                        player.getHungerManager().add(hunger, sat);
                         world.playSound(null, pos, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.BLOCKS, 0.3f, 1.0f);
-                        if (stack.getItem() instanceof AirTimeIncreasingItem) {
-                            int air = player.getAir();
-                            int maxAir = player.getMaxAir();
-                            if (air < maxAir - AirTimeIncreasingItem.airTickIncrease){
-                                player.setAir(air + AirTimeIncreasingItem.airTickIncrease);
-                            } else {
-                                player.setAir(maxAir);
-                            }
-                        }
-                        if (stack.isOf(Items.CHORUS_FRUIT)) {
-                            chorusTeleport(world, player);
-                        }
-                        for (FoodComponent.StatusEffectEntry statusEffectEntry : effects) {
-                            StatusEffectInstance effect = statusEffectEntry.effect();
-                            int length = effect.getDuration();
-                            int amplifier = effect.getAmplifier();
-                            StatusEffectInstance newEffect = new StatusEffectInstance(effect.getEffectType(), length, amplifier);
-                            player.addStatusEffect(newEffect);
-                        }
+//                        if (stack.getItem() instanceof AirTimeIncreasingItem) {
+//                            int air = player.getAir();
+//                            int maxAir = player.getMaxAir();
+//                            if (air < maxAir - AirTimeIncreasingItem.airTickIncrease){
+//                                player.setAir(air + AirTimeIncreasingItem.airTickIncrease);
+//                            } else {
+//                                player.setAir(maxAir);
+//                            }
+//                        }
+//                        if (stack.isOf(Items.CHORUS_FRUIT)) {
+//                            chorusTeleport(world, player);
+//                        }
+                        stack.getItem().finishUsing(stack, world, player);
+//                        for (FoodComponent.StatusEffectEntry statusEffectEntry : effects) {
+//                            StatusEffectInstance effect = statusEffectEntry.effect();
+//                            int length = effect.getDuration();
+//                            int amplifier = effect.getAmplifier();
+//                            StatusEffectInstance newEffect = new StatusEffectInstance(effect.getEffectType(), length, amplifier);
+//                            player.addStatusEffect(newEffect);
+//                        }
                         for (int i = 0; i < 4 + world.random.nextBetween(0, 4); i++) {
                             world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), pos.getX() + world.random.nextGaussian() / 12 + 0.5, pos.getY() + 0.2, pos.getZ() + world.random.nextGaussian() / 12 + 0.5, (world.random.nextFloat() - 0.5) / 8, (world.random.nextFloat() - 0.5) / 8, (world.random.nextFloat() - 0.5) / 8);
                         }
-                        blockEntity.removeItem();
+                        if (stack.getRecipeRemainder().getItem() != Items.AIR) {
+                            blockEntity.insertItem(stack.getRecipeRemainder());
+                        } else {
+                            blockEntity.removeItem();
+                        }
                         blockEntity.markDirty();
                         return ActionResult.SUCCESS;
                     }
@@ -162,6 +166,17 @@ public class CeramicDishBlock extends Block implements BlockEntityProvider, Wate
 
         }
         return ActionResult.PASS;
+    }
+
+    public static boolean canEatOnDish(ItemStack stack) {
+        if (stack.getComponents().get(DataComponentTypes.FOOD) != null) {
+            if (BountifulFares.CONFIG.isContainerFoodsEatableOnDish()) {
+                return true;
+            } else if (stack.getRecipeRemainder().getItem() == Items.AIR) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

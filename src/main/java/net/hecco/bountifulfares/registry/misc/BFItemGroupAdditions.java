@@ -1,4 +1,4 @@
-package net.hecco.bountifulfares.registry.util;
+package net.hecco.bountifulfares.registry.misc;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.hecco.bountifulfares.BountifulFares;
@@ -361,7 +361,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.FELDSPAR, BFItems.CERAMIC_CLAY);
             entries.addAfter(BFItems.CERAMIC_CLAY, BFItems.CERAMIC_TILE);
             entries.addAfter(Items.BOWL, BFBlocks.CERAMIC_DISH);
-            entries.addAfter(BFBlocks.CERAMIC_DISH, BFItems.JAR);
+            entries.addAfter(BFBlocks.CERAMIC_DISH, BFItems.CUP);
             entries.addAfter(Items.FIREWORK_STAR, BFItems.COCONUT);
             entries.addAfter(BFItems.COCONUT, BFItems.COCONUT_HALF);
             entries.addAfter(BFItems.COCONUT_HALF, BFItems.COCONUT_COIR);

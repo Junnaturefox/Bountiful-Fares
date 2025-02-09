@@ -100,6 +100,7 @@ public class HangingGoldenAppleBlock extends PlantBlock {
         } else {
             if (random.nextFloat() < 0.1) {
                 world.setBlockState(pos, BFBlocks.HANGING_WITHERED_GOLDEN_APPLE.getDefaultState().with(HangingWitheredGoldenAppleBlock.AGE, state.get(AGE)), Block.NOTIFY_LISTENERS);
+                //TODO: create withering sound effect
             }
         }
     }

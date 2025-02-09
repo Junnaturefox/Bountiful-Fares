@@ -174,6 +174,10 @@ public class BFRegistries {
         registry.add(BFBlocks.WALNUT_FENCE_GATE, 20, 5);
         registry.add(BFBlocks.WALNUT_DOOR, 20, 5);
         registry.add(BFBlocks.WALNUT_TRAPDOOR, 20, 5);
+        registry.add(BFBlocks.WALNUT_MULCH, 60, 30);
+        registry.add(BFBlocks.WALNUT_MULCH_BLOCK, 20, 30);
+        registry.add(BFBlocks.PALM_MULCH, 60, 30);
+        registry.add(BFBlocks.PALM_MULCH_BLOCK, 20, 30);
         registry.add(BFBlockTags.PICKETS, 20, 5);
     }
 

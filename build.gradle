@@ -36,8 +36,8 @@ dependencies {
 	// compile against the JEI API but do not include it at runtime
 	modCompileOnlyApi ("curse.maven:jei-238222:6075246")
 
-	// at runtime, use the full JEI jar for Fabric
-	modRuntimeOnly ("curse.maven:jei-238222:6075246")
+//	// at runtime, use the full JEI jar for Fabric
+//	modRuntimeOnly ("curse.maven:jei-238222:6075246")
 
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0"

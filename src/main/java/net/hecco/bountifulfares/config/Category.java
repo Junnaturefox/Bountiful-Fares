@@ -25,6 +25,9 @@ public enum Category {
             Entry.integerEntry("config.bountifulfares.flour_throwing_cooldown", () -> BountifulFares.CONFIG.getFlourThrowingCooldown(),
                     newValue -> BountifulFares.CONFIG.setFlourThrowingCooldown(newValue), 0, 0, 20),
 
+            Entry.booleanEntry("config.bountifulfares.container_foods_eatable_on_dish", () -> BountifulFares.CONFIG.isContainerFoodsEatableOnDish(),
+                    newValue -> BountifulFares.CONFIG.setContainerFoodsEatableOnDish(newValue), false),
+
             Entry.booleanEntry("config.bountifulfares.lapisberry_seeds", () -> BountifulFares.CONFIG.isEnableLapisberrySeeds(),
                     newValue -> BountifulFares.CONFIG.setEnableLapisberrySeeds(newValue), true, "config.bountifulfares.restart_warning"),
 
@@ -64,6 +67,9 @@ public enum Category {
 
             Entry.booleanEntry("config.bountifulfares.palm_trees", () -> BountifulFares.CONFIG.isGeneratePalmTrees(),
                     newValue -> BountifulFares.CONFIG.setGeneratePalmTrees(newValue), true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.golden_apple_tree_rooms", () -> BountifulFares.CONFIG.isGenerateGoldenAppleTreeRooms(),
+                    newValue -> BountifulFares.CONFIG.setGenerateGoldenAppleTreeRooms(newValue), true, "config.bountifulfares.restart_warning"),
 
             Entry.booleanEntry("config.bountifulfares.flower_forest_fruit_trees", () -> BountifulFares.CONFIG.isGenerateAllFruitTreesInFlowerForest(),
                     newValue -> BountifulFares.CONFIG.setGenerateAllFruitTreesInFlowerForest(newValue), false, "config.bountifulfares.restart_warning"),

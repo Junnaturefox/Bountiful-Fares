@@ -2,11 +2,14 @@ package net.hecco.bountifulfares.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.*;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.jei.category.FermentingRecipeCategory;
+import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
@@ -22,7 +25,7 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipes(BFRecipeTypes.FERMENTING, bfRecipes.getFermentationRecipes());
 
         //Example of information tooltip for JEI
-        //registration.addIngredientInfo(new ItemStack(BFItems.CITRUS_ESSENCE), VanillaTypes.ITEM_STACK, Text.translatable("jei.info.citrus_essence"));
+//        registration.addIngredientInfo(new ItemStack(BFItems.CITRUS_ESSENCE), VanillaTypes.ITEM_STACK, Text.translatable("jei.info.citrus_essence"));
     }
 
     @Override

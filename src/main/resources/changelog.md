@@ -1,4 +1,4 @@
-# Version 1.3.0 - 1.21.1 and 1.20.1 only
+# Version 1.3.0 - 1.20.1 and 1.21.1 only
 
 ## Fixes
 - Added missing Ebullience effect description
@@ -25,21 +25,24 @@
 - Added compatibility with Arts and Crafts - if installed:
     - Added Cork Trellises and Pickets
     - Paintbrushes can dye Ceramic Tile blocks
-    - Added compatibility with dyed Flower Pots
 - Added compatibility with Excessive Building - if installed:
     - Added Ancient and Gloom Trellis variants
     - Added Ancient and Gloom Picket variants
     - Added chiseled and mosaic variants of Walnut and Hoary Planks
     - Added Walnut and Hoary Ladders
     - Added vertical stair variants for many blocks
-    - Ancient Fruit can be eaten from Ceramic Dishes
-    - Added Walnut and Coconut Mulch Brick block sets
+- Added compatibility with JEI - if installed:
+    - Added a new recipe category for milling (using a Gristmill)
+    - Added a new recipe category for fermenting (using a Fermentation Vessel)
+        - Shows the process of using the block, the time taken to ferment, and what item is needed to obtain the result
 
 ## Tweaks
 - Added “Client” config category
 - Added an option in the config to change the radius where effects are given from Infused Candles
 - Added a Restoration heart overlay
     - Can be disabled in the config
+- Added mulch blocks to the dirt block and item tags
+- Mulch blocks are now flammable
 - Walnuts on trees can now be sheared to prevent them from falling
 - Walnut Mulch Blocks can now also be fed to Wolves
 - Increased press time of Ceramic Pressure Plates slightly
@@ -93,12 +96,17 @@
     - Raid Omen
     - Trial Omen
 - Fermentation recipes are now datadriven
-    - Item remainders (bottles, jars, buckets, bowls) are automatically utilized when needed
+    - Item containers (bottles, jars, buckets, bowls) are automatically utilized when needed
 - Fermentation Vessels will now emit bubble particles while fermenting
     - The color of the particles depends on the contents
     - Fermentation recipes can specify this color
     - Can be disabled in the config
 - Updated Gristmill GUI
+- Updated Ceramic Dish functionality
+    - Foods will now automatically be eatable on a dish if it contains a food component and doesn't have a container (bowls, bottles, etc)
+        - Added a config option to allow food with containers to be eaten on dishes
+    - All custom functionality that would normally happen when eating a food will occur
+    - Removed "eatable_on_dish" item tag
 
 ## New Content
 - Added Iron Railings
@@ -123,6 +131,8 @@
 - Added Coconuts
     - Can be crafted into halves, which can be eaten or used in recipes
         - Added Coconut Stew, Coconut Crusted Cod, and Coconut Cake food items
+        - Added Coconut Candles, a decorative block
+            - Up to 3 can be stacked in the same block
     - Coconuts can be milled in a Gristmill to create Coconut Coir items
         - Can be used in place of wheat to create Mud Bricks
         - Can be packed into coir blocks and bricks
@@ -137,5 +147,5 @@
         - Below the leaves, a Golden Apple fruit can spawn
             - Has 6 stages of growth, and grows much slower compared to other fruit
             - If not in an environment with a light level of 8 or lower, Golden Apples will not grow
-            - If exposed for a while, they will become withered and cannot be regrown. They will also not drop anything when broken
+            - If exposed for a while, they will become withered and cannot be restored. They will also not drop anything when broken
             - Unlike other fruit trees, leaves cannot be bonemealed to produce more fruit

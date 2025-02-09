@@ -1,9 +1,11 @@
 package net.hecco.bountifulfares.registry.util;
 
+import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Position;
@@ -21,6 +23,7 @@ public abstract class FlourDispenserBehavior extends ItemDispenserBehavior {
         projectileEntity.setVelocity(direction.getOffsetX(), ((float)direction.getOffsetY() + 0.1F), direction.getOffsetZ(), this.getForce(), this.getVariation());
         world.spawnEntity(projectileEntity);
         stack.decrement(1);
+        world.playSound(null, position.getX(), position.getY(), position.getZ(), BFSounds.FLOUR_THROW, SoundCategory.BLOCKS, 0.6f, 0.9f + world.random.nextFloat() / 4);
         return stack;
     }
 

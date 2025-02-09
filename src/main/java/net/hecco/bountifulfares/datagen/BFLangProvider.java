@@ -70,11 +70,13 @@ public class BFLangProvider extends FabricLanguageProvider {
 
 
         generate(translationBuilder, BFBlocks.HOARY_APPLE_SAPLING_CROP, "Hoary Apple Sapling");
-//        generate(translationBuilder, BFItems.HOARY_CHEST_BOAT, "Hoary Boat with Chest");
+        generate(translationBuilder, BFItems.HOARY_CHEST_BOAT, "Hoary Boat with Chest");
         generate(translationBuilder, BFBlocks.HANGING_HOARY_APPLE, "Hoary Apple");
 
+        generate(translationBuilder, BFBlocks.CERAMIC_CLAY_BLOCK, "Block of Ceramic Clay");
 
-//        generate(translationBuilder, BFItems.WALNUT_CHEST_BOAT, "Walnut Boat with Chest");
+
+        generate(translationBuilder, BFItems.WALNUT_CHEST_BOAT, "Walnut Boat with Chest");
 
         generate(translationBuilder, BFBlocks.HANGING_WALNUTS, "Walnuts");
 
@@ -370,6 +372,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.fruit_replace_when_picked", "Fruits on trees replant when picked");
         generate(translationBuilder, "config.bountifulfares.flour_throwing", "Flour can be thrown");
         generate(translationBuilder, "config.bountifulfares.flour_throwing_cooldown", "Flour throwing cooldown, in ticks");
+        generate(translationBuilder, "config.bountifulfares.container_foods_eatable_on_dish", "Foods with containers can be eaten on Ceramic Dishes");
         generate(translationBuilder, "config.bountifulfares.restoration_overlay", "Restoration effect changes health icons");
         generate(translationBuilder, "config.bountifulfares.particle_tint_override", "Remove particle tint for some blocks");
         generate(translationBuilder, "config.subterrous.particle_tint_override_msg", "Disable this if it is causing issues.");
@@ -400,6 +403,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.lemon_trees", "Generate Lemon Trees");
         generate(translationBuilder, "config.bountifulfares.plum_trees", "Generate Plum Trees");
         generate(translationBuilder, "config.bountifulfares.palm_trees", "Generate Palm Trees");
+        generate(translationBuilder, "config.bountifulfares.golden_apple_tree_rooms", "Generate Golden Apple Trees in Woodland Mansions");
         generate(translationBuilder, "config.bountifulfares.flower_forest_fruit_trees", "Generate fruit trees in Flower Forests");
         generate(translationBuilder, "config.bountifulfares.forest_tea_shrubs", "Generate Tea Shrubs in Forests");
         generate(translationBuilder, "config.bountifulfares.forest_walnut_trees", "Generate Walnut Trees in Forests");
@@ -423,6 +427,10 @@ public class BFLangProvider extends FabricLanguageProvider {
 
 
         generate(translationBuilder, "bountifulfares.milling", "Milling");
+        generate(translationBuilder, "bountifulfares.fermenting", "Fermenting");
+        generate(translationBuilder, "jei.bountifulfares.collect_using", "Collect using ");
+        generate(translationBuilder, "jei.bountifulfares.minutes", "minutes");
+        generate(translationBuilder, "jei.bountifulfares.seconds", "seconds");
 
         for(Identifier id : BountifulFaresUtil.allBlockIdsInNamespace(BountifulFares.MOD_ID)) {
             String key = Registries.BLOCK.get(id).getTranslationKey();
