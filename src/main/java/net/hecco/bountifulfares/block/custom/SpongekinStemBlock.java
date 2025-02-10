@@ -2,6 +2,7 @@ package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
+import net.hecco.bountifulfares.registry.util.BFBlockTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
@@ -101,7 +102,7 @@ public class SpongekinStemBlock extends PlantBlock implements Fertilizable, Flui
     }
 
     public boolean shouldPropagatePrismarine(ServerWorld world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isOf(Blocks.SEA_LANTERN);
+        return world.getBlockState(pos.down()).isIn(BFBlockTags.PRISMARINE_PROPAGATION_SUBSTRATE);
     }
 
     protected static boolean isFullyGrown(BlockState state) {

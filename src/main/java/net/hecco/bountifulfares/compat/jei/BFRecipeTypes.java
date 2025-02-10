@@ -6,6 +6,7 @@ import net.hecco.bountifulfares.recipe.FermentationRecipe;
 
 public class BFRecipeTypes {
     public static final RecipeType<FermentationRecipe> FERMENTING = RecipeType.create(BountifulFares.MOD_ID, "fermenting", FermentationRecipe.class);
+    public static final RecipeType<PropagationRecipe> PRISMARINE_PROPAGATION = RecipeType.create(BountifulFares.MOD_ID, "prismarine_propagation", PropagationRecipe.class);
 
     public BFRecipeTypes() {
     }

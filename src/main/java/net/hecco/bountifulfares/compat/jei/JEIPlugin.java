@@ -1,15 +1,16 @@
 package net.hecco.bountifulfares.compat.jei;
 
+import com.google.common.collect.ImmutableList;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.*;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.compat.jei.category.PrismarinePropagationCategory;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.jei.category.FermentingRecipeCategory;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.annotation.MethodsReturnNonnullByDefault;
 
@@ -23,6 +24,7 @@ public class JEIPlugin implements IModPlugin {
 
 //        RECIPES
         registration.addRecipes(BFRecipeTypes.FERMENTING, bfRecipes.getFermentationRecipes());
+        registration.addRecipes(BFRecipeTypes.PRISMARINE_PROPAGATION, ImmutableList.of(new PropagationRecipe()));
 
         //Example of information tooltip for JEI
 //        registration.addIngredientInfo(new ItemStack(BFItems.CITRUS_ESSENCE), VanillaTypes.ITEM_STACK, Text.translatable("jei.info.citrus_essence"));
@@ -31,6 +33,7 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
         registry.addRecipeCategories(new FermentingRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
+        registry.addRecipeCategories(new PrismarinePropagationCategory(registry.getJeiHelpers().getGuiHelper()));
     }
 
     @Override

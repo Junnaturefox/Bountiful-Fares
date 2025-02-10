@@ -607,6 +607,9 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.PALM_MULCH_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(BFBlocks.PACKED_COCONUT_COIR).add(BFBlocks.COIR_CARPET);
+
+        getOrCreateTagBuilder(BFBlockTags.PRISMARINE_PROPAGATION_SUBSTRATE)
+                .add(Blocks.SEA_LANTERN);
     }
 
     public void registerTrellisBlockTags(TrellisVariant trellis) {

@@ -35,6 +35,7 @@
     - Added a new recipe category for milling (using a Gristmill)
     - Added a new recipe category for fermenting (using a Fermentation Vessel)
         - Shows the process of using the block, the time taken to ferment, and what item is needed to obtain the result
+    - Added a new recipe category for Prismarine propagation (growing a Spongekin on a Sea Lantern)
 
 ## Tweaks
 - Added “Client” config category
@@ -59,6 +60,8 @@
 - Mulch blocks now slightly decrease fall damage when landed on
 - Retextured most ceramic block textures
 - Piglins now are distracted by Golden Apple Blocks
+- Blocks that allow Spongekins to propagate Prismarine are now datadriven
+    - Added #prismarine_propagation_substrate block tag
 - Fruit leaves are now biome tinted
 - Decreased the rate of growth of fruit on trees
 - Retextured Stripped Fruit Logs

@@ -428,6 +428,7 @@ public class BFLangProvider extends FabricLanguageProvider {
 
         generate(translationBuilder, "bountifulfares.milling", "Milling");
         generate(translationBuilder, "bountifulfares.fermenting", "Fermenting");
+        generate(translationBuilder, "bountifulfares.prismarine_propagation", "Prismarine Propagation");
         generate(translationBuilder, "jei.bountifulfares.collect_using", "Collect using ");
         generate(translationBuilder, "jei.bountifulfares.minutes", "minutes");
         generate(translationBuilder, "jei.bountifulfares.seconds", "seconds");
