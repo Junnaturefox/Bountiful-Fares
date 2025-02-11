@@ -349,11 +349,6 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .addTag(BFBlockTags.WALNUT_LOGS)
                 .addTag(BFBlockTags.HOARY_LOGS);
         getOrCreateTagBuilder(BlockTags.OVERWORLD_NATURAL_LOGS)
-                .add(BFBlocks.APPLE_LOG)
-                .add(BFBlocks.ORANGE_LOG)
-                .add(BFBlocks.LEMON_LOG)
-                .add(BFBlocks.PLUM_LOG)
-                .add(BFBlocks.PALM_LOG)
                 .add(BFBlocks.WALNUT_LOG);
         getOrCreateTagBuilder(BlockTags.PLANKS).add(BFBlocks.WALNUT_PLANKS, BFBlocks.HOARY_PLANKS);
         getOrCreateTagBuilder(BlockTags.STANDING_SIGNS).add(BFBlocks.WALNUT_SIGN, BFBlocks.HOARY_SIGN);

@@ -57,7 +57,7 @@ public class BountifulFares implements ModInitializer {
 		BFParticles.registerParticles();
 		BFPotions.registerPotions();
 		BFTrunkPlacerTypes.register();
-		BFTreeDecoratorTypes.register();
+		BFFeatures.register();
 		BFRegistries.RegisterModStuffs();
 		BFBlockEntities.registerBlockEntities();
 		BFScreenHandlers.registerScreenHandlers();
