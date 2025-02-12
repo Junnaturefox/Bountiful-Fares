@@ -5,11 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.BountifulFaresUtil;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
-import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
-import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
-import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
 import net.hecco.bountifulfares.compat.farmersdelight.FarmersDelightBlocks;
-import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
@@ -22,7 +18,6 @@ import net.hecco.bountifulfares.trellis.trellis_parts.VineCrop;
 import net.minecraft.block.BeetrootsBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CandleBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -32,7 +27,6 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.EmptyEntry;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
@@ -107,25 +101,6 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(BFBlocks.WALNUT_DOOR, doorDrops(BFBlocks.WALNUT_DOOR));
         addDrop(BFBlocks.WALNUT_LEAVES, leavesDrops(BFBlocks.WALNUT_LEAVES, BFBlocks.WALNUT_SAPLING, SAPLING_DROP_CHANCE));
 
-        picketsDrops(NaturesSpiritBlocks.ASPEN_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.CEDAR_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.COCONUT_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.CYPRESS_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.FIR_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.GHAF_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.JOSHUA_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.LARCH_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.MAHOGANY_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.MAPLE_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.OLIVE_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.PALO_VERDE_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.REDWOOD_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.MAHOGANY_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.SAXAUL_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.SUGI_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.WILLOW_PICKETS);
-        picketsDrops(NaturesSpiritBlocks.WISTERIA_PICKETS);
-
         registerTrellisLootTables(BFTrellises.OAK);
         registerTrellisLootTables(BFTrellises.SPRUCE);
         registerTrellisLootTables(BFTrellises.BIRCH);
@@ -139,32 +114,6 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         registerTrellisLootTables(BFTrellises.HOARY);
         registerTrellisLootTables(BFTrellises.CRIMSON);
         registerTrellisLootTables(BFTrellises.WARPED);
-//        registerTrellisLootTables(BFTrellises.CORK);
-//        registerTrellisLootTables(BFTrellises.BAOBAB);
-//        registerTrellisLootTables(BFTrellises.WW_CYPRESS);
-//        registerTrellisLootTables(BFTrellises.PALM);
-        registerTrellisLootTables(ExcessiveBuildingBlocks.ANCIENT);
-        registerTrellisLootTables(MintBlocks.WINTERGREEN);
-        registerTrellisLootTables(SpawnBlocks.ROTTEN);
-        registerTrellisLootTables(ArtsAndCraftsBlocks.CORK);
-
-        registerTrellisLootTables(NaturesSpiritBlocks.ASPEN);
-        registerTrellisLootTables(NaturesSpiritBlocks.CEDAR);
-        registerTrellisLootTables(NaturesSpiritBlocks.COCONUT);
-        registerTrellisLootTables(NaturesSpiritBlocks.CYPRESS);
-        registerTrellisLootTables(NaturesSpiritBlocks.FIR);
-        registerTrellisLootTables(NaturesSpiritBlocks.GHAF);
-        registerTrellisLootTables(NaturesSpiritBlocks.JOSHUA);
-        registerTrellisLootTables(NaturesSpiritBlocks.LARCH);
-        registerTrellisLootTables(NaturesSpiritBlocks.MAHOGANY);
-        registerTrellisLootTables(NaturesSpiritBlocks.MAPLE);
-        registerTrellisLootTables(NaturesSpiritBlocks.OLIVE);
-        registerTrellisLootTables(NaturesSpiritBlocks.PALO_VERDE);
-        registerTrellisLootTables(NaturesSpiritBlocks.REDWOOD);
-        registerTrellisLootTables(NaturesSpiritBlocks.SAXAUL);
-        registerTrellisLootTables(NaturesSpiritBlocks.SUGI);
-        registerTrellisLootTables(NaturesSpiritBlocks.WILLOW);
-        registerTrellisLootTables(NaturesSpiritBlocks.WISTERIA);
 
         addDrop(BFBlocks.WILD_WHEAT, WildCropDrops(Items.WHEAT_SEEDS, BFBlocks.WILD_WHEAT));
         addDrop(BFBlocks.WILD_CARROTS, WildCropDrops(Items.CARROT, BFBlocks.WILD_CARROTS));
@@ -245,45 +194,6 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         jackOStrawDrops(BFBlocks.BLACK_JACK_O_STRAW);
         jackOStrawDrops(BFBlocks.BROWN_JACK_O_STRAW);
 
-        jackOStrawDrops(DyeDepotBlocks.MAROON_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.ROSE_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.CORAL_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.GINGER_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.TAN_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.BEIGE_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.AMBER_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.OLIVE_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.FOREST_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.VERDANT_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.TEAL_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.MINT_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.AQUA_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.SLATE_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.NAVY_JACK_O_STRAW);
-        jackOStrawDrops(DyeDepotBlocks.INDIGO_JACK_O_STRAW);
-
-        jackOStrawDrops(MintBlocks.ACORN_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.ARTICHOKE_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.AMBER_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.BANANA_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.CERULEAN_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.FUCHSIA_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.GRAPE_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.INDIGO_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.MAROON_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.MAUVE_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.MOLD_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.MINT_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.NAVY_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.PEACH_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.PERIWINKLE_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.SAGE_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.SAP_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.SHAMROCK_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.VELVET_JACK_O_STRAW);
-        jackOStrawDrops(MintBlocks.VERMILION_JACK_O_STRAW);
-        picketsDrops(MintBlocks.WINTERGREEN_PICKETS);
-
         picketsDrops(BFBlocks.OAK_PICKETS);
         picketsDrops(BFBlocks.BIRCH_PICKETS);
         picketsDrops(BFBlocks.SPRUCE_PICKETS);
@@ -298,9 +208,6 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         picketsDrops(BFBlocks.CRIMSON_PICKETS);
         picketsDrops(BFBlocks.WARPED_PICKETS);
         picketsDrops(BFBlocks.IRON_RAILING);
-        picketsDrops(ExcessiveBuildingBlocks.ANCIENT_PICKETS);
-        picketsDrops(SpawnBlocks.ROTTEN_PICKETS);
-        picketsDrops(ArtsAndCraftsBlocks.CORK_PICKETS);
 
 
         addDrop(BFBlocks.WALNUT_MULCH, LootTable.builder()
@@ -490,27 +397,9 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         usedBlocks.add(BFBlocks.SPONGEKIN);
 
 
-
-
-
-
-        addDrop(FarmersDelightBlocks.WALNUT_CABINET);
-        addDrop(FarmersDelightBlocks.HOARY_CABINET);
-
-        addDrop(ExcessiveBuildingBlocks.HOARY_MOSAIC_SLAB, slabDrops(ExcessiveBuildingBlocks.HOARY_MOSAIC_SLAB));
-        addDrop(ExcessiveBuildingBlocks.WALNUT_MOSAIC_SLAB, slabDrops(ExcessiveBuildingBlocks.WALNUT_MOSAIC_SLAB));
-        picketsDrops(ExcessiveBuildingBlocks.ANCIENT_PICKETS);
-
-
         for(Identifier id : BountifulFaresUtil.allBlockIdsInNamespace(BountifulFares.MOD_ID)) {
             Block block = Registries.BLOCK.get(id);
             if(usedBlocks.contains(block)) { continue; }
-            this.addDrop(block);
-        }
-
-        for(Identifier id : BountifulFaresUtil.allCompatBlockIds()) {
-            Block block = Registries.BLOCK.get(id);
-            if(usedBlocks.contains(block) || !compatBlocks.contains(block)) { continue; }
             this.addDrop(block);
         }
     }

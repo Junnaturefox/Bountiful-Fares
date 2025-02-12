@@ -26,16 +26,20 @@
     - Added Cork Trellises and Pickets
     - Paintbrushes can dye Ceramic Tile blocks
 - Added compatibility with Excessive Building - if installed:
-    - Added Ancient and Gloom Trellis variants
-    - Added Ancient and Gloom Picket variants
+    - Added Ancient Trellis variant
+    - Added Ancient Picket variant
     - Added chiseled and mosaic variants of Walnut and Hoary Planks
     - Added Walnut and Hoary Ladders
     - Added vertical stair variants for many blocks
+    - Added Walnut and Palm Mulch Brick sets
 - Added compatibility with JEI - if installed:
     - Added a new recipe category for milling (using a Gristmill)
     - Added a new recipe category for fermenting (using a Fermentation Vessel)
         - Shows the process of using the block, the time taken to ferment, and what item is needed to obtain the result
-    - Added a new recipe category for Prismarine propagation (growing a Spongekin on a Sea Lantern)
+    - Added a new recipe category for Prismarine propagation (growing Prismarine Blossoms from Spongekins)
+- Temporarily removed Walnut and Hoary cabinets from Farmer's Delight compat
+- Updated compatibility with Nature's Spirit - if installed:
+    - Bountiful Fares features can now generate in Nature's Spirit biomes
 
 ## Tweaks
 - Added “Client” config category
@@ -64,6 +68,7 @@
     - Added #prismarine_propagation_substrate block tag
 - Fruit leaves are now biome tinted
 - Decreased the rate of growth of fruit on trees
+- Fruit trees generate less often
 - Retextured Stripped Fruit Logs
 - Reworked Fruit Logs
     - Fruit Logs can now connect to each other similarly to Chorus Plants
@@ -73,6 +78,7 @@
     - Due to paintings being datadriven since 1.21, there isn't an easy way to individually enable/disable paintings without a lot of datapacks.
 - Added an option in the config to add a cooldown to throwing flour
 - Short Grass can now be made by using Grass Seeds on Grass Blocks
+- Wild Passion Fruit and Elderberries now generate as features instead of tree decorators
 - Tweaked some recipes
 - The following effects now cannot be modified by Acidity:
     - Instant Health

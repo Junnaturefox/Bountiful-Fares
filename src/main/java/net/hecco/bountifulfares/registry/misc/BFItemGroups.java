@@ -105,7 +105,7 @@ public class BFItemGroups {
                         entries.add(BFItems.HOARY_HANGING_SIGN);
                         entries.add(BFItems.HOARY_BOAT);
                         entries.add(BFItems.HOARY_CHEST_BOAT);
-                        entries.add(FarmersDelightBlocks.HOARY_CABINET);
+//                        entries.add(FarmersDelightBlocks.HOARY_CABINET);
                         entries.add(ExcessiveBuildingBlocks.CHISELED_HOARY_PLANKS);
                         entries.add(ExcessiveBuildingBlocks.HOARY_MOSAIC);
                         entries.add(ExcessiveBuildingBlocks.HOARY_MOSAIC_STAIRS);
@@ -135,7 +135,7 @@ public class BFItemGroups {
                         entries.add(BFItems.WALNUT_HANGING_SIGN);
                         entries.add(BFItems.WALNUT_BOAT);
                         entries.add(BFItems.WALNUT_CHEST_BOAT);
-                        entries.add(FarmersDelightBlocks.WALNUT_CABINET);
+//                        entries.add(FarmersDelightBlocks.WALNUT_CABINET);
                         entries.add(ExcessiveBuildingBlocks.CHISELED_WALNUT_PLANKS);
                         entries.add(ExcessiveBuildingBlocks.WALNUT_MOSAIC);
                         entries.add(ExcessiveBuildingBlocks.WALNUT_MOSAIC_STAIRS);
@@ -146,6 +146,10 @@ public class BFItemGroups {
                         entries.add(BFItems.WALNUT);
                         entries.add(BFBlocks.WALNUT_MULCH);
                         entries.add(BFBlocks.WALNUT_MULCH_BLOCK);
+                        entries.add(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICKS);
+                        entries.add(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_STAIRS);
+                        entries.add(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_SLAB);
+                        entries.add(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_WALL);
                         entries.add(BFBlocks.PALM_LOG);
                         entries.add(BFBlocks.PALM_WOOD);
                         entries.add(BFBlocks.STRIPPED_PALM_LOG);
@@ -164,6 +168,10 @@ public class BFItemGroups {
                         entries.add(BFBlocks.COIR_BRICK_WALL);
                         entries.add(BFBlocks.PALM_MULCH);
                         entries.add(BFBlocks.PALM_MULCH_BLOCK);
+                        entries.add(ExcessiveBuildingBlocks.PALM_MULCH_BRICKS);
+                        entries.add(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_STAIRS);
+                        entries.add(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_SLAB);
+                        entries.add(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_WALL);
                         entries.add(BFBlocks.OAK_PICKETS);
                         entries.add(BFBlocks.SPRUCE_PICKETS);
                         entries.add(BFBlocks.BIRCH_PICKETS);

@@ -14,8 +14,8 @@ import static net.hecco.bountifulfares.BountifulFares.FARMERS_DELIGHT_MOD_ID;
 import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class FarmersDelightBlocks {
-    public static final Block WALNUT_CABINET = registerBlock("walnut_cabinet", new CabinetBlock(FARMERS_DELIGHT_MOD_ID, FabricBlockSettings.copyOf(Blocks.BARREL).mapColor(MapColor.BROWN)));
-    public static final Block HOARY_CABINET = registerBlock("hoary_cabinet", new CabinetBlock(FARMERS_DELIGHT_MOD_ID, FabricBlockSettings.copyOf(Blocks.BARREL).mapColor(MapColor.TERRACOTTA_GRAY)));
+//    public static final Block WALNUT_CABINET = registerBlock("walnut_cabinet", new CabinetBlock(FARMERS_DELIGHT_MOD_ID, FabricBlockSettings.copyOf(Blocks.BARREL).mapColor(MapColor.BROWN)));
+//    public static final Block HOARY_CABINET = registerBlock("hoary_cabinet", new CabinetBlock(FARMERS_DELIGHT_MOD_ID, FabricBlockSettings.copyOf(Blocks.BARREL).mapColor(MapColor.TERRACOTTA_GRAY)));
 
     public static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

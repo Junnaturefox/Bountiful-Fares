@@ -407,21 +407,20 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.flower_forest_fruit_trees", "Generate fruit trees in Flower Forests");
         generate(translationBuilder, "config.bountifulfares.forest_tea_shrubs", "Generate Tea Shrubs in Forests");
         generate(translationBuilder, "config.bountifulfares.forest_walnut_trees", "Generate Walnut Trees in Forests");
-        generate(translationBuilder, "config.bountifulfares.honeysuckle_to_banana_dye", "Honeysuckles craft into Banana Dye");
-        generate(translationBuilder, "config.bountifulfares.rename_items_to_match_dyes", "Rename dyed items to match Dye Depot's override pack");
-        generate(translationBuilder, "config.bountifulfares.honeysuckle_to_amber_dye", "Honeysuckles craft into Amber Dye");
-        generate(translationBuilder, "config.bountifulfares.chamomile_to_beige_dye", "Chamomile Flowers craft into Beige Dye");
+//        generate(translationBuilder, "config.bountifulfares.honeysuckle_to_banana_dye", "Honeysuckles craft into Banana Dye");
+//        generate(translationBuilder, "config.bountifulfares.rename_items_to_match_dyes", "Rename dyed items to match Dye Depot's override pack");
+//        generate(translationBuilder, "config.bountifulfares.honeysuckle_to_amber_dye", "Honeysuckles craft into Amber Dye");
+//        generate(translationBuilder, "config.bountifulfares.chamomile_to_beige_dye", "Chamomile Flowers craft into Beige Dye");
 
         generate(translationBuilder, "pack.bountifulfares.vanilla_item_override", "Vanilla Item Texture Override");
         generate(translationBuilder, "pack.bountifulfares.amendments", "Bountiful Fares X Amendments");
-//        generate(translationBuilder, "pack.bountifulfares.mint", "Bountiful Fares X El's and L's Dye Mod");
-//        generate(translationBuilder, "pack.bountifulfares.dye_depot", "Bountiful Fares X Dye Depot");
-//        generate(translationBuilder, "pack.bountifulfares.natures_spirit", "Bountiful Fares X Nature's Spirit");
-//        generate(translationBuilder, "pack.bountifulfares.excessive_building", "Bountiful Fares X Excessive Building");
-//        generate(translationBuilder, "pack.bountifulfares.spawn", "Bountiful Fares X Spawn");
-//        generate(translationBuilder, "pack.bountifulfares.farmersdelight", "Bountiful Fares X Farmer's Delight");
-//        generate(translationBuilder, "pack.bountifulfares.twigs", "Bountiful Fares X Twigs");
-//        generate(translationBuilder, "pack.bountifulfares.wilderwild", "Bountiful Fares X Wilder Wild");
+        generate(translationBuilder, "pack.bountifulfares.mint", "Bountiful Fares X El's and L's Dye Mod");
+        generate(translationBuilder, "pack.bountifulfares.dye_depot", "Bountiful Fares X Dye Depot");
+        generate(translationBuilder, "pack.bountifulfares.natures_spirit", "Bountiful Fares X Nature's Spirit");
+        generate(translationBuilder, "pack.bountifulfares.excessive_building", "Bountiful Fares X Excessive Building");
+        generate(translationBuilder, "pack.bountifulfares.spawn", "Bountiful Fares X Spawn");
+        generate(translationBuilder, "pack.bountifulfares.farmersdelight", "Bountiful Fares X Farmer's Delight");
+        generate(translationBuilder, "pack.bountifulfares.twigs", "Bountiful Fares X Twigs");
 
         generate(translationBuilder, "death.attack.falling_coconut", "%1$s was bonked too hard");
 

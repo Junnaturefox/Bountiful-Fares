@@ -86,25 +86,20 @@ public enum Category {
                     newValue -> BountifulFares.CONFIG.setFermentationBubbleParticles(newValue), true),
             Entry.booleanEntry("config.bountifulfares.restoration_overlay", () -> BountifulFares.CONFIG.isRestorationHeartOverlay(),
                     newValue -> BountifulFares.CONFIG.setRestorationHeartOverlay(newValue), true)
-    ),
-    MINT("config.bountifulfares.category.mint", true,
-            Entry.booleanEntry("config.bountifulfares.honeysuckle_to_banana_dye", () -> BountifulFares.CONFIG.isHoneysuckleToBananaDye(),
-                    newValue -> BountifulFares.CONFIG.setHoneysuckleToBananaDye(newValue), true, "config.bountifulfares.restart_warning")),
-    DYE_DEPOT("config.bountifulfares.category.dye_depot", true,
-            Entry.booleanEntry("config.bountifulfares.rename_items_to_match_dyes", () -> BountifulFares.CONFIG.isRenameItemsToMatchDyes(),
-                    newValue -> BountifulFares.CONFIG.setRenameItemsToMatchDyes(newValue), true, "config.bountifulfares.restart_warning"),
-            Entry.booleanEntry("config.bountifulfares.honeysuckle_to_amber_dye", () -> BountifulFares.CONFIG.isHoneysuckleToAmberDye(),
-                    newValue -> BountifulFares.CONFIG.setHoneysuckleToAmberDye(newValue), true, "config.bountifulfares.restart_warning"),
-            Entry.booleanEntry("config.bountifulfares.chamomile_to_beige_dye", () -> BountifulFares.CONFIG.isChamomileToBeigeDye(),
-                    newValue -> BountifulFares.CONFIG.setChamomileToBeigeDye(newValue), true, "config.bountifulfares.restart_warning")),
-
-    COMPAT("config.bountifulfares.category.compat", false, new Category[]{MINT, DYE_DEPOT});
-
-
-//            Entry.doubl("cuttingBoardFortuneBonus", () -> BountifulFares.CONFIG.getCuttingBoardFortuneBonus(),
-//                    newValue -> BountifulFares.CONFIG.setCuttingBoardFortuneBonus(newValue), 0.1, 0.0, 1.0,
-//                    "How much of a bonus (in percentage) should each level of Fortune grant to",
-//                    "Cutting Board chances? Set it to 0.0 to disable this."),
+    )
+    ;
+//    MINT("config.bountifulfares.category.mint", true,
+//            Entry.booleanEntry("config.bountifulfares.honeysuckle_to_banana_dye", () -> BountifulFares.CONFIG.isHoneysuckleToBananaDye(),
+//                    newValue -> BountifulFares.CONFIG.setHoneysuckleToBananaDye(newValue), true, "config.bountifulfares.restart_warning")),
+//    DYE_DEPOT("config.bountifulfares.category.dye_depot", true,
+//            Entry.booleanEntry("config.bountifulfares.rename_items_to_match_dyes", () -> BountifulFares.CONFIG.isRenameItemsToMatchDyes(),
+//                    newValue -> BountifulFares.CONFIG.setRenameItemsToMatchDyes(newValue), true, "config.bountifulfares.restart_warning"),
+//            Entry.booleanEntry("config.bountifulfares.honeysuckle_to_amber_dye", () -> BountifulFares.CONFIG.isHoneysuckleToAmberDye(),
+//                    newValue -> BountifulFares.CONFIG.setHoneysuckleToAmberDye(newValue), true, "config.bountifulfares.restart_warning"),
+//            Entry.booleanEntry("config.bountifulfares.chamomile_to_beige_dye", () -> BountifulFares.CONFIG.isChamomileToBeigeDye(),
+//                    newValue -> BountifulFares.CONFIG.setChamomileToBeigeDye(newValue), true, "config.bountifulfares.restart_warning")),
+//
+//    COMPAT("config.bountifulfares.category.compat", false, new Category[]{MINT, DYE_DEPOT});
 
 
     private final String text;

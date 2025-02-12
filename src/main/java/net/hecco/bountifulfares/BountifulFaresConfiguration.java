@@ -40,12 +40,12 @@ public class BountifulFaresConfiguration {
     private int fermentationTime = 300;
     private int millingTime = 4;
     private int infusedCandleRadius = 3;
-//  mint
-    private boolean honeysuckleToBananaDye = true;
-//  dye_depot
-    private boolean renameItemsToMatchDyes = true;
-    private boolean honeysuckleToAmberDye = true;
-    private boolean chamomileToBeigeDye = true;
+////  mint
+//    private boolean honeysuckleToBananaDye = true;
+////  dye_depot
+//    private boolean renameItemsToMatchDyes = true;
+//    private boolean honeysuckleToAmberDye = true;
+//    private boolean chamomileToBeigeDye = true;
 
 
 
@@ -298,37 +298,37 @@ public class BountifulFaresConfiguration {
     }
 
 
-    public boolean isHoneysuckleToBananaDye() {
-        return honeysuckleToBananaDye;
-    }
-
-    public void setHoneysuckleToBananaDye(boolean bool) {
-        honeysuckleToBananaDye = bool;
-    }
-
-    public boolean isRenameItemsToMatchDyes() {
-        return renameItemsToMatchDyes;
-    }
-
-    public void setRenameItemsToMatchDyes(boolean bool) {
-        renameItemsToMatchDyes = bool;
-    }
-
-    public boolean isHoneysuckleToAmberDye() {
-        return honeysuckleToAmberDye;
-    }
-
-    public void setHoneysuckleToAmberDye(boolean bool) {
-        honeysuckleToAmberDye = bool;
-    }
-
-    public boolean isChamomileToBeigeDye() {
-        return chamomileToBeigeDye;
-    }
-
-    public void setChamomileToBeigeDye(boolean bool) {
-        chamomileToBeigeDye = bool;
-    }
+//    public boolean isHoneysuckleToBananaDye() {
+//        return honeysuckleToBananaDye;
+//    }
+//
+//    public void setHoneysuckleToBananaDye(boolean bool) {
+//        honeysuckleToBananaDye = bool;
+//    }
+//
+//    public boolean isRenameItemsToMatchDyes() {
+//        return renameItemsToMatchDyes;
+//    }
+//
+//    public void setRenameItemsToMatchDyes(boolean bool) {
+//        renameItemsToMatchDyes = bool;
+//    }
+//
+//    public boolean isHoneysuckleToAmberDye() {
+//        return honeysuckleToAmberDye;
+//    }
+//
+//    public void setHoneysuckleToAmberDye(boolean bool) {
+//        honeysuckleToAmberDye = bool;
+//    }
+//
+//    public boolean isChamomileToBeigeDye() {
+//        return chamomileToBeigeDye;
+//    }
+//
+//    public void setChamomileToBeigeDye(boolean bool) {
+//        chamomileToBeigeDye = bool;
+//    }
 
 
     private static double limit(double min, double max, double value) {

@@ -31,6 +31,7 @@ public class BFBlockTags {
     public static final TagKey<Block> PICKETS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "pickets"));
     public static final TagKey<Block> GRASS_SEEDS_PLANTABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "grass_seeds_plantable_on"));
     public static final TagKey<Block> PALM_SAPLINGS_PLANTABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "palm_saplings_plantable_on"));
+    public static final TagKey<Block> WILD_ELDERBERRY_PLACEABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "wild_elderberry_placeable_on"));
     public static final TagKey<Block> SCORCHKIN_SEEDS_PLANTABLE_ON = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "splits_coconuts"));
     public static final TagKey<Block> SPLITS_COCONUTS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "splits_coconuts"));
     public static final TagKey<Block> PRISMARINE_PROPAGATION_SUBSTRATE = TagKey.of(RegistryKeys.BLOCK, Identifier.of(BountifulFares.MOD_ID, "prismarine_propagation_substrate"));

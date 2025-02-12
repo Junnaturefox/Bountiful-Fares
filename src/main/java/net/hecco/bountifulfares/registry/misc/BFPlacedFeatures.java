@@ -38,16 +38,15 @@ public class BFPlacedFeatures {
     public static final RegistryKey<PlacedFeature> FOREST_TEA_SHRUB_PLACED_KEY = registerKey("forest_tea_shrub_placed");
     public static final RegistryKey<PlacedFeature> WALNUT_PLACED_KEY = registerKey("walnut_placed");
     public static final RegistryKey<PlacedFeature> PALM_PLACED_KEY = registerKey("palm_placed");
-    public static final RegistryKey<PlacedFeature> BEACH_WALNUT_PLACED_KEY = registerKey("beach_walnut_placed");
-    public static final RegistryKey<PlacedFeature> PASSION_FRUIT_JUNGLE_TREE = registerKey("passion_fruit_jungle_tree");
-    public static final RegistryKey<PlacedFeature> ELDERBERRY_SWAMP_OAK = registerKey("elderberry_swamp_oak");
+    public static final RegistryKey<PlacedFeature> WILD_PASSION_FRUIT_PLACED_KEY = registerKey("wild_passion_fruit_placed");
+    public static final RegistryKey<PlacedFeature> WILD_ELDERBERRY_PLACED_KEY = registerKey("wild_elderberry_placed");
 
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
         register(context, WALNUT_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(BFConfiguredFeatures.WALNUT_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(0, 0.5f, 1), BFBlocks.APPLE_SAPLING));
+                        PlacedFeatures.createCountExtraModifier(0, 0.5f, 1), BFBlocks.WALNUT_SAPLING));
 
     }
 

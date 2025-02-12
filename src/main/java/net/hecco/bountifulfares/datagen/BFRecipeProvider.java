@@ -4,13 +4,6 @@ import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
-import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
-import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
-import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
-import net.hecco.bountifulfares.compat.mint.MintBlocks;
-import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
-import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
-import net.hecco.bountifulfares.compat.twigs.TwigsBlocks;
 import net.hecco.bountifulfares.datagen.recipe.MillingRecipeBuilder;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.registry.content.BFTrellises;
@@ -33,7 +26,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-import static net.hecco.bountifulfares.BountifulFares.*;
 import static net.minecraft.data.family.BlockFamilies.register;
 import static net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder.getItemId;
 
@@ -103,31 +95,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         TrellisUtil.registerTrellisRecipe(exporter, BFTrellises.CRIMSON);
         TrellisUtil.registerTrellisRecipe(exporter, BFTrellises.WARPED);
 
-        TrellisUtil.registerCompatTrellisRecipe(exporter, MintBlocks.WINTERGREEN);
 
-        TrellisUtil.registerCompatTrellisRecipe(exporter, ExcessiveBuildingBlocks.ANCIENT);
-
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.REDWOOD);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.SUGI);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.WISTERIA);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.FIR);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.WILLOW);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.ASPEN);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.MAPLE);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.CYPRESS);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.OLIVE);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.JOSHUA);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.GHAF);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.PALO_VERDE);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.COCONUT);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.CEDAR);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.LARCH);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.MAHOGANY);
-        TrellisUtil.registerCompatTrellisRecipe(exporter, NaturesSpiritBlocks.SAXAUL);
-
-        TrellisUtil.registerCompatTrellisRecipe(exporter, SpawnBlocks.ROTTEN);
-
-        TrellisUtil.registerCompatTrellisRecipe(exporter, ArtsAndCraftsBlocks.CORK);
 
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BFBlocks.FELDSPAR_LANTERN)
@@ -649,27 +617,6 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .pattern("#S#")
                 .criterion("has_iron", conditionsFromItem(Items.IRON_INGOT)).offerTo(exporter);
 
-        offerPicketsRecipe(exporter, MintBlocks.WINTERGREEN_PICKETS, Identifier.of(ELS_AND_LS_DYES_MOD_ID, "wintergreen_planks"));
-        offerPicketsRecipe(exporter, ExcessiveBuildingBlocks.ANCIENT_PICKETS, Identifier.of(EXCESSIVE_BUILDING_MOD_ID, "ancient_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.REDWOOD_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "redwood_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.SUGI_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "sugi_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.WISTERIA_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "wisteria_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.FIR_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "fir_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.WILLOW_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "willow_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.ASPEN_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "aspen_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.MAPLE_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "maple_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.CYPRESS_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "cypress_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.OLIVE_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "olive_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.JOSHUA_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "joshua_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.GHAF_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "ghaf_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.PALO_VERDE_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "palo_verde_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.COCONUT_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "coconut_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.CEDAR_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "cedar_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.LARCH_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "larch_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.MAHOGANY_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "mahogany_planks"));
-        offerPicketsRecipe(exporter, NaturesSpiritBlocks.SAXAUL_PICKETS, Identifier.of(NATURES_SPIRIT_MOD_ID, "saxaul_planks"));
-        offerPicketsRecipe(exporter, SpawnBlocks.ROTTEN_PICKETS, Identifier.of(SPAWN_MOD_ID, "rotten_planks"));
-        offerPicketsRecipe(exporter, ArtsAndCraftsBlocks.CORK_PICKETS, Identifier.of(ARTS_AND_CRAFTS_MOD_ID, "cork_planks"));
 
 
         offerShapelessRecipe(exporter, BFItems.MAIZE_SEEDS, BFItems.MAIZE, null, 2);
@@ -760,44 +707,6 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerJackOStrawRecipes(exporter, BFBlocks.PURPLE_JACK_O_STRAW, Items.PURPLE_WOOL);
         offerJackOStrawRecipes(exporter, BFBlocks.MAGENTA_JACK_O_STRAW, Items.MAGENTA_WOOL);
         offerJackOStrawRecipes(exporter, BFBlocks.PINK_JACK_O_STRAW, Items.PINK_WOOL);
-
-        offerJackOStrawRecipes(exporter, MintBlocks.ACORN_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "acorn_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.MAROON_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "maroon_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.PEACH_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "peach_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.VERMILION_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "vermilion_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.AMBER_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "amber_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.BANANA_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "banana_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.ARTICHOKE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "artichoke_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.MOLD_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "mold_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.SAGE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "sage_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.SAP_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "sap_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.SHAMROCK_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "shamrock_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.MINT_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "mint_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.CERULEAN_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "cerulean_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.NAVY_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "navy_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.PERIWINKLE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "periwinkle_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.GRAPE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "grape_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.INDIGO_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "indigo_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.MAUVE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "mauve_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.VELVET_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "velvet_wool")));
-        offerJackOStrawRecipes(exporter, MintBlocks.FUCHSIA_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(ELS_AND_LS_DYES_MOD_ID, "fuchsia_wool")));
-
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.MAROON_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "maroon_wool")), "dye_depot");
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.ROSE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "rose_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.CORAL_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "coral_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.GINGER_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "ginger_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.TAN_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "tan_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.BEIGE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "beige_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.AMBER_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "amber_wool")), "dye_depot");
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.OLIVE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "olive_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.FOREST_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "forest_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.VERDANT_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "verdant_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.TEAL_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "teal_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.MINT_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "mint_wool")), "dye_depot");
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.AQUA_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "aqua_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.SLATE_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "slate_wool")));
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.NAVY_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "navy_wool")), "dye_depot");
-        offerJackOStrawRecipes(exporter, DyeDepotBlocks.INDIGO_JACK_O_STRAW, Registries.ITEM.get(Identifier.of(DYE_DEPOT_MOD_ID, "indigo_wool")), "dye_depot");
 
         MillingRecipeBuilder.create(Items.WHEAT, BFItems.FLOUR, 2)
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
@@ -1003,34 +912,6 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .input(BFItems.GRASS_SEEDS)
                 .input(BFItemTags.GRASS_SEEDS_PLANTABLE_ON)
                 .criterion(hasItem(BFItems.GRASS_SEEDS), conditionsFromItem(BFItems.GRASS_SEEDS))
-                .offerTo(exporter);
-
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TwigsBlocks.WALNUT_TABLE)
-                .pattern("___")
-                .pattern("0 0")
-                .pattern("0 0")
-                .input('_', BFBlocks.WALNUT_SLAB)
-                .input('0', BFBlocks.WALNUT_FENCE)
-                .criterion(hasItem(BFBlocks.WALNUT_PLANKS), conditionsFromItem(BFBlocks.WALNUT_PLANKS))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TwigsBlocks.HOARY_TABLE)
-                .pattern("___")
-                .pattern("0 0")
-                .pattern("0 0")
-                .input('_', BFBlocks.HOARY_SLAB)
-                .input('0', BFBlocks.HOARY_FENCE)
-                .criterion(hasItem(BFBlocks.HOARY_PLANKS), conditionsFromItem(BFBlocks.HOARY_PLANKS))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TwigsBlocks.FELDSPAR_LAMP)
-                .pattern("III")
-                .pattern("FSF")
-                .pattern("ICI")
-                .input('I', Items.IRON_INGOT)
-                .input('F', BFItems.FELDSPAR)
-                .input('S', Items.TORCH)
-                .input('C', Items.COAL)
-                .criterion(hasItem(BFItems.FELDSPAR), conditionsFromItem(BFItems.FELDSPAR))
                 .offerTo(exporter);
 
     }

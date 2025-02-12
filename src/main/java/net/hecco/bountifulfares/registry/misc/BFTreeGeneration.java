@@ -42,12 +42,6 @@ public class BFTreeGeneration {
         }
         BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WALNUT_TREES),
                 GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.WALNUT_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_BEACH),
-                GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.BEACH_WALNUT_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WILD_PASSION_FRUIT),
-                GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.PASSION_FRUIT_JUNGLE_TREE);
-        BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WILD_ELDERBERRIES),
-                GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.ELDERBERRY_SWAMP_OAK);
         if (BountifulFares.CONFIG.isGenerateForestWalnutTrees()) {
             BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST),
                     GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.WALNUT_PLACED_KEY);

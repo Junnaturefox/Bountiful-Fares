@@ -51,8 +51,31 @@ public class BFResourcePacks {
         Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer(BountifulFares.MOD_ID);
         if (modContainer.isPresent()) {
             if (BountifulFares.isModLoaded(BountifulFares.AMENDMENTS_MOD_ID)) {
-                registerBuiltinResourcePack(modContainer.get(), BountifulFares.AMENDMENTS_MOD_ID);
                 registerBuiltinDataPack(modContainer.get(), BountifulFares.AMENDMENTS_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.ELS_AND_LS_DYES_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.ELS_AND_LS_DYES_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.ARTS_AND_CRAFTS_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.ARTS_AND_CRAFTS_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.DYE_DEPOT_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.DYE_DEPOT_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.EXCESSIVE_BUILDING_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.EXCESSIVE_BUILDING_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.FARMERS_DELIGHT_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.FARMERS_DELIGHT_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.NATURES_SPIRIT_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.NATURES_SPIRIT_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.SPAWN_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.SPAWN_MOD_ID);
+            }
+            if (BountifulFares.isModLoaded(BountifulFares.TWIGS_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.TWIGS_MOD_ID);
             }
 //            if (BountifulFares.isModLoaded(BountifulFares.DYE_DEPOT_MOD_ID)) {
 //                if (BountifulFares.CONFIG.isRenameItemsToMatchDyes()) {

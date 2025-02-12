@@ -1,6 +1,8 @@
 package net.hecco.bountifulfares.world.wild_vine_feature;
 
 import com.mojang.serialization.Codec;
+import net.hecco.bountifulfares.block.custom.WildVineCropBlock;
+import net.minecraft.block.Blocks;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -29,13 +31,12 @@ public class WildVineFeature extends Feature<WildVineFeatureConfig> {
         for (int i = -patchSize; i <= patchSize; i++) {
             for (int j = -patchSize; j <= patchSize; j++) {
                 for (int k = -patchSize; k <= patchSize; k++) {
-                    if (random.nextBoolean()) {
+                    if (random.nextFloat() < 0.25f) {
                         placeVine(random, world, startPos.add(i, j, k), context);
                     }
                 }
             }
         }
-        
         return true;
     }
 
@@ -43,9 +44,9 @@ public class WildVineFeature extends Feature<WildVineFeatureConfig> {
         Collection<Direction> dirs = Direction.shuffle(random);
         dirs.remove(Direction.UP);
         dirs.remove(Direction.DOWN);
-        if (world.isAir(pos)) {
+        if (world.isAir(pos) || world.getBlockState(pos).isOf(Blocks.VINE)) {
             for (Direction direction : dirs) {
-                if (world.getBlockState(pos.offset(direction)).isIn(context.getConfig().canPlaceOn)) {
+                if (world.getBlockState(pos.offset(direction.getOpposite())).isIn(context.getConfig().canPlaceOn)) {
                     world.setBlockState(pos, context.getConfig().block.with(Properties.HORIZONTAL_FACING, direction), 2);
                 }
             }

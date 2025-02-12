@@ -134,6 +134,14 @@ public class BFModelProvider extends FabricModelProvider {
 //        TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.PALM);
 
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, ExcessiveBuildingBlocks.ANCIENT);
+        BlockStateModelGenerator.BlockTexturePool walnutMulchBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICKS);
+        walnutMulchBrickPool.stairs(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_STAIRS);
+        walnutMulchBrickPool.slab(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_SLAB);
+        walnutMulchBrickPool.wall(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_WALL);
+        BlockStateModelGenerator.BlockTexturePool palmMulchBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ExcessiveBuildingBlocks.PALM_MULCH_BRICKS);
+        palmMulchBrickPool.stairs(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_STAIRS);
+        palmMulchBrickPool.slab(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_SLAB);
+        palmMulchBrickPool.wall(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_WALL);
 
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, MintBlocks.WINTERGREEN);
 

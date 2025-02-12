@@ -3,15 +3,6 @@ package net.hecco.bountifulfares.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
-import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
-import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
-import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
-import net.hecco.bountifulfares.compat.farmersdelight.FarmersDelightBlocks;
-import net.hecco.bountifulfares.compat.mint.MintBlocks;
-import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
-import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
-import net.hecco.bountifulfares.compat.twigs.TwigsBlockTags;
-import net.hecco.bountifulfares.compat.twigs.TwigsBlocks;
 import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.trellis.trellis_parts.DecorativeVine;
@@ -168,48 +159,6 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.PURPLE_JACK_O_STRAW)
                 .add(BFBlocks.MAGENTA_JACK_O_STRAW)
                 .add(BFBlocks.PINK_JACK_O_STRAW)
-
-                .add(MintBlocks.ACORN_JACK_O_STRAW)
-                .add(MintBlocks.AMBER_JACK_O_STRAW)
-                .add(MintBlocks.ARTICHOKE_JACK_O_STRAW)
-                .add(MintBlocks.BANANA_JACK_O_STRAW)
-                .add(MintBlocks.CERULEAN_JACK_O_STRAW)
-                .add(MintBlocks.FUCHSIA_JACK_O_STRAW)
-                .add(MintBlocks.GRAPE_JACK_O_STRAW)
-                .add(MintBlocks.INDIGO_JACK_O_STRAW)
-                .add(MintBlocks.MAROON_JACK_O_STRAW)
-                .add(MintBlocks.MAUVE_JACK_O_STRAW)
-                .add(MintBlocks.MINT_JACK_O_STRAW)
-                .add(MintBlocks.MOLD_JACK_O_STRAW)
-                .add(MintBlocks.NAVY_JACK_O_STRAW)
-                .add(MintBlocks.PEACH_JACK_O_STRAW)
-                .add(MintBlocks.PERIWINKLE_JACK_O_STRAW)
-                .add(MintBlocks.SAGE_JACK_O_STRAW)
-                .add(MintBlocks.SAP_JACK_O_STRAW)
-                .add(MintBlocks.SHAMROCK_JACK_O_STRAW)
-                .add(MintBlocks.VELVET_JACK_O_STRAW)
-                .add(MintBlocks.VERMILION_JACK_O_STRAW)
-                .add(MintBlocks.WINTERGREEN_PICKETS)
-
-                .add(DyeDepotBlocks.MAROON_JACK_O_STRAW)
-                .add(DyeDepotBlocks.ROSE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.CORAL_JACK_O_STRAW)
-                .add(DyeDepotBlocks.GINGER_JACK_O_STRAW)
-                .add(DyeDepotBlocks.TAN_JACK_O_STRAW)
-                .add(DyeDepotBlocks.BEIGE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.AMBER_JACK_O_STRAW)
-                .add(DyeDepotBlocks.OLIVE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.FOREST_JACK_O_STRAW)
-                .add(DyeDepotBlocks.VERDANT_JACK_O_STRAW)
-                .add(DyeDepotBlocks.TEAL_JACK_O_STRAW)
-                .add(DyeDepotBlocks.MINT_JACK_O_STRAW)
-                .add(DyeDepotBlocks.AQUA_JACK_O_STRAW)
-                .add(DyeDepotBlocks.SLATE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.NAVY_JACK_O_STRAW)
-                .add(DyeDepotBlocks.INDIGO_JACK_O_STRAW)
-
-                .add(FarmersDelightBlocks.WALNUT_CABINET)
-                .add(FarmersDelightBlocks.HOARY_CABINET)
         ;
 
         registerTrellisBlockTags(BFTrellises.OAK);
@@ -225,63 +174,6 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         registerTrellisBlockTags(BFTrellises.HOARY);
         registerTrellisBlockTags(BFTrellises.CRIMSON);
         registerTrellisBlockTags(BFTrellises.WARPED);
-//        registerTrellisBlockTags(BFTrellises.CORK);
-//        registerTrellisBlockTags(BFTrellises.BAOBAB);
-//        registerTrellisBlockTags(BFTrellises.WW_CYPRESS);
-//        registerTrellisBlockTags(BFTrellises.PALM);
-        registerTrellisBlockTags(ExcessiveBuildingBlocks.ANCIENT);
-        registerTrellisBlockTags(MintBlocks.WINTERGREEN);
-//        registerTrellisBlockTags(BFTrellises.ROTTEN);
-        registerTrellisBlockTags(NaturesSpiritBlocks.ASPEN);
-        registerTrellisBlockTags(NaturesSpiritBlocks.CEDAR);
-        registerTrellisBlockTags(NaturesSpiritBlocks.COCONUT);
-        registerTrellisBlockTags(NaturesSpiritBlocks.CYPRESS);
-        registerTrellisBlockTags(NaturesSpiritBlocks.FIR);
-        registerTrellisBlockTags(NaturesSpiritBlocks.GHAF);
-        registerTrellisBlockTags(NaturesSpiritBlocks.JOSHUA);
-        registerTrellisBlockTags(NaturesSpiritBlocks.LARCH);
-        registerTrellisBlockTags(NaturesSpiritBlocks.MAHOGANY);
-        registerTrellisBlockTags(NaturesSpiritBlocks.MAPLE);
-        registerTrellisBlockTags(NaturesSpiritBlocks.OLIVE);
-        registerTrellisBlockTags(NaturesSpiritBlocks.PALO_VERDE);
-        registerTrellisBlockTags(NaturesSpiritBlocks.SAXAUL);
-        registerTrellisBlockTags(NaturesSpiritBlocks.SUGI);
-        registerTrellisBlockTags(NaturesSpiritBlocks.WILLOW);
-        registerTrellisBlockTags(NaturesSpiritBlocks.WISTERIA);
-        registerTrellisBlockTags(SpawnBlocks.ROTTEN);
-        registerTrellisBlockTags(ArtsAndCraftsBlocks.CORK);
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(NaturesSpiritBlocks.ASPEN_PICKETS)
-                .add(NaturesSpiritBlocks.CEDAR_PICKETS)
-                .add(NaturesSpiritBlocks.COCONUT_PICKETS)
-                .add(NaturesSpiritBlocks.CYPRESS_PICKETS)
-                .add(NaturesSpiritBlocks.FIR_PICKETS)
-                .add(NaturesSpiritBlocks.GHAF_PICKETS)
-                .add(NaturesSpiritBlocks.JOSHUA_PICKETS)
-                .add(NaturesSpiritBlocks.LARCH_PICKETS)
-                .add(NaturesSpiritBlocks.MAHOGANY_PICKETS)
-                .add(NaturesSpiritBlocks.MAPLE_PICKETS)
-                .add(NaturesSpiritBlocks.OLIVE_PICKETS)
-                .add(NaturesSpiritBlocks.PALO_VERDE_PICKETS)
-                .add(NaturesSpiritBlocks.SAXAUL_PICKETS)
-                .add(NaturesSpiritBlocks.SUGI_PICKETS)
-                .add(NaturesSpiritBlocks.WILLOW_PICKETS)
-                .add(NaturesSpiritBlocks.WISTERIA_PICKETS);
-
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(TwigsBlocks.WALNUT_TABLE)
-                .add(TwigsBlocks.HOARY_TABLE);
-        getOrCreateTagBuilder(TwigsBlockTags.TABLES)
-                .add(TwigsBlocks.WALNUT_TABLE)
-                .add(TwigsBlocks.HOARY_TABLE);
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(TwigsBlocks.FELDSPAR_LAMP);
-
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(SpawnBlocks.ROTTEN_PICKETS);
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ArtsAndCraftsBlocks.CORK_PICKETS);
-
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(BFBlocks.APPLE_LEAVES)
@@ -435,55 +327,18 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.LIGHT_GRAY_JACK_O_STRAW)
                 .add(BFBlocks.GRAY_JACK_O_STRAW)
                 .add(BFBlocks.BLACK_JACK_O_STRAW)
-                .add(MintBlocks.ACORN_JACK_O_STRAW)
                 .add(BFBlocks.BROWN_JACK_O_STRAW)
-                .add(MintBlocks.MAROON_JACK_O_STRAW)
                 .add(BFBlocks.RED_JACK_O_STRAW)
-                .add(MintBlocks.PEACH_JACK_O_STRAW)
-                .add(MintBlocks.VERMILION_JACK_O_STRAW)
                 .add(BFBlocks.ORANGE_JACK_O_STRAW)
-                .add(MintBlocks.AMBER_JACK_O_STRAW)
                 .add(BFBlocks.YELLOW_JACK_O_STRAW)
-                .add(MintBlocks.BANANA_JACK_O_STRAW)
-                .add(MintBlocks.ARTICHOKE_JACK_O_STRAW)
                 .add(BFBlocks.LIME_JACK_O_STRAW)
-                .add(MintBlocks.MINT_JACK_O_STRAW)
-                .add(MintBlocks.SHAMROCK_JACK_O_STRAW)
-                .add(MintBlocks.SAGE_JACK_O_STRAW)
-                .add(MintBlocks.MOLD_JACK_O_STRAW)
                 .add(BFBlocks.GREEN_JACK_O_STRAW)
-                .add(MintBlocks.SAP_JACK_O_STRAW)
                 .add(BFBlocks.CYAN_JACK_O_STRAW)
-                .add(MintBlocks.NAVY_JACK_O_STRAW)
                 .add(BFBlocks.BLUE_JACK_O_STRAW)
                 .add(BFBlocks.LIGHT_BLUE_JACK_O_STRAW)
-                .add(MintBlocks.CERULEAN_JACK_O_STRAW)
-                .add(MintBlocks.INDIGO_JACK_O_STRAW)
-                .add(MintBlocks.PERIWINKLE_JACK_O_STRAW)
                 .add(BFBlocks.PURPLE_JACK_O_STRAW)
-                .add(MintBlocks.GRAPE_JACK_O_STRAW)
                 .add(BFBlocks.MAGENTA_JACK_O_STRAW)
-                .add(MintBlocks.MAUVE_JACK_O_STRAW)
-                .add(MintBlocks.VELVET_JACK_O_STRAW)
-                .add(MintBlocks.FUCHSIA_JACK_O_STRAW)
                 .add(BFBlocks.PINK_JACK_O_STRAW)
-
-                .add(DyeDepotBlocks.MAROON_JACK_O_STRAW)
-                .add(DyeDepotBlocks.ROSE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.CORAL_JACK_O_STRAW)
-                .add(DyeDepotBlocks.GINGER_JACK_O_STRAW)
-                .add(DyeDepotBlocks.TAN_JACK_O_STRAW)
-                .add(DyeDepotBlocks.BEIGE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.AMBER_JACK_O_STRAW)
-                .add(DyeDepotBlocks.OLIVE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.FOREST_JACK_O_STRAW)
-                .add(DyeDepotBlocks.VERDANT_JACK_O_STRAW)
-                .add(DyeDepotBlocks.TEAL_JACK_O_STRAW)
-                .add(DyeDepotBlocks.MINT_JACK_O_STRAW)
-                .add(DyeDepotBlocks.AQUA_JACK_O_STRAW)
-                .add(DyeDepotBlocks.SLATE_JACK_O_STRAW)
-                .add(DyeDepotBlocks.NAVY_JACK_O_STRAW)
-                .add(DyeDepotBlocks.INDIGO_JACK_O_STRAW)
         ;
         getOrCreateTagBuilder(BFBlockTags.CERAMIC_TILES)
                 .add(BFBlocks.CERAMIC_TILES)
@@ -532,26 +387,6 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.HOARY_PICKETS)
                 .add(BFBlocks.CRIMSON_PICKETS)
                 .add(BFBlocks.WARPED_PICKETS)
-                .add(MintBlocks.WINTERGREEN_PICKETS)
-                .add(ExcessiveBuildingBlocks.ANCIENT_PICKETS)
-                .add(NaturesSpiritBlocks.ASPEN_PICKETS)
-                .add(NaturesSpiritBlocks.CEDAR_PICKETS)
-                .add(NaturesSpiritBlocks.COCONUT_PICKETS)
-                .add(NaturesSpiritBlocks.CYPRESS_PICKETS)
-                .add(NaturesSpiritBlocks.FIR_PICKETS)
-                .add(NaturesSpiritBlocks.GHAF_PICKETS)
-                .add(NaturesSpiritBlocks.JOSHUA_PICKETS)
-                .add(NaturesSpiritBlocks.LARCH_PICKETS)
-                .add(NaturesSpiritBlocks.MAHOGANY_PICKETS)
-                .add(NaturesSpiritBlocks.MAPLE_PICKETS)
-                .add(NaturesSpiritBlocks.OLIVE_PICKETS)
-                .add(NaturesSpiritBlocks.PALO_VERDE_PICKETS)
-                .add(NaturesSpiritBlocks.SAXAUL_PICKETS)
-                .add(NaturesSpiritBlocks.SUGI_PICKETS)
-                .add(NaturesSpiritBlocks.WILLOW_PICKETS)
-                .add(NaturesSpiritBlocks.WISTERIA_PICKETS)
-                .add(SpawnBlocks.ROTTEN_PICKETS)
-                .add(ArtsAndCraftsBlocks.CORK_PICKETS);
         ;
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
                 .add(BFBlocks.APPLE_SAPLING)
@@ -573,6 +408,11 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(BFBlocks.GRASSY_DIRT)
         ;
+
+        getOrCreateTagBuilder(BFBlockTags.WILD_ELDERBERRY_PLACEABLE_ON)
+                .addTag(BlockTags.OVERWORLD_NATURAL_LOGS)
+                .add(Blocks.MANGROVE_ROOTS)
+                ;
 
         getOrCreateTagBuilder(BFBlockTags.PALM_SAPLINGS_PLANTABLE_ON)
                 .addTag(BlockTags.DIRT)

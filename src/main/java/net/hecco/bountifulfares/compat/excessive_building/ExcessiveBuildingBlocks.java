@@ -1,14 +1,12 @@
 package net.hecco.bountifulfares.compat.excessive_building;
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.block.custom.MulchBlockBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.block.*;
 import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.MapColor;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -42,6 +40,16 @@ public class ExcessiveBuildingBlocks {
     public static final Block CHECKERED_CERAMIC_TILE_VERTICAL_STAIRS = registerBlock("checkered_ceramic_tile_vertical_stairs", new CeramicTileVerticalStairsBlock(EXCESSIVE_BUILDING_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.CHECKERED_CERAMIC_TILES)));
     public static final Block CERAMIC_MOSAIC_VERTICAL_STAIRS = registerBlock("ceramic_mosaic_vertical_stairs", new CeramicTileVerticalStairsBlock(EXCESSIVE_BUILDING_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.CERAMIC_MOSAIC)));
     public static final Block CHECKERED_CERAMIC_MOSAIC_VERTICAL_STAIRS = registerBlock("checkered_ceramic_mosaic_vertical_stairs", new CeramicTileVerticalStairsBlock(EXCESSIVE_BUILDING_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.CHECKERED_CERAMIC_MOSAIC)));
+
+    public static final Block WALNUT_MULCH_BRICKS = registerBlock("walnut_mulch_bricks", new Block(AbstractBlock.Settings.copy(BFBlocks.WALNUT_MULCH_BLOCK)));
+    public static final Block WALNUT_MULCH_BRICK_STAIRS = registerBlock("walnut_mulch_bricks_stairs", new StairsBlock(WALNUT_MULCH_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(BFBlocks.WALNUT_MULCH_BLOCK)));
+    public static final Block WALNUT_MULCH_BRICK_SLAB = registerBlock("walnut_mulch_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(BFBlocks.WALNUT_MULCH_BLOCK)));
+    public static final Block WALNUT_MULCH_BRICK_WALL = registerBlock("walnut_mulch_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(BFBlocks.WALNUT_MULCH_BLOCK)));
+
+    public static final Block PALM_MULCH_BRICKS = registerBlock("palm_mulch_bricks", new Block(AbstractBlock.Settings.copy(BFBlocks.PALM_MULCH_BLOCK)));
+    public static final Block PALM_MULCH_BRICK_STAIRS = registerBlock("palm_mulch_bricks_stairs", new StairsBlock(PALM_MULCH_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(BFBlocks.PALM_MULCH_BLOCK)));
+    public static final Block PALM_MULCH_BRICK_SLAB = registerBlock("palm_mulch_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(BFBlocks.PALM_MULCH_BLOCK)));
+    public static final Block PALM_MULCH_BRICK_WALL = registerBlock("palm_mulch_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(BFBlocks.PALM_MULCH_BLOCK)));
 
     public static final TrellisVariant ANCIENT = new TrellisVariant(BountifulFares.EXCESSIVE_BUILDING_MOD_ID, "ancient", Identifier.of(BountifulFares.EXCESSIVE_BUILDING_MOD_ID, "ancient_planks"), TRELLIS_RENDER_CUTOUT);
 

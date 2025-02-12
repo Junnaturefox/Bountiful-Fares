@@ -61,7 +61,7 @@ public class WildVineCropBlock extends Block {
     }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.offset((state.get(FACING)).getOpposite())).isSolid();
+        return world.getBlockState(pos.offset((state.get(FACING)).getOpposite())).isSideSolidFullSquare(world, pos.offset(state.get(FACING).getOpposite()), state.get(FACING));
     }
 
     @Override
