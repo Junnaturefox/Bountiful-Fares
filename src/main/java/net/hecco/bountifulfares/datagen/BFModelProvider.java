@@ -2,6 +2,7 @@ package net.hecco.bountifulfares.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
@@ -12,6 +13,7 @@ import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
 
 import static net.hecco.bountifulfares.datagen.custom.BFTemplateModels.*;
 
@@ -138,10 +140,12 @@ public class BFModelProvider extends FabricModelProvider {
         walnutMulchBrickPool.stairs(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_STAIRS);
         walnutMulchBrickPool.slab(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_SLAB);
         walnutMulchBrickPool.wall(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_WALL);
+        blockStateModelGenerator.registerParentedItemModel(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICKS, Identifier.of(BountifulFares.EXCESSIVE_BUILDING_MOD_ID, "block/walnut_mulch_bricks"));
         BlockStateModelGenerator.BlockTexturePool palmMulchBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ExcessiveBuildingBlocks.PALM_MULCH_BRICKS);
         palmMulchBrickPool.stairs(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_STAIRS);
         palmMulchBrickPool.slab(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_SLAB);
         palmMulchBrickPool.wall(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_WALL);
+        blockStateModelGenerator.registerParentedItemModel(ExcessiveBuildingBlocks.PALM_MULCH_BRICKS, Identifier.of(BountifulFares.EXCESSIVE_BUILDING_MOD_ID, "block/palm_mulch_bricks"));
 
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, MintBlocks.WINTERGREEN);
 

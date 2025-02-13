@@ -50,7 +50,6 @@ public abstract class LivingEntityMixin {
             while (iterator.hasNext()) {
                 Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance> entry = iterator.next();
                 if (entry.getKey() != BFEffects.STUPOR && !entry.getKey().isIn(BFEffectTags.STUPOR_BLACKLIST)) {
-                    BountifulFares.LOGGER.info(entry + "effect");
                     removedEffects.add(entry.getValue());
                 }
             }
@@ -94,11 +93,9 @@ public abstract class LivingEntityMixin {
             int acidicAmplifier = this.activeStatusEffects.get(effect).getAmplifier();
             Iterator<Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance>> iterator = this.activeStatusEffects.entrySet().iterator();
             ArrayList<StatusEffectInstance> newEffects = new ArrayList<>();
-            BountifulFares.LOGGER.info(this.activeStatusEffects + "effects");
             while (iterator.hasNext()) {
                 Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance> entry = iterator.next();
                 if (entry.getKey() != BFEffects.ACIDIC && !entry.getKey().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
-                    BountifulFares.LOGGER.info(entry + "effect");
                     int amplifier = Math.max(entry.getValue().getAmplifier() - acidicAmplifier - 1, 0);
                     newEffects.add(new StatusEffectInstance(entry.getKey(), entry.getValue().getDuration(), amplifier, entry.getValue().isAmbient(), entry.getValue().shouldShowParticles(), entry.getValue().shouldShowIcon()));
                 }
