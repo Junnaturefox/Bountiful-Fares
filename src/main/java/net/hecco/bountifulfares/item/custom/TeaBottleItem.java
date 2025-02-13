@@ -41,8 +41,8 @@ public class TeaBottleItem extends Item {
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-            for (int i = 0; i < getStatusEffectsToRemove().size(); i++) {
-                user.removeStatusEffect(getStatusEffectsToRemove().get(i));
+            for (RegistryEntry<StatusEffect> effect : getStatusEffectsToRemove()) {
+                user.removeStatusEffect(effect);
             }
         }
         if (stack.isEmpty()) {
