@@ -10,12 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StuporEffect extends StatusEffect {
-    public static final List<StatusEffect> EFFECTS_BLACKLIST = List.of(
-            StatusEffects.CONDUIT_POWER.value(),
-            StatusEffects.HERO_OF_THE_VILLAGE.value(),
-            StatusEffects.BAD_OMEN.value(),
-            StatusEffects.RAID_OMEN.value(),
-            StatusEffects.TRIAL_OMEN.value());
     public StuporEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }

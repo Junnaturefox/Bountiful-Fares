@@ -1,5 +1,7 @@
 package net.hecco.bountifulfares.effect;
 
+import net.hecco.bountifulfares.registry.content.BFEffects;
+import net.hecco.bountifulfares.registry.util.BFEffectTags;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
@@ -14,55 +16,21 @@ import java.util.List;
 
 public class AcidicEffect extends StatusEffect {
     //TODO: Fix acidic effect
-    private final List<StatusEffectInstance> affectedEffects;
-    public static final List<StatusEffect> EFFECTS_BLACKLIST = List.of(
-            StatusEffects.INSTANT_HEALTH.value(),
-            StatusEffects.INSTANT_DAMAGE.value(),
-            StatusEffects.INVISIBILITY.value(),
-            StatusEffects.NIGHT_VISION.value(),
-            StatusEffects.BLINDNESS.value(),
-            StatusEffects.CONDUIT_POWER.value(),
-            StatusEffects.DARKNESS.value(),
-            StatusEffects.FIRE_RESISTANCE.value(),
-            StatusEffects.WATER_BREATHING.value(),
-            StatusEffects.GLOWING.value(),
-            StatusEffects.SLOW_FALLING.value(),
-            StatusEffects.HERO_OF_THE_VILLAGE.value(),
-            StatusEffects.BAD_OMEN.value(),
-            StatusEffects.RAID_OMEN.value(),
-            StatusEffects.TRIAL_OMEN.value(),
-            StatusEffects.OOZING.value(),
-            StatusEffects.WIND_CHARGED.value(),
-            StatusEffects.INFESTED.value(),
-            StatusEffects.WEAVING.value());
+//    private final List<StatusEffectInstance> affectedEffects;
+
     public AcidicEffect(StatusEffectCategory category, int color) {
         super(category, color);
-        this.affectedEffects = new ArrayList<>();
+//        this.affectedEffects = new ArrayList<>();
     }
 
     @Override
     public void onApplied(LivingEntity entity, int amplifier) {
-//        if (!entity.getStatusEffects().isEmpty()) {
-//            affectedEffects.clear();
-//            List<StatusEffectInstance> effectsToModify = new ArrayList<>();
-//            for (StatusEffectInstance effect : entity.getStatusEffects()) {
-//                if (effect.getEffectType() != BFEffects.ACIDIC) {
-//                    if (!EFFECTS_BLACKLIST.contains(effect.getEffectType().value())) {
-//                        int newAmplifier = effect.getAmplifier() + amplifier + 1;
-//                        if (newAmplifier > 255) {
-//                            newAmplifier = 255;
-//                        }
-//                        StatusEffectInstance newEffect = new StatusEffectInstance(effect.getEffectType(), effect.getDuration(), newAmplifier, effect.isAmbient(), effect.shouldShowParticles(), effect.shouldShowIcon());
-//                        effectsToModify.add(newEffect);
-//                        affectedEffects.add(newEffect);
-//                    }
-//                }
-//            }
-//            if (!effectsToModify.isEmpty()) {
-//                for (StatusEffectInstance effect : effectsToModify) {
-//                    entity.removeStatusEffect(effect.getEffectType());
-//                    entity.addStatusEffect(effect);
-//                }
+//        for (StatusEffectInstance effect : entity.getStatusEffects()) {
+//            if (effect.getEffectType() != BFEffects.ACIDIC && effect.getEffectType().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
+//                int newAmplifier = Math.min(effect.getAmplifier() + amplifier + 1, 255);
+//                StatusEffectInstance newEffect = new StatusEffectInstance(effect.getEffectType(), effect.getDuration(), newAmplifier, effect.isAmbient(), effect.shouldShowParticles(), effect.shouldShowIcon());
+//                entity.removeStatusEffect(effect.getEffectType());
+//                entity.addStatusEffect(newEffect);
 //            }
 //        }
         super.onApplied(entity, amplifier);
