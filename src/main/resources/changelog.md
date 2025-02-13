@@ -20,6 +20,7 @@
 - Made blocks that should be flammable actually flammable
 - Fixed bowl not stacking with others on eating the final stew item in a stack
 - Added missing recipes for Walnut Wood
+- Updated how Acidic and Stupor effects are coded, which should make them less buggy
 
 ## Compatibility
 - Added compatibility with Arts and Crafts - if installed:
@@ -73,6 +74,7 @@
 - Reworked Fruit Logs
     - Fruit Logs can now connect to each other similarly to Chorus Plants
     - Any leaf type can now be used to “leaflog” a log, instead of just the matching type
+    - Other leaflogged fruit logs can leaflog other logs
 - Removed “Bountiful” painting
 - Removed config options for disabling paintings
     - Due to paintings being datadriven since 1.21, there isn't an easy way to individually enable/disable paintings without a lot of datapacks.

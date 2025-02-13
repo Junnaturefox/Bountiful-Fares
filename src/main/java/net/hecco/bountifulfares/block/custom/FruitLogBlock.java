@@ -115,7 +115,7 @@ public class FruitLogBlock extends PillarBlock implements Waterloggable {
         }
         return super.getPlacementState(ctx)
                 .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER)
-                .with(LEAFY, shouldBeLeafy(ctx.getWorld(), ctx.getBlockPos(), super.getDefaultState()))
+                .with(LEAFY, shouldBeLeafy(ctx.getWorld(), ctx.getBlockPos()))
                 .with(NORTH, directionMap.get(Direction.NORTH))
                 .with(EAST, directionMap.get(Direction.EAST))
                 .with(SOUTH, directionMap.get(Direction.SOUTH))
@@ -129,7 +129,7 @@ public class FruitLogBlock extends PillarBlock implements Waterloggable {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        world.setBlockState(pos, updateState(world, pos, state).with(LEAFY, shouldBeLeafy(world, pos, state)), 2);
+        world.setBlockState(pos, updateState(world, pos, state).with(LEAFY, shouldBeLeafy(world, pos)), 2);
         return super.getStateForNeighborUpdate(state, unusedDir, neighborState, world, pos, neighborPos);
     }
 
@@ -155,25 +155,16 @@ public class FruitLogBlock extends PillarBlock implements Waterloggable {
 
 
 
-    protected boolean shouldBeLeafy(WorldView world, BlockPos pos, BlockState blockState) {
-        Direction.Axis axis = blockState.get(AXIS);
-        Direction[] directions;
-        if (axis == Direction.Axis.X) {
-            directions = new Direction[]{Direction.UP, Direction.DOWN, Direction.NORTH, Direction.SOUTH};
-        } else if (axis == Direction.Axis.Z) {
-            directions = new Direction[]{Direction.UP, Direction.DOWN, Direction.WEST, Direction.EAST};
-        } else {
-            directions = new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST};
-        }
-
-        for (Direction direction : directions) {
+    protected boolean shouldBeLeafy(WorldView world, BlockPos pos) {
+        int count = 0;
+        for (Direction direction : DIRECTIONS) {
             BlockState neighborState = world.getBlockState(pos.offset(direction));
-            if (!neighborState.isIn(BlockTags.LEAVES)) {
-                return false;
+            if (neighborState.isIn(BlockTags.LEAVES) || (neighborState.getBlock() instanceof FruitLogBlock && neighborState.get(LEAFY))) {
+                count++;
             }
         }
 
-        return true;
+        return count > 2;
     }
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

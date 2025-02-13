@@ -94,6 +94,7 @@ public class HangingWalnutsBlock extends FallingBlock implements Fertilizable {
             world.setBlockState(pos, state.with(SNIPPED, true));
             player.getStackInHand(player.getActiveHand()).damage(1, player, LivingEntity.getSlotForHand(player.getActiveHand()));
             world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            return ActionResult.SUCCESS;
         }
         return super.onUse(state, world, pos, player, hit);
     }
