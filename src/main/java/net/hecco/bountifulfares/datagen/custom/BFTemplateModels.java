@@ -1,6 +1,7 @@
 package net.hecco.bountifulfares.datagen.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.block.custom.FruitLogBlock;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
@@ -10,6 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -64,6 +66,678 @@ public class BFTemplateModels {
 
         );
         Models.GENERATED.upload(ModelIds.getItemModelId(picket.asItem()), TextureMap.layer0(getItemId(picket)), blockStateModelGenerator.modelCollector);
+    }
+
+    public static void registerFruitLogModels(BlockStateModelGenerator blockStateModelGenerator, Block log, Block wood, Identifier leaves) {
+        Identifier logID = Registries.BLOCK.getId(log);
+        Identifier woodID = Registries.BLOCK.getId(wood);
+        Identifier template_fruit_log = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_noside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_noside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_noside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_otherside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_otherside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_side").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_side").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood_otherside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), woodID.getPath() + "_otherside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood_side").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), woodID.getPath() + "_side").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(woodID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(log)
+                .with(When.create().set(FruitLogBlock.NORTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.EAST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.SOUTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.WEST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                )
+                .with(When.create().set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.LEAFY,true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, leaves)
+                                .put(VariantSettings.UVLOCK, true)
+                ));
+
+        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(wood)
+                .with(When.create().set(FruitLogBlock.NORTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.EAST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.SOUTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.WEST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                )
+                .with(When.create().set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.LEAFY,true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, leaves)
+                                .put(VariantSettings.UVLOCK, true)
+                ));
+
+
+    }
+
+    public static void registerFruitLogModels(BlockStateModelGenerator blockStateModelGenerator, Block log, Block wood) {
+        Identifier template_fruit_log = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_noside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(log)
+                .with(When.create().set(FruitLogBlock.NORTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.EAST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.SOUTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.WEST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                )
+                .with(When.create().set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+        );
+
+        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(wood)
+                .with(When.create().set(FruitLogBlock.NORTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.EAST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.SOUTH, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.WEST, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                )
+                .with(When.create().set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, true),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.UP, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.EAST, false).set(FruitLogBlock.WEST, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.X).set(FruitLogBlock.WEST, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R180)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_log_noside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+                .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.UP, false).set(FruitLogBlock.WEST, false).set(FruitLogBlock.DOWN, false),
+                        BlockStateVariant.create()
+                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                )
+        );
+
+
     }
 
     public static void registerTrellis(BlockStateModelGenerator blockStateModelGenerator, TrellisVariant trellis){

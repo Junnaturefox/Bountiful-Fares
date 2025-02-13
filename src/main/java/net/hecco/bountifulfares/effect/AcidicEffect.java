@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AcidicEffect extends StatusEffect {
-    //TODO: Fix acidic effect
 //    private final List<StatusEffectInstance> affectedEffects;
 
     public AcidicEffect(StatusEffectCategory category, int color) {

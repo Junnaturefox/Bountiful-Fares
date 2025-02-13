@@ -22,7 +22,7 @@
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_side",
-        "x": -90
+        "x": 270
       },
       "when": {
         "south": "true"
@@ -31,7 +31,7 @@
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_otherside",
-        "x": -90,
+        "x": 270,
         "y": 90
       },
       "when": {
@@ -49,13 +49,12 @@
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_otherside",
-        "x": 180
+        "x": 270
       },
       "when": {
         "down": "true"
       }
     },
-
     {
       "apply": {
         "model": "bountifulfares:block/orange_log"
@@ -70,8 +69,8 @@
       },
       "when": {
         "axis": "y",
-        "up": "false",
-        "down": true
+        "down": "true",
+        "up": "false"
       }
     },
     {
@@ -82,18 +81,7 @@
       "when": {
         "axis": "y",
         "down": "false",
-        "up": true
-      }
-    },
-
-    {
-      "apply": {
-        "model": "bountifulfares:block/orange_wood_side"
-      },
-      "when": {
-        "axis": "y",
-        "up": "false",
-        "down": false
+        "up": "true"
       }
     },
     {
@@ -102,11 +90,32 @@
       },
       "when": {
         "axis": "y",
+        "down": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "bountifulfares:block/orange_wood_side"
+      },
+      "when": {
+        "axis": "y",
+        "east": "false",
+        "north": "false",
+        "south": "false",
         "up": "false",
-        "north": false,
-        "east": false,
-        "south": false,
-        "west": false
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "bountifulfares:block/orange_wood_side",
+        "x": 180
+      },
+      "when": {
+        "axis": "y",
+        "down": "false",
+        "up": "false"
       }
     },
     {
@@ -117,25 +126,12 @@
       "when": {
         "axis": "y",
         "down": "false",
-        "up": false
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "west": "false"
       }
     },
-    {
-      "apply": {
-        "model": "bountifulfares:block/orange_wood_otherside",
-        "x": 180
-      },
-      "when": {
-        "axis": "y",
-        "down": "false",
-        "north": false,
-        "east": false,
-        "south": false,
-        "west": false
-      }
-    },
-
-
     {
       "apply": {
         "model": "bountifulfares:block/orange_log",
@@ -160,7 +156,7 @@
     {
       "apply": {
         "model": "bountifulfares:block/orange_log_noside",
-        "x": -90,
+        "x": 270,
         "y": 90
       },
       "when": {
@@ -168,7 +164,6 @@
         "west": "false"
       }
     },
-
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_side",
@@ -178,7 +173,7 @@
       "when": {
         "axis": "x",
         "east": "false",
-        "west": false
+        "west": "false"
       }
     },
     {
@@ -190,45 +185,70 @@
       "when": {
         "axis": "x",
         "east": "false",
-        "north": false,
-        "up": false,
-        "south": false,
-        "down": false
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "bountifulfares:block/orange_wood_side",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x",
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "bountifulfares:block/orange_wood_side",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "axis": "x",
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false"
       }
     },
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_otherside",
-        "x": -90,
+        "x": 270,
         "y": 90
       },
       "when": {
         "axis": "x",
-        "west": "false",
-        "east": false
+        "east": "false",
+        "west": "false"
       }
     },
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_otherside",
-        "x": -90,
+        "x": 270,
         "y": 90
       },
       "when": {
         "axis": "x",
-        "west": "false",
-        "north": false,
-        "up": false,
-        "south": false,
-        "down": false
+        "down": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
       }
     },
-
-
     {
       "apply": {
         "model": "bountifulfares:block/orange_log",
-        "x": -90
+        "x": 270
       },
       "when": {
         "axis": "z"
@@ -237,7 +257,7 @@
     {
       "apply": {
         "model": "bountifulfares:block/orange_log_noside",
-        "x": -90,
+        "x": 270,
         "y": 180
       },
       "when": {
@@ -248,15 +268,14 @@
     {
       "apply": {
         "model": "bountifulfares:block/orange_log_noside",
-        "x": 90,
-        "y": 180
+        "x": 270,
+        "y": 90
       },
       "when": {
         "axis": "z",
         "south": "false"
       }
     },
-
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_otherside",
@@ -265,7 +284,7 @@
       "when": {
         "axis": "z",
         "north": "false",
-        "south": false
+        "south": "false"
       }
     },
     {
@@ -275,48 +294,45 @@
       },
       "when": {
         "axis": "z",
+        "down": "false",
+        "east": "false",
         "north": "false",
-        "east": false,
-        "up": false,
-        "west": false,
-        "down": false
+        "up": "false",
+        "west": "false"
       }
     },
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_side",
-        "x": -90
+        "x": 270
       },
       "when": {
         "axis": "z",
-        "south": "false",
-        "north": false
+        "north": "false",
+        "south": "false"
       }
     },
     {
       "apply": {
         "model": "bountifulfares:block/orange_wood_side",
-        "x": -90
+        "x": 270
       },
       "when": {
         "axis": "z",
+        "down": "false",
+        "east": "false",
         "south": "false",
-        "east": false,
-        "up": false,
-        "west": false,
-        "down": false
+        "up": "false",
+        "west": "false"
       }
     },
-
-
-
     {
       "apply": {
         "model": "bountifulfares:block/orange_leaves",
         "uvlock": true
       },
       "when": {
-        "leafy": true
+        "leafy": "true"
       }
     }
   ]
