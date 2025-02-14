@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
@@ -88,10 +89,10 @@ public abstract class LivingEntityMixin {
         }
         return effect;
     }
-    @Inject(method = "removeStatusEffect", at = @At("HEAD"))
-    private void bountifulfares_acidicRemove(RegistryEntry<StatusEffect> effect, CallbackInfoReturnable<Boolean> cir) {
-        if (effect == BFEffects.ACIDIC && this.activeStatusEffects.containsKey(BFEffects.ACIDIC)) {
-            int acidicAmplifier = this.activeStatusEffects.get(effect).getAmplifier();
+    @Inject(method = "onStatusEffectRemoved", at = @At("HEAD"))
+    private void bountifulfares_acidicRemove(StatusEffectInstance effect, CallbackInfo ci) {
+        if (effect.getEffectType() == BFEffects.ACIDIC && !this.activeStatusEffects.containsKey(BFEffects.ACIDIC)) {
+            int acidicAmplifier = effect.getAmplifier();
             Iterator<Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance>> iterator = this.activeStatusEffects.entrySet().iterator();
             ArrayList<StatusEffectInstance> newEffects = new ArrayList<>();
             while (iterator.hasNext()) {
