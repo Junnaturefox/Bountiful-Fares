@@ -41,6 +41,7 @@ public abstract class LivingEntityMixin {
     @Shadow protected abstract void onStatusEffectUpgraded(StatusEffectInstance effect, boolean reapplyEffect, @Nullable Entity source);
 
     @Shadow private boolean effectsChanged;
+//    TODO: fix acidic upgrade logic + timer running out
 
     @Inject(method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"))
     private void bountifulfares_acidicApply(StatusEffectInstance effect, @Nullable Entity source, CallbackInfoReturnable<Boolean> cir) {

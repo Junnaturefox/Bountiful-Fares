@@ -5,17 +5,13 @@
     "B": {
       "item": "minecraft:brick"
     },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
     "P": {
       "tag": "minecraft:planks"
     }
   },
   "pattern": [
-    "PPP",
-    "PIP",
-    "BBB"
+    "PP",
+    "BB"
   ],
   "result": {
     "count": 1,

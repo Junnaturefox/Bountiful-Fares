@@ -42,6 +42,7 @@
     - Bountiful Fares features can now generate in Nature's Spirit biomes
 
 ## Tweaks
+- Changed the recipe of Gristmills to be less expensive
 - Added “Client” config category
 - Added an option in the config to change the radius where effects are given from Infused Candles
 - Added a Restoration heart overlay
@@ -82,7 +83,8 @@
 - Short Grass can now be made by using Grass Seeds on Grass Blocks
 - Wild Passion Fruit and Elderberries now generate as features instead of tree decorators
 - Tweaked some recipes
-- The following effects now cannot be modified by Acidity:
+- Retextured Acidic effect icon
+- The following effects now cannot be modified by Acidic:
     - Instant Health
     - Instant Damage
     - Invisibility
@@ -106,6 +108,7 @@
     - Bad Omen
     - Raid Omen
     - Trial Omen
+- Effect blacklists of Acidic and Stupor are defined by status effect tags "acidic_blacklist" and "stupor_blacklist"
 - Fermentation recipes are now datadriven
     - Item containers (bottles, jars, buckets, bowls) are automatically utilized when needed
 - Fermentation Vessels will now emit bubble particles while fermenting

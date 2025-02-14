@@ -38,13 +38,11 @@ public class BFRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BFBlocks.GRISTMILL)
-                .pattern("PPP")
-                .pattern("PIP")
-                .pattern("BBB")
+                .pattern("PP")
+                .pattern("BB")
                 .input('P', ItemTags.PLANKS)
-                .input('I', Items.IRON_INGOT)
                 .input('B', Items.BRICK)
-                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion("has_plank", conditionsFromTag(ItemTags.PLANKS))
                 .criterion(hasItem(Items.BRICK), conditionsFromItem(Items.BRICK))
                 .offerTo(exporter);
 

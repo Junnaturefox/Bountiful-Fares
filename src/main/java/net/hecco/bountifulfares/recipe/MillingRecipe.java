@@ -54,7 +54,7 @@ public class MillingRecipe implements Recipe<RecipeInput> {
 
     @Override
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
-        return null;
+        return output;
     }
 
     public ItemStack getOutput() {
