@@ -75,6 +75,7 @@
     - Fruit Logs can now connect to each other similarly to Chorus Plants
     - Any leaf type can now be used to “leaflog” a log, instead of just the matching type
     - Other leaflogged fruit logs can leaflog other logs
+    - leaves model used for leaflogged state is taken directly from the respective leaves model, making it compatible with resource packs
 - Removed “Bountiful” painting
 - Removed config options for disabling paintings
     - Due to paintings being datadriven since 1.21, there isn't an easy way to individually enable/disable paintings without a lot of datapacks.

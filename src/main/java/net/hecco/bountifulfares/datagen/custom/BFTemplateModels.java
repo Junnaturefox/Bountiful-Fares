@@ -68,7 +68,7 @@ public class BFTemplateModels {
         Models.GENERATED.upload(ModelIds.getItemModelId(picket.asItem()), TextureMap.layer0(getItemId(picket)), blockStateModelGenerator.modelCollector);
     }
 
-    public static void registerFruitLogModels(BlockStateModelGenerator blockStateModelGenerator, Block log, Block wood, Identifier leaves) {
+    public static void registerFruitLogModels(BlockStateModelGenerator blockStateModelGenerator, Block log, Block wood, Block leaves) {
         Identifier logID = Registries.BLOCK.getId(log);
         Identifier woodID = Registries.BLOCK.getId(wood);
         Identifier template_fruit_log = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
@@ -77,8 +77,8 @@ public class BFTemplateModels {
         Identifier template_fruit_log_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_side").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_side").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
         Identifier template_fruit_wood_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood_otherside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), woodID.getPath() + "_otherside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
         Identifier template_fruit_wood_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood_side").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), woodID.getPath() + "_side").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_log_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_wood_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(woodID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(woodID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
 
         blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(log)
                 .with(When.create().set(FruitLogBlock.NORTH, true),
@@ -239,7 +239,7 @@ public class BFTemplateModels {
                 )
                 .with(When.create().set(FruitLogBlock.LEAFY,true),
                         BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, leaves)
+                                .put(VariantSettings.MODEL, Registries.BLOCK.getId(leaves).withPrefixedPath("block/"))
                                 .put(VariantSettings.UVLOCK, true)
                 ));
 
@@ -402,7 +402,7 @@ public class BFTemplateModels {
                 )
                 .with(When.create().set(FruitLogBlock.LEAFY,true),
                         BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, leaves)
+                                .put(VariantSettings.MODEL, Registries.BLOCK.getId(leaves).withPrefixedPath("block/"))
                                 .put(VariantSettings.UVLOCK, true)
                 ));
 
@@ -410,14 +410,16 @@ public class BFTemplateModels {
     }
 
     public static void registerFruitLogModels(BlockStateModelGenerator blockStateModelGenerator, Block log, Block wood) {
-        Identifier template_fruit_log = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_log_noside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_log_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_log_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(log, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_wood_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_wood_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_log_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
-        Identifier template_fruit_wood_inventory = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(wood, TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier logID = Registries.BLOCK.getId(log);
+        Identifier woodID = Registries.BLOCK.getId(wood);
+        Identifier template_fruit_log = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_noside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_noside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_noside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_otherside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_otherside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_log_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log_side").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), logID.getPath() + "_side").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_otherside = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood_otherside").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), woodID.getPath() + "_otherside").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        Identifier template_fruit_wood_side = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood_side").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Identifier.of(logID.getNamespace(), woodID.getPath() + "_side").withPrefixedPath("block/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_log").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(logID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
+        new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "template_fruit_wood").withPrefixedPath("item/")), Optional.empty(), TextureKey.TEXTURE).upload(woodID.withPrefixedPath("item/"), TextureMap.texture(log), blockStateModelGenerator.modelCollector);
 
         blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(log)
                 .with(When.create().set(FruitLogBlock.NORTH, true),

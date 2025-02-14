@@ -24,8 +24,17 @@ public class BFModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
-        registerFruitLogModels(blockStateModelGenerator, BFBlocks.ORANGE_LOG, BFBlocks.ORANGE_WOOD, Identifier.of(BountifulFares.MOD_ID, "block/orange_leaves"));
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.APPLE_LOG, BFBlocks.APPLE_WOOD, BFBlocks.APPLE_LEAVES);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.STRIPPED_APPLE_LOG, BFBlocks.STRIPPED_APPLE_WOOD);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.ORANGE_LOG, BFBlocks.ORANGE_WOOD, BFBlocks.ORANGE_LEAVES);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.STRIPPED_ORANGE_LOG, BFBlocks.STRIPPED_ORANGE_WOOD);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.LEMON_LOG, BFBlocks.LEMON_WOOD, BFBlocks.LEMON_LEAVES);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.STRIPPED_LEMON_LOG, BFBlocks.STRIPPED_LEMON_WOOD);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.PLUM_LOG, BFBlocks.PLUM_WOOD, BFBlocks.PLUM_LEAVES);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.STRIPPED_PLUM_LOG, BFBlocks.STRIPPED_PLUM_WOOD);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.PALM_LOG, BFBlocks.PALM_WOOD);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.STRIPPED_PALM_LOG, BFBlocks.STRIPPED_PALM_WOOD);
+        registerFruitLogModels(blockStateModelGenerator, BFBlocks.GOLDEN_APPLE_LOG, BFBlocks.GOLDEN_APPLE_WOOD, BFBlocks.GOLDEN_APPLE_LEAVES);
 
         blockStateModelGenerator.registerLog(BFBlocks.WALNUT_LOG).log(BFBlocks.WALNUT_LOG).wood(BFBlocks.WALNUT_WOOD);
         blockStateModelGenerator.registerLog(BFBlocks.STRIPPED_WALNUT_LOG).log(BFBlocks.STRIPPED_WALNUT_LOG).wood(BFBlocks.STRIPPED_WALNUT_WOOD);
