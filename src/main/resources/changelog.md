@@ -10,7 +10,6 @@
 - Fixed Spongekins growing from Spongekin Stems way too quickly
 - Fixed “obtain_spongekin” advancement requirements
 - Fixed excessivebuilding compat slab and stair recipes
-- Fixed the arrow in the Gristmill gui being slightly offset
 - Fixed some drink items playing eat sounds
 - Fixed Grassy Dirt bottom texture
 - Added undying recipes for Ceramic Doors and Trapdoors

@@ -109,7 +109,7 @@
     },
     {
       "apply": {
-        "model": "bountifulfares:block/apple_log_side",
+        "model": "bountifulfares:block/apple_log_otherside",
         "x": 180
       },
       "when": {

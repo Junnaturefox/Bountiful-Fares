@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.compat.jei;
 
+import net.hecco.bountifulfares.recipe.MillingRecipe;
 import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.hecco.bountifulfares.recipe.FermentationRecipe;
 import net.minecraft.client.MinecraftClient;
@@ -21,7 +22,9 @@ public class BFJEIRecipes {
             throw new NullPointerException("minecraft world must not be null.");
         }
     }
-
+    public List<MillingRecipe> getMillingRecipes() {
+        return this.recipeManager.listAllOfType(BFRecipes.MILLING).stream().map(RecipeEntry::value).toList();
+    }
     public List<FermentationRecipe> getFermentationRecipes() {
         return this.recipeManager.listAllOfType(BFRecipes.FERMENTING).stream().map(RecipeEntry::value).toList();
     }

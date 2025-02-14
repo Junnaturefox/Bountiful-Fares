@@ -136,7 +136,7 @@ public class BFTemplateModels {
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
                         BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
@@ -273,7 +273,7 @@ public class BFTemplateModels {
                 .with(When.create().set(FruitLogBlock.DOWN, true),
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_wood_otherside)
-                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
 
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
@@ -299,7 +299,7 @@ public class BFTemplateModels {
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
                         BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
@@ -451,7 +451,7 @@ public class BFTemplateModels {
                 .with(When.create().set(FruitLogBlock.DOWN, true),
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_log_otherside)
-                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
 
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
@@ -477,7 +477,7 @@ public class BFTemplateModels {
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
                         BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, template_fruit_log_side)
+                                .put(VariantSettings.MODEL, template_fruit_log_otherside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),
@@ -610,7 +610,7 @@ public class BFTemplateModels {
                 .with(When.create().set(FruitLogBlock.DOWN, true),
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_wood_otherside)
-                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
+                                .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
 
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y),
@@ -636,7 +636,7 @@ public class BFTemplateModels {
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.UP, false),
                         BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, template_fruit_wood_side)
+                                .put(VariantSettings.MODEL, template_fruit_wood_otherside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R180)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Y).set(FruitLogBlock.DOWN, false).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.EAST, false).set(FruitLogBlock.SOUTH, false).set(FruitLogBlock.WEST, false),

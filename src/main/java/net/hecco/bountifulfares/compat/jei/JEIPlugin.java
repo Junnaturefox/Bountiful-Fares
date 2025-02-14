@@ -5,6 +5,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.*;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.compat.jei.category.MillingRecipeCategory;
 import net.hecco.bountifulfares.compat.jei.category.PrismarinePropagationCategory;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.jei.category.FermentingRecipeCategory;
@@ -23,6 +24,7 @@ public class JEIPlugin implements IModPlugin {
         BFJEIRecipes bfRecipes = new BFJEIRecipes();
 
 //        RECIPES
+        registration.addRecipes(BFRecipeTypes.MILLING, bfRecipes.getMillingRecipes());
         registration.addRecipes(BFRecipeTypes.FERMENTING, bfRecipes.getFermentationRecipes());
         registration.addRecipes(BFRecipeTypes.PRISMARINE_PROPAGATION, ImmutableList.of(new PropagationRecipe()));
 
@@ -32,12 +34,14 @@ public class JEIPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
+        registry.addRecipeCategories(new MillingRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
         registry.addRecipeCategories(new FermentingRecipeCategory(registry.getJeiHelpers().getGuiHelper()));
         registry.addRecipeCategories(new PrismarinePropagationCategory(registry.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(new ItemStack(BFBlocks.GRISTMILL.asItem()), BFRecipeTypes.MILLING);
         registration.addRecipeCatalyst(new ItemStack(BFBlocks.FERMENTATION_VESSEL.asItem()), BFRecipeTypes.FERMENTING);
     }
 
