@@ -97,75 +97,77 @@ public class GuiMixin {
 //    }
     @Inject(method = "renderStatusEffectOverlay", at = @At(value = "HEAD"), cancellable = true)
     private void bountifulfares_acidicBackgroundOverlay(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
-        Collection<StatusEffectInstance> collection = this.client.player.getStatusEffects();
-        if (collection.stream().map(StatusEffectInstance::getEffectType).collect(Collectors.toSet()).contains(BFEffects.ACIDIC)) {
-            Screen screen = this.client.currentScreen;
-            if (screen instanceof AbstractInventoryScreen abstractInventoryScreen) {
-                if (abstractInventoryScreen.hideStatusEffectHud()) {
-                    return;
+        if (BountifulFares.CONFIG.isAcidifiedEffectIconEffects()) {
+            Collection<StatusEffectInstance> collection = this.client.player.getStatusEffects();
+            if (collection.stream().map(StatusEffectInstance::getEffectType).collect(Collectors.toSet()).contains(BFEffects.ACIDIC)) {
+                Screen screen = this.client.currentScreen;
+                if (screen instanceof AbstractInventoryScreen abstractInventoryScreen) {
+                    if (abstractInventoryScreen.hideStatusEffectHud()) {
+                        return;
+                    }
                 }
-            }
 
-            RenderSystem.enableBlend();
-            int i = 0;
-            int j = 0;
-            StatusEffectSpriteManager statusEffectSpriteManager = this.client.getStatusEffectSpriteManager();
-            List<Runnable> list = Lists.newArrayListWithExpectedSize(collection.size());
+                RenderSystem.enableBlend();
+                int i = 0;
+                int j = 0;
+                StatusEffectSpriteManager statusEffectSpriteManager = this.client.getStatusEffectSpriteManager();
+                List<Runnable> list = Lists.newArrayListWithExpectedSize(collection.size());
 
-            for(StatusEffectInstance statusEffectInstance : Ordering.natural().reverse().sortedCopy(collection)) {
-                RegistryEntry<StatusEffect> registryEntry = statusEffectInstance.getEffectType();
-                if (statusEffectInstance.shouldShowIcon()) {
-                    int k = context.getScaledWindowWidth();
-                    int l = 1;
-                    if (this.client.isDemo()) {
-                        l += 15;
-                    }
-
-                    if (registryEntry.value().isBeneficial()) {
-                        ++i;
-                        k -= 25 * i;
-                    } else {
-                        ++j;
-                        k -= 25 * j;
-                        l += 26;
-                    }
-
-                    float f;
-                    Identifier ambientTexture = EFFECT_BACKGROUND_AMBIENT_TEXTURE;
-                    Identifier texture = EFFECT_BACKGROUND_TEXTURE;
-                    if (statusEffectInstance.getEffectType() != BFEffects.ACIDIC && !statusEffectInstance.getEffectType().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
-                        ambientTexture = ACIDFIED_EFFECT_BACKGROUND_AMBIENT_TEXTURE;
-                        texture = ACIDFIED_EFFECT_BACKGROUND_TEXTURE;
-                    }
-                    if (statusEffectInstance.isAmbient()) {
-                        f = 1.0F;
-                        context.drawGuiTexture(ambientTexture, k, l, 24, 24);
-                    } else {
-                        context.drawGuiTexture(texture, k, l, 24, 24);
-                        if (statusEffectInstance.isDurationBelow(200)) {
-                            int m = statusEffectInstance.getDuration();
-                            int n = 10 - m / 20;
-                            f = MathHelper.clamp((float) m / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F) + MathHelper.cos((float) m * (float) Math.PI / 5.0F) * MathHelper.clamp((float) n / 10.0F * 0.25F, 0.0F, 0.25F);
-                        } else {
-                            f = 1.0F;
+                for (StatusEffectInstance statusEffectInstance : Ordering.natural().reverse().sortedCopy(collection)) {
+                    RegistryEntry<StatusEffect> registryEntry = statusEffectInstance.getEffectType();
+                    if (statusEffectInstance.shouldShowIcon()) {
+                        int k = context.getScaledWindowWidth();
+                        int l = 1;
+                        if (this.client.isDemo()) {
+                            l += 15;
                         }
+
+                        if (registryEntry.value().isBeneficial()) {
+                            ++i;
+                            k -= 25 * i;
+                        } else {
+                            ++j;
+                            k -= 25 * j;
+                            l += 26;
+                        }
+
+                        float f;
+                        Identifier ambientTexture = EFFECT_BACKGROUND_AMBIENT_TEXTURE;
+                        Identifier texture = EFFECT_BACKGROUND_TEXTURE;
+                        if (statusEffectInstance.getEffectType() != BFEffects.ACIDIC && !statusEffectInstance.getEffectType().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
+                            ambientTexture = ACIDFIED_EFFECT_BACKGROUND_AMBIENT_TEXTURE;
+                            texture = ACIDFIED_EFFECT_BACKGROUND_TEXTURE;
+                        }
+                        if (statusEffectInstance.isAmbient()) {
+                            f = 1.0F;
+                            context.drawGuiTexture(ambientTexture, k, l, 24, 24);
+                        } else {
+                            context.drawGuiTexture(texture, k, l, 24, 24);
+                            if (statusEffectInstance.isDurationBelow(200)) {
+                                int m = statusEffectInstance.getDuration();
+                                int n = 10 - m / 20;
+                                f = MathHelper.clamp((float) m / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F) + MathHelper.cos((float) m * (float) Math.PI / 5.0F) * MathHelper.clamp((float) n / 10.0F * 0.25F, 0.0F, 0.25F);
+                            } else {
+                                f = 1.0F;
+                            }
+                        }
+
+                        Sprite sprite = statusEffectSpriteManager.getSprite(registryEntry);
+                        int finalK = k;
+                        int finalL = l;
+                        list.add(() -> {
+                            context.setShaderColor(1.0F, 1.0F, 1.0F, f);
+                            context.drawSprite(finalK + 3, finalL + 3, 0, 18, 18, sprite);
+                            context.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+                        });
                     }
-
-                    Sprite sprite = statusEffectSpriteManager.getSprite(registryEntry);
-                    int finalK = k;
-                    int finalL = l;
-                    list.add(() -> {
-                        context.setShaderColor(1.0F, 1.0F, 1.0F, f);
-                        context.drawSprite(finalK + 3, finalL + 3, 0, 18, 18, sprite);
-                        context.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                    });
                 }
+
+                list.forEach(Runnable::run);
+                RenderSystem.disableBlend();
+
+                ci.cancel();
             }
-
-            list.forEach(Runnable::run);
-            RenderSystem.disableBlend();
-
-            ci.cancel();
         }
     }
 }

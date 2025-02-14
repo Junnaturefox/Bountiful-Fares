@@ -19,6 +19,7 @@ public class BountifulFaresConfiguration {
     private int flourThrowingCooldown = 0;
     private boolean containerFoodsEatableOnDish = false;
     private boolean restorationHeartOverlay = true;
+    private boolean acidifiedEffectIconEffects = true;
     private boolean fermentationBubbleParticles = true;
     private boolean enableLapisberrySeeds = true;
     private boolean enableHoarySeeds = true;
@@ -111,6 +112,14 @@ public class BountifulFaresConfiguration {
 
     public void setRestorationHeartOverlay(boolean bool) {
         restorationHeartOverlay = bool;
+    }
+
+    public boolean isAcidifiedEffectIconEffects() {
+        return acidifiedEffectIconEffects;
+    }
+
+    public void setAcidifiedEffectIconEffects(boolean bool) {
+        acidifiedEffectIconEffects = bool;
     }
 
     public boolean isFermentationBubbleParticles() {

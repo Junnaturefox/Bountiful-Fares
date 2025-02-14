@@ -1003,6 +1003,7 @@
   "bountifulfares.fermenting": "Fermenting",
   "bountifulfares.milling": "Milling",
   "bountifulfares.prismarine_propagation": "Prismarine Propagation",
+  "config.bountifulfares.acidified_effect_icon_effects": "Status Effects modified by Acidity have visual effects",
   "config.bountifulfares.apple_trees": "Generate Apple Trees",
   "config.bountifulfares.category.client": "Client",
   "config.bountifulfares.category.compat": "Compatibility",

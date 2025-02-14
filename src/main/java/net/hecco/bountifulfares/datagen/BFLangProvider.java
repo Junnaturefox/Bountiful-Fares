@@ -374,6 +374,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.flour_throwing_cooldown", "Flour throwing cooldown, in ticks");
         generate(translationBuilder, "config.bountifulfares.container_foods_eatable_on_dish", "Foods with containers can be eaten on Ceramic Dishes");
         generate(translationBuilder, "config.bountifulfares.restoration_overlay", "Restoration effect changes health icons");
+        generate(translationBuilder, "config.bountifulfares.acidified_effect_icon_effects", "Status Effects modified by Acidity have visual effects");
         generate(translationBuilder, "config.bountifulfares.particle_tint_override", "Remove particle tint for some blocks");
         generate(translationBuilder, "config.subterrous.particle_tint_override_msg", "Disable this if it is causing issues.");
         generate(translationBuilder, "config.bountifulfares.lapisberry_seeds", "Sniffers can dig up Lapisberry Seeds");

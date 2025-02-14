@@ -85,7 +85,9 @@ public enum Category {
             Entry.booleanEntry("config.bountifulfares.fermentation_bubble_particles", () -> BountifulFares.CONFIG.isFermentationBubbleParticles(),
                     newValue -> BountifulFares.CONFIG.setFermentationBubbleParticles(newValue), true),
             Entry.booleanEntry("config.bountifulfares.restoration_overlay", () -> BountifulFares.CONFIG.isRestorationHeartOverlay(),
-                    newValue -> BountifulFares.CONFIG.setRestorationHeartOverlay(newValue), true)
+                    newValue -> BountifulFares.CONFIG.setRestorationHeartOverlay(newValue), true),
+            Entry.booleanEntry("config.bountifulfares.acidified_effect_icon_effects", () -> BountifulFares.CONFIG.isAcidifiedEffectIconEffects(),
+                    newValue -> BountifulFares.CONFIG.setAcidifiedEffectIconEffects(newValue), true)
     )
     ;
 //    MINT("config.bountifulfares.category.mint", true,
