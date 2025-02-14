@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StuporEffect extends StatusEffect {
+//    TODO: add sound effect when removing effects and when an effect fails to apply
     public StuporEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }

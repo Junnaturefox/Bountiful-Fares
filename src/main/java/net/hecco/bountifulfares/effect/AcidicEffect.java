@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AcidicEffect extends StatusEffect {
 //    private final List<StatusEffectInstance> affectedEffects;
-
+//TODO: add sound if effects were modified
     public AcidicEffect(StatusEffectCategory category, int color) {
         super(category, color);
 //        this.affectedEffects = new ArrayList<>();

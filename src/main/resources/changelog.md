@@ -109,6 +109,7 @@
     - Raid Omen
     - Trial Omen
 - Effect blacklists of Acidic and Stupor are defined by status effect tags "acidic_blacklist" and "stupor_blacklist"
+- Effects that were modified by Acidic will have a different effect icon background
 - Fermentation recipes are now datadriven
     - Item containers (bottles, jars, buckets, bowls) are automatically utilized when needed
 - Fermentation Vessels will now emit bubble particles while fermenting

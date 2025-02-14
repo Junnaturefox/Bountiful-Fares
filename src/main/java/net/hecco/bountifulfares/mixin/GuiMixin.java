@@ -23,6 +23,7 @@ import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -74,7 +75,9 @@ public class GuiMixin {
         }
     }
 
+    @Unique
     private static final Identifier ACIDFIED_EFFECT_BACKGROUND_TEXTURE = Identifier.of(BountifulFares.MOD_ID, "hud/acidified_effect_background");
+    @Unique
     private static final Identifier ACIDFIED_EFFECT_BACKGROUND_AMBIENT_TEXTURE = Identifier.of(BountifulFares.MOD_ID, "hud/acidified_effect_background_ambient");
 
 //    @Inject(method = "renderStatusEffectOverlay",

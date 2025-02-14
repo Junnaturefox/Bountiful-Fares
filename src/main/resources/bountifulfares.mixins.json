@@ -3,9 +3,11 @@
   "package": "net.hecco.bountifulfares.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AbstractInventoryMixin",
     "BrewingRecipeRegistryMixin",
     "ChickenEntityMixin",
     "GuiMixin",
+    "HandledScreenMixin",
     "ItemRendererAccessor",
     "ItemRendererMixin",
     "LivingEntityMixin",
