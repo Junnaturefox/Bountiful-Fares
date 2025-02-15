@@ -79,7 +79,30 @@ public abstract class LivingEntityMixin {
             }
         }
     }
-    @ModifyVariable(method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"), argsOnly = true)
+
+    @Inject(method = "onStatusEffectUpgraded", at = @At("HEAD"))
+    private void bountifulfares_acidicUpgrade(StatusEffectInstance effect, boolean reapplyEffect, @Nullable Entity source, CallbackInfo ci) {
+        if (reapplyEffect && effect.getEffectType() == BFEffects.ACIDIC) {
+            int acidicAmplifier = effect.getAmplifier();
+            Iterator<Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance>> iterator = this.activeStatusEffects.entrySet().iterator();
+            ArrayList<StatusEffectInstance> newEffects = new ArrayList<>();
+            while (iterator.hasNext()) {
+                Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance> entry = iterator.next();
+                if (entry.getKey() != BFEffects.ACIDIC && !entry.getKey().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
+                    int amplifier = Math.min(entry.getValue().getAmplifier() - this.activeStatusEffects + acidicAmplifier, 255);
+                    newEffects.add(new StatusEffectInstance(entry.getKey(), entry.getValue().getDuration(), amplifier, entry.getValue().isAmbient(), entry.getValue().shouldShowParticles(), entry.getValue().shouldShowIcon()));
+                }
+            }
+
+            for (StatusEffectInstance instance : newEffects) {
+                this.removeStatusEffect(instance.getEffectType());
+                this.addStatusEffect(instance);
+                this.onStatusEffectUpgraded(instance, true, null);
+            }
+        }
+    }
+
+        @ModifyVariable(method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"), argsOnly = true)
     private StatusEffectInstance bountifulfares_ifAcidicPresent(StatusEffectInstance effect) {
          if (activeStatusEffects.containsKey(BFEffects.ACIDIC)) {
             if (effect.getEffectType() != BFEffects.ACIDIC && !effect.getEffectType().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
@@ -110,11 +133,6 @@ public abstract class LivingEntityMixin {
             }
         }
     }
-
-
-//    @Inject(method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"))
-//    private void bountifulfares_stuporApply(StatusEffectInstance effect, @Nullable Entity source, CallbackInfoReturnable<Boolean> cir) {
-//    }
 
     @Inject(method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"), cancellable = true)
     private void bountifulfares_stupor(StatusEffectInstance effect, @Nullable Entity source, CallbackInfoReturnable<Boolean> cir) {
