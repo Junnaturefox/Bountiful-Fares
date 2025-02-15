@@ -306,5 +306,11 @@
       "bountifulfares:coir/hit1",
       "bountifulfares:coir/hit2"
     ]
+  },
+  "golden_apple_wither": {
+    "subtitle": "subtitles.block.golden_apple.wither",
+    "sounds": [
+      "bountifulfares:golden_apple/wither1"
+    ]
   }
 }

@@ -80,6 +80,16 @@ public class BFAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("cocoa_custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.COCOA_CUSTARD)))
                 .criterion("ancient_custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.ANCIENT_CUSTARD)))
                 .build(consumer, BountifulFares.MOD_ID + ":eat_all_food");
+        AdvancementEntry obtain_lemon_block = Advancement.Builder.create()
+                .display(new AdvancementDisplay(new ItemStack(BFItems.LEMON),
+                        Text.translatable("advancement.bountifulfares.how_easy"),
+                        Text.translatable("advancement.bountifulfares.how_easy.description"), Optional.of(Identifier.of("minecraft:textures/block/farmland_moist.png")), AdvancementFrame.CHALLENGE,
+                        true,
+                        true,
+                        true))
+                .parent(root_advancement)
+                .criterion("obtain_lemon_block", ItemCriterion.Conditions.createPlacedBlock(BFBlocks.LEMON_BLOCK))
+                .build(consumer, BountifulFares.MOD_ID + ":obtain_lemon_block");
         AdvancementEntry place_gristmill = Advancement.Builder.create()
                 .display(new AdvancementDisplay(new ItemStack(BFBlocks.GRISTMILL),
                         Text.translatable("advancement.bountifulfares.place_gristmill"),

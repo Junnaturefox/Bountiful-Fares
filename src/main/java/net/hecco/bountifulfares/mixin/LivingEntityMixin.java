@@ -77,19 +77,16 @@ public abstract class LivingEntityMixin {
                 this.addStatusEffect(instance);
                 this.onStatusEffectUpgraded(instance, true, null);
             }
-        }
-    }
-
-    @Inject(method = "onStatusEffectUpgraded", at = @At("HEAD"))
-    private void bountifulfares_acidicUpgrade(StatusEffectInstance effect, boolean reapplyEffect, @Nullable Entity source, CallbackInfo ci) {
-        if (reapplyEffect && effect.getEffectType() == BFEffects.ACIDIC) {
+        } else if (this.activeStatusEffects.containsKey(BFEffects.ACIDIC) && effect.getEffectType() == BFEffects.ACIDIC && this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier() < effect.getAmplifier()) {
+            BountifulFares.LOGGER.info(effect.getAmplifier() + " " + this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier());
             int acidicAmplifier = effect.getAmplifier();
             Iterator<Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance>> iterator = this.activeStatusEffects.entrySet().iterator();
             ArrayList<StatusEffectInstance> newEffects = new ArrayList<>();
             while (iterator.hasNext()) {
                 Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance> entry = iterator.next();
                 if (entry.getKey() != BFEffects.ACIDIC && !entry.getKey().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
-                    int amplifier = Math.min(entry.getValue().getAmplifier() - this.activeStatusEffects + acidicAmplifier, 255);
+                    int amplifier = Math.min((entry.getValue().getAmplifier() - (this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier() * 2)) + acidicAmplifier, 255);
+                    BountifulFares.LOGGER.info(entry.getValue().getAmplifier() + " " + this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier() + " " + acidicAmplifier + " " + amplifier);
                     newEffects.add(new StatusEffectInstance(entry.getKey(), entry.getValue().getDuration(), amplifier, entry.getValue().isAmbient(), entry.getValue().shouldShowParticles(), entry.getValue().shouldShowIcon()));
                 }
             }
@@ -98,9 +95,33 @@ public abstract class LivingEntityMixin {
                 this.removeStatusEffect(instance.getEffectType());
                 this.addStatusEffect(instance);
                 this.onStatusEffectUpgraded(instance, true, null);
+                BountifulFares.LOGGER.info(instance.getAmplifier() + "");
             }
         }
     }
+
+//    @Inject(method = "onStatusEffectUpgraded", at = @At("HEAD"))
+//    private void bountifulfares_acidicUpgrade(StatusEffectInstance effect, boolean reapplyEffect, @Nullable Entity source, CallbackInfo ci) {
+//        BountifulFares.LOGGER.info(effect.getAmplifier() + " " + this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier());
+//        if (reapplyEffect && effect.getEffectType() == BFEffects.ACIDIC && this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier() != effect.getAmplifier()) {
+//            int acidicAmplifier = effect.getAmplifier();
+//            Iterator<Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance>> iterator = this.activeStatusEffects.entrySet().iterator();
+//            ArrayList<StatusEffectInstance> newEffects = new ArrayList<>();
+//            while (iterator.hasNext()) {
+//                Map.Entry<RegistryEntry<StatusEffect>, StatusEffectInstance> entry = iterator.next();
+//                if (entry.getKey() != BFEffects.ACIDIC && !entry.getKey().isIn(BFEffectTags.ACIDIC_BLACKLIST)) {
+//                    int amplifier = Math.min(entry.getValue().getAmplifier() - this.activeStatusEffects.get(BFEffects.ACIDIC).getAmplifier() + acidicAmplifier, 255);
+//                    newEffects.add(new StatusEffectInstance(entry.getKey(), entry.getValue().getDuration(), amplifier, entry.getValue().isAmbient(), entry.getValue().shouldShowParticles(), entry.getValue().shouldShowIcon()));
+//                }
+//            }
+//
+//            for (StatusEffectInstance instance : newEffects) {
+//                this.removeStatusEffect(instance.getEffectType());
+//                this.addStatusEffect(instance);
+//                this.onStatusEffectUpgraded(instance, true, null);
+//            }
+//        }
+//    }
 
         @ModifyVariable(method = "addStatusEffect(Lnet/minecraft/entity/effect/StatusEffectInstance;Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"), argsOnly = true)
     private StatusEffectInstance bountifulfares_ifAcidicPresent(StatusEffectInstance effect) {

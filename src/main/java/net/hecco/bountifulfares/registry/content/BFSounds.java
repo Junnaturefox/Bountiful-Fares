@@ -29,6 +29,8 @@ public class BFSounds {
 
     public static final SoundEvent GRISTMILL_GRIND = registerSoundEvent("gristmill_grind");
 
+    public static final SoundEvent GOLDEN_APPLE_WITHER = registerSoundEvent("golden_apple_wither");
+
     public static final SoundEvent LIGHT_WOOD_PLACE = registerSoundEvent("light_wood_place");
     public static final SoundEvent LIGHT_WOOD_BREAK = registerSoundEvent("light_wood_break");
     public static final SoundEvent LIGHT_WOOD_HIT = registerSoundEvent("light_wood_hit");

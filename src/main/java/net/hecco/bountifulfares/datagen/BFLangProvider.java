@@ -295,6 +295,9 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch", "Mulchmaxxer");
         generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch.description", "Feed a wolf Walnut Mulch - Delicious!");
 
+        generate(translationBuilder, "advancement.bountifulfares.how_easy", "How easy...");
+        generate(translationBuilder, "advancement.bountifulfares.how_easy.description", "Threaten to squeeze a Lemon Block");
+
         generate(translationBuilder, "advancement.bountifulfares.obtain_fermentation_vessel", "Toil and Trouble");
         generate(translationBuilder, "advancement.bountifulfares.obtain_fermentation_vessel.description", "Craft a Fermentation Vessel");
 
@@ -352,6 +355,8 @@ public class BFLangProvider extends FabricLanguageProvider {
 
         generate(translationBuilder, "subtitles.block.coconut.land", "Coconut thuds");
         generate(translationBuilder, "subtitles.block.coconut.bonk", "Coconut bonks");
+
+        generate(translationBuilder, "subtitles.block.golden_apple.wither", "Golden Apple withers");
 
 
 
