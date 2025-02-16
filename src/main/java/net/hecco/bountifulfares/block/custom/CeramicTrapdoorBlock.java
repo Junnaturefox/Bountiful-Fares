@@ -5,10 +5,8 @@ import net.hecco.bountifulfares.block.entity.DyeableCeramicBlockEntity;
 import net.hecco.bountifulfares.block.interfaces.DyeableCeramicBlockInterface;
 import net.hecco.bountifulfares.compat.CompatUtil;
 import net.hecco.bountifulfares.registry.content.BFItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockSetType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.TrapdoorBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
@@ -21,8 +19,9 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
+import org.jetbrains.annotations.Nullable;
 
-public class CeramicTrapdoorBlock extends TrapdoorBlock implements DyeableCeramicBlockInterface {
+public class CeramicTrapdoorBlock extends TrapdoorBlock implements BlockEntityProvider {
     private final BlockSetType blockSetType;
     public CeramicTrapdoorBlock(Settings settings, BlockSetType blockSetType) {
         super(blockSetType, settings);
@@ -30,59 +29,31 @@ public class CeramicTrapdoorBlock extends TrapdoorBlock implements DyeableCerami
     }
 
     @Override
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return DyeableCeramicBlock.createBlockEntity(pos, state);
+    }
+
+    @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
-        if (DyeableCeramicBlockEntity.getColor(world, pos) != DyeableCeramicBlockEntity.DEFAULT_COLOR) {
-            ItemStack stack = super.getPickStack(world, pos, state);
-            return pickBlock(world,pos,stack);
-        } else {
-            return new ItemStack(this);
-        }
+        return DyeableCeramicBlock.getPickStack(world, pos, state.getBlock());
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        ItemStack itemStack = player.getStackInHand(player.getActiveHand());
-        if (itemStack.isOf(BFItems.ARTISAN_BRUSH) && !player.isSneaking() && itemStack.getComponents().contains(DataComponentTypes.DYED_COLOR)) {
-            int brushColor = itemStack.getComponents().get(DataComponentTypes.DYED_COLOR).rgb();
-            world.removeBlock(pos, false);
-            world.setBlockState(pos, this.getStateWithProperties(state));
-            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1.0F, 0.8F + (world.random.nextFloat() / 3));
-            if (world.getBlockEntity(pos) instanceof DyeableCeramicBlockEntity dyeableCeramicBlockEntity && dyeableCeramicBlockEntity.color != brushColor) {
-                dyeableCeramicBlockEntity.color = brushColor;
-                dyeableCeramicBlockEntity.markDirty();
-                return ActionResult.SUCCESS;
-
-            }
-        }
-        if (BountifulFares.isModLoaded(BountifulFares.ARTS_AND_CRAFTS_MOD_ID)) {
-            Item item = player.getStackInHand(player.getActiveHand()).getItem();
-            if (CompatUtil.isItemPaintbrush(item)) {
-                int brushColor = CompatUtil.getIntColorFromPaintbrush(item);
-                if (brushColor != 1) {
-                    world.removeBlock(pos, false);
-                    world.setBlockState(pos, this.getStateWithProperties(state));
-                    world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1.0F, 0.8F + (world.random.nextFloat() / 3));
-                    if (world.getBlockEntity(pos) instanceof DyeableCeramicBlockEntity dyeableCeramicBlockEntity && dyeableCeramicBlockEntity.color != brushColor) {
-                        dyeableCeramicBlockEntity.color = brushColor;
-                        dyeableCeramicBlockEntity.markDirty();
-                        return ActionResult.SUCCESS;
-
+        if (DyeableCeramicBlock.onUse(state, world, pos, player, state.getBlock()) == ActionResult.PASS) {
+            if (!state.get(POWERED)) {
+                if (!this.blockSetType.canOpenByHand()) {
+                    return ActionResult.PASS;
+                } else {
+                    state = state.cycle(OPEN);
+                    world.setBlockState(pos, state, 2);
+                    if (state.get(WATERLOGGED)) {
+                        world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
                     }
-                }
-            }
-        }
-        if (!state.get(POWERED)) {
-            if (!this.blockSetType.canOpenByHand()) {
-                return ActionResult.PASS;
-            } else {
-                state = state.cycle(OPEN);
-                world.setBlockState(pos, state, 2);
-                if (state.get(WATERLOGGED)) {
-                    world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-                }
 
-                this.playToggleSound(player, world, pos, state.get(OPEN));
-                return ActionResult.success(world.isClient);
+                    this.playToggleSound(player, world, pos, state.get(OPEN));
+                    return ActionResult.success(world.isClient);
+                }
             }
         }
         return ActionResult.PASS;

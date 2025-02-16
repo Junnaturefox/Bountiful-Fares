@@ -1,4 +1,5 @@
 accessWidener   v1  named
+accessible method net/minecraft/block/LeverBlock spawnParticles (Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldAccess;Lnet/minecraft/util/math/BlockPos;F)V
 
 accessible class net/minecraft/client/gui/hud/InGameHud$HeartType
 

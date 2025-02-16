@@ -1,59 +1,20 @@
 package net.hecco.bountifulfares.compat;
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.BountifulFaresUtil;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
 public class CompatUtil {
+    public static final List<String> VANILLA_COLORS = List.of("red", "orange", "yellow", "lime", "green", "cyan", "light_blue", "blue", "purple", "magenta", "pink", "brown", "white", "light_gray", "gray", "black");
     public static boolean isItemPaintbrush(Item item) {
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "red_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "orange_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "yellow_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "lime_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "green_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "cyan_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "light_blue_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "blue_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "purple_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "magenta_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "pink_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "brown_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "white_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "light_gray_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "gray_paintbrush"))) {
-            return true;
-        }
-        if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "black_paintbrush"))) {
-            return true;
+        for (String color : VANILLA_COLORS) {
+            if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, color + "_paintbrush"))) {
+                return true;
+            }
         }
         if (item == Registries.ITEM.get(Identifier.of(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "bleachdew_paintbrush"))) {
             return true;

@@ -22,15 +22,15 @@ public class DyeableCeramicBlockItem extends BlockItem {
         super(block, settings);
     }
 
-    @Override
-    public ActionResult place(ItemPlacementContext context) {
-        ActionResult result = super.place(context);
-        BlockEntity blockEntity = context.getWorld().getBlockEntity(context.getBlockPos());
-        if(blockEntity instanceof DyeableCeramicBlockEntity ceramicTilesBlockEntity){
-            ceramicTilesBlockEntity.color = DyedColorComponent.getColor(context.getStack(), DEFAULT_COLOR);
-        }
-        return result;
-    }
+//    @Override
+//    public ActionResult place(ItemPlacementContext context) {
+//        ActionResult result = super.place(context);
+//        BlockEntity blockEntity = context.getWorld().getBlockEntity(context.getBlockPos());
+//        if(blockEntity instanceof DyeableCeramicBlockEntity ceramicTilesBlockEntity){
+//            ceramicTilesBlockEntity.color = DyedColorComponent.getColor(context.getStack(), DEFAULT_COLOR);
+//        }
+//        return result;
+//    }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {

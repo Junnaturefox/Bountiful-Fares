@@ -40,17 +40,17 @@ public abstract class DyeableBlockEntity extends BlockEntity {
             componentMapBuilder.add(DataComponentTypes.DYED_COLOR, new DyedColorComponent(color, true));
             super.addComponents(componentMapBuilder);
         }
+        //TODO: Fix ceramic component to nbt conversion?
     }
-//
-//    @Override
-//    protected void readComponents(ComponentsAccess components) {
-//        if (components.get(DataComponentTypes.DYED_COLOR).rgb() == 0) {
-//            color = DEFAULT_COLOR;
-//        } else {
-//            super.readComponents(components);
-//            color = components.get(DataComponentTypes.DYED_COLOR).rgb();
-//        }
-//    }
+
+    @Override
+    protected void readComponents(ComponentsAccess components) {
+        if (components.get(DataComponentTypes.DYED_COLOR) == null) {
+            color = DEFAULT_COLOR;
+        } else {
+            color = components.get(DataComponentTypes.DYED_COLOR).rgb();
+        }
+    }
 
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {

@@ -34,8 +34,10 @@ public class ArtisanBrushItem extends Item {
         PlayerEntity player = context.getPlayer();
         BlockState current = world.getBlockState(pos);
         int oldColor = DyeableBlockEntity.getColor(world, pos);
+        DyedColorComponent component = context.getStack().get(DataComponentTypes.DYED_COLOR);
+        BountifulFares.LOGGER.info(DyedColorComponent.getColor(context.getStack(), DEFAULT_COLOR) + " " + (component != null ? component.rgb() : DEFAULT_COLOR) + " " + DyeableBlockEntity.getColor(world, pos));
         if (BFBlocks.CERAMIC_TO_CHECKERED_CERAMIC.containsKey(current.getBlock()) && DyeableBlockEntity.getColor(world, pos) != DyeableBlockEntity.DEFAULT_COLOR) {
-            if (DyedColorComponent.getColor(context.getStack(), DEFAULT_COLOR) == DyeableBlockEntity.getColor(world, pos)) {
+            if ((component != null ? component.rgb() : DEFAULT_COLOR) == DyeableBlockEntity.getColor(world, pos)) {
                     world.setBlockState(pos, BFBlocks.CERAMIC_TO_CHECKERED_CERAMIC.get(current.getBlock()).getStateWithProperties(current));
                     world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_DYE_USE, SoundCategory.BLOCKS, 1.0F, 1.0F);
                     if (world.getBlockEntity(pos) instanceof DyeableBlockEntity ceramicTilesBlockEntity) {

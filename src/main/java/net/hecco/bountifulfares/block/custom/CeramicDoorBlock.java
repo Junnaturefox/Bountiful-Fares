@@ -7,6 +7,7 @@ import net.hecco.bountifulfares.compat.CompatUtil;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.item.custom.DyeableCeramicBlockItem;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.Entity;
@@ -28,7 +29,7 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
-public class CeramicDoorBlock extends DoorBlock implements DyeableCeramicBlockInterface {
+public class CeramicDoorBlock extends DoorBlock implements BlockEntityProvider {
     private final BlockSetType blockSetType;
 
     public CeramicDoorBlock(Settings settings, BlockSetType blockSetType) {
@@ -37,13 +38,13 @@ public class CeramicDoorBlock extends DoorBlock implements DyeableCeramicBlockIn
     }
 
     @Override
+    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return DyeableCeramicBlock.createBlockEntity(pos, state);
+    }
+
+    @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
-        if (DyeableCeramicBlockEntity.getColor(world, pos) != DyeableCeramicBlockEntity.DEFAULT_COLOR) {
-            ItemStack stack = super.getPickStack(world, pos, state);
-            return pickBlock(world,pos,stack);
-        } else {
-            return new ItemStack(this);
-        }
+        return DyeableCeramicBlock.getPickStack(world, pos, state.getBlock());
     }
 
     @Override
