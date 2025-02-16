@@ -5,7 +5,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.hecco.bountifulfares.registry.content.*;
 import net.hecco.bountifulfares.registry.misc.*;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
-import net.hecco.bountifulfares.block.entity.BFBlockEntities;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.registry.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -40,7 +40,6 @@ public abstract class DyeableBlockEntity extends BlockEntity {
             componentMapBuilder.add(DataComponentTypes.DYED_COLOR, new DyedColorComponent(color, true));
             super.addComponents(componentMapBuilder);
         }
-        //TODO: Fix ceramic component to nbt conversion?
     }
 
     @Override

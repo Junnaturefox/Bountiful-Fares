@@ -2,6 +2,7 @@ package net.hecco.bountifulfares.block.entity;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.HoneysuckleCandleBlock;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;

@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.block.entity;
 
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.SignBlockEntity;

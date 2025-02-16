@@ -5,8 +5,6 @@ import net.hecco.bountifulfares.block.entity.DyeableCeramicBlockEntity;
 import net.hecco.bountifulfares.compat.CompatUtil;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockKeys;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.component.DataComponentTypes;
@@ -17,13 +15,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import org.jetbrains.annotations.Nullable;
 
-import static net.hecco.bountifulfares.block.entity.BFBlockEntities.CERAMIC_TILES_BLOCK_ENTITY;
+import static net.hecco.bountifulfares.registry.content.BFBlockEntities.CERAMIC_TILES_BLOCK_ENTITY;
 
 public class DyeableCeramicBlock {
 

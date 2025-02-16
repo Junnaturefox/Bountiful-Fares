@@ -2,7 +2,7 @@ package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.block.entity.GristmillBlockEntity;
-import net.hecco.bountifulfares.block.entity.BFBlockEntities;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;

@@ -2,7 +2,7 @@ package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.entity.BFBlockEntities;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.FermentationVesselBlockEntity;
 import net.hecco.bountifulfares.block.enums.FermentationStage;
 import net.hecco.bountifulfares.registry.content.BFParticles;

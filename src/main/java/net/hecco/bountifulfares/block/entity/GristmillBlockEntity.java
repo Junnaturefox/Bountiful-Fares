@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.GristmillBlock;
 import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.hecco.bountifulfares.recipe.MillingRecipe;
 import net.hecco.bountifulfares.screen.GristmillScreenHandler;

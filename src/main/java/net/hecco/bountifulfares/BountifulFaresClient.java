@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
-import net.hecco.bountifulfares.block.entity.BFBlockEntities;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.DyeableBlockEntity;
 import net.hecco.bountifulfares.block.entity.renderer.CeramicDishBlockEntityRenderer;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;

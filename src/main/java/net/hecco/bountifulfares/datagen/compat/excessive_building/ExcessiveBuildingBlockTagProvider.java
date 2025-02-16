@@ -74,6 +74,11 @@ public class ExcessiveBuildingBlockTagProvider extends FabricTagProvider.BlockTa
                 .add(ExcessiveBuildingBlocks.WALNUT_MULCH_BRICK_WALL)
                 .add(ExcessiveBuildingBlocks.PALM_MULCH_BRICK_WALL)
         ;
+
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                .add(ExcessiveBuildingBlocks.HOARY_LADDER)
+                .add(ExcessiveBuildingBlocks.WALNUT_LADDER)
+                ;
     }
 
     public void registerTrellisBlockTags(TrellisVariant trellis) {

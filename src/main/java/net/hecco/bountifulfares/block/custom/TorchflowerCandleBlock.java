@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.block.custom;
 
-import net.hecco.bountifulfares.block.entity.BFBlockEntities;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.TorchflowerCandleBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

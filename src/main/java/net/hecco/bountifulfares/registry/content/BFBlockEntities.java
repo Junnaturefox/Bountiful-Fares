@@ -1,7 +1,8 @@
-package net.hecco.bountifulfares.block.entity;
+package net.hecco.bountifulfares.registry.content;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.block.entity.*;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
