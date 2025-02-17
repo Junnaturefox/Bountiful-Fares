@@ -38,8 +38,9 @@ public class BFRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BFBlocks.GRISTMILL)
-                .pattern("PP")
+                .pattern("IP")
                 .pattern("BB")
+                .input('I', Items.IRON_INGOT)
                 .input('P', ItemTags.PLANKS)
                 .input('B', Items.BRICK)
                 .criterion("has_plank", conditionsFromTag(ItemTags.PLANKS))
@@ -360,7 +361,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.PASSION_GLAZED_SALMON)
-                .input(BFItems.PASSION_FRUIT, 3)
+                .input(BFItems.PASSION_FRUIT, 2)
                 .input(Items.COOKED_SALMON)
                 .input(Items.BOWL)
                 .criterion(hasItem(BFItems.PASSION_FRUIT), conditionsFromItem(BFItems.PASSION_FRUIT))
@@ -426,17 +427,17 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.CUSTARD)
-                .input(Items.MILK_BUCKET, 1)
-                .input(Items.SUGAR, 2)
+                .input(Items.MILK_BUCKET)
+                .input(Items.SUGAR)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.PIQUANT_CUSTARD)
-                .input(Items.MILK_BUCKET, 1)
-                .input(Items.SUGAR, 2)
-                .input(Items.SWEET_BERRIES, 2)
+                .input(Items.MILK_BUCKET)
+                .input(Items.SUGAR)
+                .input(Items.SWEET_BERRIES)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
@@ -444,9 +445,9 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.PASSION_CUSTARD)
-                .input(Items.MILK_BUCKET, 1)
-                .input(Items.SUGAR, 2)
-                .input(BFItems.PASSION_FRUIT, 2)
+                .input(Items.MILK_BUCKET)
+                .input(Items.SUGAR)
+                .input(BFItems.PASSION_FRUIT)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
@@ -454,10 +455,10 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.COCOA_CUSTARD)
-                .input(Items.MILK_BUCKET, 1)
-                .input(Items.SUGAR, 2)
-                .input(Items.COCOA_BEANS, 1)
-                .input(BFItems.WALNUT, 1)
+                .input(Items.MILK_BUCKET)
+                .input(Items.SUGAR)
+                .input(Items.COCOA_BEANS)
+                .input(BFItems.WALNUT)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
@@ -467,10 +468,10 @@ public class BFRecipeProvider extends FabricRecipeProvider {
 
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.ANCIENT_CUSTARD)
-                .input(Items.MILK_BUCKET, 1)
-                .input(Items.SUGAR, 2)
-                .input(BFItems.LAPISBERRIES, 1)
-                .input(BFItems.HOARY_APPLE, 1)
+                .input(Items.MILK_BUCKET)
+                .input(Items.SUGAR)
+                .input(BFItems.LAPISBERRIES)
+                .input(BFItems.HOARY_APPLE)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))

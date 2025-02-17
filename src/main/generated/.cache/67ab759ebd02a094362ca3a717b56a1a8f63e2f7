@@ -1,8 +1,8 @@
-// 1.21.1	2025-02-16T15:28:57.9230031	bountifulfares:dye_depot_dat/Block Loot Tables
+// 1.21.1	2025-02-16T21:33:28.8309069	bountifulfares:dye_depot_dat/Block Loot Tables
 154a8e66d157dd37f159de4141564c650f9225d4 resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\coral_jack_o_straw.json
 3b0cd637f1062ab11dabd7da538754aea2d9713d resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\verdant_jack_o_straw.json
-fe40aba3b7e23e8b5584e6b88b155f12431af77a resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\beige_jack_o_straw.json
 2ee1f6bc8615213c6db682ef86ff5aadb0cc44b1 resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\mint_jack_o_straw.json
+fe40aba3b7e23e8b5584e6b88b155f12431af77a resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\beige_jack_o_straw.json
 139844f138429fe2b434cefd2d4aa41e0b601b8d resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\tan_jack_o_straw.json
 2e764c86241147c8138163175c67f29f5cbf1b86 resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\olive_jack_o_straw.json
 88e1bba29bb976daa4308c7fe9cf13627cb9ac13 resourcepacks\dye_depot_dat\data\dye_depot\loot_table\blocks\aqua_jack_o_straw.json

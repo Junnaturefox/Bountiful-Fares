@@ -122,6 +122,7 @@
         - Added a config option to allow food with containers to be eaten on dishes
     - All custom functionality that would normally happen when eating a food will occur
     - Removed "eatable_on_dish" item tag
+- Rebalanced pretty much every food - too many changes to list them all
 
 ## New Content
 - Added Iron Railings

@@ -342,8 +342,8 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.APPLE_STEW, BFItems.COCONUT_STEW);
             entries.addAfter(BFItems.COCONUT_STEW, BFItems.STONE_STEW);
             entries.addAfter(BFItems.STONE_STEW, BFItems.BOUNTIFUL_STEW);
-            entries.addAfter(BFItems.BOUNTIFUL_STEW, BFItems.PASSION_GLAZED_SALMON);
-            entries.addAfter(BFItems.PASSION_GLAZED_SALMON, BFItems.COCONUT_CRUSTED_COD);
+            entries.addAfter(BFItems.BOUNTIFUL_STEW, BFItems.COCONUT_CRUSTED_COD);
+            entries.addAfter(BFItems.COCONUT_CRUSTED_COD, BFItems.PASSION_GLAZED_SALMON);
             entries.addAfter(BFItems.PASSION_GLAZED_SALMON, BFItems.CRUSTED_BEEF);
             entries.addAfter(BFItems.CRUSTED_BEEF, BFItems.CRIMSON_CHOW);
             entries.addAfter(BFItems.CRIMSON_CHOW, BFItems.WARPED_CHOW);

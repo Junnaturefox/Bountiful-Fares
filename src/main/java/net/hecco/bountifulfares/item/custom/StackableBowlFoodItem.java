@@ -20,10 +20,10 @@ public class StackableBowlFoodItem extends Item {
     public List<StatusEffectInstance> effects;
 
     public StackableBowlFoodItem(Item.Settings settings) {
-        super(settings);
+        super(settings.recipeRemainder(Items.BOWL));
     }
     public StackableBowlFoodItem(List<StatusEffectInstance> effects, Item.Settings settings) {
-        super(settings);
+        super(settings.recipeRemainder(Items.BOWL));
         this.effects = effects;
     }
 
