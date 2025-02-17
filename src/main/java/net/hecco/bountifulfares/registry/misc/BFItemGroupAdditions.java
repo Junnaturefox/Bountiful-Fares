@@ -4,10 +4,8 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
-import net.hecco.bountifulfares.compat.farmersdelight.FarmersDelightBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
-import net.hecco.bountifulfares.compat.twigs.TwigsBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
@@ -15,10 +13,6 @@ import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
 
 import java.util.Objects;
 
@@ -361,7 +355,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.FELDSPAR, BFItems.CERAMIC_CLAY);
             entries.addAfter(BFItems.CERAMIC_CLAY, BFItems.CERAMIC_TILE);
             entries.addAfter(Items.BOWL, BFBlocks.CERAMIC_DISH);
-            entries.addAfter(BFBlocks.CERAMIC_DISH, BFItems.CUP);
+            entries.addAfter(BFBlocks.CERAMIC_DISH, BFItems.JAR);
             entries.addAfter(Items.FIREWORK_STAR, BFItems.COCONUT);
             entries.addAfter(BFItems.COCONUT, BFItems.COCONUT_HALF);
             entries.addAfter(BFItems.COCONUT_HALF, BFItems.COCONUT_COIR);

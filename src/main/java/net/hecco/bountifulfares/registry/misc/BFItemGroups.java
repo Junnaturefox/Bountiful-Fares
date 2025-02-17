@@ -6,7 +6,6 @@ import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
-import net.hecco.bountifulfares.compat.farmersdelight.FarmersDelightBlocks;
 import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
 import net.hecco.bountifulfares.compat.spawn.SpawnBlocks;
@@ -386,7 +385,7 @@ public class BFItemGroups {
                         entries.add(BFItems.ELDERBERRY_WINE_BOTTLE);
                         entries.add(BFItems.LAPISBERRY_WINE_BOTTLE);
                         entries.add(BFItems.MEAD_BOTTLE);
-                        entries.add(BFItems.CUP);
+                        entries.add(BFItems.JAR);
                         entries.add(BFItems.APPLE_CIDER_JAR);
                         entries.add(BFItems.PLUM_CIDER_JAR);
                         entries.add(BFItems.HOARY_CIDER_JAR);

@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.screen;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.entity.GristmillBlockEntity;
 import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
 import net.hecco.bountifulfares.block.entity.slot.GristmillOutputSlot;
@@ -23,10 +24,10 @@ public class GristmillScreenHandler extends ScreenHandler {
 
     public int getScaledProgress() {
         int progress = this.blockEntity.propertyDelegate.get(0);
-        int maxProgress = this.blockEntity.propertyDelegate.get(0);
+        int maxProgress = this.blockEntity.getMaxProgress();
         int progressArrowSize = 35;
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+        BountifulFares.LOGGER.info(progress + " " + maxProgress + " " + progressArrowSize);
+        return (progress / maxProgress) * progressArrowSize;
     }
 
     public GristmillScreenHandler(int syncId, PlayerInventory playerInventory, GristmillPayload payload) {

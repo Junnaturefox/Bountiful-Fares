@@ -65,5 +65,7 @@ public class BountifulFares implements ModInitializer {
 		BFSounds.registerSounds();
 		BFDamageTypes.registerDamageTypes();
 		BFCompat.registerCompatContent();
+//		BFDataFixers.registerDataFixers();
 	} //appledog - Lydia
+	//appledog - Hecco
 }

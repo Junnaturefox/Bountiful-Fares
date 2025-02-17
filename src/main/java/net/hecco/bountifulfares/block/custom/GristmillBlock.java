@@ -103,7 +103,7 @@ public class GristmillBlock extends BlockWithEntity implements BlockEntityProvid
             double e = pos.getY();
             double f = (double)pos.getZ() + 0.5;
             if (random.nextDouble() < 0.1) {
-                world.playSound(d, e, f, BFSounds.GRISTMILL_GRIND, SoundCategory.BLOCKS, 0.8F, 0.6F + random.nextFloat()/2, false);
+                world.playSound(d, e, f, BFSounds.GRISTMILL_GRIND, SoundCategory.BLOCKS, 0.5F, 0.5F + random.nextFloat()/2, true);
             }
         }
     }

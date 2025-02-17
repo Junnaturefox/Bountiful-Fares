@@ -9,7 +9,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.stat.Stat;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
@@ -79,16 +78,16 @@ public class BFItems {
 
 
     public static final Item ARTISAN_BRUSH = registerItem("artisan_brush", new ArtisanBrushItem(new Item.Settings().maxCount(1)));
-    public static final Item CUP = registerItem("jar", new Item(new Item.Settings().maxCount(16)));
-    public static final Item APPLE_COMPOTE_JAR = registerItem("apple_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.CUP)));
-    public static final Item ORANGE_COMPOTE_JAR = registerItem("orange_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.CUP)));
-    public static final Item LEMON_COMPOTE_JAR = registerItem("lemon_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.CUP)));
-    public static final Item PLUM_COMPOTE_JAR = registerItem("plum_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.CUP)));
-    public static final Item HOARY_COMPOTE_JAR = registerItem("hoary_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.CUP)));
+    public static final Item JAR = registerItem("jar", new Item(new Item.Settings().maxCount(16)));
+    public static final Item APPLE_COMPOTE_JAR = registerItem("apple_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
+    public static final Item ORANGE_COMPOTE_JAR = registerItem("orange_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
+    public static final Item LEMON_COMPOTE_JAR = registerItem("lemon_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
+    public static final Item PLUM_COMPOTE_JAR = registerItem("plum_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
+    public static final Item HOARY_COMPOTE_JAR = registerItem("hoary_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 600, 0)), new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
 
-    public static final Item APPLE_CIDER_JAR = registerItem("apple_cider_jar", new DrinkableJarItem(new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
-    public static final Item PLUM_CIDER_JAR = registerItem("plum_cider_jar", new DrinkableJarItem(new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
-    public static final Item HOARY_CIDER_JAR = registerItem("hoary_cider_jar", new DrinkableJarItem(new Item.Settings().maxCount(16).recipeRemainder(CUP).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
+    public static final Item APPLE_CIDER_JAR = registerItem("apple_cider_jar", new DrinkableJarItem(new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
+    public static final Item PLUM_CIDER_JAR = registerItem("plum_cider_jar", new DrinkableJarItem(new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
+    public static final Item HOARY_CIDER_JAR = registerItem("hoary_cider_jar", new DrinkableJarItem(new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
 
     public static final Item CANDY = registerItem("candy", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.4F).snack().build())));
     public static final Item SOUR_CANDY = registerItem("sour_candy", new EffectFoodItem(List.of(new StatusEffectInstance(BFEffects.ACIDIC, 200)), new Item.Settings().food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3F).statusEffect(new StatusEffectInstance(BFEffects.ACIDIC, 200), 0.2f).snack().build())));

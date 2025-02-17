@@ -2,6 +2,7 @@ package net.hecco.bountifulfares.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.block.entity.GristmillBlockEntity;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
@@ -11,8 +12,10 @@ import net.minecraft.util.Identifier;
 
 public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
     private static final Identifier TEXTURE = Identifier.of(BountifulFares.MOD_ID, "textures/gui/gristmill.png");
+    private final GristmillBlockEntity blockEntity;
     public GristmillScreen(GristmillScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
+        this.blockEntity = handler.blockEntity;
     }
 
     @Override
@@ -34,10 +37,9 @@ public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
-            BountifulFares.LOGGER.info("true");
-            BountifulFares.LOGGER.info("" + handler.getScaledProgress());
             //TODO: Fix progress arrow
-            context.drawTexture(TEXTURE, x + 69, y + 35, 176, 0, handler.getScaledProgress(), 14);
+//            BountifulFares.LOGGER.info("scaledProgress: " + handler.getScaledProgress());
+            context.drawTexture(TEXTURE, x + 69, y + 36, 176, 0, handler.getScaledProgress(), 14);
 //            context.drawTexture(TEXTURE, x + 69, y + 36, 176 + handler.getScaledProgress(), 0, handler.getScaledProgress(), 16);
 
         }

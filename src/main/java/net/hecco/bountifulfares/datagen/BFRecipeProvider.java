@@ -151,7 +151,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(BFItems.CERAMIC_TILE), conditionsFromItem(BFItems.CERAMIC_TILE))
                 .offerTo(exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.CUP, 3)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.JAR, 3)
                 .pattern("# #")
                 .pattern(" # ")
                 .input('#', BFItems.CERAMIC_CLAY)
@@ -974,8 +974,8 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, output)
                 .input(input, 2)
                 .input(BFItems.CITRUS_ESSENCE)
-                .input(BFItems.CUP)
-                .criterion(hasItem(BFItems.CUP), conditionsFromItem(BFItems.CUP))
+                .input(BFItems.JAR)
+                .criterion(hasItem(BFItems.JAR), conditionsFromItem(BFItems.JAR))
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter);
     }
