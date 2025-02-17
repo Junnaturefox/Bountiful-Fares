@@ -3,6 +3,7 @@ package net.hecco.bountifulfares.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.compat.delicate_dyes.DelicateDyesBlocks;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
@@ -62,6 +63,31 @@ public class BFModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerWoolAndCarpet(BFBlocks.PACKED_COCONUT_COIR, BFBlocks.COIR_CARPET);
 
         blockStateModelGenerator.registerFlowerPotPlant(BFBlocks.GOLDEN_APPLE_SAPLING, BFBlocks.POTTED_GOLDEN_APPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.RED_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.ORANGE_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.YELLOW_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.LIME_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.GREEN_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.CYAN_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.LIGHT_BLUE_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.BLUE_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.PURPLE_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.MAGENTA_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.PINK_JACK_O_STRAW);
+        registerUnlitableJackOStrawModels(blockStateModelGenerator, BFBlocks.BROWN_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.WHITE_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.LIGHT_GRAY_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.GRAY_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, BFBlocks.BLACK_JACK_O_STRAW);
+
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.CORAL_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.CANARY_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.SACRAMENTO_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.SKY_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.BLURPLE_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.SANGRIA_JACK_O_STRAW);
+        registerJackOStrawModels(blockStateModelGenerator, DelicateDyesBlocks.ROSE_JACK_O_STRAW);
 
         registerPicketsModels(blockStateModelGenerator, BFBlocks.OAK_PICKETS);
         registerPicketsModels(blockStateModelGenerator, BFBlocks.SPRUCE_PICKETS);

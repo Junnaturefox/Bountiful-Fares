@@ -24,18 +24,15 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.Optional;
 
 public class GristmillBlockEntity extends BlockEntity implements SidedInventory, ImplementedInventory, ExtendedScreenHandlerFactory<GristmillPayload>, RecipeInputProvider {
-    //TODO: fix gristmill recipes
     private static BooleanProperty millingState;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
@@ -48,11 +45,10 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     private int maxProgress = 80;
     public GristmillBlockEntity(BlockPos pos, BlockState state) {
         super(BFBlockEntities.GRISTMILL_BLOCK_ENTITY, pos, state);
-        millingState = ((GristmillBlock)state.getBlock()).getMillingState();
+        millingState = ((GristmillBlock) state.getBlock()).getMillingState();
         this.propertyDelegate = new PropertyDelegate() {
             @Override
             public int get(int index) {
-                BountifulFares.LOGGER.info(GristmillBlockEntity.this.progress + "");
                 return switch (index) {
                     case 0 -> GristmillBlockEntity.this.progress;
                     case 1 -> GristmillBlockEntity.this.maxProgress;
@@ -63,8 +59,8 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
             @Override
             public void set(int index, int value) {
                 switch (index) {
-                    case 0: GristmillBlockEntity.this.progress = value;
-                    case 1: GristmillBlockEntity.this.maxProgress = value;
+                    case 0 -> GristmillBlockEntity.this.progress = value;
+                    case 1 -> GristmillBlockEntity.this.maxProgress = value;
                 }
             }
 
@@ -73,6 +69,10 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
                 return 2;
             }
         };
+
+        if (this.progress == -1) {
+            this.progress = 0;
+        }
     }
 
     public int getProgress() {
@@ -103,11 +103,10 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, GristmillBlockEntity blockEntity) {
-        BountifulFares.LOGGER.info("inTick " + blockEntity.progress);
-        if (blockEntity.maxProgress != (BountifulFares.CONFIG.getMillingTime() * 20)) {
-            blockEntity.maxProgress = BountifulFares.CONFIG.getMillingTime() * 20;
+        if (!world.isClient()) {
+            BountifulFares.LOGGER.info("Progress before tick: " + blockEntity.progress);
         }
-//        Updates the block state based on if it is milling
+
         if (!state.get(millingState) && !blockEntity.inventory.get(0).isEmpty() && blockEntity.hasRecipe() && blockEntity.canInsertOutputSlot()) {
             world.setBlockState(pos, state.with(millingState, true));
         }
@@ -121,11 +120,21 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
                 blockEntity.progress = 1;
             }
             markDirty(world, pos, state);
-        } else {
-            if (blockEntity.progress > 0) {
-                blockEntity.progress -= 2;
-            }
         }
+//        else {
+//            if (blockEntity.progress > 0) {
+//                blockEntity.progress -= 2;
+//            }
+//        }
+        if (blockEntity.progress == -1) {
+            blockEntity.progress = 20;
+        }
+        if (!world.isClient()) {
+            BountifulFares.LOGGER.info("Progress after tick: " + blockEntity.progress);
+        }
+
+        blockEntity.markDirty();
+
     }
 
     private boolean hasRecipe() {

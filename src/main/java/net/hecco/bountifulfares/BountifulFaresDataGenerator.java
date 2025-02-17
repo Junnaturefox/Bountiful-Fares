@@ -7,6 +7,9 @@ import net.hecco.bountifulfares.datagen.BFLangProvider;
 import net.hecco.bountifulfares.datagen.compat.arts_and_crafts.ArtsAndCraftsBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.compat.arts_and_crafts.ArtsAndCraftsBlockTagProvider;
 import net.hecco.bountifulfares.datagen.compat.arts_and_crafts.ArtsAndCraftsRecipeProvider;
+import net.hecco.bountifulfares.datagen.compat.delicate_dyes.DelicateDyesBlockLootTableProvider;
+import net.hecco.bountifulfares.datagen.compat.delicate_dyes.DelicateDyesBlockTagProvider;
+import net.hecco.bountifulfares.datagen.compat.delicate_dyes.DelicateDyesRecipeProvider;
 import net.hecco.bountifulfares.datagen.compat.dye_depot.DyeDepotBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.compat.dye_depot.DyeDepotBlockTagProvider;
 import net.hecco.bountifulfares.datagen.compat.dye_depot.DyeDepotRecipeProvider;
@@ -82,6 +85,11 @@ public class BountifulFaresDataGenerator implements DataGeneratorEntrypoint {
         twigsPack.addProvider(SpawnBlockLootTableProvider::new);
         twigsPack.addProvider(SpawnBlockTagProvider::new);
         twigsPack.addProvider(SpawnRecipeProvider::new);
+
+        FabricDataGenerator.Pack delicateDyesPack = fabricDataGenerator.createBuiltinResourcePack(Identifier.of(BountifulFares.MOD_ID, BountifulFares.DELICATE_DYES_MOD_ID + "_dat"));
+        delicateDyesPack.addProvider(DelicateDyesBlockLootTableProvider::new);
+        delicateDyesPack.addProvider(DelicateDyesBlockTagProvider::new);
+        delicateDyesPack.addProvider(DelicateDyesRecipeProvider::new);
     }
 
     @Override

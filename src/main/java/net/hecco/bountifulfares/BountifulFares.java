@@ -19,13 +19,12 @@ public class BountifulFares implements ModInitializer {
 	public static final String DYE_DEPOT_MOD_ID = "dye_depot";
 	public static final String AMENDMENTS_MOD_ID = "amendments";
 	public static final String EXCESSIVE_BUILDING_MOD_ID = "excessive_building";
+	public static final String DELICATE_DYES_MOD_ID = "delicate_dyes";
 	public static final String NATURES_SPIRIT_MOD_ID = "natures_spirit";
 	public static final String SPAWN_MOD_ID = "spawn";
 	public static final String FARMERS_DELIGHT_MOD_ID = "farmersdelight";
-	public static final String DRAMATIC_DOORS_MOD_ID = "dramaticdoors";
 	public static final String TWIGS_MOD_ID = "twigs";
 	public static final String ETCETERA_MOD_ID = "etcetera";
-	public static final String WILDER_WILD_MOD_ID = "wilderwild";
 	public static final String ARTS_AND_CRAFTS_MOD_ID = "arts_and_crafts";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);

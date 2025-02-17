@@ -24,14 +24,18 @@ public class GristmillScreenHandler extends ScreenHandler {
 
     public int getScaledProgress() {
         int progress = this.blockEntity.propertyDelegate.get(0);
-        int maxProgress = this.blockEntity.getMaxProgress();
+        int maxProgress = this.blockEntity.propertyDelegate.get(1);
         int progressArrowSize = 35;
-        BountifulFares.LOGGER.info(progress + " " + maxProgress + " " + progressArrowSize);
-        return (progress / maxProgress) * progressArrowSize;
+
+        int scaledProgress = (int) (((float) progress / (float) maxProgress) * progressArrowSize);
+        BountifulFares.LOGGER.info("Progress: " + progress + " / " + maxProgress + " -> Scaled: " + scaledProgress);
+
+        return scaledProgress;
     }
 
     public GristmillScreenHandler(int syncId, PlayerInventory playerInventory, GristmillPayload payload) {
         this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(payload.pos()));
+        this.addProperties(blockEntity.propertyDelegate);
     }
 
     public GristmillScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {

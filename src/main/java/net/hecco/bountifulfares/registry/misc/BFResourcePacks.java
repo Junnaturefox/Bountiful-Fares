@@ -77,6 +77,9 @@ public class BFResourcePacks {
             if (BountifulFares.isModLoaded(BountifulFares.TWIGS_MOD_ID)) {
                 registerBuiltinDataPack(modContainer.get(), BountifulFares.TWIGS_MOD_ID);
             }
+            if (BountifulFares.isModLoaded(BountifulFares.DELICATE_DYES_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.DELICATE_DYES_MOD_ID);
+            }
 //            if (BountifulFares.isModLoaded(BountifulFares.DYE_DEPOT_MOD_ID)) {
 //                if (BountifulFares.CONFIG.isRenameItemsToMatchDyes()) {
 //                    registerBuiltinResourcePack(modContainer.get(), BountifulFares.DYE_DEPOT_MOD_ID, "rename");

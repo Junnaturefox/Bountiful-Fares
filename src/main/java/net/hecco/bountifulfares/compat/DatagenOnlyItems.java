@@ -79,6 +79,15 @@ public class DatagenOnlyItems {
         registerDatagenOnlyItem(SPAWN_MOD_ID, "rotten_planks");
 
         registerDatagenOnlyItem(ARTS_AND_CRAFTS_MOD_ID, "cork_planks");
+
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "coral_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "canary_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "wasabi_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "sacramento_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "sky_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "blurple_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "sangria_wool");
+        registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "rose_wool");
     }
 
 }

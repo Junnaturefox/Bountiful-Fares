@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.hecco.bountifulfares.compat.delicate_dyes.DelicateDyesBlocks;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.DyeableBlockEntity;
@@ -128,15 +129,15 @@ public class BountifulFaresClient implements ClientModInitializer {
         //        ArtsAndCrafts compat
             BlockRenderLayerMap.INSTANCE.putBlock(ArtsAndCraftsBlocks.CORK_PICKETS, RenderLayer.getCutout());
 
-//        //        DramaticDoors compat
-//        if (BountifulFares.isModLoaded(BountifulFares.DRAMATIC_DOORS_MOD_ID)) {
-//            BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.TALL_WALNUT_DOOR, RenderLayer.getCutout());
-//            BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.SHORT_WALNUT_DOOR, RenderLayer.getCutout());
-//            BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.TALL_CERAMIC_DOOR, RenderLayer.getCutout());
-//            BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.SHORT_CERAMIC_DOOR, RenderLayer.getCutout());
-//            registerBlockColor(BFBlocks.TALL_CERAMIC_DOOR);
-//            registerBlockColor(BFBlocks.SHORT_CERAMIC_DOOR);
-//        }
+        //        DelicateDyes compat
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.CORAL_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.CANARY_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.WASABI_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.SACRAMENTO_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.SKY_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.BLURPLE_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.SANGRIA_JACK_O_STRAW, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.ROSE_JACK_O_STRAW, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.APPLE_LOG, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.APPLE_WOOD, RenderLayer.getCutout());

@@ -6,12 +6,12 @@ import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.Block;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.client.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -741,6 +741,46 @@ public class BFTemplateModels {
 
 
     }
+
+    public static void registerJackOStrawModels(BlockStateModelGenerator blockStateModelGenerator, Block block) {
+        Identifier lowerModel = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_lower").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(block, "_lower", TextureMap.texture(block), blockStateModelGenerator.modelCollector);
+        Identifier upperModel = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_upper").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(block, "_upper", TextureMap.texture(block), blockStateModelGenerator.modelCollector);
+        Identifier upperLitModel = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_upper").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(block, "_upper_lit", TextureMap.texture(Registries.BLOCK.getId(block).withPath((path) -> "block/" + path + "_lit")), blockStateModelGenerator.modelCollector);
+        new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_inventory").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Registries.BLOCK.getId(block).withPrefixedPath("item/"), TextureMap.texture(block), blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
+                        .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R0))
+                        .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                        .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                        .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R270)))
+                .coordinate(BlockStateVariantMap.create(Properties.DOUBLE_BLOCK_HALF, Properties.LIT)
+                        .register(DoubleBlockHalf.LOWER, false, BlockStateVariant.create().put(VariantSettings.MODEL, lowerModel))
+                        .register(DoubleBlockHalf.LOWER, true, BlockStateVariant.create().put(VariantSettings.MODEL, lowerModel))
+                        .register(DoubleBlockHalf.UPPER, false, BlockStateVariant.create().put(VariantSettings.MODEL, upperModel))
+                        .register(DoubleBlockHalf.UPPER, true, BlockStateVariant.create().put(VariantSettings.MODEL, upperLitModel))
+                )
+        );
+    }
+
+    public static void registerUnlitableJackOStrawModels(BlockStateModelGenerator blockStateModelGenerator, Block block) {
+        Identifier lowerModel = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_lower").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(block, "_lower", TextureMap.texture(block), blockStateModelGenerator.modelCollector);
+        Identifier upperModel = new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_upper").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(block, "_upper", TextureMap.texture(block), blockStateModelGenerator.modelCollector);
+        new Model(Optional.of(Identifier.of(BountifulFares.MOD_ID, "jack_o_straw_inventory").withPrefixedPath("block/")), Optional.empty(), TextureKey.TEXTURE).upload(Registries.BLOCK.getId(block).withPrefixedPath("item/"), TextureMap.texture(block), blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_FACING)
+                        .register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R0))
+                        .register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                        .register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                        .register(Direction.WEST, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R270)))
+                .coordinate(BlockStateVariantMap.create(Properties.DOUBLE_BLOCK_HALF)
+                        .register(DoubleBlockHalf.LOWER, BlockStateVariant.create().put(VariantSettings.MODEL, lowerModel))
+                        .register(DoubleBlockHalf.UPPER, BlockStateVariant.create().put(VariantSettings.MODEL, upperModel))
+                )
+        );
+    }
+
 
     public static void registerTrellis(BlockStateModelGenerator blockStateModelGenerator, TrellisVariant trellis){
         Identifier modelID = TEMPLATE_TRELLIS.upload(TrellisUtil.getTrellisFromVariant(trellis), TextureMap.texture(TrellisUtil.getTrellisFromVariant(trellis)), blockStateModelGenerator.modelCollector);
