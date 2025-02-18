@@ -268,8 +268,7 @@
     {
       "apply": {
         "model": "bountifulfares:block/stripped_lemon_log_noside",
-        "x": 270,
-        "y": 90
+        "x": 270
       },
       "when": {
         "axis": "z",

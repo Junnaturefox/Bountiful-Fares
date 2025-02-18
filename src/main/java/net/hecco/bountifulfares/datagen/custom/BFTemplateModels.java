@@ -215,7 +215,6 @@ public class BFTemplateModels {
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_log_noside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
                         BlockStateVariant.create()
@@ -378,7 +377,6 @@ public class BFTemplateModels {
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_log_noside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
                         BlockStateVariant.create()
@@ -556,7 +554,6 @@ public class BFTemplateModels {
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_log_noside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
                         BlockStateVariant.create()
@@ -715,7 +712,6 @@ public class BFTemplateModels {
                         BlockStateVariant.create()
                                 .put(VariantSettings.MODEL, template_fruit_log_noside)
                                 .put(VariantSettings.X, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
                 )
                 .with(When.create().set(FruitLogBlock.AXIS, Direction.Axis.Z).set(FruitLogBlock.NORTH, false).set(FruitLogBlock.SOUTH, false),
                         BlockStateVariant.create()
