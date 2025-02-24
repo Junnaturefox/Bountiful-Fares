@@ -82,6 +82,7 @@
 - Added an option in the config to add a cooldown to throwing flour
 - Short Grass can now be made by using Grass Seeds on Grass Blocks
 - Wild Passion Fruit and Elderberries now generate as features instead of tree decorators
+- Added config options to disable generation of Passion Fruit, Elderberries, Leeks, and Maize
 - Tweaked some recipes
 - Retextured Acidic effect icon
 - The following effects now cannot be modified by Acidic:

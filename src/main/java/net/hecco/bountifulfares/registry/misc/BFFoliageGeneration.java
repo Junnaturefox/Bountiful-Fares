@@ -61,10 +61,14 @@ public class BFFoliageGeneration {
         BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_TEA_SHRUB),
                 GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.TEA_SHRUB_PLACED_KEY);
 
-        BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WILD_PASSION_FRUIT),
-                GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.WILD_PASSION_FRUIT_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WILD_ELDERBERRIES),
-                GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.WILD_ELDERBERRY_PLACED_KEY);
+        if (BountifulFares.CONFIG.generateWildPassionFruit) {
+            BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WILD_PASSION_FRUIT),
+                    GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.WILD_PASSION_FRUIT_PLACED_KEY);
+        }
+        if (BountifulFares.CONFIG.generateWildElderberries) {
+            BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_WILD_ELDERBERRIES),
+                    GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.WILD_ELDERBERRY_PLACED_KEY);
+        }
 
         if (BountifulFares.CONFIG.isGenerateForestTeaShrubs()) {
             BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST),

@@ -29,11 +29,15 @@ public class BountifulFaresConfiguration {
     private boolean generateWildCarrots = true;
     private boolean generateWildPotatoes = true;
     private boolean generateWildBeetroot = true;
+    public boolean generateWildLeeks = true;
+    public boolean generateWildMaize = true;
     private boolean generateAppleTrees = true;
     private boolean generateOrangeTrees = true;
     private boolean generateLemonTrees = true;
     private boolean generatePlumTrees = true;
     private boolean generatePalmTrees = true;
+    public boolean generateWildPassionFruit = true;
+    public boolean generateWildElderberries = true;
     private boolean generateAllFruitTreesInFlowerForest = false;
     private boolean generateForestTeaShrubs = false;
     private boolean generateForestWalnutTrees = false;

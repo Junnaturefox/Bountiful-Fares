@@ -28,11 +28,11 @@ public enum Category {
             Entry.booleanEntry("config.bountifulfares.container_foods_eatable_on_dish", () -> BountifulFares.CONFIG.isContainerFoodsEatableOnDish(),
                     newValue -> BountifulFares.CONFIG.setContainerFoodsEatableOnDish(newValue), false),
 
-            Entry.booleanEntry("config.bountifulfares.lapisberry_seeds", () -> BountifulFares.CONFIG.isEnableLapisberrySeeds(),
-                    newValue -> BountifulFares.CONFIG.setEnableLapisberrySeeds(newValue), true, "config.bountifulfares.restart_warning"),
-
             Entry.booleanEntry("config.bountifulfares.hoary_seeds", () -> BountifulFares.CONFIG.isEnableHoarySeeds(),
                     newValue -> BountifulFares.CONFIG.setEnableHoarySeeds(newValue), true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.lapisberry_seeds", () -> BountifulFares.CONFIG.isEnableLapisberrySeeds(),
+                    newValue -> BountifulFares.CONFIG.setEnableLapisberrySeeds(newValue), true, "config.bountifulfares.restart_warning"),
 
             Entry.booleanEntry("config.bountifulfares.spongekin_seeds_elder_guardian", () -> BountifulFares.CONFIG.isEnableElderGuardianSpongekinSeeds(),
                     newValue -> BountifulFares.CONFIG.setEnableElderGuardianSpongekinSeeds(newValue), true, "config.bountifulfares.restart_warning"),
@@ -52,6 +52,18 @@ public enum Category {
 
             Entry.booleanEntry("config.bountifulfares.wild_beetroot", () -> BountifulFares.CONFIG.isGenerateWildBeetroot(),
                     newValue -> BountifulFares.CONFIG.setGenerateWildBeetroot(newValue), true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.wild_leeks", () -> BountifulFares.CONFIG.generateWildLeeks,
+                    newValue -> BountifulFares.CONFIG.generateWildLeeks = newValue, true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.wild_maize", () -> BountifulFares.CONFIG.generateWildMaize,
+                    newValue -> BountifulFares.CONFIG.generateWildMaize = newValue, true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.wild_passion_fruit", () -> BountifulFares.CONFIG.generateWildPassionFruit,
+                    newValue -> BountifulFares.CONFIG.generateWildPassionFruit = newValue, true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.wild_elderberries", () -> BountifulFares.CONFIG.generateWildElderberries,
+                    newValue -> BountifulFares.CONFIG.generateWildElderberries = newValue, true, "config.bountifulfares.restart_warning"),
 
             Entry.booleanEntry("config.bountifulfares.apple_trees", () -> BountifulFares.CONFIG.isGenerateAppleTrees(),
                     newValue -> BountifulFares.CONFIG.setGenerateAppleTrees(newValue), true, "config.bountifulfares.restart_warning"),

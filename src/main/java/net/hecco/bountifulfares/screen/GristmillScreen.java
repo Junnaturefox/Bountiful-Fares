@@ -38,6 +38,7 @@ public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
             //TODO: Fix progress arrow
+            //TODO: Add missing milling recipes
 //            BountifulFares.LOGGER.info("scaledProgress: " + handler.getScaledProgress());
             context.drawTexture(TEXTURE, x + 69, y + 36, 176, 0, handler.getScaledProgress(), 14);
 //            context.drawTexture(TEXTURE, x + 69, y + 36, 176 + handler.getScaledProgress(), 0, handler.getScaledProgress(), 16);

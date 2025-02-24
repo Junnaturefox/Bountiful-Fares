@@ -404,11 +404,15 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.wild_carrots", "Generate Wild Carrots");
         generate(translationBuilder, "config.bountifulfares.wild_potatoes", "Generate Wild Potatoes");
         generate(translationBuilder, "config.bountifulfares.wild_beetroot", "Generate Wild Beetroot");
+        generate(translationBuilder, "config.bountifulfares.wild_leeks", "Generate Wild Leeks");
+        generate(translationBuilder, "config.bountifulfares.wild_maize", "Generate Wild Maize");
         generate(translationBuilder, "config.bountifulfares.apple_trees", "Generate Apple Trees");
         generate(translationBuilder, "config.bountifulfares.orange_trees", "Generate Orange Trees");
         generate(translationBuilder, "config.bountifulfares.lemon_trees", "Generate Lemon Trees");
         generate(translationBuilder, "config.bountifulfares.plum_trees", "Generate Plum Trees");
         generate(translationBuilder, "config.bountifulfares.palm_trees", "Generate Palm Trees");
+        generate(translationBuilder, "config.bountifulfares.wild_passion_fruit", "Generate Wild Passion Fruit");
+        generate(translationBuilder, "config.bountifulfares.wild_elderberries", "Generate Wild Elderberries");
         generate(translationBuilder, "config.bountifulfares.golden_apple_tree_rooms", "Generate Golden Apple Trees in Woodland Mansions");
         generate(translationBuilder, "config.bountifulfares.flower_forest_fruit_trees", "Generate fruit trees in Flower Forests");
         generate(translationBuilder, "config.bountifulfares.forest_tea_shrubs", "Generate Tea Shrubs in Forests");
