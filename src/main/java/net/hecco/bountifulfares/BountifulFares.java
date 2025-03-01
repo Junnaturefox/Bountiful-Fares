@@ -51,8 +51,13 @@ public class BountifulFares implements ModInitializer {
 		return FabricLoader.getInstance().isModLoaded(modId);
 	}
 	public static boolean isDatagen() {
-		return System.getProperty("fabric-api.datagen") != null;
-	}
+		try {
+			Class.forName("net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint");
+			return System.getProperty("fabric-api.datagen") != null;
+		} catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
 	@Override
 	public void onInitialize() {
 		BountifulFares.CONFIG = BountifulFaresConfiguration.load();
