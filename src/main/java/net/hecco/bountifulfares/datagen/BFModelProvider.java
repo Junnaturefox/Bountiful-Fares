@@ -249,5 +249,7 @@ public class BFModelProvider extends FabricModelProvider {
         itemModelGenerator.register(BFItems.COCONUT_CRUSTED_COD, Models.GENERATED);
         itemModelGenerator.register(BFBlocks.COCONUT_CANDLE.asItem(), Models.GENERATED);
         itemModelGenerator.register(BFItems.DIRT_STEW, Models.GENERATED);
+        itemModelGenerator.register(BFItems.PICKLED_SPONGEKIN, Models.GENERATED);
+        itemModelGenerator.register(BFItems.TROPICAL_MEDLEY, Models.GENERATED);
     }
 }

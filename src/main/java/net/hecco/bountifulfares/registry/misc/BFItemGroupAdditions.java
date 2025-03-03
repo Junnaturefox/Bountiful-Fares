@@ -282,6 +282,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.HOARY_CIDER_JAR, BFBlocks.HOARY_APPLE_BLOCK);
             entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, BFBlocks.GOLDEN_APPLE_BLOCK);
             entries.addAfter(Items.MELON_SLICE, BFItems.SPONGEKIN_SLICE);
+            entries.addAfter(BFItems.SPONGEKIN_SLICE, BFItems.PICKLED_SPONGEKIN);
             entries.addAfter(Items.SWEET_BERRIES, BFItems.PASSION_FRUIT);
             entries.addAfter(BFItems.PASSION_FRUIT, BFItems.ELDERBERRIES);
             entries.addAfter(BFItems.ELDERBERRIES, BFItems.ELDERBERRY_WINE_BOTTLE);
@@ -330,6 +331,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.FOREST_MEDLEY, BFItems.ARID_MEDLEY);
             entries.addAfter(BFItems.ARID_MEDLEY, BFItems.MEADOW_MEDLEY);
             entries.addAfter(BFItems.MEADOW_MEDLEY, BFItems.COASTAL_MEDLEY);
+            entries.addAfter(BFItems.COASTAL_MEDLEY, BFItems.TROPICAL_MEDLEY);
             entries.addAfter(Items.RABBIT_STEW, BFItems.LEEK_STEW);
             entries.addAfter(BFItems.LEEK_STEW, BFItems.FISH_STEW);
             entries.addAfter(BFItems.FISH_STEW, BFItems.APPLE_STEW);

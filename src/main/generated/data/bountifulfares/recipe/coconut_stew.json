@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "bountifulfares:coconut_half"
+      "tag": "bountifulfares:coconut_ingredients"
     },
     {
-      "item": "bountifulfares:coconut_half"
+      "tag": "bountifulfares:coconut_ingredients"
     },
     {
       "item": "bountifulfares:leek"

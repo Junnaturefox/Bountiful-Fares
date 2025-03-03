@@ -209,15 +209,19 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(BFItems.MUSHROOM_STUFFED_POTATO)
                 .add(BFItems.BERRY_STUFFED_POTATO)
                 .add(BFItems.MAIZE_STUFFED_POTATO)
+                .add(BFItems.COCONUT_CRUSTED_COD)
+                .add(BFItems.PASSION_GLAZED_SALMON)
                 .add(BFItems.LEEK_STEW)
                 .add(BFItems.FISH_STEW)
                 .add(BFItems.APPLE_STEW)
+                .add(BFItems.COCONUT_STEW)
                 .add(BFItems.STONE_STEW)
                 .add(BFItems.BOUNTIFUL_STEW)
                 .add(BFItems.FOREST_MEDLEY)
                 .add(BFItems.ARID_MEDLEY)
                 .add(BFItems.MEADOW_MEDLEY)
                 .add(BFItems.COASTAL_MEDLEY)
+                .add(BFItems.TROPICAL_MEDLEY)
                 .add(BFItems.CRUSTED_BEEF)
                 .add(BFItems.CRIMSON_CHOW)
                 .add(BFItems.WARPED_CHOW)
@@ -273,6 +277,10 @@ public class BFItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(BFItemTags.SUGAR_INGREDIENTS)
                 .add(Items.SUGAR)
                 .add(Items.HONEY_BOTTLE)
+        ;
+
+        getOrCreateTagBuilder(BFItemTags.COCONUT_INGREDIENTS)
+                .add(BFItems.COCONUT_HALF)
         ;
 
         getOrCreateTagBuilder(ItemTags.DIRT)

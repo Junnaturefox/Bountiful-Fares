@@ -341,7 +341,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.make_first_food.description", "Make your first meal");
 
         generate(translationBuilder, "advancement.bountifulfares.eat_all_food", "Bountiful Fares");
-        generate(translationBuilder, "advancement.bountifulfares.eat_all_food.description", "Eat every meal");
+        generate(translationBuilder, "advancement.bountifulfares.eat_all_food.description", "Eat every food");
 
         generate(translationBuilder, "subtitles.block.gristmill.grind", "Gristmill mills");
         generate(translationBuilder, "subtitles.entity.flour.throw", "Flour flies");
@@ -431,6 +431,8 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "pack.bountifulfares.spawn", "Bountiful Fares X Spawn");
         generate(translationBuilder, "pack.bountifulfares.farmersdelight", "Bountiful Fares X Farmer's Delight");
         generate(translationBuilder, "pack.bountifulfares.twigs", "Bountiful Fares X Twigs");
+        generate(translationBuilder, "pack.bountifulfares.delicate_dyes", "Bountiful Fares X Delicate Dyes");
+        generate(translationBuilder, "pack.bountifulfares.appledog", "Bountiful Fares X Appledog!");
 
         generate(translationBuilder, "death.attack.falling_coconut", "%1$s was bonked too hard");
 

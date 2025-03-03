@@ -88,6 +88,8 @@ public class DatagenOnlyItems {
         registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "blurple_wool");
         registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "sangria_wool");
         registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "rose_wool");
+
+        registerDatagenOnlyItem(APPLEDOG_MOD_ID, "dogapple");
     }
 
 }

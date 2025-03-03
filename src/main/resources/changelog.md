@@ -1,4 +1,4 @@
-# Version 1.3.0 - 1.20.1 and 1.21.1 only
+# Bountiful Fares Version 2.0.0 - The Big One
 
 ## Fixes
 - Added missing Ebullience effect description
@@ -40,6 +40,11 @@
 - Temporarily removed Walnut and Hoary cabinets from Farmer's Delight compat
 - Updated compatibility with Nature's Spirit - if installed:
     - Bountiful Fares features can now generate in Nature's Spirit biomes
+    - Nature's Spirit Coconuts can be used in Bountiful Fares recipes
+- Added compatibility with appledog
+    - Added Appledog Block
+        - Crafted from 9 Dogapples
+        - Becomes joyous when interacted with
 
 ## Tweaks
 - Changed the recipe of Gristmills to be less expensive
@@ -135,6 +140,7 @@
         - Like other fruit logs, Palm Logs cannot be made into planks
         - Palm Fronds can be placed on top or on the side of blocks, and up to 3 can be placed in a block to increase its size
         - Palm Fronds can be potted in a Flower Pot
+        - Palm Fronds can be crafted into Paper
         - Milling Palm Fronds creates Palm Mulch
             - Acts similarly to Walnut Mulch
             - Can be placed in layers or crafted into a block
@@ -166,3 +172,14 @@
             - If not in an environment with a light level of 8 or lower, Golden Apples will not grow
             - If exposed for a while, they will become withered and cannot be restored. They will also not drop anything when broken
             - Unlike other fruit trees, leaves cannot be bonemealed to produce more fruit
+- Added new food items:
+    - Coconut Crusted Cod
+        - Crafted from 2 Coconut Halves, 1 Cooked Cod, and 1 Bowl
+  - Coconut Stew
+      - Crafted from 2 Coconut Halves, 1 Leek, and 1 Bowl
+  - Coconut Cake
+      - Crafted from 3 Coconut Halves, 2 Sugar, 1 Egg, and 3 Flour
+  - Pickled Spongekinå
+      - Crafted by fermenting a Spongekin Slice
+  - Tropical Medley
+      - Crafted from 1 Orange, 2 Cocoa Beans, 1 Passionfruit, and 1 Coconut Half

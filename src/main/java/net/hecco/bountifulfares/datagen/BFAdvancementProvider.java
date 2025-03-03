@@ -12,12 +12,16 @@ import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.criterion.*;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -50,36 +54,22 @@ public class BFAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root_advancement)
                 .criterion("make_first_food", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().tag(BFItemTags.MEALS)))
                 .build(consumer, BountifulFares.MOD_ID + ":make_first_food");
-        AdvancementEntry eat_all_food = Advancement.Builder.create()
+
+        Advancement.Builder eat_all_food = Advancement.Builder.create()
                 .display(new AdvancementDisplay(new ItemStack(BFItems.CRUSTED_BEEF),
                         Text.translatable("advancement.bountifulfares.eat_all_food"),
                         Text.translatable("advancement.bountifulfares.eat_all_food.description"), Optional.of(Identifier.of("minecraft:textures/block/farmland_moist.png")), AdvancementFrame.GOAL,
                         true,
                         true,
                         false))
-                .parent(make_first_food)
-                .criterion("mushroom_stuffed_potato", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.MUSHROOM_STUFFED_POTATO)))
-                .criterion("berry_stuffed_potato", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.BERRY_STUFFED_POTATO)))
-                .criterion("maize_stuffed_potato", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.MAIZE_STUFFED_POTATO)))
-                .criterion("passion_glazed_salmon", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.PASSION_GLAZED_SALMON)))
-                .criterion("leek_stew", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.LEEK_STEW)))
-                .criterion("fish_stew", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.FISH_STEW)))
-                .criterion("apple_stew", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.APPLE_STEW)))
-                .criterion("stone_stew", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.STONE_STEW)))
-                .criterion("bountiful_stew", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.BOUNTIFUL_STEW)))
-                .criterion("forest_medley", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.FOREST_MEDLEY)))
-                .criterion("arid_medley", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.ARID_MEDLEY)))
-                .criterion("meadow_medley", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.MEADOW_MEDLEY)))
-                .criterion("coastal_medley", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.COASTAL_MEDLEY)))
-                .criterion("crusted_beef", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.CRUSTED_BEEF)))
-                .criterion("crimson_chow", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.CRIMSON_CHOW)))
-                .criterion("warped_chow", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.WARPED_CHOW)))
-                .criterion("custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.CUSTARD)))
-                .criterion("piquant_custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.PIQUANT_CUSTARD)))
-                .criterion("passion_custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.PASSION_CUSTARD)))
-                .criterion("cocoa_custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.COCOA_CUSTARD)))
-                .criterion("ancient_custard", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(BFItems.ANCIENT_CUSTARD)))
-                .build(consumer, BountifulFares.MOD_ID + ":eat_all_food");
+                .parent(make_first_food);
+        for (Item i : Registries.ITEM) {
+            if (Registries.ITEM.getId(i).getNamespace() == BountifulFares.MOD_ID && i.getComponents().contains(DataComponentTypes.FOOD) && i != BFItems.DIRT_STEW) {
+                eat_all_food.criterion(Registries.ITEM.getId(i).getPath(), ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().items(i)));
+            }
+        }
+        eat_all_food.build(consumer, BountifulFares.MOD_ID + ":eat_all_food");
+
         AdvancementEntry obtain_lemon_block = Advancement.Builder.create()
                 .display(new AdvancementDisplay(new ItemStack(BFItems.LEMON),
                         Text.translatable("advancement.bountifulfares.how_easy"),
@@ -209,6 +199,10 @@ public class BFAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("piquant", ConsumeItemCriterion.Conditions.item(BFItems.PIQUANT_CANDY))
                 .criterion("sour", ConsumeItemCriterion.Conditions.item(BFItems.SOUR_CANDY))
                 .criterion("bitter", ConsumeItemCriterion.Conditions.item(BFItems.BITTER_CANDY))
+                .criterion("candied_apple", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_APPLE))
+                .criterion("candied_orange", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_ORANGE))
+                .criterion("candied_lemon", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_LEMON))
+                .criterion("candied_plum", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_PLUM))
                 .build(consumer, BountifulFares.MOD_ID + ":eat_all_candy");
 //        AdvancementEntry gorge = Advancement.Builder.create()
 //                .display(new AdvancementDisplay(new ItemStack(ModItems.SOUR_CANDY),

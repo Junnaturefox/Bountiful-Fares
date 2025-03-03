@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.hecco.bountifulfares.compat.appledog.AppledogBlocks;
 import net.hecco.bountifulfares.compat.delicate_dyes.DelicateDyesBlocks;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFBlockEntities;
@@ -138,6 +139,9 @@ public class BountifulFaresClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.BLURPLE_JACK_O_STRAW, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.SANGRIA_JACK_O_STRAW, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(DelicateDyesBlocks.ROSE_JACK_O_STRAW, RenderLayer.getCutout());
+
+        //          Appledog compat
+        BlockRenderLayerMap.INSTANCE.putBlock(AppledogBlocks.APPLEDOG_BLOCK, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.APPLE_LOG, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.APPLE_WOOD, RenderLayer.getCutout());

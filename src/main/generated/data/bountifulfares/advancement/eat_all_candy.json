@@ -9,6 +9,38 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "candied_apple": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:candied_apple"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "candied_lemon": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:candied_lemon"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "candied_orange": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:candied_orange"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "candied_plum": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:candied_plum"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "candy": {
       "conditions": {
         "item": {
@@ -59,6 +91,18 @@
     ],
     [
       "bitter"
+    ],
+    [
+      "candied_apple"
+    ],
+    [
+      "candied_orange"
+    ],
+    [
+      "candied_lemon"
+    ],
+    [
+      "candied_plum"
     ]
   ],
   "sends_telemetry_event": true

@@ -270,13 +270,13 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .pattern("CCC")
                 .pattern("SES")
                 .pattern("FFF")
-                .input('C', BFItems.COCONUT_HALF)
+                .input('C', BFItemTags.COCONUT_INGREDIENTS)
                 .input('E', Items.EGG)
                 .input('F', BFItems.FLOUR)
                 .input('S', Items.SUGAR)
                 .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
                 .criterion(hasItem(BFItems.FLOUR), conditionsFromItem(BFItems.FLOUR))
-                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromItem(BFItems.COCONUT_HALF))
+                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromTag(BFItemTags.COCONUT_INGREDIENTS))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.MAIZE_BREAD)
@@ -369,10 +369,11 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.COCONUT_CRUSTED_COD)
-                .input(BFItems.COCONUT_HALF, 2)
+                .input(BFItemTags.COCONUT_INGREDIENTS)
+                .input(BFItemTags.COCONUT_INGREDIENTS)
                 .input(Items.COOKED_COD)
                 .input(Items.BOWL)
-                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromItem(BFItems.COCONUT_HALF))
+                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromTag(BFItemTags.COCONUT_INGREDIENTS))
                 .criterion(hasItem(Items.COOKED_COD), conditionsFromItem(Items.COOKED_COD))
                 .offerTo(exporter);
 
@@ -401,10 +402,11 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.COCONUT_STEW)
-                .input(BFItems.COCONUT_HALF, 2)
+                .input(BFItemTags.COCONUT_INGREDIENTS)
+                .input(BFItemTags.COCONUT_INGREDIENTS)
                 .input(BFItems.LEEK, 1)
                 .input(Items.BOWL)
-                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromItem(BFItems.COCONUT_HALF))
+                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromTag(BFItemTags.COCONUT_INGREDIENTS))
                 .criterion(hasItem(BFItems.LEEK), conditionsFromItem(BFItems.LEEK))
                 .offerTo(exporter);
 
@@ -559,6 +561,12 @@ public class BFRecipeProvider extends FabricRecipeProvider {
 
         offerShapelessRecipe(exporter, BFItems.COCONUT_HALF, BFItems.COCONUT, "coconut_half", 2);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.PAPER, 2)
+                .pattern("##")
+                .input('#', BFItems.PALM_FROND)
+                .criterion(hasItem(BFItems.PALM_FROND), conditionsFromItem(BFItems.PALM_FROND))
+                .offerTo(exporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Items.PACKED_MUD)
                 .input(Items.MUD)
                 .input(BFItems.COCONUT_COIR)
@@ -580,12 +588,12 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BFBlocks.COCONUT_CANDLE, 1)
                 .input('S', Items.STRING)
                 .input('H', Items.HONEYCOMB)
-                .input('#', BFItems.COCONUT_HALF)
+                .input('#', BFItemTags.COCONUT_INGREDIENTS)
                 .pattern("S")
                 .pattern("H")
                 .pattern("#")
                 .criterion(hasItem(Items.HONEYCOMB), conditionsFromItem(Items.HONEYCOMB))
-                .criterion("has_coconut", conditionsFromItem(BFItems.COCONUT_HALF))
+                .criterion("has_coconut", conditionsFromTag(BFItemTags.COCONUT_INGREDIENTS))
                 .offerTo(exporter);
 
         offerBarkBlockRecipe(exporter, BFBlocks.HOARY_WOOD, BFBlocks.HOARY_LOG);

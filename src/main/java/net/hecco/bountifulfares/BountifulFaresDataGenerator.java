@@ -4,6 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.hecco.bountifulfares.datagen.*;
 import net.hecco.bountifulfares.datagen.BFLangProvider;
+import net.hecco.bountifulfares.datagen.compat.appledog.AppledogBlockLootTableProvider;
+import net.hecco.bountifulfares.datagen.compat.appledog.AppledogBlockTagProvider;
+import net.hecco.bountifulfares.datagen.compat.appledog.AppledogRecipeProvider;
 import net.hecco.bountifulfares.datagen.compat.arts_and_crafts.ArtsAndCraftsBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.compat.arts_and_crafts.ArtsAndCraftsBlockTagProvider;
 import net.hecco.bountifulfares.datagen.compat.arts_and_crafts.ArtsAndCraftsRecipeProvider;
@@ -24,6 +27,7 @@ import net.hecco.bountifulfares.datagen.compat.mint.MintBlockTagProvider;
 import net.hecco.bountifulfares.datagen.compat.mint.MintRecipeProvider;
 import net.hecco.bountifulfares.datagen.compat.natures_spirit.NaturesSpiritBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.compat.natures_spirit.NaturesSpiritBlockTagProvider;
+import net.hecco.bountifulfares.datagen.compat.natures_spirit.NaturesSpiritItemTagProvider;
 import net.hecco.bountifulfares.datagen.compat.natures_spirit.NaturesSpiritRecipeProvider;
 import net.hecco.bountifulfares.datagen.compat.spawn.SpawnBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.compat.spawn.SpawnBlockTagProvider;
@@ -74,6 +78,7 @@ public class BountifulFaresDataGenerator implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack naturesSpiritPack = fabricDataGenerator.createBuiltinResourcePack(Identifier.of(BountifulFares.MOD_ID, BountifulFares.NATURES_SPIRIT_MOD_ID + "_dat"));
         naturesSpiritPack.addProvider(NaturesSpiritBlockLootTableProvider::new);
         naturesSpiritPack.addProvider(NaturesSpiritBlockTagProvider::new);
+        naturesSpiritPack.addProvider(NaturesSpiritItemTagProvider::new);
         naturesSpiritPack.addProvider(NaturesSpiritRecipeProvider::new);
 
         FabricDataGenerator.Pack spawnPack = fabricDataGenerator.createBuiltinResourcePack(Identifier.of(BountifulFares.MOD_ID, BountifulFares.SPAWN_MOD_ID + "_dat"));
@@ -90,6 +95,11 @@ public class BountifulFaresDataGenerator implements DataGeneratorEntrypoint {
         delicateDyesPack.addProvider(DelicateDyesBlockLootTableProvider::new);
         delicateDyesPack.addProvider(DelicateDyesBlockTagProvider::new);
         delicateDyesPack.addProvider(DelicateDyesRecipeProvider::new);
+
+        FabricDataGenerator.Pack appledogPack = fabricDataGenerator.createBuiltinResourcePack(Identifier.of(BountifulFares.MOD_ID, BountifulFares.APPLEDOG_MOD_ID + "_dat"));
+        appledogPack.addProvider(AppledogBlockLootTableProvider::new);
+        appledogPack.addProvider(AppledogBlockTagProvider::new);
+        appledogPack.addProvider(AppledogRecipeProvider::new);
     }
 
     @Override

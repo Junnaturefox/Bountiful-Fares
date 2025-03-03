@@ -16,14 +16,14 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class AirTimeIncreasingItem extends EffectFoodItem {
-    public static int airTickIncrease;
+    public int airTickIncrease;
     public AirTimeIncreasingItem(int airTickIncrease, Settings settings) {
         super(List.of(), settings);
-        AirTimeIncreasingItem.airTickIncrease = airTickIncrease;
+        this.airTickIncrease = airTickIncrease;
     }
     public AirTimeIncreasingItem(List<StatusEffectInstance> effects, int airTickIncrease, Settings settings) {
         super(effects, settings);
-        AirTimeIncreasingItem.airTickIncrease = airTickIncrease;
+        this.airTickIncrease = airTickIncrease;
     }
 
 

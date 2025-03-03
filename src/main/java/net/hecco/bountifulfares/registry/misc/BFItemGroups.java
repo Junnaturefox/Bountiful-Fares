@@ -2,6 +2,7 @@ package net.hecco.bountifulfares.registry.misc;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.compat.appledog.AppledogBlocks;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
@@ -395,6 +396,7 @@ public class BFItemGroups {
                         entries.add(BFItems.PLUM_COMPOTE_JAR);
                         entries.add(BFItems.HOARY_COMPOTE_JAR);
                         entries.add(BFItems.CITRUS_ESSENCE);
+                        entries.add(BFItems.PICKLED_SPONGEKIN);
                         entries.add(PotionContentsComponent.createStack(Items.POTION, BFPotions.ACIDIC));
                         entries.add(PotionContentsComponent.createStack(Items.POTION, BFPotions.LONG_ACIDIC));
                         entries.add(PotionContentsComponent.createStack(Items.POTION, BFPotions.STRONG_ACIDIC));
@@ -435,6 +437,7 @@ public class BFItemGroups {
                         entries.add(BFItems.ARID_MEDLEY);
                         entries.add(BFItems.MEADOW_MEDLEY);
                         entries.add(BFItems.COASTAL_MEDLEY);
+                        entries.add(BFItems.TROPICAL_MEDLEY);
                         entries.add(BFItems.MUSHROOM_STUFFED_POTATO);
                         entries.add(BFItems.BERRY_STUFFED_POTATO);
                         entries.add(BFItems.MAIZE_STUFFED_POTATO);
@@ -468,6 +471,8 @@ public class BFItemGroups {
                         displayContext.lookup().getOptionalWrapper(RegistryKeys.PAINTING_VARIANT).ifPresent((registryWrapper) -> {
                             addPaintings(entries, displayContext.lookup(), registryWrapper, (registryEntry) -> registryEntry.isIn(BFBlockTags.PAINTINGS), ItemGroup.StackVisibility.PARENT_AND_SEARCH_TABS);
                         });
+
+                        entries.add(AppledogBlocks.APPLEDOG_BLOCK);
                     }).build());
 
     private static void addPaintings(ItemGroup.Entries entries, RegistryWrapper.WrapperLookup registryLookup, RegistryWrapper.Impl<PaintingVariant> registryWrapper, Predicate<RegistryEntry<PaintingVariant>> filter, ItemGroup.StackVisibility stackVisibility) {
