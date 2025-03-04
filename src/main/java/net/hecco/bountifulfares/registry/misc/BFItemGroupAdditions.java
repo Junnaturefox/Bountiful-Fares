@@ -165,6 +165,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.WILD_MAIZE, BFBlocks.WILD_PASSION_FRUIT_VINE);
             entries.addAfter(BFBlocks.WILD_PASSION_FRUIT_VINE, BFBlocks.WILD_ELDERBERRY_VINE);
             entries.addAfter(BFBlocks.WILD_ELDERBERRY_VINE, BFItems.GRASS_SEEDS);
+            entries.addAfter(BFItems.GRASS_SEEDS, BFItems.SWEET_BERRY_PIPS);
             entries.addAfter(Items.KELP, BFBlocks.SPONGEKIN);
             entries.addAfter(BFBlocks.SPONGEKIN, BFBlocks.PRISMARINE_BLOSSOM);
             entries.addAfter(Items.LILY_OF_THE_VALLEY, BFBlocks.CHAMOMILE_FLOWERS);
@@ -190,6 +191,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFBlocks.TORCHFLOWER_CANDLE, BFBlocks.WALNUT_CANDLE);
             entries.addAfter(BFBlocks.WALNUT_CANDLE, BFBlocks.FERMENTATION_VESSEL);
             entries.addAfter(BFBlocks.FERMENTATION_VESSEL, BFBlocks.COCONUT_CANDLE);
+            entries.addAfter(BFBlocks.COCONUT_CANDLE, BFBlocks.GOLDEN_APPLE_SAPLING);
             entries.addAfter(Blocks.COMPOSTER, TrellisUtil.getTrellisFromVariant(BFTrellises.OAK));
             TrellisVariant prevTrellis = BFTrellises.OAK;
             for (TrellisVariant trellis : TrellisUtil.TrellisVariants) {
@@ -277,7 +279,8 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.PLUM_COMPOTE_JAR, BFItems.PLUM_CIDER_JAR);
             entries.addAfter(BFItems.PLUM_CIDER_JAR, BFBlocks.PLUM_BLOCK);
             entries.addAfter(BFBlocks.PLUM_BLOCK, BFItems.HOARY_APPLE);
-            entries.addAfter(BFItems.HOARY_APPLE, BFItems.HOARY_COMPOTE_JAR);
+            entries.addAfter(BFItems.HOARY_APPLE, BFItems.STUFFED_HOARY_APPLE);
+            entries.addAfter(BFItems.STUFFED_HOARY_APPLE, BFItems.HOARY_COMPOTE_JAR);
             entries.addAfter(BFItems.HOARY_COMPOTE_JAR, BFItems.HOARY_CIDER_JAR);
             entries.addAfter(BFItems.HOARY_CIDER_JAR, BFBlocks.HOARY_APPLE_BLOCK);
             entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, BFBlocks.GOLDEN_APPLE_BLOCK);
@@ -323,15 +326,18 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.CANDY, BFItems.PIQUANT_CANDY);
             entries.addAfter(BFItems.PIQUANT_CANDY, BFItems.SOUR_CANDY);
             entries.addAfter(BFItems.SOUR_CANDY, BFItems.BITTER_CANDY);
-            entries.addAfter(BFItems.BITTER_CANDY, BFItems.CANDIED_APPLE);
+            entries.addAfter(BFItems.BITTER_CANDY, BFItems.STRANGE_CANDY);
+            entries.addAfter(BFItems.STRANGE_CANDY, BFItems.CANDIED_APPLE);
             entries.addAfter(BFItems.CANDIED_APPLE, BFItems.CANDIED_PLUM);
             entries.addAfter(BFItems.CANDIED_PLUM, BFItems.CANDIED_ORANGE);
             entries.addAfter(BFItems.CANDIED_ORANGE, BFItems.CANDIED_LEMON);
             entries.addAfter(BFItems.CANDIED_LEMON, BFItems.FOREST_MEDLEY);
             entries.addAfter(BFItems.FOREST_MEDLEY, BFItems.ARID_MEDLEY);
             entries.addAfter(BFItems.ARID_MEDLEY, BFItems.MEADOW_MEDLEY);
-            entries.addAfter(BFItems.MEADOW_MEDLEY, BFItems.COASTAL_MEDLEY);
+            entries.addAfter(BFItems.MEADOW_MEDLEY, BFItems.MIRE_MEDLEY);
+            entries.addAfter(BFItems.MIRE_MEDLEY, BFItems.COASTAL_MEDLEY);
             entries.addAfter(BFItems.COASTAL_MEDLEY, BFItems.TROPICAL_MEDLEY);
+            entries.addAfter(BFItems.TROPICAL_MEDLEY, BFItems.SEA_SALAD);
             entries.addAfter(Items.RABBIT_STEW, BFItems.LEEK_STEW);
             entries.addAfter(BFItems.LEEK_STEW, BFItems.FISH_STEW);
             entries.addAfter(BFItems.FISH_STEW, BFItems.APPLE_STEW);

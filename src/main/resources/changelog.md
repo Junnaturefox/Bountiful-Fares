@@ -179,12 +179,20 @@
             - Unlike other fruit trees, leaves cannot be bonemealed to produce more fruit
 - Added new food items:
     - Coconut Crusted Cod
-        - Crafted from 2 Coconut Halves, 1 Cooked Cod, and 1 Bowl
+        - Crafted from Coconut Halves, Cooked Cod, and Bowls
   - Coconut Stew
-      - Crafted from 2 Coconut Halves, 1 Leek, and 1 Bowl
+      - Crafted from Coconut Halves, Leek, and Bowls
   - Coconut Cake
-      - Crafted from 3 Coconut Halves, 2 Sugar, 1 Egg, and 3 Flour
-  - Pickled Spongekinå
+      - Crafted from Coconut Halves, Sugar, Egg, and Flour
+  - Pickled Spongekin
       - Crafted by fermenting a Spongekin Slice
+  - Mire Medley
+      - Crafted from Elderberries, Maize, Chamomile Flowers, and Coconut Halves\
   - Tropical Medley
-      - Crafted from 1 Orange, 2 Cocoa Beans, 1 Passionfruit, and 1 Coconut Half
+      - Crafted from Orange, Cocoa Beans, Passionfruit, and Coconut Halves
+  - Sea Salad
+      - Crafted from Kelp, Leeks, and Citrus Essense
+  - Stuffed Hoary Apple
+      - Crafted from Hoary Apples and Lapisberries
+  - Strange Candy
+      - Crafted from Lapisberries and Sugar

@@ -50,6 +50,7 @@ public class BFItemGroups {
                         entries.add(BFBlocks.FLOWERING_APPLE_LEAVES);
                         entries.add(Items.APPLE);
                         entries.add(BFBlocks.APPLE_BLOCK);
+                        entries.add(AppledogBlocks.APPLEDOG_BLOCK);
                         entries.add(BFBlocks.APPLE_SAPLING);
                         entries.add(BFBlocks.ORANGE_LOG);
                         entries.add(BFBlocks.ORANGE_WOOD);
@@ -437,17 +438,20 @@ public class BFItemGroups {
                         entries.add(BFItems.FOREST_MEDLEY);
                         entries.add(BFItems.ARID_MEDLEY);
                         entries.add(BFItems.MEADOW_MEDLEY);
+                        entries.add(BFItems.MIRE_MEDLEY);
                         entries.add(BFItems.COASTAL_MEDLEY);
                         entries.add(BFItems.TROPICAL_MEDLEY);
                         entries.add(BFItems.MUSHROOM_STUFFED_POTATO);
                         entries.add(BFItems.BERRY_STUFFED_POTATO);
                         entries.add(BFItems.MAIZE_STUFFED_POTATO);
+                        entries.add(BFItems.STUFFED_HOARY_APPLE);
                         entries.add(BFItems.LEEK_STEW);
                         entries.add(BFItems.FISH_STEW);
                         entries.add(BFItems.APPLE_STEW);
                         entries.add(BFItems.COCONUT_STEW);
                         entries.add(BFItems.STONE_STEW);
                         entries.add(BFItems.BOUNTIFUL_STEW);
+                        entries.add(BFItems.SEA_SALAD);
                         entries.add(BFItems.PASSION_GLAZED_SALMON);
                         entries.add(BFItems.COCONUT_CRUSTED_COD);
                         entries.add(BFItems.CRUSTED_BEEF);
@@ -462,6 +466,7 @@ public class BFItemGroups {
                         entries.add(BFItems.PIQUANT_CANDY);
                         entries.add(BFItems.SOUR_CANDY);
                         entries.add(BFItems.BITTER_CANDY);
+                        entries.add(BFItems.STRANGE_CANDY);
                         entries.add(BFItems.CANDIED_APPLE);
                         entries.add(BFItems.CANDIED_PLUM);
                         entries.add(BFItems.CANDIED_ORANGE);
@@ -473,7 +478,6 @@ public class BFItemGroups {
                             addPaintings(entries, displayContext.lookup(), registryWrapper, (registryEntry) -> registryEntry.isIn(BFBlockTags.PAINTINGS), ItemGroup.StackVisibility.PARENT_AND_SEARCH_TABS);
                         });
 
-                        entries.add(AppledogBlocks.APPLEDOG_BLOCK);
                     }).build());
 
     private static void addPaintings(ItemGroup.Entries entries, RegistryWrapper.WrapperLookup registryLookup, RegistryWrapper.Impl<PaintingVariant> registryWrapper, Predicate<RegistryEntry<PaintingVariant>> filter, ItemGroup.StackVisibility stackVisibility) {

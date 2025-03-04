@@ -199,6 +199,7 @@ public class BFAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("piquant", ConsumeItemCriterion.Conditions.item(BFItems.PIQUANT_CANDY))
                 .criterion("sour", ConsumeItemCriterion.Conditions.item(BFItems.SOUR_CANDY))
                 .criterion("bitter", ConsumeItemCriterion.Conditions.item(BFItems.BITTER_CANDY))
+                .criterion("strange", ConsumeItemCriterion.Conditions.item(BFItems.STRANGE_CANDY))
                 .criterion("candied_apple", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_APPLE))
                 .criterion("candied_orange", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_ORANGE))
                 .criterion("candied_lemon", ConsumeItemCriterion.Conditions.item(BFItems.CANDIED_LEMON))

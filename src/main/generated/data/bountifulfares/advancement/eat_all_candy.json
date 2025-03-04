@@ -64,6 +64,14 @@
         }
       },
       "trigger": "minecraft:consume_item"
+    },
+    "strange": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:strange_candy"
+        }
+      },
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
@@ -91,6 +99,9 @@
     ],
     [
       "bitter"
+    ],
+    [
+      "strange"
     ],
     [
       "candied_apple"

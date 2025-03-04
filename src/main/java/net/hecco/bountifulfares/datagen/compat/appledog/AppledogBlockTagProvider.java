@@ -25,5 +25,9 @@ public class AppledogBlockTagProvider extends FabricTagProvider.BlockTagProvider
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(AppledogBlocks.APPLEDOG_BLOCK)
         ;
+
+        getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
+                .add(AppledogBlocks.APPLEDOG_BLOCK)
+        ;
     }
 }

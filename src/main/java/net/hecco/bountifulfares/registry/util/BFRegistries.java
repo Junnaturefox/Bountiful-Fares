@@ -19,6 +19,8 @@ import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.Position;
 import net.minecraft.world.World;
 
+import java.util.Objects;
+
 import static net.fabricmc.fabric.api.registry.StrippableBlockRegistry.register;
 import static net.minecraft.block.ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE;
 
@@ -63,6 +65,7 @@ public class BFRegistries {
         registry.add(BFItemTags.WALNUT_LOGS, 300);
         registry.add(BFItemTags.PICKETS, 200);
         for (TrellisVariant trellis : TrellisUtil.TrellisVariants) {
+            if (!(Objects.equals(trellis.getBlockName(), "warped_trellis") || Objects.equals(trellis.getBlockName(), "crimson_trellis")))
             registry.add(TrellisUtil.getTrellisFromVariant(trellis), 300);
         }
         registry.add(BFBlocks.GRISTMILL, 300);

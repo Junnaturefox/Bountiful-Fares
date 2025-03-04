@@ -361,6 +361,14 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "mire_medley": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:mire_medley"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "mushroom_stuffed_potato": {
       "conditions": {
         "item": {
@@ -457,6 +465,14 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "sea_salad": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:sea_salad"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "sour_candy": {
       "conditions": {
         "item": {
@@ -477,6 +493,22 @@
       "conditions": {
         "item": {
           "items": "bountifulfares:stone_stew"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "strange_candy": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:strange_candy"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "stuffed_hoary_apple": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:stuffed_hoary_apple"
         }
       },
       "trigger": "minecraft:consume_item"
@@ -649,6 +681,9 @@
       "bitter_candy"
     ],
     [
+      "strange_candy"
+    ],
+    [
       "passion_glazed_salmon"
     ],
     [
@@ -676,6 +711,9 @@
       "coconut_stew"
     ],
     [
+      "sea_salad"
+    ],
+    [
       "forest_medley"
     ],
     [
@@ -685,10 +723,16 @@
       "meadow_medley"
     ],
     [
+      "mire_medley"
+    ],
+    [
       "coastal_medley"
     ],
     [
       "tropical_medley"
+    ],
+    [
+      "stuffed_hoary_apple"
     ],
     [
       "crimson_chow"

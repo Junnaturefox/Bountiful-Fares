@@ -20,6 +20,6 @@ public class AppledogRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        offerCompactingRecipe(exporter, RecipeCategory.MISC, Registries.ITEM.get(Identifier.of(APPLEDOG_MOD_ID, "dogapple")), AppledogBlocks.APPLEDOG_BLOCK);
+        offerCompactingRecipe(exporter, RecipeCategory.MISC, AppledogBlocks.APPLEDOG_BLOCK, Registries.ITEM.get(Identifier.of(APPLEDOG_MOD_ID, "dogapple")));
     }
 }

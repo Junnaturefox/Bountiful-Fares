@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_appledog_block": {
+    "has_kelp": {
       "conditions": {
         "items": [
           {
-            "items": "appledog:appledog_block"
+            "items": "minecraft:kelp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_leek": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bountifulfares:leek"
           }
         ]
       },
@@ -13,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "appledog:dogapple"
+        "recipe": "bountifulfares:sea_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_appledog_block"
+      "has_kelp",
+      "has_leek"
     ]
   ],
   "rewards": {
     "recipes": [
-      "appledog:dogapple"
+      "bountifulfares:sea_salad"
     ]
   }
 }

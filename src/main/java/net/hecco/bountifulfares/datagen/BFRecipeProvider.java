@@ -327,6 +327,17 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(BFItems.LEEK), conditionsFromItem(BFItems.LEEK))
                 .offerTo(exporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.MIRE_MEDLEY)
+                .input(BFItems.ELDERBERRIES)
+                .input(BFItems.MAIZE)
+                .input(BFBlocks.CHAMOMILE_FLOWERS)
+                .input(Items.CARROT)
+                .criterion(hasItem(BFItems.ELDERBERRIES), conditionsFromItem(BFItems.ELDERBERRIES))
+                .criterion(hasItem(BFItems.MAIZE), conditionsFromItem(BFItems.MAIZE))
+                .criterion(hasItem(BFBlocks.CHAMOMILE_FLOWERS), conditionsFromItem(BFBlocks.CHAMOMILE_FLOWERS))
+                .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
+                .offerTo(exporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.COASTAL_MEDLEY)
                 .input(BFItems.SPONGEKIN_SLICE)
                 .input(Items.DRIED_KELP, 2)
@@ -334,6 +345,32 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(BFItems.SPONGEKIN_SLICE), conditionsFromItem(BFItems.SPONGEKIN_SLICE))
                 .criterion(hasItem(Items.DRIED_KELP), conditionsFromItem(Items.DRIED_KELP))
                 .criterion("has_fish", conditionsFromTag(BFItemTags.COOKED_FISHES))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.TROPICAL_MEDLEY)
+                .input(BFItems.ORANGE)
+                .input(Items.COCOA_BEANS)
+                .input(BFItems.PASSION_FRUIT)
+                .input(BFItems.COCONUT_HALF)
+                .criterion(hasItem(BFItems.ORANGE), conditionsFromItem(BFItems.ORANGE))
+                .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .criterion(hasItem(BFItems.PASSION_FRUIT), conditionsFromItem(BFItems.PASSION_FRUIT))
+                .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromItem(BFItems.COCONUT_HALF))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.STUFFED_HOARY_APPLE)
+                .input(BFItems.HOARY_APPLE)
+                .input(BFItems.LAPISBERRIES, 2)
+                .criterion(hasItem(BFItems.HOARY_APPLE), conditionsFromItem(BFItems.HOARY_APPLE))
+                .criterion(hasItem(BFItems.LAPISBERRIES), conditionsFromItem(BFItems.LAPISBERRIES))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.SEA_SALAD)
+                .input(Items.KELP, 2)
+                .input(BFItems.LEEK)
+                .input(BFItems.CITRUS_ESSENCE)
+                .criterion(hasItem(Items.KELP), conditionsFromItem(Items.KELP))
+                .criterion(hasItem(BFItems.LEEK), conditionsFromItem(BFItems.LEEK))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.MUSHROOM_STUFFED_POTATO)
@@ -667,6 +704,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerCandyRecipe(exporter, BFItems.PIQUANT_CANDY, Items.SWEET_BERRIES);
         offerCandyRecipe(exporter, BFItems.SOUR_CANDY, BFItems.CITRUS_ESSENCE);
         offerCandyRecipe(exporter, BFItems.BITTER_CANDY, BFItems.ELDERBERRIES);
+        offerCandyRecipe(exporter, BFItems.STRANGE_CANDY, BFItems.LAPISBERRIES);
         offerTartAndPieRecipe(exporter, BFBlocks.PASSION_FRUIT_TART, BFItems.PASSION_FRUIT);
         offerTartAndPieRecipe(exporter, BFBlocks.ELDERBERRY_TART, BFItems.ELDERBERRIES);
         offerTartAndPieRecipe(exporter, BFBlocks.GLOW_BERRY_TART, Items.GLOW_BERRIES);
@@ -931,12 +969,9 @@ public class BFRecipeProvider extends FabricRecipeProvider {
 
 
     public static void offerCandiedFruitRecipe(RecipeExporter exporter, ItemConvertible input, ItemConvertible output, int count) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, output, count)
-                .pattern(" S ")
-                .pattern("S#S")
-                .pattern(" S ")
-                .input('S', BFItemTags.SUGAR_INGREDIENTS)
-                .input('#', input)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, output, count)
+                .input(input)
+                .input(BFItemTags.SUGAR_INGREDIENTS)
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter);
     }
