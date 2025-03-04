@@ -21,6 +21,7 @@ public class BountifulFaresConfiguration {
     private boolean restorationHeartOverlay = true;
     private boolean acidifiedEffectIconEffects = true;
     private boolean fermentationBubbleParticles = true;
+    public boolean enableSweetBerryPips = true;
     private boolean enableLapisberrySeeds = true;
     private boolean enableHoarySeeds = true;
     private boolean enableElderGuardianSpongekinSeeds = true;

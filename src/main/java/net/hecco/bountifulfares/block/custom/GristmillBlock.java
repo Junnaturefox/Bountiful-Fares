@@ -108,6 +108,8 @@ public class GristmillBlock extends BlockWithEntity implements BlockEntityProvid
         }
     }
 
+
+
     @Nullable
     protected static <T extends BlockEntity> BlockEntityTicker<T> validateTicker(World world, BlockEntityType<T> givenType) {
         return world.isClient ? null : validateTicker(givenType, (BlockEntityType<? extends GristmillBlockEntity>) BFBlockEntities.GRISTMILL_BLOCK_ENTITY, GristmillBlockEntity::tick);

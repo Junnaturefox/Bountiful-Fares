@@ -21,6 +21,7 @@ public class ChickenEntityMixin extends PathAwareEntity {
     @Unique
     private static final Ingredient BF_BREEDING_INGREDIENT = Ingredient.ofItems(
             BFItems.GRASS_SEEDS,
+            BFItems.SWEET_BERRY_PIPS,
             BFItems.HOARY_SEEDS,
             BFItems.LAPISBERRY_SEEDS,
             BFItems.LEEK_SEEDS,

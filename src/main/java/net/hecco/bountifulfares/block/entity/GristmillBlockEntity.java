@@ -103,9 +103,6 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, GristmillBlockEntity blockEntity) {
-        if (!world.isClient()) {
-            BountifulFares.LOGGER.info("Progress before tick: " + blockEntity.progress);
-        }
 
         if (!state.get(millingState) && !blockEntity.inventory.get(0).isEmpty() && blockEntity.hasRecipe() && blockEntity.canInsertOutputSlot()) {
             world.setBlockState(pos, state.with(millingState, true));
@@ -119,13 +116,13 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
                 blockEntity.craftItem();
                 blockEntity.progress = 1;
             }
-            markDirty(world, pos, state);
+            blockEntity.markDirty();
         }
-//        else {
-//            if (blockEntity.progress > 0) {
-//                blockEntity.progress -= 2;
-//            }
-//        }
+        else {
+            if (blockEntity.progress > 0) {
+                blockEntity.progress -= 2;
+            }
+        }
         if (blockEntity.progress == -1) {
             blockEntity.progress = 20;
         }
@@ -135,6 +132,13 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
 
         blockEntity.markDirty();
 
+    }
+
+    @Override
+    public void markDirty() {
+        super.markDirty();
+        propertyDelegate.set(0, propertyDelegate.get(0) + 1);
+        propertyDelegate.set(1, 60);
     }
 
     private boolean hasRecipe() {
@@ -199,7 +203,7 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
 
     @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new GristmillScreenHandler(syncId, playerInventory, this);
+        return new GristmillScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     @Override

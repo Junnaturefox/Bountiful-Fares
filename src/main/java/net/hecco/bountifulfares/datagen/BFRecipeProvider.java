@@ -54,6 +54,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
                 .offerTo(exporter);
 
+        offerSingleOutputShapelessRecipe(exporter, BFItems.SWEET_BERRY_PIPS, Items.SWEET_BERRIES, "sweet_berry_seeds");
 
 //        for (TrellisVariant trellis : TrellisVariants.TrellisVariants) {
 //            if (Objects.equals(trellis.getId(), BountifulFares.MOD_ID)) {

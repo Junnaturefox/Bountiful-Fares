@@ -7,15 +7,14 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
     private static final Identifier TEXTURE = Identifier.of(BountifulFares.MOD_ID, "textures/gui/gristmill.png");
-    private final GristmillBlockEntity blockEntity;
     public GristmillScreen(GristmillScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
-        this.blockEntity = handler.blockEntity;
     }
 
     @Override
@@ -37,6 +36,7 @@ public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
+
             //TODO: Fix progress arrow
             //TODO: Add missing milling recipes
 //            BountifulFares.LOGGER.info("scaledProgress: " + handler.getScaledProgress());

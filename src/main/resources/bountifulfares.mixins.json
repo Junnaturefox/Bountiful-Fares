@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractInventoryMixin",
+    "BlockItemMixin",
     "BrewingRecipeRegistryMixin",
     "ChickenEntityMixin",
     "GuiMixin",
@@ -12,6 +13,7 @@
     "ItemRendererMixin",
     "LivingEntityMixin",
     "ModelLoaderMixin",
+    "SweetBerryBushMixin",
     "WolfEntityMixin",
     "WoodlandMansionFirstFloorMixin",
     "WoodlandMansionSecondFloorMixin"

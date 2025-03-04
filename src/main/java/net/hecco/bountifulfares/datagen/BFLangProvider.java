@@ -382,6 +382,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.acidified_effect_icon_effects", "Status Effects modified by Acidity have visual effects");
         generate(translationBuilder, "config.bountifulfares.particle_tint_override", "Remove particle tint for some blocks");
         generate(translationBuilder, "config.subterrous.particle_tint_override_msg", "Disable this if it is causing issues.");
+        generate(translationBuilder, "config.bountifulfares.sweet_berry_pips", "Sweet Berries cannot place Sweet Berry Bushes");
         generate(translationBuilder, "config.bountifulfares.lapisberry_seeds", "Sniffers can dig up Lapisberry Seeds");
         generate(translationBuilder, "config.bountifulfares.hoary_seeds", "Sniffers can dig up Hoary Seeds");
         generate(translationBuilder, "config.bountifulfares.spongekin_seeds_elder_guardian", "Elder Guardians drop Spongekin Seeds");

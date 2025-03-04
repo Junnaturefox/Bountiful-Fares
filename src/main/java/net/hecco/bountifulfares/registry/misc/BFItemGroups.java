@@ -307,6 +307,7 @@ public class BFItemGroups {
                         entries.add(BFBlocks.WILD_PASSION_FRUIT_VINE);
                         entries.add(BFBlocks.WILD_ELDERBERRY_VINE);
                         entries.add(BFItems.GRASS_SEEDS);
+                        entries.add(BFItems.SWEET_BERRY_PIPS);
                         entries.add(BFItems.MAIZE_SEEDS);
                         entries.add(BFItems.LEEK_SEEDS);
                         entries.add(BFItems.SPONGEKIN_SEEDS);

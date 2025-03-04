@@ -3,6 +3,7 @@ package net.hecco.bountifulfares.registry.content;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.item.custom.*;
+import net.minecraft.block.Blocks;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -29,6 +30,8 @@ public class BFItems {
     public static final Item HOARY_HANGING_SIGN = registerItem("hoary_hanging_sign", new HangingSignItem(BFBlocks.HOARY_HANGING_SIGN, BFBlocks.HOARY_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
     public static final Item HOARY_BOAT = TerraformBoatItemHelper.registerBoatItem(BFBoats.HOARY_BOAT_ID, BFBoats.HOARY_BOAT_KEY, false);
     public static final Item HOARY_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(BFBoats.HOARY_CHEST_BOAT_ID, BFBoats.HOARY_BOAT_KEY, true);
+
+    public static final Item SWEET_BERRY_PIPS = registerItem("sweet_berry_pips", new AliasedBlockItem(Blocks.SWEET_BERRY_BUSH, new Item.Settings()));
 
     public static final Item WALNUT = registerItem("walnut", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(1).saturationModifier(0).snack().build())));
     public static final Item WALNUT_SIGN = registerItem("walnut_sign", new SignItem(new Item.Settings().maxCount(16), BFBlocks.WALNUT_SIGN, BFBlocks.WALNUT_WALL_SIGN));

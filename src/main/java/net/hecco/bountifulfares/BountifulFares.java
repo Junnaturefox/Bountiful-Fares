@@ -2,11 +2,13 @@ package net.hecco.bountifulfares;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.hecco.bountifulfares.datafix.RenameJarFix;
 import net.hecco.bountifulfares.registry.content.*;
 import net.hecco.bountifulfares.registry.misc.*;
 import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.registry.util.*;
+import net.minecraft.datafixer.DataFixTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,7 +72,6 @@ public class BountifulFares implements ModInitializer {
 		BFSounds.registerSounds();
 		BFDamageTypes.registerDamageTypes();
 		BFCompat.registerCompatContent();
-//		BFDataFixers.registerDataFixers();
 	} //appledog - Lydia
 	//appledog - Hecco
 }

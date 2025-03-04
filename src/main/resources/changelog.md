@@ -133,6 +133,11 @@
 ## New Content
 - Added Iron Railings
     - A variant of Iron Bars, similar to pickets
+- Added Sweet Berry Seeds
+    - Crafted from Sweet Berries
+    - Can plant new Sweet Berry Bushes
+    - Sweet Berries can no longer plant Sweet Berry Bushes
+    - Added a config option to disable Sweet Berry Pips
 - Added Palm Trees
     - A new type of fruit tree
     - Generates on Beaches and near water in Deserts
