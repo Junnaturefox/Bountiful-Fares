@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wheat_from_wheat_milling"
+        "recipe": "minecraft:coconut_coir_from_coconut_milling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wheat_from_wheat_milling"
+      "minecraft:coconut_coir_from_coconut_milling"
     ]
   }
 }

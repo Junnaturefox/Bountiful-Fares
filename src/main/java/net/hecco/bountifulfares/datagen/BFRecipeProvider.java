@@ -14,6 +14,7 @@ import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -754,15 +755,42 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerJackOStrawRecipes(exporter, BFBlocks.MAGENTA_JACK_O_STRAW, Items.MAGENTA_WOOL);
         offerJackOStrawRecipes(exporter, BFBlocks.PINK_JACK_O_STRAW, Items.PINK_WOOL);
 
-        MillingRecipeBuilder.create(Items.WHEAT, BFItems.FLOUR, 2)
-                .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
-                .offerTo(exporter);
-//        offerTeaBlendMillingRecipe(exporter, ModItems.GREEN_TEA_BLEND, ModItems.TEA_LEAVES);
-//        offerTeaBlendMillingRecipe(exporter, ModItems.BLACK_TEA_BLEND, ModItems.DRIED_TEA_LEAVES);
-//        offerTeaBlendMillingRecipe(exporter, ModItems.CHAMOMILE_TEA_BLEND, ModBlocks.CHAMOMILE_FLOWERS);
-//        offerTeaBlendMillingRecipe(exporter, ModItems.HONEYSUCKLE_TEA_BLEND, ModBlocks.HONEYSUCKLE);
-//        offerTeaBlendMillingRecipe(exporter, ModItems.BELLFLOWER_TEA_BLEND, ModBlocks.VIOLET_BELLFLOWER);
-//        offerTeaBlendMillingRecipe(exporter, ModItems.TORCHFLOWER_TEA_BLEND, Items.TORCHFLOWER);
+        offerMillingRecipe(exporter, Items.WHEAT, BFItems.FLOUR, 2);
+        offerMillingRecipe(exporter, BFItems.MAIZE, BFItems.FLOUR, 2);
+        offerMillingRecipe(exporter, Items.GRANITE, BFItems.FELDSPAR, 2);
+        offerMillingRecipe(exporter, Items.ANDESITE, BFItems.FELDSPAR, 2);
+        offerMillingRecipe(exporter, Items.DIORITE, BFItems.FELDSPAR, 2);
+        offerMillingRecipe(exporter, Items.TUFF, BFItems.FELDSPAR, 2);
+        offerMillingRecipe(exporter, BFItems.COCONUT, BFItems.COCONUT_COIR, 2);
+        offerMillingRecipe(exporter, BFItems.WALNUT, BFBlocks.WALNUT_MULCH, 1);
+        offerMillingRecipe(exporter, BFItems.PALM_FROND, BFBlocks.PALM_MULCH, 1);
+        offerMillingRecipe(exporter, Items.BONE, Items.BONE_MEAL, 4);
+        offerMillingRecipe(exporter, Items.COAL_ORE, Items.COAL, 2);
+        offerMillingRecipe(exporter, Items.SUGAR_CANE, Items.SUGAR, 2);
+        offerMillingRecipe(exporter, Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD, 2);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_COAL_ORE, Items.COAL, 2);
+        offerMillingRecipe(exporter, Items.IRON_ORE, Items.RAW_IRON, 2);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_IRON_ORE, Items.RAW_IRON, 2);
+        offerMillingRecipe(exporter, Items.COPPER_ORE, Items.RAW_COPPER, 5);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_COPPER_ORE, Items.RAW_COPPER, 5);
+        offerMillingRecipe(exporter, Items.REDSTONE_ORE, Items.REDSTONE, 6);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_REDSTONE_ORE, Items.REDSTONE, 6);
+        offerMillingRecipe(exporter, Items.LAPIS_ORE, Items.LAPIS_LAZULI, 6);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_LAPIS_ORE, Items.LAPIS_LAZULI, 6);
+        offerMillingRecipe(exporter, Items.GOLD_ORE, Items.RAW_GOLD, 2);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_GOLD_ORE, Items.RAW_GOLD, 2);
+        offerMillingRecipe(exporter, Items.DIAMOND_ORE, Items.DIAMOND, 2);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_DIAMOND_ORE, Items.DIAMOND, 2);
+        offerMillingRecipe(exporter, Items.EMERALD_ORE, Items.EMERALD, 3);
+        offerMillingRecipe(exporter, Items.DEEPSLATE_EMERALD_ORE, Items.EMERALD, 3);
+        offerMillingRecipe(exporter, Items.NETHER_QUARTZ_ORE, Items.QUARTZ, 4);
+        offerMillingRecipe(exporter, Items.NETHER_GOLD_ORE, Items.GOLD_NUGGET, 8);
+        offerMillingRecipe(exporter, BFItems.TEA_LEAVES, BFItems.GREEN_TEA_BLEND, 1);
+        offerMillingRecipe(exporter, BFItems.DRIED_TEA_LEAVES, BFItems.BLACK_TEA_BLEND, 1);
+        offerMillingRecipe(exporter, BFBlocks.CHAMOMILE_FLOWERS, BFItems.CHAMOMILE_TEA_BLEND, 2);
+        offerMillingRecipe(exporter, BFBlocks.HONEYSUCKLE, BFItems.HONEYSUCKLE_TEA_BLEND, 2);
+        offerMillingRecipe(exporter, BFBlocks.VIOLET_BELLFLOWER, BFItems.BELLFLOWER_TEA_BLEND, 2);
+        offerMillingRecipe(exporter, Items.TORCHFLOWER, BFItems.TORCHFLOWER_TEA_BLEND, 2);
 //        new MillingRecipeBuilder(Items.GRANITE, ModItems.FELDSPAR, 2, "granite")
 //                .group("feldspar")
 //                .criterion("has_felsic_stone", conditionsFromTag(ModItemTags.FELSIC_STONES))
@@ -1083,6 +1111,12 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .input(Items.SUGAR)
                 .criterion(hasItem(BFItems.FLOUR), conditionsFromItem(BFItems.FLOUR))
                 .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
+                .criterion(hasItem(input), conditionsFromItem(input))
+                .offerTo(exporter);
+    }
+
+    public static void offerMillingRecipe(RecipeExporter exporter, ItemConvertible input, ItemConvertible output, int count) {
+        MillingRecipeBuilder.create(input.asItem(), output, count)
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter);
     }

@@ -35,7 +35,7 @@ public class MillingRecipeBuilder implements CraftingRecipeJsonBuilder {
     }
 
     public static <T extends MillingRecipe> MillingRecipeBuilder create(Item input, ItemConvertible output, int count) {
-        return new MillingRecipeBuilder(output, input, count, MillingRecipe::new);
+        return new MillingRecipeBuilder(input, output, count, MillingRecipe::new);
     }
 
     public MillingRecipeBuilder criterion(String string, AdvancementCriterion<?> advancementCriterion) {
@@ -63,6 +63,6 @@ public class MillingRecipeBuilder implements CraftingRecipeJsonBuilder {
 
     @Override
     public void offerTo(RecipeExporter exporter) {
-        this.offerTo(exporter, Registries.ITEM.getId(getOutputItem()).getPath() + "_from_" + Registries.ITEM.getId(this.result).getPath() + "_milling");
+        this.offerTo(exporter, Registries.ITEM.getId(getOutputItem()).getPath() + "_from_" + Registries.ITEM.getId(this.ingredient.getMatchingStacks()[0].getItem()).getPath() + "_milling");
     }
 }

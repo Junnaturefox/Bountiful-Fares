@@ -50,7 +50,6 @@ public class BFItemGroups {
                         entries.add(BFBlocks.FLOWERING_APPLE_LEAVES);
                         entries.add(Items.APPLE);
                         entries.add(BFBlocks.APPLE_BLOCK);
-                        entries.add(AppledogBlocks.APPLEDOG_BLOCK);
                         entries.add(BFBlocks.APPLE_SAPLING);
                         entries.add(BFBlocks.ORANGE_LOG);
                         entries.add(BFBlocks.ORANGE_WOOD);
@@ -477,6 +476,7 @@ public class BFItemGroups {
                         displayContext.lookup().getOptionalWrapper(RegistryKeys.PAINTING_VARIANT).ifPresent((registryWrapper) -> {
                             addPaintings(entries, displayContext.lookup(), registryWrapper, (registryEntry) -> registryEntry.isIn(BFBlockTags.PAINTINGS), ItemGroup.StackVisibility.PARENT_AND_SEARCH_TABS);
                         });
+                        entries.add(AppledogBlocks.APPLEDOG_BLOCK);
 
                     }).build());
 
