@@ -60,7 +60,8 @@
 - Updated fr_ca translations
 - Added pl_pl (Polish) translations
 - Added config option to disable flour throwing
-- Added effect tooltips to foods that give effects
+- Added effect tooltips to foods that give effects (adds status effects, removes status effects, or other effects)
+    - Can be disabled in the config
 - Added effect tooltips to infused candles
 - Added effect tooltips to foods that increase underwater air time (Spongekin Slice, Coastal Medley)
 - Decreased the amount of hunger regained from candied fruit
@@ -138,6 +139,8 @@
     - Can plant new Sweet Berry Bushes
     - Sweet Berries can no longer plant Sweet Berry Bushes
     - Added a config option to disable Sweet Berry Pips
+- Patches of Grassy and Coarse Dirt can be found in forest biomes
+    - Can be disabled in the config
 - Added Palm Trees
     - A new type of fruit tree
     - Generates on Beaches and near water in Deserts
