@@ -40,6 +40,7 @@ public class BFPlacedFeatures {
     public static final RegistryKey<PlacedFeature> PALM_PLACED_KEY = registerKey("palm_placed");
     public static final RegistryKey<PlacedFeature> WILD_PASSION_FRUIT_PLACED_KEY = registerKey("wild_passion_fruit_placed");
     public static final RegistryKey<PlacedFeature> WILD_ELDERBERRY_PLACED_KEY = registerKey("wild_elderberry_placed");
+    public static final RegistryKey<PlacedFeature> PATCH_GRASSY_DIRT_KEY = registerKey("patch_grassy_dirt");
 
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
