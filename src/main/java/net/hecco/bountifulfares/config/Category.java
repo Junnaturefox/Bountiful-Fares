@@ -86,6 +86,9 @@ public enum Category {
             Entry.booleanEntry("config.bountifulfares.golden_apple_tree_rooms", () -> BountifulFares.CONFIG.isGenerateGoldenAppleTreeRooms(),
                     newValue -> BountifulFares.CONFIG.setGenerateGoldenAppleTreeRooms(newValue), true, "config.bountifulfares.restart_warning"),
 
+            Entry.booleanEntry("config.bountifulfares.grassy_dirt_patches", () -> BountifulFares.CONFIG.generateGrassyDirtPatches,
+                    newValue -> BountifulFares.CONFIG.generateGrassyDirtPatches = newValue, true, "config.bountifulfares.restart_warning"),
+
             Entry.booleanEntry("config.bountifulfares.flower_forest_fruit_trees", () -> BountifulFares.CONFIG.isGenerateAllFruitTreesInFlowerForest(),
                     newValue -> BountifulFares.CONFIG.setGenerateAllFruitTreesInFlowerForest(newValue), false, "config.bountifulfares.restart_warning"),
 

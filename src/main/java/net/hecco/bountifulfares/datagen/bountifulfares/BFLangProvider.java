@@ -416,6 +416,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.lemon_trees", "Generate Lemon Trees");
         generate(translationBuilder, "config.bountifulfares.plum_trees", "Generate Plum Trees");
         generate(translationBuilder, "config.bountifulfares.palm_trees", "Generate Palm Trees");
+        generate(translationBuilder, "config.bountifulfares.grassy_dirt_patches", "Generate Patches of Grassy Dirt");
         generate(translationBuilder, "config.bountifulfares.wild_passion_fruit", "Generate Wild Passion Fruit");
         generate(translationBuilder, "config.bountifulfares.wild_elderberries", "Generate Wild Elderberries");
         generate(translationBuilder, "config.bountifulfares.golden_apple_tree_rooms", "Generate Golden Apple Trees in Woodland Mansions");

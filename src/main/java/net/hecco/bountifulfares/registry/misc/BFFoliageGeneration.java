@@ -9,6 +9,10 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class BFFoliageGeneration {
     public static void generateFlowers() {
+        if (BountifulFares.CONFIG.generateGrassyDirtPatches) {
+            BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST, BiomeKeys.BIRCH_FOREST, BiomeKeys.DARK_FOREST, BiomeKeys.OLD_GROWTH_BIRCH_FOREST),
+                    GenerationStep.Feature.TOP_LAYER_MODIFICATION, BFPlacedFeatures.PATCH_GRASSY_DIRT_KEY);
+        }
         BiomeModifications.addFeature(BiomeSelectors.tag(BFBiomeTags.HAS_HONEYSUCKLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, BFPlacedFeatures.HONEYSUCKLE_PLACED_KEY);
 

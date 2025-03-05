@@ -1034,6 +1034,7 @@
   "config.bountifulfares.forest_walnut_trees": "Generate Walnut Trees in Forests",
   "config.bountifulfares.fruit_replace_when_picked": "Fruits on trees replant when picked",
   "config.bountifulfares.golden_apple_tree_rooms": "Generate Golden Apple Trees in Woodland Mansions",
+  "config.bountifulfares.grassy_dirt_patches": "Generate Patches of Grassy Dirt",
   "config.bountifulfares.hoary_seeds": "Sniffers can dig up Hoary Seeds",
   "config.bountifulfares.infused_candle_radius": "Size of area where Infused Candles give effects",
   "config.bountifulfares.lapisberry_seeds": "Sniffers can dig up Lapisberry Seeds",

@@ -40,6 +40,7 @@ public class BountifulFaresConfiguration {
     private boolean generatePalmTrees = true;
     public boolean generateWildPassionFruit = true;
     public boolean generateWildElderberries = true;
+    public boolean generateGrassyDirtPatches = true;
     private boolean generateAllFruitTreesInFlowerForest = false;
     private boolean generateForestTeaShrubs = false;
     private boolean generateForestWalnutTrees = false;
