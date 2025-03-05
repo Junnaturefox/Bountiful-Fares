@@ -9,10 +9,10 @@
       "item": "minecraft:egg"
     },
     "F": {
-      "item": "bountifulfares:flour"
+      "tag": "c:flour"
     },
     "M": {
-      "item": "minecraft:milk_bucket"
+      "tag": "c:milks"
     }
   },
   "pattern": [

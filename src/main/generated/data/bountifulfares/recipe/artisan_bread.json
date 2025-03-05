@@ -3,13 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "bountifulfares:flour"
+      "tag": "c:flour"
     },
     {
-      "item": "bountifulfares:flour"
+      "tag": "c:flour"
     },
     {
-      "item": "bountifulfares:flour"
+      "tag": "c:flour"
     },
     {
       "item": "minecraft:egg"

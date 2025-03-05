@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "C": {
-      "tag": "bountifulfares:coconut_ingredients"
+      "tag": "c:coconut_halves"
     },
     "E": {
       "item": "minecraft:egg"
     },
     "F": {
-      "item": "bountifulfares:flour"
+      "tag": "c:flour"
     },
     "S": {
       "item": "minecraft:sugar"

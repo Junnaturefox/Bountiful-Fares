@@ -3,7 +3,7 @@ package net.hecco.bountifulfares.registry.misc;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.registry.util.BFBiomeTags;
+import net.hecco.bountifulfares.registry.tags.BFBiomeTags;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 

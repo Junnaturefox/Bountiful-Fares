@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFEffects;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.component.type.PotionContentsComponent;
@@ -82,11 +83,13 @@ public class TeaBottleItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
-        PotionContentsComponent.buildTooltip(List.of(new StatusEffectInstance(BFEffects.EBULLIENCE, 3600, 0, true, true)), tooltip::add, 1.0F, context.getUpdateTickRate());
-        tooltip.add(ScreenTexts.EMPTY);
-        tooltip.add(Text.translatable("tooltip.bountifulfares.removes").formatted(Formatting.GRAY));
-        for (StatusEffectInstance effect : removedEffects) {
-            tooltip.add(Text.translatable(effect.getTranslationKey().formatted(effect.getEffectType().value().getCategory().getFormatting())).formatted(Formatting.RED));
+        if (BountifulFares.CONFIG.effectTooltips) {
+            PotionContentsComponent.buildTooltip(List.of(new StatusEffectInstance(BFEffects.EBULLIENCE, 3600, 0, true, true)), tooltip::add, 1.0F, context.getUpdateTickRate());
+            tooltip.add(ScreenTexts.EMPTY);
+            tooltip.add(Text.translatable("tooltip.bountifulfares.removes").formatted(Formatting.GRAY));
+            for (StatusEffectInstance effect : removedEffects) {
+                tooltip.add(Text.translatable(effect.getTranslationKey().formatted(effect.getEffectType().value().getCategory().getFormatting())).formatted(Formatting.RED));
+            }
         }
     }
 }

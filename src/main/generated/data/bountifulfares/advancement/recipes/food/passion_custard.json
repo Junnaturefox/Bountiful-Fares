@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_milk_bucket": {
+    "has_milk": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:milk_bucket"
+            "items": "#c:milks"
           }
         ]
       },
@@ -41,7 +41,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_milk_bucket",
+      "has_milk",
       "has_sugar",
       "has_passion_fruit"
     ]

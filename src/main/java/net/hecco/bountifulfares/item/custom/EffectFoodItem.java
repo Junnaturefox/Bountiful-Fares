@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
@@ -19,7 +20,7 @@ public class EffectFoodItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
-        if (effects != null && !effects.isEmpty()) {
+        if (effects != null && !effects.isEmpty() && BountifulFares.CONFIG.effectTooltips) {
             PotionContentsComponent.buildTooltip(effects, tooltip::add, 1.0F, context.getUpdateTickRate());
         }
     }

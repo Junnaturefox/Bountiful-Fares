@@ -8,7 +8,7 @@ import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.trellis.trellis_parts.DecorativeVine;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.hecco.bountifulfares.trellis.trellis_parts.VineCrop;
-import net.hecco.bountifulfares.datagen.custom.BFTemplateModels;
+import net.hecco.bountifulfares.datagen.bountifulfares.BFTemplateModels;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.server.recipe.RecipeExporter;

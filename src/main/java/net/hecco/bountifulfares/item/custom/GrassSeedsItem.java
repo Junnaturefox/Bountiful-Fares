@@ -1,6 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
-import net.hecco.bountifulfares.registry.util.BFBlockTags;
+import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

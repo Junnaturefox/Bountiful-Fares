@@ -2,13 +2,17 @@ package net.hecco.bountifulfares.registry.util;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.EmptyEntry;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BFLootTableModifiers {
@@ -62,10 +66,15 @@ public class BFLootTableModifiers {
             return original;
         });
         if (BountifulFares.CONFIG.isEnableLapisberrySeeds()) {
-            LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
-                if (SNIFFER_DIGGING_ID.equals(key.getValue())) {
-                    tableBuilder.modifyPools(builder -> builder.with(ItemEntry.builder(BFItems.LAPISBERRY_SEEDS)));
+            LootTableEvents.REPLACE.register((resourceManager, lootManager, key, original, source) -> {
+                if (SNIFFER_DIGGING_ID.equals(key)) {
+                    List<LootPoolEntry> entries = new ArrayList<>(Arrays.asList(original));
+                    entries.add(ItemEntry.builder(BFItems.HOARY_SEEDS).build());
+
+                    LootPool.Builder lootPool = LootPool.builder().with(entries);
+                    return LootTable.builder().pool(lootPool).build();
                 }
+                return lootManager;
             });
         }
         if (BountifulFares.CONFIG.isEnableHoarySeeds()) {

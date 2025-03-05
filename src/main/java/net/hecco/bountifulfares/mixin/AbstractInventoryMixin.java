@@ -2,7 +2,7 @@ package net.hecco.bountifulfares.mixin;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFEffects;
-import net.hecco.bountifulfares.registry.util.BFEffectTags;
+import net.hecco.bountifulfares.registry.tags.BFEffectTags;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 import net.minecraft.entity.effect.StatusEffect;

@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_milk_bucket": {
+    "has_milk": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:milk_bucket"
+            "items": "#c:milks"
           }
         ]
       },
@@ -51,7 +51,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_milk_bucket",
+      "has_milk",
       "has_sugar",
       "has_cocoa_beans",
       "has_walnut"

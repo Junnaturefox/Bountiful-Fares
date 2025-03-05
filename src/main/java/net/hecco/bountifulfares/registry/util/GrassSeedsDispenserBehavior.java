@@ -1,9 +1,9 @@
 package net.hecco.bountifulfares.registry.util;
 
+import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
-import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.particle.ParticleUtil;
@@ -12,7 +12,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Position;
 import net.minecraft.world.World;
 
 public abstract class GrassSeedsDispenserBehavior extends ItemDispenserBehavior {

@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
 import net.hecco.bountifulfares.registry.content.BFBlocks;
-import net.hecco.bountifulfares.registry.util.BFBlockTags;
+import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.minecraft.block.*;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;

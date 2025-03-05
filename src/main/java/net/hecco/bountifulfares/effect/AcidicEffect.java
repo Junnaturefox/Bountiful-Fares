@@ -1,18 +1,8 @@
 package net.hecco.bountifulfares.effect;
 
-import net.hecco.bountifulfares.registry.content.BFEffects;
-import net.hecco.bountifulfares.registry.util.BFEffectTags;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class AcidicEffect extends StatusEffect {
 //    private final List<StatusEffectInstance> affectedEffects;

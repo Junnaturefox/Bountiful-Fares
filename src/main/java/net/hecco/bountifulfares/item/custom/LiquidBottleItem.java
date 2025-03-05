@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.LivingEntity;
@@ -72,7 +73,7 @@ public class LiquidBottleItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
-        if (!effects.isEmpty()) {
+        if (!effects.isEmpty() && BountifulFares.CONFIG.effectTooltips) {
             PotionContentsComponent.buildTooltip(effects, tooltip::add, 1.0F, context.getUpdateTickRate());
         }
     }

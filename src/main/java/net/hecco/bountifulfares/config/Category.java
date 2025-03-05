@@ -102,7 +102,9 @@ public enum Category {
             Entry.booleanEntry("config.bountifulfares.restoration_overlay", () -> BountifulFares.CONFIG.isRestorationHeartOverlay(),
                     newValue -> BountifulFares.CONFIG.setRestorationHeartOverlay(newValue), true),
             Entry.booleanEntry("config.bountifulfares.acidified_effect_icon_effects", () -> BountifulFares.CONFIG.isAcidifiedEffectIconEffects(),
-                    newValue -> BountifulFares.CONFIG.setAcidifiedEffectIconEffects(newValue), true)
+                    newValue -> BountifulFares.CONFIG.setAcidifiedEffectIconEffects(newValue), true),
+            Entry.booleanEntry("config.bountifulfares.effect_tooltips", () -> BountifulFares.CONFIG.effectTooltips,
+                    newValue -> BountifulFares.CONFIG.effectTooltips = newValue, true)
     )
     ;
 //    MINT("config.bountifulfares.category.mint", true,

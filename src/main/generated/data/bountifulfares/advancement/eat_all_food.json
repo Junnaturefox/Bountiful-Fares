@@ -169,6 +169,14 @@
       },
       "trigger": "minecraft:consume_item"
     },
+    "coconut_milk_bottle": {
+      "conditions": {
+        "item": {
+          "items": "bountifulfares:coconut_milk_bottle"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
     "coconut_stew": {
       "conditions": {
         "item": {
@@ -595,6 +603,9 @@
     ],
     [
       "coconut_half"
+    ],
+    [
+      "coconut_milk_bottle"
     ],
     [
       "citrus_essence"

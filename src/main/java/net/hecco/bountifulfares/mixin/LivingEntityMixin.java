@@ -1,12 +1,10 @@
 package net.hecco.bountifulfares.mixin;
 
 import com.google.common.collect.Maps;
-import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFEffects;
-import net.hecco.bountifulfares.registry.util.BFEffectTags;
+import net.hecco.bountifulfares.registry.tags.BFEffectTags;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.registry.entry.RegistryEntry;

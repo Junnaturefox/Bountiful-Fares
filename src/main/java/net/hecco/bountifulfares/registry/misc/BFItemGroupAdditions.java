@@ -283,6 +283,7 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.STUFFED_HOARY_APPLE, BFItems.HOARY_COMPOTE_JAR);
             entries.addAfter(BFItems.HOARY_COMPOTE_JAR, BFItems.HOARY_CIDER_JAR);
             entries.addAfter(BFItems.HOARY_CIDER_JAR, BFBlocks.HOARY_APPLE_BLOCK);
+            entries.addAfter(BFBlocks.HOARY_APPLE_BLOCK, BFItems.COCONUT_HALF);
             entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, BFBlocks.GOLDEN_APPLE_BLOCK);
             entries.addAfter(Items.MELON_SLICE, BFItems.SPONGEKIN_SLICE);
             entries.addAfter(BFItems.SPONGEKIN_SLICE, BFItems.PICKLED_SPONGEKIN);
@@ -291,8 +292,8 @@ public class BFItemGroupAdditions {
             entries.addAfter(BFItems.ELDERBERRIES, BFItems.ELDERBERRY_WINE_BOTTLE);
             entries.addAfter(Items.GLOW_BERRIES, BFItems.LAPISBERRIES);
             entries.addAfter(BFItems.LAPISBERRIES, BFItems.LAPISBERRY_WINE_BOTTLE);
-            entries.addAfter(Items.MILK_BUCKET, BFItems.GREEN_TEA_BOTTLE);
-            entries.addAfter(Items.MILK_BUCKET, BFItems.GREEN_TEA_BOTTLE);
+            entries.addAfter(Items.MILK_BUCKET, BFItems.COCONUT_MILK_BOTTLE);
+            entries.addAfter(BFItems.COCONUT_MILK_BOTTLE, BFItems.GREEN_TEA_BOTTLE);
             entries.addAfter(BFItems.GREEN_TEA_BOTTLE, BFItems.BLACK_TEA_BOTTLE);
             entries.addAfter(BFItems.BLACK_TEA_BOTTLE, BFItems.CHAMOMILE_TEA_BOTTLE);
             entries.addAfter(BFItems.CHAMOMILE_TEA_BOTTLE, BFItems.HONEYSUCKLE_TEA_BOTTLE);

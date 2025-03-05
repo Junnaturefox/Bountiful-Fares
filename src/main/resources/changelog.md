@@ -133,7 +133,7 @@
 ## New Content
 - Added Iron Railings
     - A variant of Iron Bars, similar to pickets
-- Added Sweet Berry Seeds
+- Added Sweet Berry Pips
     - Crafted from Sweet Berries
     - Can plant new Sweet Berry Bushes
     - Sweet Berries can no longer plant Sweet Berry Bushes
@@ -187,11 +187,11 @@
   - Pickled Spongekin
       - Crafted by fermenting a Spongekin Slice
   - Mire Medley
-      - Crafted from Elderberries, Maize, Chamomile Flowers, and Coconut Halves\
+      - Crafted from Elderberries, Maize, Chamomile Flowers, and Carrots
   - Tropical Medley
-      - Crafted from Orange, Cocoa Beans, Passionfruit, and Coconut Halves
+      - Crafted from Orange, Cocoa Beans, Passion fruit, and Coconut Halves
   - Sea Salad
-      - Crafted from Kelp, Leeks, and Citrus Essense
+      - Crafted from Kelp, Leeks, and Citrus Essence
   - Stuffed Hoary Apple
       - Crafted from Hoary Apples and Lapisberries
   - Strange Candy

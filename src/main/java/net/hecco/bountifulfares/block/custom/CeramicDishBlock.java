@@ -6,14 +6,10 @@ import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.block.entity.CeramicDishBlockEntity;
 import net.hecco.bountifulfares.compat.CompatUtil;
 import net.hecco.bountifulfares.registry.content.BFItems;
-import net.hecco.bountifulfares.item.custom.AirTimeIncreasingItem;
-import net.hecco.bountifulfares.registry.util.BFItemTags;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
@@ -44,9 +40,6 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.Objects;
 
 public class CeramicDishBlock extends Block implements BlockEntityProvider, Waterloggable, CeramicDishBlockInterface {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;

@@ -13,9 +13,8 @@ import net.hecco.bountifulfares.compat.jei.BFRecipeTypes;
 import net.hecco.bountifulfares.compat.jei.PropagationRecipe;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
-import net.hecco.bountifulfares.registry.util.BFBlockTags;
+import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
@@ -23,7 +22,6 @@ import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("removal")

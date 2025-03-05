@@ -42,6 +42,7 @@ public class BFItems {
     public static final Item COCONUT = registerItem("coconut", new AliasedBlockItem(BFBlocks.PALM_SAPLING, new Item.Settings()));
     public static final Item COCONUT_COIR = registerItem("coconut_coir", new Item(new Item.Settings()));
     public static final Item COCONUT_HALF = registerItem("coconut_half", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.1f).build())));
+    public static final Item COCONUT_MILK_BOTTLE = registerItem("coconut_milk_bottle", new CoconutMilkBottleItem(new Item.Settings().food(new FoodComponent.Builder().nutrition(3).saturationModifier(1f).build()).recipeRemainder(Items.GLASS_BOTTLE)));
     public static final Item CITRUS_ESSENCE = registerItem("citrus_essence", new EffectFoodItem(List.of(new StatusEffectInstance(BFEffects.ACIDIC, 300, 0)), new Item.Settings().food(new FoodComponent.Builder().nutrition(1).saturationModifier(0.1f).snack().alwaysEdible().statusEffect(new StatusEffectInstance(BFEffects.ACIDIC, 300, 0),1).build())));
     public static final Item CANDIED_ORANGE = registerItem("candied_orange", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.2f).snack().build())));
     public static final Item CANDIED_LEMON = registerItem("candied_lemon", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.2f).snack().build())));

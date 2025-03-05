@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -47,9 +48,10 @@ public class AirTimeIncreasingItem extends EffectFoodItem {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
-        tooltip.add(ScreenTexts.EMPTY);
-        tooltip.add(Text.translatable("tooltip.bountifulfares.when_eaten").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("+" + airTickIncrease/20 + " ").append(Text.translatable("tooltip.bountifulfares.air_time")).formatted(Formatting.BLUE));
-
+        if (BountifulFares.CONFIG.effectTooltips) {
+            tooltip.add(ScreenTexts.EMPTY);
+            tooltip.add(Text.translatable("tooltip.bountifulfares.when_eaten").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("+" + airTickIncrease / 20 + " ").append(Text.translatable("tooltip.bountifulfares.air_time")).formatted(Formatting.BLUE));
+        }
     }
 }

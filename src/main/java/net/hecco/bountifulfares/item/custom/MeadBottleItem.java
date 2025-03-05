@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.item.custom;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -38,8 +39,10 @@ public class MeadBottleItem extends LiquidBottleItem {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         super.appendTooltip(stack, context, tooltip, type);
-        tooltip.add(ScreenTexts.EMPTY);
-        tooltip.add(Text.translatable("tooltip.bountifulfares.removes").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable(new StatusEffectInstance(StatusEffects.POISON).getTranslationKey().formatted(StatusEffects.POISON.value().getCategory().getFormatting())).formatted(Formatting.RED));
+        if (BountifulFares.CONFIG.effectTooltips) {
+            tooltip.add(ScreenTexts.EMPTY);
+            tooltip.add(Text.translatable("tooltip.bountifulfares.removes").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable(new StatusEffectInstance(StatusEffects.POISON).getTranslationKey().formatted(StatusEffects.POISON.value().getCategory().getFormatting())).formatted(Formatting.RED));
+        }
     }
 }

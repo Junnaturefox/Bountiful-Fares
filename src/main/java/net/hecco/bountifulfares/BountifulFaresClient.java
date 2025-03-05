@@ -3,6 +3,7 @@ package net.hecco.bountifulfares;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -25,6 +26,7 @@ import net.hecco.bountifulfares.networking.BFMessages;
 import net.hecco.bountifulfares.particle.*;
 import net.hecco.bountifulfares.registry.content.BFParticles;
 import net.hecco.bountifulfares.registry.misc.BFScreenHandlers;
+import net.hecco.bountifulfares.registry.util.BFTooltipEvents;
 import net.hecco.bountifulfares.screen.GristmillScreen;
 import net.hecco.bountifulfares.registry.content.BFTrellises;
 import net.hecco.bountifulfares.registry.util.BFWoodTypes;
@@ -53,6 +55,7 @@ public class BountifulFaresClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BFMessages.registerS2CPackets();
+        ItemTooltipCallback.EVENT.register(BFTooltipEvents::addTooltipsToVanillaItems);
         BlockEntityRendererFactories.register(BFBlockEntities.CERAMIC_DISH_BLOCK_ENTITY, CeramicDishBlockEntityRenderer::new);
 //        ElsAndLsDyes compat
             BlockRenderLayerMap.INSTANCE.putBlock(MintBlocks.ACORN_JACK_O_STRAW, RenderLayer.getCutout());

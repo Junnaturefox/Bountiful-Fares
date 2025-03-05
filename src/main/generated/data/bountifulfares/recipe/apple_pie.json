@@ -6,7 +6,7 @@
       "item": "minecraft:apple"
     },
     {
-      "item": "bountifulfares:flour"
+      "tag": "c:flour"
     },
     {
       "item": "minecraft:egg"

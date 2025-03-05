@@ -3,7 +3,7 @@ package net.hecco.bountifulfares.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.registry.content.BFSounds;
-import net.hecco.bountifulfares.registry.util.BFBlockTags;
+import net.hecco.bountifulfares.registry.tags.BFBlockTags;
 import net.hecco.bountifulfares.registry.util.BFDamageTypes;
 import net.minecraft.block.*;
 import net.minecraft.entity.FallingBlockEntity;
