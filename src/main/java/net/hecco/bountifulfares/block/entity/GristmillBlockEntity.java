@@ -1,9 +1,7 @@
 package net.hecco.bountifulfares.block.entity;
 
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.GristmillBlock;
-import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
 import net.hecco.bountifulfares.recipe.MillingRecipe;
 import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.registry.misc.BFRecipes;
@@ -21,9 +19,9 @@ import net.minecraft.recipe.RecipeInputProvider;
 import net.minecraft.recipe.RecipeMatcher;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
@@ -34,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class GristmillBlockEntity extends BlockEntity implements SidedInventory, ImplementedInventory, ExtendedScreenHandlerFactory<GristmillPayload>, RecipeInputProvider {
+public class GristmillBlockEntity extends BlockEntity implements SidedInventory, ImplementedInventory, NamedScreenHandlerFactory, RecipeInputProvider {
     private static BooleanProperty millingState;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
 
@@ -191,11 +189,6 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
     private boolean canInsertOutputSlot() {
         return this.getStack(OUTPUT_SLOT).isEmpty() ||
                 this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
-    }
-
-    @Override
-    public GristmillPayload getScreenOpeningData(ServerPlayerEntity player) {
-        return new GristmillPayload(this.pos, this.progress);
     }
 
     @Override

@@ -1,14 +1,12 @@
 package net.hecco.bountifulfares.screen;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.custom.GristmillBlock;
-import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
 import net.hecco.bountifulfares.block.entity.slot.GristmillOutputSlot;
 import net.hecco.bountifulfares.registry.misc.BFScreenHandlers;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
@@ -19,8 +17,6 @@ public class GristmillScreenHandler extends ScreenHandler {
 
     private final Inventory inventory;
     public final PropertyDelegate propertyDelegate;
-    public final Boolean milling;
-
     public boolean isCrafting() {
         return true;
     }
@@ -36,15 +32,14 @@ public class GristmillScreenHandler extends ScreenHandler {
         return scaledProgress;
     }
 
-    public GristmillScreenHandler(int syncId, PlayerInventory playerInventory, GristmillPayload payload) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(payload.pos()), new ArrayPropertyDelegate(2));
+    public GristmillScreenHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory, new SimpleInventory(2), new ArrayPropertyDelegate(2));
     }
 
-    public GristmillScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate propertyDelegate) {
+    public GristmillScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(BFScreenHandlers.GRISTMILL_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 2);
-        this.inventory = (Inventory)blockEntity;
-        this.milling = playerInventory.player.getWorld().getBlockState(blockEntity.getPos()).get(GristmillBlock.MILLING);
+//        checkSize(((Inventory) blockEntity), 2);
+        this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;
         this.addSlot(new Slot(inventory, 0, 44, 36));
         this.addSlot(new GristmillOutputSlot(inventory, 1, 116, 36));

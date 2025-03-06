@@ -296,7 +296,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.obtain_ceramic_tiles.description", "Craft Ceramic Tiles");
 
         generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch", "Mulchmaxxer");
-        generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch.description", "Feed a wolf Walnut Mulch - Delicious!");
+        generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch.description", "Feed a wolf mulch");
 
         generate(translationBuilder, "advancement.bountifulfares.how_easy", "How easy...");
         generate(translationBuilder, "advancement.bountifulfares.how_easy.description", "Threaten to squeeze a Lemon Block");
