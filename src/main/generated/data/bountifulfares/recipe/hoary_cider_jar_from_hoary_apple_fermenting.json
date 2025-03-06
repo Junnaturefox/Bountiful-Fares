@@ -3,8 +3,9 @@
   "ingredient": {
     "item": "bountifulfares:hoary_apple"
   },
+  "particle_color": 15714738,
   "result": {
     "id": "bountifulfares:hoary_cider_jar"
   },
-  "particle_color": 15714738
+  "result_count": 1
 }

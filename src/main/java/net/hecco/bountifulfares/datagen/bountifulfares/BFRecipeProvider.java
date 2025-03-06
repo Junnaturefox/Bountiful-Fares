@@ -3,6 +3,7 @@ package net.hecco.bountifulfares.datagen.bountifulfares;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.hecco.bountifulfares.datagen.recipe.FermentingRecipeBuilder;
 import net.hecco.bountifulfares.datagen.recipe.MillingRecipeBuilder;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
@@ -792,6 +793,18 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerMillingRecipe(exporter, BFBlocks.HONEYSUCKLE, BFItems.HONEYSUCKLE_TEA_BLEND, 2);
         offerMillingRecipe(exporter, BFBlocks.VIOLET_BELLFLOWER, BFItems.BELLFLOWER_TEA_BLEND, 2);
         offerMillingRecipe(exporter, Items.TORCHFLOWER, BFItems.TORCHFLOWER_TEA_BLEND, 2);
+
+        offerFermentingRecipe(exporter, Items.APPLE, BFItems.APPLE_CIDER_JAR, 1, 16771237);
+        offerFermentingRecipe(exporter, BFItems.ORANGE, BFItems.CITRUS_ESSENCE, 2, 15200149);
+        offerFermentingRecipe(exporter, BFItems.LEMON, BFItems.CITRUS_ESSENCE, 2, 15200149);
+        offerFermentingRecipe(exporter, BFItems.ELDERBERRIES, BFItems.ELDERBERRY_WINE_BOTTLE, 1, 13803457);
+        offerFermentingRecipe(exporter, Items.SPIDER_EYE, Items.FERMENTED_SPIDER_EYE, 1, 10250865);
+        offerFermentingRecipe(exporter, BFItems.HOARY_APPLE, BFItems.HOARY_CIDER_JAR, 1, 15714738);
+        offerFermentingRecipe(exporter, BFItems.LAPISBERRIES, BFItems.LAPISBERRY_WINE_BOTTLE, 1, 6449890);
+        offerFermentingRecipe(exporter, Items.HONEY_BOTTLE, BFItems.MEAD_BOTTLE, 1, 16774088);
+        offerFermentingRecipe(exporter, BFItems.SPONGEKIN_SLICE, BFItems.PICKLED_SPONGEKIN, 2, 3916203);
+        offerFermentingRecipe(exporter, BFItems.PLUM, BFItems.PLUM_CIDER_JAR, 1, 14532546);
+        offerFermentingRecipe(exporter, BFItems.COCONUT_HALF, BFItems.COCONUT_MILK_BOTTLE, 1, 13747902);
 //        new MillingRecipeBuilder(Items.GRANITE, ModItems.FELDSPAR, 2, "granite")
 //                .group("feldspar")
 //                .criterion("has_felsic_stone", conditionsFromTag(ModItemTags.FELSIC_STONES))
@@ -1118,6 +1131,12 @@ public class BFRecipeProvider extends FabricRecipeProvider {
 
     public static void offerMillingRecipe(RecipeExporter exporter, ItemConvertible input, ItemConvertible output, int count) {
         MillingRecipeBuilder.create(input.asItem(), output, count)
+                .criterion(hasItem(input), conditionsFromItem(input))
+                .offerTo(exporter);
+    }
+
+    public static void offerFermentingRecipe(RecipeExporter exporter, ItemConvertible input, ItemConvertible output, int count, int particleColor) {
+        FermentingRecipeBuilder.create(input.asItem(), output, count, particleColor)
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter);
     }

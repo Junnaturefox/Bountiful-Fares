@@ -3,10 +3,9 @@
   "ingredient": {
     "item": "bountifulfares:spongekin_slice"
   },
+  "particle_color": 3916203,
   "result": {
     "id": "bountifulfares:pickled_spongekin"
   },
-  "particle_color": 3916203
+  "result_count": 2
 }
-
-

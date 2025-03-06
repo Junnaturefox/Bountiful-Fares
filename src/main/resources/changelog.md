@@ -69,7 +69,6 @@
     - Can be disabled in the config
 - Added effect tooltips to infused candles
 - Added effect tooltips to foods that increase underwater air time (Spongekin Slice, Coastal Medley)
-- Decreased the amount of hunger regained from candied fruit
 - Added Amethyst Shard from Amethyst Block milling recipe
 - Added Sugar from Sugarcane milling recipe
 - Added recipes for Diorite and Granite using Feldspar in place of Quartz

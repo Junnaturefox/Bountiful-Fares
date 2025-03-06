@@ -3,9 +3,9 @@
   "ingredient": {
     "item": "bountifulfares:elderberries"
   },
+  "particle_color": 13803457,
   "result": {
     "id": "bountifulfares:elderberry_wine_bottle"
   },
-  "particle_color": 13803457
+  "result_count": 1
 }
-

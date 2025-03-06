@@ -3,10 +3,9 @@
   "ingredient": {
     "item": "minecraft:apple"
   },
+  "particle_color": 16771237,
   "result": {
     "id": "bountifulfares:apple_cider_jar"
   },
-  "particle_color": 16771237
+  "result_count": 1
 }
-
-

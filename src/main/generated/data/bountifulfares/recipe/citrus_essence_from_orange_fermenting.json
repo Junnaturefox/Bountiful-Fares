@@ -3,8 +3,9 @@
   "ingredient": {
     "item": "bountifulfares:orange"
   },
+  "particle_color": 15200149,
   "result": {
     "id": "bountifulfares:citrus_essence"
   },
-  "particle_color": 15200149
+  "result_count": 2
 }

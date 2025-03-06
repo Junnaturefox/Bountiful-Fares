@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.misc.BFRecipes;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -17,6 +18,7 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.input.RecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
 
 public class FermentationRecipe implements Recipe<RecipeInput> {
@@ -26,16 +28,16 @@ public class FermentationRecipe implements Recipe<RecipeInput> {
     private final Ingredient ingredient;
     private final int particleColor;
 
-    public FermentationRecipe(Identifier id, ItemStack output, Ingredient input, int particleColor) {
+    public FermentationRecipe(Identifier id, ItemStack output, int outputCount, Ingredient input, int particleColor) {
         this.id = id;
-        this.output = output;
+        this.output = new ItemStack(output.getItem(), outputCount);
         this.ingredient = input;
         this.particleColor = particleColor;
     }
 
-    public FermentationRecipe(Ingredient ingredient, ItemStack itemStack, int particleColor) {
+    public FermentationRecipe(Ingredient ingredient, ItemStack itemStack, int outputCount, int particleColor) {
         this.id = Identifier.of(BountifulFares.MOD_ID, "fermenting");
-        this.output = itemStack;
+        this.output = new ItemStack(itemStack.getItem(), outputCount);
         this.ingredient = ingredient;
         this.particleColor = particleColor;
     }
@@ -95,7 +97,7 @@ public class FermentationRecipe implements Recipe<RecipeInput> {
     }
 
     public interface RecipeFactory<T extends FermentationRecipe> {
-        T create(Ingredient ingredient, ItemStack result, int ParticleColor);
+        T create(Ingredient ingredient, ItemStack result, int resultCount, int ParticleColor);
     }
 
     public static class Serializer implements RecipeSerializer<FermentationRecipe> {
@@ -103,8 +105,8 @@ public class FermentationRecipe implements Recipe<RecipeInput> {
         public final MapCodec<FermentationRecipe> CODEC;
         public final PacketCodec<RegistryByteBuf, FermentationRecipe> PACKET_CODEC;
 
-        public FermentationRecipe create(Ingredient ingredient, ItemStack result, int particleColor) {
-            return this.recipeFactory.create(ingredient, result, particleColor);
+        public FermentationRecipe create(Ingredient ingredient, ItemStack result, int resultCount, int particleColor) {
+            return this.recipeFactory.create(ingredient, result, resultCount, particleColor);
         }
 
         public Serializer(FermentationRecipe.RecipeFactory<FermentationRecipe> recipeFactory) {
@@ -114,6 +116,8 @@ public class FermentationRecipe implements Recipe<RecipeInput> {
                                 .forGetter((recipe) -> recipe.ingredient),
                             ItemStack.VALIDATED_UNCOUNTED_CODEC.fieldOf("result")
                                     .forGetter((recipe) -> recipe.output),
+                            Codecs.rangedInt(1, 99).fieldOf("result_count")
+                                    .forGetter((recipe) -> recipe.output.getCount()),
                             Codec.INT.fieldOf("particle_color").forGetter(
                                     (recipe) -> recipe.particleColor)
                             )
@@ -125,13 +129,15 @@ public class FermentationRecipe implements Recipe<RecipeInput> {
         public FermentationRecipe read(RegistryByteBuf buf) {
             Ingredient ingredient = Ingredient.PACKET_CODEC.decode(buf);
             ItemStack itemStack = ItemStack.PACKET_CODEC.decode(buf);
+            int count = PacketCodecs.INTEGER.decode(buf);
             int particleColor = PacketCodecs.INTEGER.decode(buf);
-            return this.recipeFactory.create(ingredient, itemStack, particleColor);
+            return this.recipeFactory.create(ingredient, itemStack, count, particleColor);
         }
 
         public void write(RegistryByteBuf buf, FermentationRecipe recipe) {
             Ingredient.PACKET_CODEC.encode(buf, recipe.ingredient);
             ItemStack.PACKET_CODEC.encode(buf, recipe.output);
+            PacketCodecs.INTEGER.encode(buf, recipe.output.getCount());
             PacketCodecs.INTEGER.encode(buf, recipe.particleColor);
         }
         @Override
