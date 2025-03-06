@@ -1,9 +1,8 @@
 package net.hecco.bountifulfares.compat.excessive_building;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.custom.MulchBlockBlock;
-import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.block.*;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.*;
@@ -14,8 +13,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 import static net.hecco.bountifulfares.BountifulFares.EXCESSIVE_BUILDING_MOD_ID;
-import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 import static net.hecco.bountifulfares.registry.content.BFTrellises.TRELLIS_RENDER_CUTOUT;
+import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class ExcessiveBuildingBlocks {
     public static final Block ANCIENT_PICKETS = registerBlock("ancient_pickets", new CompatPicketsBlock(EXCESSIVE_BUILDING_MOD_ID, AbstractBlock.Settings.create().burnable().mapColor(MapColor.CLEAR).strength(0.5F).sounds(BFSounds.LIGHT_WOOD).instrument(NoteBlockInstrument.BASS).notSolid().nonOpaque()));

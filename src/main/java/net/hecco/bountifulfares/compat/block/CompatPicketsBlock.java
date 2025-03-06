@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.compat.block;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.custom.JackOStrawBlock;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 

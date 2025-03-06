@@ -1,19 +1,15 @@
 package net.hecco.bountifulfares.world.wild_vine_feature;
 
 import com.mojang.serialization.Codec;
-import net.hecco.bountifulfares.block.custom.WildVineCropBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
-import java.lang.reflect.Array;
 import java.util.Collection;
 
 public class WildVineFeature extends Feature<WildVineFeatureConfig> {

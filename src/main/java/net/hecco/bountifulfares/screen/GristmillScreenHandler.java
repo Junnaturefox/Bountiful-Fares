@@ -2,7 +2,6 @@ package net.hecco.bountifulfares.screen;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.GristmillBlock;
-import net.hecco.bountifulfares.block.entity.GristmillBlockEntity;
 import net.hecco.bountifulfares.block.entity.network.GristmillPayload;
 import net.hecco.bountifulfares.block.entity.slot.GristmillOutputSlot;
 import net.hecco.bountifulfares.registry.misc.BFScreenHandlers;

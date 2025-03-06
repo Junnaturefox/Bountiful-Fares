@@ -2,10 +2,9 @@ package net.hecco.bountifulfares.block.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.entity.DyeableCeramicBlockEntity;
-import net.hecco.bountifulfares.block.interfaces.DyeableCeramicBlockInterface;
 import net.hecco.bountifulfares.compat.CompatUtil;
-import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.item.custom.DyeableCeramicBlockItem;
+import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.DoubleBlockHalf;

@@ -1,10 +1,10 @@
 package net.hecco.bountifulfares.block.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.interfaces.CeramicDishBlockInterface;
-import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.block.entity.CeramicDishBlockEntity;
+import net.hecco.bountifulfares.block.interfaces.CeramicDishBlockInterface;
 import net.hecco.bountifulfares.compat.CompatUtil;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;

@@ -3,8 +3,6 @@ package net.hecco.bountifulfares.particle;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.SimpleParticleType;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 
 public class FermentedBubbleParticle extends SpriteBillboardParticle {
     private final SpriteProvider spriteProvider;

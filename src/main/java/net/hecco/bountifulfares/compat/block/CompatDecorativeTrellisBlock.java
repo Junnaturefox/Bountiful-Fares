@@ -1,11 +1,9 @@
 package net.hecco.bountifulfares.compat.block;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.custom.CropTrellisBlock;
 import net.hecco.bountifulfares.block.custom.DecorativeTrellisBlock;
 import net.hecco.bountifulfares.trellis.trellis_parts.DecorativeVine;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
-import net.hecco.bountifulfares.trellis.trellis_parts.VineCrop;
 import net.minecraft.item.Item;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 

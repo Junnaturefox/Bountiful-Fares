@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.registry.tags;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.minecraft.entity.decoration.painting.PaintingVariant;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;

@@ -1,9 +1,7 @@
 package net.hecco.bountifulfares.compat.block;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 
 public class CompatSlabBlock extends SlabBlock {

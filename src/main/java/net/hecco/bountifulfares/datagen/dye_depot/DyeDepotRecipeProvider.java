@@ -16,7 +16,6 @@ import net.minecraft.util.Identifier;
 import java.util.concurrent.CompletableFuture;
 
 import static net.hecco.bountifulfares.BountifulFares.DYE_DEPOT_MOD_ID;
-import static net.hecco.bountifulfares.datagen.bountifulfares.BFRecipeProvider.offerPicketsRecipe;
 import static net.minecraft.data.server.recipe.CraftingRecipeJsonBuilder.getItemId;
 
 public class DyeDepotRecipeProvider extends FabricRecipeProvider {

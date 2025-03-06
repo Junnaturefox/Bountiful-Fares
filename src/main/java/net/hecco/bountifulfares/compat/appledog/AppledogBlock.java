@@ -1,13 +1,10 @@
 package net.hecco.bountifulfares.compat.appledog;
 
-import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.block.custom.AppleBlock;
 import net.hecco.bountifulfares.compat.block.CompatBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;

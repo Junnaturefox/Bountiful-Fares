@@ -2,8 +2,8 @@ package net.hecco.bountifulfares.datagen.bountifulfares;
 
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.FruitLogBlock;
-import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
+import net.hecco.bountifulfares.trellis.TrellisUtil;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.Block;
 import net.minecraft.block.enums.DoubleBlockHalf;

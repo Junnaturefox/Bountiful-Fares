@@ -1,8 +1,8 @@
 package net.hecco.bountifulfares.compat.jei;
 
+import net.hecco.bountifulfares.recipe.FermentationRecipe;
 import net.hecco.bountifulfares.recipe.MillingRecipe;
 import net.hecco.bountifulfares.registry.misc.BFRecipes;
-import net.hecco.bountifulfares.recipe.FermentationRecipe;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.recipe.RecipeEntry;

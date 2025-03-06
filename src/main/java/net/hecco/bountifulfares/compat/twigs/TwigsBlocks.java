@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.compat.twigs;
 
-import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;

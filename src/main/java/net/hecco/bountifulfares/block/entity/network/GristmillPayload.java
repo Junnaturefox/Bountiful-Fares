@@ -1,9 +1,6 @@
 package net.hecco.bountifulfares.block.entity.network;
 
-import com.mojang.serialization.Codec;
-import io.netty.buffer.ByteBuf;
 import net.hecco.bountifulfares.BountifulFares;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;

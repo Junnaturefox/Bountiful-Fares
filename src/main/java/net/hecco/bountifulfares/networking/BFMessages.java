@@ -1,9 +1,6 @@
 package net.hecco.bountifulfares.networking;
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.networking.packet.CeramicColorS2CPacket;
-import net.hecco.bountifulfares.networking.packet.ItemStackS2CPacket;
 import net.minecraft.util.Identifier;
 
 public class BFMessages {

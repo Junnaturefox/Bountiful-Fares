@@ -18,8 +18,8 @@ import net.minecraft.util.Identifier;
 
 import static net.hecco.bountifulfares.BountifulFares.ELS_AND_LS_DYES_MOD_ID;
 import static net.hecco.bountifulfares.registry.content.BFBlocks.createLightLevelFromLitBlockState;
-import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 import static net.hecco.bountifulfares.registry.content.BFTrellises.TRELLIS_RENDER_CUTOUT;
+import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class MintBlocks {
     public static Block ACORN_JACK_O_STRAW = registerBlock("acorn_jack_o_straw", new CompatJackOStrawBlock(ELS_AND_LS_DYES_MOD_ID, AbstractBlock.Settings.create().burnable().mapColor(MapColor.YELLOW).strength(0.5F).luminance(createLightLevelFromLitBlockState(12)).instrument(NoteBlockInstrument.BASS).notSolid().nonOpaque().pistonBehavior(PistonBehavior.DESTROY)));

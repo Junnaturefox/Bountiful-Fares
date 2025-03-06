@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.compat.block;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.minecraft.block.Block;
 import net.minecraft.block.LadderBlock;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 

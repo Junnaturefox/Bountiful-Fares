@@ -1,8 +1,8 @@
 package net.hecco.bountifulfares.item.custom;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.block.entity.DyeableBlockEntity;
+import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.DyedColorComponent;

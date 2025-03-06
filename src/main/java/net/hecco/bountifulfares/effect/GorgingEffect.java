@@ -1,11 +1,9 @@
 package net.hecco.bountifulfares.effect;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.random.Random;
 
 public class GorgingEffect extends StatusEffect {
     protected GorgingEffect(StatusEffectCategory category, int color) {

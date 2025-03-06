@@ -2,13 +2,13 @@ package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.registry.content.BFBlockEntities;
 import net.hecco.bountifulfares.block.entity.FermentationVesselBlockEntity;
 import net.hecco.bountifulfares.block.enums.FermentationStage;
-import net.hecco.bountifulfares.registry.content.BFParticles;
-import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.hecco.bountifulfares.recipe.FermentationRecipe;
+import net.hecco.bountifulfares.registry.content.BFBlockEntities;
+import net.hecco.bountifulfares.registry.content.BFParticles;
 import net.hecco.bountifulfares.registry.content.BFSounds;
+import net.hecco.bountifulfares.registry.misc.BFRecipes;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;

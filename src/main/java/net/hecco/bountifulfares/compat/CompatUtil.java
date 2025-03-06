@@ -1,7 +1,6 @@
 package net.hecco.bountifulfares.compat;
 
 import net.hecco.bountifulfares.BountifulFares;
-import net.hecco.bountifulfares.BountifulFaresUtil;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
