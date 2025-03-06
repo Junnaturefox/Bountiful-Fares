@@ -372,6 +372,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .input(Items.KELP, 2)
                 .input(BFItems.LEEK)
                 .input(BFItems.CITRUS_ESSENCE)
+                .input(Items.BOWL)
                 .criterion(hasItem(Items.KELP), conditionsFromItem(Items.KELP))
                 .criterion(hasItem(BFItems.LEEK), conditionsFromItem(BFItems.LEEK))
                 .offerTo(exporter);

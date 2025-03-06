@@ -9,7 +9,6 @@
 - Added missing loot tables for potted plants
 - Fixed Spongekins growing from Spongekin Stems way too quickly
 - Fixed “obtain_spongekin” advancement requirements
-- Fixed excessivebuilding compat slab and stair recipes
 - Fixed some drink items playing eat sounds
 - Fixed Grassy Dirt bottom texture
 - Added undying recipes for Ceramic Doors and Trapdoors
@@ -29,9 +28,6 @@
 - Added compatibility with Excessive Building - if installed:
     - Added Ancient Trellis variant
     - Added Ancient Picket variant
-    - Added chiseled and mosaic variants of Walnut and Hoary Planks
-    - Added Walnut and Hoary Ladders
-    - Added vertical stair variants for many blocks
     - Added Walnut and Palm Mulch Brick sets
 - Added compatibility with JEI - if installed:
     - Added a new recipe category for milling (using a Gristmill)
@@ -112,6 +108,7 @@
     - Wind Charging
     - Infested
     - Weaving
+    - Ebullience
     - (effects without amplifiers or effects relating to bad omen cannot be affected by Acidic)
 - The following effects now cannot be removed by Stupor:
     - Conduit Power
@@ -134,6 +131,7 @@
     - All custom functionality that would normally happen when eating a food will occur
     - Removed "eatable_on_dish" item tag
 - Rebalanced pretty much every food - too many changes to list them all
+- Retextured many items such as Jars, Ceramic Tiles (item), Citrus Essence, etc.
 
 ## New Content
 - Added Iron Railings
@@ -168,6 +166,9 @@
         - Added Coconut Stew, Coconut Crusted Cod, and Coconut Cake food items
         - Added Coconut Candles, a decorative block
             - Up to 3 can be stacked in the same block
+	- Added Coconut Milk
+	    - Crafted by fermenting a Coconut Half
+	    - Acts like normal milk, and can be used in place of Milk Buckets in recipes
     - Coconuts can be milled in a Gristmill to create Coconut Coir items
         - Can be used in place of wheat to create Mud Bricks
         - Can be packed into coir blocks and bricks
@@ -185,12 +186,6 @@
             - If exposed for a while, they will become withered and cannot be restored. They will also not drop anything when broken
             - Unlike other fruit trees, leaves cannot be bonemealed to produce more fruit
 - Added new food items:
-    - Coconut Crusted Cod
-        - Crafted from Coconut Halves, Cooked Cod, and Bowls
-  - Coconut Stew
-      - Crafted from Coconut Halves, Leek, and Bowls
-  - Coconut Cake
-      - Crafted from Coconut Halves, Sugar, Egg, and Flour
   - Pickled Spongekin
       - Crafted by fermenting a Spongekin Slice
   - Mire Medley

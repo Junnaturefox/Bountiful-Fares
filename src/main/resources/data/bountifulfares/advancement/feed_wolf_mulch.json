@@ -14,7 +14,10 @@
         ],
         "item": {
           "items": [
-            "bountifulfares:walnut_mulch"
+            "bountifulfares:walnut_mulch",
+            "bountifulfares:walnut_mulch_block",
+            "bountifulfares:palm_mulch",
+            "bountifulfares:palm_mulch_block"
           ]
         }
       },
@@ -30,7 +33,7 @@
     "frame": "challenge",
     "hidden": true,
     "icon": {
-      "item": "bountifulfares:walnut_mulch"
+      "id": "bountifulfares:walnut_mulch"
     },
     "show_toast": true,
     "title": {

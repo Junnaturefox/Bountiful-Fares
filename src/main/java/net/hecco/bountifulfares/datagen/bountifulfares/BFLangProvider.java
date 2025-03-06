@@ -249,8 +249,8 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "tooltip.bountifulfares.removes", "Removes:");
         generate(translationBuilder, "tooltip.bountifulfares.when_eaten", "When eaten:");
         generate(translationBuilder, "tooltip.bountifulfares.when_drunk", "When drunk:");
-        generate(translationBuilder, "tooltip.bountifulfares.air_time", "Underwater air time");
-        generate(translationBuilder, "tooltip.bountifulfares.removes_all_effects", "Removes All Effects");
+        generate(translationBuilder, "tooltip.bountifulfares.air_time", "Oxygen");
+        generate(translationBuilder, "tooltip.bountifulfares.removes_all_effects", "Removes all effects");
 
 
         generate(translationBuilder, "painting.bountifulfares.bountiful.title", "Bountiful");
