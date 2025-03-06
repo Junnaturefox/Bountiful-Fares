@@ -5,6 +5,7 @@ import net.hecco.bountifulfares.compat.DatagenOnlyItems;
 import net.hecco.bountifulfares.compat.appledog.AppledogBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.delicate_dyes.DelicateDyesBlocks;
+import net.hecco.bountifulfares.compat.dungeons_delight.DungeonsDelightBlocks;
 import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
 import net.hecco.bountifulfares.compat.farmersdelight.FarmersDelightBlocks;
@@ -58,5 +59,7 @@ public class BFCompat {
         DelicateDyesBlocks.registerPigmentPaloozaBlocks();
 
         AppledogBlocks.registerAppledogBlocks();
+
+        DungeonsDelightBlocks.registerDungeonsDelightBlocks();
     }
 }

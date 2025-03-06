@@ -90,6 +90,8 @@ public class DatagenOnlyItems {
         registerDatagenOnlyItem(DELICATE_DYES_MOD_ID, "rose_wool");
 
         registerDatagenOnlyItem(APPLEDOG_MOD_ID, "dogapple");
+
+        registerDatagenOnlyItem(DUNGEONS_DELIGHT_MOD_ID, "wormwood_planks");
     }
 
 }

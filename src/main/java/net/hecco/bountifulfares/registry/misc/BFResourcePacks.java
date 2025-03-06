@@ -83,6 +83,9 @@ public class BFResourcePacks {
             if (BountifulFares.isModLoaded(BountifulFares.APPLEDOG_MOD_ID)) {
                 registerBuiltinDataPack(modContainer.get(), BountifulFares.APPLEDOG_MOD_ID);
             }
+            if (BountifulFares.isModLoaded(BountifulFares.DUNGEONS_DELIGHT_MOD_ID)) {
+                registerBuiltinDataPack(modContainer.get(), BountifulFares.DUNGEONS_DELIGHT_MOD_ID);
+            }
 //            if (BountifulFares.isModLoaded(BountifulFares.DYE_DEPOT_MOD_ID)) {
 //                if (BountifulFares.CONFIG.isRenameItemsToMatchDyes()) {
 //                    registerBuiltinResourcePack(modContainer.get(), BountifulFares.DYE_DEPOT_MOD_ID, "rename");

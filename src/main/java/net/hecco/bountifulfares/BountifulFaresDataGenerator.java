@@ -12,6 +12,9 @@ import net.hecco.bountifulfares.datagen.bountifulfares.*;
 import net.hecco.bountifulfares.datagen.delicate_dyes.DelicateDyesBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.delicate_dyes.DelicateDyesBlockTagProvider;
 import net.hecco.bountifulfares.datagen.delicate_dyes.DelicateDyesRecipeProvider;
+import net.hecco.bountifulfares.datagen.dungeons_delight.DungeonsDelightBlockLootTableProvider;
+import net.hecco.bountifulfares.datagen.dungeons_delight.DungeonsDelightBlockTagProvider;
+import net.hecco.bountifulfares.datagen.dungeons_delight.DungeonsDelightRecipeProvider;
 import net.hecco.bountifulfares.datagen.dye_depot.DyeDepotBlockLootTableProvider;
 import net.hecco.bountifulfares.datagen.dye_depot.DyeDepotBlockTagProvider;
 import net.hecco.bountifulfares.datagen.dye_depot.DyeDepotRecipeProvider;
@@ -96,6 +99,11 @@ public class BountifulFaresDataGenerator implements DataGeneratorEntrypoint {
         appledogPack.addProvider(AppledogBlockLootTableProvider::new);
         appledogPack.addProvider(AppledogBlockTagProvider::new);
         appledogPack.addProvider(AppledogRecipeProvider::new);
+
+        FabricDataGenerator.Pack dungeonsDelightPack = fabricDataGenerator.createBuiltinResourcePack(Identifier.of(BountifulFares.MOD_ID, BountifulFares.DUNGEONS_DELIGHT_MOD_ID + "_dat"));
+        dungeonsDelightPack.addProvider(DungeonsDelightBlockLootTableProvider::new);
+        dungeonsDelightPack.addProvider(DungeonsDelightBlockTagProvider::new);
+        dungeonsDelightPack.addProvider(DungeonsDelightRecipeProvider::new);
     }
 
     @Override

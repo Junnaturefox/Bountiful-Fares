@@ -438,6 +438,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "pack.bountifulfares.twigs", "Bountiful Fares X Twigs");
         generate(translationBuilder, "pack.bountifulfares.delicate_dyes", "Bountiful Fares X Delicate Dyes");
         generate(translationBuilder, "pack.bountifulfares.appledog", "Bountiful Fares X Appledog!");
+        generate(translationBuilder, "pack.bountifulfares.dungeons_delight", "Bountiful Fares X Dungeon's Delight");
 
         generate(translationBuilder, "death.attack.falling_coconut", "%1$s was bonked too hard");
 

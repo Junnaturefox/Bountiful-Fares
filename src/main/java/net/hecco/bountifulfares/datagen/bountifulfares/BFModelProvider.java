@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.delicate_dyes.DelicateDyesBlocks;
+import net.hecco.bountifulfares.compat.dungeons_delight.DungeonsDelightBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
 import net.hecco.bountifulfares.compat.mint.MintBlocks;
 import net.hecco.bountifulfares.compat.natures_spirit.NaturesSpiritBlocks;
@@ -126,6 +127,7 @@ public class BFModelProvider extends FabricModelProvider {
         registerPicketsModels(blockStateModelGenerator, NaturesSpiritBlocks.WISTERIA_PICKETS);
         registerPicketsModels(blockStateModelGenerator, SpawnBlocks.ROTTEN_PICKETS);
         registerPicketsModels(blockStateModelGenerator, ArtsAndCraftsBlocks.CORK_PICKETS);
+        registerPicketsModels(blockStateModelGenerator, DungeonsDelightBlocks.WORMWOOD_PICKETS);
 
 //        for (TrellisVariant trellis : TrellisVariants.TrellisVariants) {
 //            if (Objects.equals(trellis.getId(), BountifulFares.MOD_ID)) {
@@ -171,8 +173,6 @@ public class BFModelProvider extends FabricModelProvider {
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.CRIMSON);
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.WARPED);
 
-//        TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.CORK);
-
 //        TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.BAOBAB);
 //        TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.WW_CYPRESS);
 //        TrellisUtil.registerTrellisModels(blockStateModelGenerator, BFTrellises.PALM);
@@ -212,6 +212,8 @@ public class BFModelProvider extends FabricModelProvider {
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, NaturesSpiritBlocks.WISTERIA);
 
         TrellisUtil.registerTrellisModels(blockStateModelGenerator, ArtsAndCraftsBlocks.CORK);
+
+        TrellisUtil.registerTrellisModels(blockStateModelGenerator, DungeonsDelightBlocks.WORMWOOD);
     }
 
     @Override

@@ -42,10 +42,14 @@
 - Updated compatibility with Nature's Spirit - if installed:
     - Bountiful Fares features can now generate in Nature's Spirit biomes
     - Nature's Spirit Coconuts can be used in Bountiful Fares recipes
-- Added compatibility with appledog
+- Added compatibility with appledog - if installed:
     - Added Appledog Block
         - Crafted from 9 Dogapples
-        - Becomes joyous when interacted with !
+        - Becomes joyous when interacted with!
+- Added compatibility with (currently unreleased) Delicate Dyes - if installed:
+    - Added 8 new Jack O' Straw Variants for Coral, Canary, Wasabi, Sacramento, Sky, Blurple, Sangria, and Rose dyes
+- Added compatibility with (currently unreleased) Dungeon's Delight - if installed:
+    - Added Wormwood Trellises and Pickets
 
 ## Tweaks
 - Changed the recipe of Gristmills to be less expensive
