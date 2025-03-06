@@ -44,7 +44,7 @@
 - Added compatibility with appledog
     - Added Appledog Block
         - Crafted from 9 Dogapples
-        - Becomes joyous when interacted with
+        - Becomes joyous when interacted with !
 
 ## Tweaks
 - Changed the recipe of Gristmills to be less expensive
