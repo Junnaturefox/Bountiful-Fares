@@ -20,6 +20,7 @@
 - Fixed bowl not stacking with others on eating the final stew item in a stack
 - Added missing recipes for Walnut Wood
 - Updated how Acidic and Stupor effects are coded, which should make them less buggy
+- Fixed Ceramic Lever sounds being reversed
 
 ## Compatibility
 - Added compatibility with Arts and Crafts - if installed:

@@ -102,6 +102,7 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
         world.playSound(null, pos, SoundEvents.BLOCK_CANDLE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
         world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     }
+
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos());
         if (blockState.isOf(this)) {
@@ -112,7 +113,6 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
             return super.getPlacementState(ctx).with(WATERLOGGED, bl);
         }
     }
-
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
@@ -151,13 +151,12 @@ public class CoconutCandleBlock extends Block implements Waterloggable {
     }
 
     public static boolean canBeLit(BlockState state) {
-        return !state.get(LIT);
+        return !state.get(LIT) || !state.get(WATERLOGGED);
     }
 
     static void setLit(WorldAccess world, BlockState state, BlockPos pos, boolean lit) {
         world.setBlockState(pos, state.with(LIT, lit), Block.NOTIFY_ALL | Block.REDRAW_ON_MAIN_THREAD);
     }
-
 
     private static void spawnCandleParticles(World world, Vec3d vec3d, Random random) {
         float f = random.nextFloat();
