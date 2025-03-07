@@ -23,6 +23,9 @@
 - Fixed loot modifiers for sniffers
 
 ## Compatibility
+- Revamped the compatibility system
+    - Compat features will no longer disappear when the other mod is uninstalled
+    - Builtin resource packs are no longer used for compat
 - Added compatibility with Arts and Crafts - if installed:
     - Added Cork Trellises and Pickets
     - Paintbrushes can dye Ceramic Tile blocks
@@ -133,6 +136,7 @@
     - Removed "eatable_on_dish" item tag
 - Rebalanced pretty much every food - too many changes to list them all
 - Retextured many items such as Jars, Ceramic Tiles (item), Citrus Essence, etc.
+- Removed Bananacat
 
 ## New Content
 - Added Iron Railings

@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.block.entity;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.GristmillBlock;
 import net.hecco.bountifulfares.recipe.MillingRecipe;
 import net.hecco.bountifulfares.registry.content.BFBlockEntities;
@@ -92,11 +93,15 @@ public class GristmillBlockEntity extends BlockEntity implements SidedInventory,
         super.readNbt(nbt, registryLookup);
     }
 
-    public void tick(World world, BlockPos pos, BlockState state) {
-        if (!state.get(millingState) && !this.inventory.get(0).isEmpty() && this.hasRecipe() && this.canInsertOutputSlot()) {
+    public void tick(World world, BlockPos pos, BlockState state, GristmillBlockEntity blockEntity) {
+        if (BountifulFares.CONFIG.getMillingTime() * 20 != this.maxProgress) {
+            this.maxProgress = BountifulFares.CONFIG.getMillingTime() * 20;
+        }
+        BountifulFares.LOGGER.info(state.get(millingState) + "" + !blockEntity.hasRecipe() + (blockEntity.progress != 0));
+        if (!state.get(millingState) && !blockEntity.inventory.get(0).isEmpty() && blockEntity.hasRecipe() && blockEntity.canInsertOutputSlot()) {
             world.setBlockState(pos, state.with(millingState, true));
         }
-        if (state.get(millingState) && !this.hasRecipe() && this.progress != 0) {
+        if (state.get(millingState) && !blockEntity.hasRecipe()) {
             world.setBlockState(pos, state.with(millingState, false));
         }
 
