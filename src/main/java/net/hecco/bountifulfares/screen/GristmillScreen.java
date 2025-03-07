@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
     private static final Identifier TEXTURE = Identifier.of(BountifulFares.MOD_ID, "textures/gui/gristmill.png");
+    private static final Identifier PROGRESS_ARROW = Identifier.of(BountifulFares.MOD_ID, "textures/gui/gristmill_progress_arrow.png");
     public GristmillScreen(GristmillScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
@@ -29,23 +30,18 @@ public class GristmillScreen extends HandledScreen<GristmillScreenHandler> {
         int y = (height - backgroundHeight) / 2;
 
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-        renderProgressArrow(context, x, y);
+        renderProgressArrow(context, this.x, this.y);
     }
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
-
-            //TODO: Fix progress arrow
-            //TODO: Add missing milling recipes
-//            BountifulFares.LOGGER.info("scaledProgress: " + handler.getScaledProgress());
-            context.drawTexture(TEXTURE, x + 69, y + 36, 176, 0, handler.getScaledProgress(), 14);
-//            context.drawTexture(TEXTURE, x + 69, y + 36, 176 + handler.getScaledProgress(), 0, handler.getScaledProgress(), 16);
-
+            context.drawTexture(PROGRESS_ARROW, x + 69, y + 36, 0, 0, handler.getScaledProgress(), 14);
         }
     }
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        drawBackground(context, delta, mouseX, mouseY);
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
     }

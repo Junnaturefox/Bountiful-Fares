@@ -17,8 +17,10 @@ public class GristmillScreenHandler extends ScreenHandler {
 
     private final Inventory inventory;
     public final PropertyDelegate propertyDelegate;
+
+
     public boolean isCrafting() {
-        return true;
+        return this.propertyDelegate.get(0) > 0;
     }
 
     public int getScaledProgress() {
@@ -27,8 +29,6 @@ public class GristmillScreenHandler extends ScreenHandler {
         int progressArrowSize = 35;
 
         int scaledProgress = (int) (((float) progress / (float) maxProgress) * progressArrowSize);
-        BountifulFares.LOGGER.info("Progress: " + progress + " / " + maxProgress + " -> Scaled: " + scaledProgress);
-
         return scaledProgress;
     }
 
@@ -46,6 +46,7 @@ public class GristmillScreenHandler extends ScreenHandler {
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+        addProperties(propertyDelegate);
     }
 
     @Override
