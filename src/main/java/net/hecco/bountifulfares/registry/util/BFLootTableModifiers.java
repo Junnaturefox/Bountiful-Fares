@@ -31,6 +31,7 @@ public class BFLootTableModifiers {
             }
             return original;
         });
+
         LootTableEvents.REPLACE.register((key, original, source) -> {
             if (TALL_GRASS_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -41,6 +42,7 @@ public class BFLootTableModifiers {
             }
             return original;
         });
+
         LootTableEvents.REPLACE.register((key, original, source) -> {
             if (FERN_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -51,6 +53,7 @@ public class BFLootTableModifiers {
             }
             return original;
         });
+
         LootTableEvents.REPLACE.register((key, original, source) -> {
             if (LARGE_FERN_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
@@ -61,20 +64,27 @@ public class BFLootTableModifiers {
             }
             return original;
         });
+
         if (BountifulFares.CONFIG.isEnableLapisberrySeeds()) {
             LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
                 if (SNIFFER_DIGGING_ID.equals(key.getValue())) {
-                    tableBuilder.modifyPools(builder -> builder.with(ItemEntry.builder(BFItems.LAPISBERRY_SEEDS)));
+                    tableBuilder.modifyPools(itemEntry -> {
+                        itemEntry.with((ItemEntry.builder(BFItems.LAPISBERRY_SEEDS)).build());
+                    });
                 }
             });
         }
+
         if (BountifulFares.CONFIG.isEnableHoarySeeds()) {
             LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
                 if (SNIFFER_DIGGING_ID.equals(key.getValue())) {
-                    tableBuilder.modifyPools(builder -> builder.with(ItemEntry.builder(BFItems.HOARY_SEEDS)));
+                    tableBuilder.modifyPools(itemEntry -> {
+                        itemEntry.with((ItemEntry.builder(BFItems.HOARY_SEEDS)).build());
+                    });
                 }
             });
         }
+
         if (BountifulFares.CONFIG.isEnableElderGuardianSpongekinSeeds()) {
             LootTableEvents.REPLACE.register((key, original, source) -> {
                 if (ELDER_GUARDIAN_ID.equals(key.getValue())) {
@@ -86,6 +96,7 @@ public class BFLootTableModifiers {
                 return original;
             });
         }
+
         if (BountifulFares.CONFIG.isEnableGuardianSpongekinSeeds()) {
             LootTableEvents.REPLACE.register((key, original, source) -> {
                 if (GUARDIAN_ID.equals(key.getValue())) {

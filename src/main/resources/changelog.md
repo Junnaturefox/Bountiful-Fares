@@ -20,6 +20,7 @@
 - Added missing recipes for Walnut Wood
 - Updated how Acidic and Stupor effects are coded, which should make them less buggy
 - Fixed Ceramic Lever sounds being reversed
+- Fixed loot modifiers for sniffers
 
 ## Compatibility
 - Added compatibility with Arts and Crafts - if installed:
