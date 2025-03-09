@@ -1,8 +1,5 @@
-- Fix palm tree generation
-- Fix falling coconuts infinitely dropping when a block is below it
-- Right clickable farmer hats
+
 - Using ceramic levers kills the game
-- Place palm fronds on fruit logs and leaves
 - Placing signs crash the game
 - Candles on modded cakes turn into normal cakes
 - Leaves drop normal leaves

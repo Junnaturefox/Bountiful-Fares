@@ -1,6 +1,7 @@
 package net.hecco.bountifulfares.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.hecco.bountifulfares.registry.content.BFSounds;
 import net.hecco.bountifulfares.registry.tags.BFBlockTags;
@@ -162,7 +163,7 @@ public class CoconutBlock extends FallingBlock implements Fertilizable {
 
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!player.isCreative() && state.get(AGE) == 5) {
+        if (!player.isCreative() && state.get(AGE) == 5 && (canFallThrough(world.getBlockState(pos.down())) || world.getBlockState(pos.down()).isIn(BFBlockTags.SPLITS_COCONUTS))) {
             FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
             this.configureFallingBlockEntity(fallingBlockEntity);
             world.removeBlock(pos, false);
@@ -238,7 +239,8 @@ public class CoconutBlock extends FallingBlock implements Fertilizable {
             world.playSound(null, pos, BFSounds.COCONUT_LAND, SoundCategory.BLOCKS, 1, 0.8f + world.random.nextFloat()/3);
         }
         fallingBlockEntity.discard();
-        super.onLanding(world, pos, fallingBlockState, currentStateInPos, fallingBlockEntity);
+        BountifulFares.LOGGER.info("landed" + world.getBlockState(pos));
+        world.removeBlock(pos, false);
     }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {

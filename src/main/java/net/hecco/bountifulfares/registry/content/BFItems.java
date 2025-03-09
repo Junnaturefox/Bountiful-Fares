@@ -78,7 +78,7 @@ public class BFItems {
     public static final Item SCORCHKIN_SEEDS = registerItem("scorchkin_seeds", new AliasedBlockItem(BFBlocks.SCORCHKIN_STEM, new Item.Settings()));
     public static final Item FLOUR = registerItem("flour", new FlourItem(new Item.Settings()));
     public static final Item ARTISAN_COOKIE = registerItem("artisan_cookie", new AliasedBlockItem(BFBlocks.ARTISAN_COOKIES, new Item.Settings()));
-    public static final Item SUN_HAT = registerItem("sun_hat", new FarmersHatItem(new Item.Settings().maxCount(1)));
+    public static final Item SUN_HAT = registerItem("sun_hat", new SunHatItem(new Item.Settings().maxCount(1)));
 
 
 
