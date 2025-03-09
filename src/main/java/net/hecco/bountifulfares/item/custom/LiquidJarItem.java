@@ -16,8 +16,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
-public class DrinkableJarItem extends Item {
-    public DrinkableJarItem(Settings settings) {
+public class LiquidJarItem extends Item {
+    public LiquidJarItem(Settings settings) {
         super(settings);
     }
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {

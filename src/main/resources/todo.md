@@ -2,7 +2,7 @@
 - Placing signs crash the game
 - Change compote eat sound to honey sound
 - increase enrichment time for compotes
-- Fix compat blocks arent disabled
+- Fix compat blocks aren't disabled
 - Fix roy g biv
 
 Dont need to do now:
