@@ -46,10 +46,6 @@
     - Added Appledog Block
         - Crafted from 9 Dogapples
         - Becomes joyous when interacted with!
-- Added compatibility with (currently unreleased) Delicate Dyes - if installed:
-    - Added 8 new Jack O' Straw Variants for Coral, Canary, Wasabi, Sacramento, Sky, Blurple, Sangria, and Rose dyes
-- Added compatibility with (currently unreleased) Dungeon's Delight - if installed:
-    - Added Wormwood Trellises and Pickets
 
 ## Tweaks
 - Changed the recipe of Gristmills to be less expensive
@@ -122,6 +118,7 @@
     - Trial Omen
 - Effect blacklists of Acidic and Stupor are defined by status effect tags "acidic_blacklist" and "stupor_blacklist"
 - Effects that were modified by Acidic will have a different effect icon background
+    - Can be disabled in the config
 - Fermentation recipes are now datadriven
     - Item containers (bottles, jars, buckets, bowls) are automatically utilized when needed
 - Fermentation Vessels will now emit bubble particles while fermenting
@@ -136,6 +133,9 @@
     - Removed "eatable_on_dish" item tag
 - Rebalanced pretty much every food - too many changes to list them all
 - Retextured many items such as Jars, Ceramic Tiles (item), Citrus Essence, etc.
+- Added some items to common item tags
+    - Recipes that use Flour have been changed to use the flour common tag
+    - Recipes that use Milk Buckets have been changed to use the milks common tag
 - Removed Bananacat
 
 ## New Content
@@ -193,6 +193,7 @@
 - Added new food items:
   - Pickled Spongekin
       - Crafted by fermenting a Spongekin Slice
+      - Gives slightly more oxygen when eaten
   - Mire Medley
       - Crafted from Elderberries, Maize, Chamomile Flowers, and Carrots
   - Tropical Medley

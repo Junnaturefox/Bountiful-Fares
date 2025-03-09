@@ -20,7 +20,7 @@ public class ChamomileFlowersBlock extends FlowerbedBlock implements Fertilizabl
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         int i = state.get(FLOWER_AMOUNT);
         if (i < 4 || world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) {
-            world.setBlockState(pos, state.with(FLOWER_AMOUNT, i + 1), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.cycle(FLOWER_AMOUNT), Block.NOTIFY_LISTENERS);
         }
     }
 }

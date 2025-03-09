@@ -85,7 +85,7 @@ public abstract class LivingEntityMixin {
                     newEffects.add(new StatusEffectInstance(entry.getKey(), entry.getValue().getDuration(), amplifier, entry.getValue().isAmbient(), entry.getValue().shouldShowParticles(), entry.getValue().shouldShowIcon()));
                 }
             }
-
+            this.activeStatusEffects.remove(BFEffects.ACIDIC);
             for (StatusEffectInstance instance : newEffects) {
                 this.removeStatusEffect(instance.getEffectType());
                 this.addStatusEffect(instance);
