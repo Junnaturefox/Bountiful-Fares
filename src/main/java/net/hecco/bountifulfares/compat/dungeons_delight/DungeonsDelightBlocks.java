@@ -3,6 +3,7 @@ package net.hecco.bountifulfares.compat.dungeons_delight;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
+import net.hecco.bountifulfares.compat.block.CompatPicketsBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.AbstractBlock;
@@ -18,7 +19,7 @@ import static net.hecco.bountifulfares.registry.content.BFTrellises.TRELLIS_REND
 import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class DungeonsDelightBlocks {
-    public static Block WORMWOOD_PICKETS = registerBlock("wormwood_pickets", new PicketsBlock(AbstractBlock.Settings.copy(BFBlocks.OAK_PICKETS)));
+    public static Block WORMWOOD_PICKETS = registerBlock("wormwood_pickets", new CompatPicketsBlock(BountifulFares.DUNGEONS_DELIGHT_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.OAK_PICKETS)));
 
     public static final TrellisVariant WORMWOOD = new TrellisVariant(BountifulFares.DUNGEONS_DELIGHT_MOD_ID, "wormwood", Identifier.of(DUNGEONS_DELIGHT_MOD_ID, "wormwood_planks"), TRELLIS_RENDER_CUTOUT);
 

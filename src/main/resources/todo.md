@@ -1,9 +1,5 @@
 - Using ceramic levers kills the game
 - Placing signs crash the game
-- Change compote eat sound to honey sound
-- increase enrichment time for compotes
-- Fix compat blocks aren't disabled
-- Fix roy g biv
 
 Dont need to do now:
 - Add coconut advancements

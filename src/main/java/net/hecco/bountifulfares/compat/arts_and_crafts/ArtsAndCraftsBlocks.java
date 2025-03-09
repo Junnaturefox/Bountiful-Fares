@@ -3,6 +3,7 @@ package net.hecco.bountifulfares.compat.arts_and_crafts;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.block.custom.PicketsBlock;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
+import net.hecco.bountifulfares.compat.block.CompatPicketsBlock;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.hecco.bountifulfares.trellis.trellis_parts.TrellisVariant;
 import net.minecraft.block.AbstractBlock;
@@ -17,7 +18,7 @@ import static net.hecco.bountifulfares.registry.content.BFTrellises.TRELLIS_REND
 import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class ArtsAndCraftsBlocks {
-    public static Block CORK_PICKETS = registerBlock("cork_pickets", new PicketsBlock(AbstractBlock.Settings.copy(BFBlocks.OAK_PICKETS)));
+    public static Block CORK_PICKETS = registerBlock("cork_pickets", new CompatPicketsBlock(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.OAK_PICKETS)));
 
     public static final TrellisVariant CORK = new TrellisVariant(BountifulFares.ARTS_AND_CRAFTS_MOD_ID, "cork", Identifier.of(ARTS_AND_CRAFTS_MOD_ID, "cork_planks"), TRELLIS_RENDER_CUTOUT);
 
