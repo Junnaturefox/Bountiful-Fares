@@ -1,0 +1,23 @@
+- Fix palm tree generation
+- Fix falling coconuts infinitely dropping when a block is below it
+- Right clickable farmer hats
+- Using ceramic levers kills the game
+- Place palm fronds on fruit logs and leaves
+- Placing signs crash the game
+- Candles on modded cakes turn into normal cakes
+- Leaves drop normal leaves
+- Normal candy removes poison
+- Decrease chance of dirt patches
+- Add grassy dirt to shovels mineable tag
+- Change compote eat sound to honey sound
+- increase enrichment time for compotes
+- Add replant hanging fruits when broken config
+- Fix texture for stage 2
+- Fix compat blocks arent disabled
+- add cutout render type to wormwood
+- Add urban decor compat, stainless steel railings
+- Move hoary sapling to next to leaves
+- Add coconut advancements
+- Add splitting coconut dripstone sound
+- Fix roy g biv
+- checkered ceramic pillar

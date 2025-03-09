@@ -286,7 +286,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.bountiful_fares", "Bountiful Fares");
         generate(translationBuilder, "advancement.bountifulfares.bountiful_fares.description", "The world is filled with more food!");
 
-        generate(translationBuilder, "advancement.bountifulfares.place_gristmill", "On the Grind");
+        generate(translationBuilder, "advancement.bountifulfares.place_gristmill", "On The Grind");
         generate(translationBuilder, "advancement.bountifulfares.place_gristmill.description", "Place a Gristmill");
 
         generate(translationBuilder, "advancement.bountifulfares.obtain_feldspar", "Felsic Forager");
@@ -298,10 +298,10 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch", "Mulchmaxxer");
         generate(translationBuilder, "advancement.bountifulfares.feed_wolf_mulch.description", "Feed a wolf mulch");
 
-        generate(translationBuilder, "advancement.bountifulfares.how_easy", "How easy...");
+        generate(translationBuilder, "advancement.bountifulfares.how_easy", "How Easy...");
         generate(translationBuilder, "advancement.bountifulfares.how_easy.description", "Threaten to squeeze a Lemon Block");
 
-        generate(translationBuilder, "advancement.bountifulfares.obtain_fermentation_vessel", "Toil and Trouble");
+        generate(translationBuilder, "advancement.bountifulfares.obtain_fermentation_vessel", "Toil And Trouble");
         generate(translationBuilder, "advancement.bountifulfares.obtain_fermentation_vessel.description", "Craft a Fermentation Vessel");
 
         generate(translationBuilder, "advancement.bountifulfares.eat_ancient_fruit", "How Long Has This Sat Out?");
@@ -310,7 +310,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.place_all_baked_goods", "Baker's Dozen");
         generate(translationBuilder, "advancement.bountifulfares.place_all_baked_goods.description", "Place every baked good");
 
-        generate(translationBuilder, "advancement.bountifulfares.eat_citrus_essence", "Pass the Antacid");
+        generate(translationBuilder, "advancement.bountifulfares.eat_citrus_essence", "Pass The Antacid");
         generate(translationBuilder, "advancement.bountifulfares.eat_citrus_essence.description", "Eat Citric Essence");
 
 //        generate(translationBuilder, "advancement.bountifulfares.throw_flour", "Great Escape");
@@ -337,10 +337,10 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "advancement.bountifulfares.obtain_spongekin_seeds", "A Spongy Place");
         generate(translationBuilder, "advancement.bountifulfares.obtain_spongekin_seeds.description", "Discover the source of all these Sponges...");
 
-        generate(translationBuilder, "advancement.bountifulfares.obtain_spongekin", "Who Lives in a Loofah Under the Sea");
+        generate(translationBuilder, "advancement.bountifulfares.obtain_spongekin", "Who Lives In A Loofah Under The Sea");
         generate(translationBuilder, "advancement.bountifulfares.obtain_spongekin.description", "Grow and collect a Spongekin");
 
-        generate(translationBuilder, "advancement.bountifulfares.make_first_food", "Anyone can Cook");
+        generate(translationBuilder, "advancement.bountifulfares.make_first_food", "Anyone Can Cook");
         generate(translationBuilder, "advancement.bountifulfares.make_first_food.description", "Make your first meal");
 
         generate(translationBuilder, "advancement.bountifulfares.eat_all_food", "Bountiful Fares");
