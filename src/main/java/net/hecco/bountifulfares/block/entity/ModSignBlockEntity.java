@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class ModSignBlockEntity extends SignBlockEntity {
     public ModSignBlockEntity(BlockPos pos, BlockState state) {
-        super(pos, state);
+        super(BFBlockEntities.MOD_SIGN_BLOCK_ENTITY, pos, state);
     }
 
     @Override

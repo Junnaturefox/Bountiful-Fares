@@ -3,13 +3,11 @@
   "criteria": {
     "obtain_ceramic_tiles": {
       "conditions": {
-        "items": [
-          {
-            "items": "bountifulfares:ceramic_tiles"
-          }
-        ]
+        "item": {
+          "items": "#bountifulfares:dyeable_ceramic_blocks"
+        }
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:consume_item"
     }
   },
   "display": {
