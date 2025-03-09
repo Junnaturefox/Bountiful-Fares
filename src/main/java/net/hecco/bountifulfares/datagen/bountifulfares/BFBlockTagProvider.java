@@ -196,6 +196,7 @@ public class BFBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(BFBlocks.PALM_MULCH)
                 .add(BFBlocks.PALM_MULCH_BLOCK)
                 .add(BFBlocks.CERAMIC_CLAY_BLOCK)
+                .add(BFBlocks.GRASSY_DIRT)
         ;
 
         getOrCreateTagBuilder(BlockTags.FLOWERS)

@@ -1,20 +1,10 @@
-
 - Using ceramic levers kills the game
 - Placing signs crash the game
-- Candles on modded cakes turn into normal cakes
-- Leaves drop normal leaves
-- Normal candy removes poison
-- Decrease chance of dirt patches
-- Add grassy dirt to shovels mineable tag
-- Change compote eat sound to honey sound
-- increase enrichment time for compotes
-- Add replant hanging fruits when broken config
-- Fix texture for stage 2
-- Fix compat blocks arent disabled
-- add cutout render type to wormwood
-- Add urban decor compat, stainless steel railings
-- Move hoary sapling to next to leaves
+
+Dont need to do now:
 - Add coconut advancements
+- Add urban decor compat, stainless steel railings
+- Normal candy removes poison
+- Add replant hanging fruits when broken config
 - Add splitting coconut dripstone sound
-- Fix roy g biv
 - checkered ceramic pillar

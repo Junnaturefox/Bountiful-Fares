@@ -85,7 +85,6 @@ public class BFItemGroups {
                         entries.add(Items.GOLDEN_APPLE);
                         entries.add(BFBlocks.GOLDEN_APPLE_BLOCK);
                         entries.add(BFBlocks.GOLDEN_APPLE_SAPLING);
-                        entries.add(BFBlocks.HOARY_APPLE_SAPLING);
                         entries.add(BFBlocks.HOARY_LOG);
                         entries.add(BFBlocks.HOARY_WOOD);
                         entries.add(BFBlocks.STRIPPED_HOARY_LOG);
@@ -115,7 +114,7 @@ public class BFItemGroups {
                         entries.add(BFBlocks.HOARY_LEAVES);
                         entries.add(BFItems.HOARY_APPLE);
                         entries.add(BFBlocks.HOARY_APPLE_BLOCK);
-                        entries.add(BFBlocks.WALNUT_SAPLING);
+                        entries.add(BFBlocks.HOARY_APPLE_SAPLING);
                         entries.add(BFBlocks.WALNUT_LOG);
                         entries.add(BFBlocks.WALNUT_WOOD);
                         entries.add(BFBlocks.STRIPPED_WALNUT_LOG);
@@ -143,6 +142,7 @@ public class BFItemGroups {
                         entries.add(ExcessiveBuildingBlocks.WALNUT_MOSAIC_SLAB);
                         entries.add(ExcessiveBuildingBlocks.WALNUT_LADDER);
                         entries.add(BFBlocks.WALNUT_LEAVES);
+                        entries.add(BFBlocks.WALNUT_SAPLING);
                         entries.add(BFItems.WALNUT);
                         entries.add(BFBlocks.WALNUT_MULCH);
                         entries.add(BFBlocks.WALNUT_MULCH_BLOCK);
