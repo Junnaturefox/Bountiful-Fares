@@ -9,9 +9,7 @@
 - Change compote eat sound to honey sound
 - increase enrichment time for compotes
 - Add replant hanging fruits when broken config
-- Fix texture for stage 2
 - Fix compat blocks arent disabled
-- add cutout render type to wormwood
 - Add urban decor compat, stainless steel railings
 - Move hoary sapling to next to leaves
 - Add coconut advancements

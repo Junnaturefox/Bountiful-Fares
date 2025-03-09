@@ -12,6 +12,7 @@ import net.hecco.bountifulfares.block.entity.renderer.CeramicDishBlockEntityRend
 import net.hecco.bountifulfares.compat.appledog.AppledogBlocks;
 import net.hecco.bountifulfares.compat.arts_and_crafts.ArtsAndCraftsBlocks;
 import net.hecco.bountifulfares.compat.delicate_dyes.DelicateDyesBlocks;
+import net.hecco.bountifulfares.compat.dungeons_delight.DungeonsDelightBlocks;
 import net.hecco.bountifulfares.compat.dye_depot.DyeDepotBlocks;
 import net.hecco.bountifulfares.compat.excessive_building.ExcessiveBuildingBlocks;
 import net.hecco.bountifulfares.compat.mint.MintBlocks;
@@ -143,6 +144,9 @@ public class BountifulFaresClient implements ClientModInitializer {
 
         //          Appledog compat
         BlockRenderLayerMap.INSTANCE.putBlock(AppledogBlocks.APPLEDOG_BLOCK, RenderLayer.getCutout());
+
+        //          DungeonsDelight compat
+        BlockRenderLayerMap.INSTANCE.putBlock(DungeonsDelightBlocks.WORMWOOD_PICKETS, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.APPLE_LOG, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BFBlocks.APPLE_WOOD, RenderLayer.getCutout());
