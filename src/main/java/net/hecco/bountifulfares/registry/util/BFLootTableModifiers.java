@@ -3,17 +3,30 @@ package net.hecco.bountifulfares.registry.util;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFItems;
+import net.minecraft.data.server.loottable.BlockLootTableGenerator;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.entry.EmptyEntry;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.predicate.NumberRange;
+import net.minecraft.predicate.item.EnchantmentPredicate;
+import net.minecraft.predicate.item.EnchantmentsPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.predicate.item.ItemSubPredicateTypes;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
 
+import static net.minecraft.data.server.loottable.BlockLootTableGenerator.WITH_SHEARS;
+
 public class BFLootTableModifiers {
 
-    private static final Identifier GRASS_ID = Identifier.of("minecraft", "blocks/grass");
+    private static final Identifier GRASS_ID = Identifier.of("minecraft", "blocks/short_grass");
     private static final Identifier TALL_GRASS_ID = Identifier.of("minecraft", "blocks/tall_grass");
     private static final Identifier FERN_ID = Identifier.of("minecraft", "blocks/fern");
     private static final Identifier LARGE_FERN_ID = Identifier.of("minecraft", "blocks/large_fern");
@@ -25,7 +38,8 @@ public class BFLootTableModifiers {
             if (GRASS_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .with(ItemEntry.builder(BFItems.GRASS_SEEDS).weight(1))
-                        .with(EmptyEntry.builder().weight(5));
+                        .with(EmptyEntry.builder().weight(5))
+                        .conditionally(WITH_SHEARS.invert());
 
                 return mergePools(original, poolBuilder.build());
             }
@@ -36,7 +50,8 @@ public class BFLootTableModifiers {
             if (TALL_GRASS_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .with(ItemEntry.builder(BFItems.GRASS_SEEDS).weight(1))
-                        .with(EmptyEntry.builder().weight(5));
+                        .with(EmptyEntry.builder().weight(5))
+                        .conditionally(WITH_SHEARS.invert());
 
                 return mergePools(original, poolBuilder.build());
             }
@@ -47,7 +62,8 @@ public class BFLootTableModifiers {
             if (FERN_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .with(ItemEntry.builder(BFItems.GRASS_SEEDS).weight(1))
-                        .with(EmptyEntry.builder().weight(5));
+                        .with(EmptyEntry.builder().weight(5))
+                        .conditionally(WITH_SHEARS.invert());
 
                 return mergePools(original, poolBuilder.build());
             }
@@ -58,7 +74,8 @@ public class BFLootTableModifiers {
             if (LARGE_FERN_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .with(ItemEntry.builder(BFItems.GRASS_SEEDS).weight(1))
-                        .with(EmptyEntry.builder().weight(5));
+                        .with(EmptyEntry.builder().weight(5))
+                        .conditionally(WITH_SHEARS.invert());
 
                 return mergePools(original, poolBuilder.build());
             }

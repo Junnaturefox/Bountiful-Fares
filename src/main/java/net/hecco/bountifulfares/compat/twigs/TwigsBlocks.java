@@ -1,5 +1,6 @@
 package net.hecco.bountifulfares.compat.twigs;
 
+import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.compat.block.CompatBlockItem;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.AbstractBlock;
@@ -16,9 +17,9 @@ import static net.hecco.bountifulfares.registry.misc.BFCompat.compatBlocks;
 
 public class TwigsBlocks {
 
-    public static final Block WALNUT_TABLE = registerBlock("walnut_table", new TwigsTableBlock(AbstractBlock.Settings.copy(BFBlocks.WALNUT_PLANKS)));
-    public static final Block HOARY_TABLE = registerBlock("hoary_table", new TwigsTableBlock(AbstractBlock.Settings.copy(BFBlocks.HOARY_PLANKS)));
-    public static final Block FELDSPAR_LAMP = registerBlock("feldspar_lamp", new TwigsLampBlock(AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).requiresTool().strength(4.5F).sounds(TwigsSounds.LAMP).luminance(createLightLevelFromLitBlockState(8))));
+    public static final Block WALNUT_TABLE = registerBlock("walnut_table", new TwigsTableBlock(BountifulFares.TWIGS_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.WALNUT_PLANKS)));
+    public static final Block HOARY_TABLE = registerBlock("hoary_table", new TwigsTableBlock(BountifulFares.TWIGS_MOD_ID, AbstractBlock.Settings.copy(BFBlocks.HOARY_PLANKS)));
+    public static final Block FELDSPAR_LAMP = registerBlock("feldspar_lamp", new TwigsLampBlock(BountifulFares.TWIGS_MOD_ID, AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).requiresTool().strength(4.5F).sounds(TwigsSounds.LAMP).luminance(createLightLevelFromLitBlockState(8))));
 
 
     public static Block registerBlock(String name, Block block) {

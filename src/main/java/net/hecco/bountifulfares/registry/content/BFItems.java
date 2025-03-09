@@ -84,7 +84,7 @@ public class BFItems {
 
 
     public static final Item ARTISAN_BRUSH = registerItem("artisan_brush", new ArtisanBrushItem(new Item.Settings().maxCount(1)));
-    public static final Item JAR = registerItem("jar", new Item(new Item.Settings().maxCount(16)));
+    public static final Item JAR = registerItem("cup", new Item(new Item.Settings().maxCount(16)));
     public static final Item APPLE_COMPOTE_JAR = registerItem("apple_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 1200, 0)), SoundEvents.ITEM_HONEY_BOTTLE_DRINK, new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(BFEffects.ENRICHMENT, 1200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
     public static final Item ORANGE_COMPOTE_JAR = registerItem("orange_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 1200, 0)), SoundEvents.ITEM_HONEY_BOTTLE_DRINK, new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(BFEffects.ENRICHMENT, 1200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));
     public static final Item LEMON_COMPOTE_JAR = registerItem("lemon_compote_jar", new EdibleJarItem(List.of(new StatusEffectInstance(BFEffects.ENRICHMENT, 1200, 0)), SoundEvents.ITEM_HONEY_BOTTLE_DRINK, new Item.Settings().maxCount(16).recipeRemainder(JAR).food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.4f).statusEffect(new StatusEffectInstance(BFEffects.ENRICHMENT, 1200, 0), 1f).build()).recipeRemainder(BFItems.JAR)));

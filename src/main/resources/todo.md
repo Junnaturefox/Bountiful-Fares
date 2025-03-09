@@ -4,3 +4,5 @@
 - Add replant hanging fruits when broken config
 - Add splitting coconut dripstone sound
 - checkered ceramic pillar
+- Add 3-way compat with a&c, el's and l's, paintbrushes
+- Fix palm and golden trees breaking through blocks when growing

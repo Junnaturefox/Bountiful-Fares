@@ -2,6 +2,7 @@ package net.hecco.bountifulfares.compat.twigs;
 
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.compat.block.CompatBlock;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 //This class is only included for ease of use and in order to not use Twigs as a dependency.
 // The original code was grabbed from here: https://github.com/N1nn1/twigs/blob/main/src/main/java/com/ninni/twigs/block/TableBlock.java
 
-public class TwigsTableBlock extends Block implements Waterloggable {
+public class TwigsTableBlock extends CompatBlock implements Waterloggable {
     private static final BooleanProperty WATERLOGGED;
     private static final BooleanProperty LEG1;
     private static final BooleanProperty LEG2;
@@ -36,8 +37,8 @@ public class TwigsTableBlock extends Block implements Waterloggable {
     protected static final VoxelShape LEG_4;
     protected static final VoxelShape[] SHAPES;
 
-    public TwigsTableBlock(AbstractBlock.Settings properties) {
-        super(properties);
+    public TwigsTableBlock(String modId, AbstractBlock.Settings properties) {
+        super(modId, properties);
         this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(LEG1, true).with(LEG2, true).with(LEG3, true).with(LEG4, true));
     }
 

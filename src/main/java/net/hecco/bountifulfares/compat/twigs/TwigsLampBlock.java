@@ -1,6 +1,7 @@
 package net.hecco.bountifulfares.compat.twigs;
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.compat.block.CompatBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,11 +20,11 @@ import net.minecraft.world.World;
 //This class is only included for ease of use and in order to not use Twigs as a dependency.
 // The original code was grabbed from here: https://github.com/N1nn1/twigs/blob/main/src/main/java/com/ninni/twigs/block/LampBlock.java
 
-public class TwigsLampBlock extends Block {
+public class TwigsLampBlock extends CompatBlock {
     public static final BooleanProperty LIT;
 
-    public TwigsLampBlock(AbstractBlock.Settings properties) {
-        super(properties);
+    public TwigsLampBlock(String modId, AbstractBlock.Settings properties) {
+        super(modId, properties);
         this.setDefaultState(this.getDefaultState().with(LIT, true));
     }
 
