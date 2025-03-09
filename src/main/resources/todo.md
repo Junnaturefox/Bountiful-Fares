@@ -1,5 +1,4 @@
 - Using ceramic levers kills the game
-- Placing signs crash the game
 
 Dont need to do now:
 - Add coconut advancements
