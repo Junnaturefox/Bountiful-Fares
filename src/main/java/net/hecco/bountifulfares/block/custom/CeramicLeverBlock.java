@@ -5,14 +5,17 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +43,7 @@ public class CeramicLeverBlock extends LeverBlock implements BlockEntityProvider
             if (world.isClient) {
                 blockState = state.cycle(POWERED);
                 if (blockState.get(POWERED)) {
-                    this.spawnParticles(blockState, world, pos, 1.0F);
+                    spawnParticles(blockState, world, pos, 1.0F);
                 }
 
                 return ActionResult.SUCCESS;
@@ -76,5 +79,14 @@ public class CeramicLeverBlock extends LeverBlock implements BlockEntityProvider
             default:
                 return Block.createCuboidShape(4, 14, 4, 12, 16, 12);
         }
+    }
+
+    public static void spawnParticles(BlockState state, WorldAccess world, BlockPos pos, float alpha) {
+        Direction direction = state.get(FACING).getOpposite();
+        Direction direction2 = getDirection(state).getOpposite();
+        double d = (double)pos.getX() + (double)0.5F + 0.1 * (double)direction.getOffsetX() + 0.2 * (double)direction2.getOffsetX();
+        double e = (double)pos.getY() + (double)0.5F + 0.1 * (double)direction.getOffsetY() + 0.2 * (double)direction2.getOffsetY();
+        double f = (double)pos.getZ() + (double)0.5F + 0.1 * (double)direction.getOffsetZ() + 0.2 * (double)direction2.getOffsetZ();
+        world.addParticle(new DustParticleEffect(DustParticleEffect.RED, alpha), d, e, f, 0.0F, 0.0F, 0.0F);
     }
 }
