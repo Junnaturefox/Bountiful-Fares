@@ -111,7 +111,7 @@ public class BFAdvancementProvider extends FabricAdvancementProvider {
                         true,
                         false))
                 .parent(obtain_feldspar)
-                .criterion("obtain_ceramic_tiles", InventoryChangedCriterion.Conditions.items(BFBlocks.CERAMIC_TILES))
+                .criterion("obtain_ceramic_tiles", ConsumeItemCriterion.Conditions.predicate(ItemPredicate.Builder.create().tag(BFItemTags.DYEABLE_CERAMIC_BLOCKS)))
                 .build(consumer, BountifulFares.MOD_ID + ":obtain_ceramic_tiles");
         AdvancementEntry obtain_fermentation_vessel = Advancement.Builder.create()
                 .display(new AdvancementDisplay(new ItemStack(BFBlocks.FERMENTATION_VESSEL),
