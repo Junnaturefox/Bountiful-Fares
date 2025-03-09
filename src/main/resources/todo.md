@@ -1,6 +1,5 @@
 - Using ceramic levers kills the game
 - Placing signs crash the game
-- Leaves drop normal leaves
 - Change compote eat sound to honey sound
 - increase enrichment time for compotes
 - Fix compat blocks arent disabled
