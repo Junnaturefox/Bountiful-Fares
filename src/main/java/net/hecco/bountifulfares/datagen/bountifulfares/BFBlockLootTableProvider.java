@@ -391,6 +391,14 @@ public class BFBlockLootTableProvider extends FabricBlockLootTableProvider {
         usedBlocks.add(BFBlocks.TEA_SHRUB);
         usedBlocks.add(BFBlocks.SPONGEKIN);
 
+        usedBlocks.add(BFBlocks.HOARY_SIGN);
+        usedBlocks.add(BFBlocks.HOARY_WALL_SIGN);
+        usedBlocks.add(BFBlocks.HOARY_HANGING_SIGN);
+        usedBlocks.add(BFBlocks.HOARY_WALL_HANGING_SIGN);
+        usedBlocks.add(BFBlocks.WALNUT_SIGN);
+        usedBlocks.add(BFBlocks.WALNUT_WALL_SIGN);
+        usedBlocks.add(BFBlocks.WALNUT_HANGING_SIGN);
+        usedBlocks.add(BFBlocks.WALNUT_WALL_HANGING_SIGN);
 
         for(Identifier id : BountifulFaresUtil.allBlockIdsInNamespace(BountifulFares.MOD_ID)) {
             Block block = Registries.BLOCK.get(id);
