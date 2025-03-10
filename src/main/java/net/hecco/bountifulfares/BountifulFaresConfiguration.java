@@ -25,6 +25,7 @@ public class BountifulFaresConfiguration {
     public boolean enableSweetBerryPips = true;
     private boolean enableLapisberrySeeds = true;
     private boolean enableHoarySeeds = true;
+    public boolean grassLootTableOverride = true;
     private boolean enableElderGuardianSpongekinSeeds = true;
     private boolean enableGuardianSpongekinSeeds = true;
     private boolean generateWildWheat = true;

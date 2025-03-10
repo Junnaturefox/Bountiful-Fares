@@ -62,7 +62,7 @@ public class FermentationRecipe implements Recipe<RecipeInput> {
 
     @Override
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
-        return null;
+        return output.copy();
     }
 
     public ItemStack getOutput() {

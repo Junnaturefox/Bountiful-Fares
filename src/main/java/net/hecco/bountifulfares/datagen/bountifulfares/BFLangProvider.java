@@ -388,6 +388,7 @@ public class BFLangProvider extends FabricLanguageProvider {
         generate(translationBuilder, "config.bountifulfares.sweet_berry_pips", "Sweet Berries cannot place Sweet Berry Bushes");
         generate(translationBuilder, "config.bountifulfares.lapisberry_seeds", "Sniffers can dig up Lapisberry Seeds");
         generate(translationBuilder, "config.bountifulfares.hoary_seeds", "Sniffers can dig up Hoary Seeds");
+        generate(translationBuilder, "config.bountifulfares.grass_loot_table_override", "Grass loot tables are overridden");
         generate(translationBuilder, "config.bountifulfares.spongekin_seeds_elder_guardian", "Elder Guardians drop Spongekin Seeds");
         generate(translationBuilder, "config.bountifulfares.spongekin_seeds_guardian", "Guardians drop Spongekin Seeds");
         generate(translationBuilder, "config.bountifulfares.milling_time", "Gristmill milling time, in seconds");
@@ -428,6 +429,7 @@ public class BFLangProvider extends FabricLanguageProvider {
 //        generate(translationBuilder, "config.bountifulfares.chamomile_to_beige_dye", "Chamomile Flowers craft into Beige Dye");
 
         generate(translationBuilder, "pack.bountifulfares.vanilla_item_override", "Vanilla Item Texture Override");
+        generate(translationBuilder, "pack.bountifulfares.grass_loot_table_override", "Grass Loot Table Override");
         generate(translationBuilder, "pack.bountifulfares.amendments", "Bountiful Fares X Amendments");
         generate(translationBuilder, "pack.bountifulfares.mint", "Bountiful Fares X El's and L's Dye Mod");
         generate(translationBuilder, "pack.bountifulfares.dye_depot", "Bountiful Fares X Dye Depot");
