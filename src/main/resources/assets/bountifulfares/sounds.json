@@ -324,5 +324,11 @@
       "bountifulfares:note/old_piano"
     ],
     "subtitle": "subtitles.block.note_block.note"
+  },
+  "steel_drum": {
+    "sounds": [
+      "bountifulfares:note/steel_drum"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
   }
 }

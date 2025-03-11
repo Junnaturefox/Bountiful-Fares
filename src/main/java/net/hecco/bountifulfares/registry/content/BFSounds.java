@@ -68,6 +68,7 @@ public class BFSounds {
     // The below sound is used in the example in NoteBlockInstrumentMixin. It can be deleted if necessary.
      public static final RegistryEntry<SoundEvent> NOTE_BLOCK_OCARINA = registerSoundReference("ocarina");
      public static final RegistryEntry<SoundEvent> NOTE_BLOCK_OLD_PIANO = registerSoundReference("old_piano");
+     public static final RegistryEntry<SoundEvent> NOTE_BLOCK_STEEL_DRUM = registerSoundReference("steel_drum");
 
     public static final BlockSoundGroup CERAMIC_TILES = new BlockSoundGroup(1f, 1f, CERAMIC_TILES_BREAK, CERAMIC_TILES_STEP, CERAMIC_TILES_PLACE, CERAMIC_TILES_HIT, CERAMIC_TILES_FALL);
     public static final BlockSoundGroup CERAMIC_DECORATION = new BlockSoundGroup(1f, 1f, CERAMIC_DECORATION_BREAK, CERAMIC_DECORATION_STEP, CERAMIC_DECORATION_PLACE, CERAMIC_DECORATION_HIT, CERAMIC_DECORATION_FALL);

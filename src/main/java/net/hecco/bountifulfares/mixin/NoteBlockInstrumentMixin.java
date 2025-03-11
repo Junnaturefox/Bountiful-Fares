@@ -94,7 +94,16 @@ public abstract class NoteBlockInstrumentMixin
         BFNoteBlockInstruments.OLD_PIANO = bf_old_piano;
         notesounds.add(bf_old_piano);
         i++;
-
+        var bf_steel_drum = newNoteType(
+                "BOUNTIFUL_FARES_STEEL_DRUM",
+                last.ordinal() + i,
+                "bountiful_fares_steel_drum",
+                BFSounds.NOTE_BLOCK_STEEL_DRUM,
+                NoteBlockInstrument.Type.BASE_BLOCK
+        );
+        BFNoteBlockInstruments.STEEL_DRUM = bf_steel_drum;
+        notesounds.add(bf_steel_drum);
+        i++;
 
         // Complete the injection.
         // This must ALWAYS be executed at the end of this method - no more code beyond this.

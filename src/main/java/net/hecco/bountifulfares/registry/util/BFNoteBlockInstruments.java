@@ -15,6 +15,7 @@ public class BFNoteBlockInstruments
     // "BOUNTIFUL_FARES_BONK" is a commented-out example; see its registry code in NoteBlockInstrumentMixin.
     public static NoteBlockInstrument OCARINA;
     public static NoteBlockInstrument OLD_PIANO;
+    public static NoteBlockInstrument STEEL_DRUM;
 
     /*
         To add a new Note Block sound, simply create a new 'public static' like the commented out code shows.
