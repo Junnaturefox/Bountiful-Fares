@@ -17,12 +17,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Mixin(SplashTextResourceSupplier.class)
-public abstract class SplashMixin
+public abstract class SplashTextMixin
 {
     @Unique private final List<String> bountifulFaresTexts = Lists.<String>newArrayList();
     @Unique private static final Identifier BOUNTIFUL_FARES_ID = Identifier.of(BountifulFares.MOD_ID,"texts/splashes.txt");

@@ -1,6 +1,7 @@
 package net.hecco.bountifulfares.mixin;
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.mixin.util.ItemRendererAccessor;
 import net.hecco.bountifulfares.registry.content.BFItems;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.ItemRenderer;

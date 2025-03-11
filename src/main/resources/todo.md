@@ -6,3 +6,5 @@
 - checkered ceramic pillar
 - Add 3-way compat with a&c, el's and l's, paintbrushes
 - Fix palm and golden trees breaking through blocks when growing
+- change rarity of golden apple tree blocks
+- Fix block particle tint for tinted blocks

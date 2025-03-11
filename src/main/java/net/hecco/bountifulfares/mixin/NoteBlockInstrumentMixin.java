@@ -1,7 +1,7 @@
 package net.hecco.bountifulfares.mixin;
 
 import net.hecco.bountifulfares.registry.content.BFSounds;
-import net.hecco.bountifulfares.registry.util.BFNoteBlockInstrument;
+import net.hecco.bountifulfares.registry.util.BFNoteBlockInstruments;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
@@ -70,19 +70,31 @@ public abstract class NoteBlockInstrumentMixin
         Also, check the comment at the bottom of this file for a handy reference for adding sounds to sounds.json, if it makes it easier.
         ----------------------------------
 
+
+         */
+
         // Bountiful Fares: Coconut Bonk
-        var bf_bonk = newNoteType(
-                "BOUNTIFUL_FARES_BONK",
+        var bf_ocarina = newNoteType(
+                "BOUNTIFUL_FARES_OCARINA",
                 last.ordinal() + i,
-                "bountiful_fares_bonk",
-                BFSounds.NOTE_BLOCK_BONK_EXAMPLE,
+                "bountiful_fares_ocarina",
+                BFSounds.NOTE_BLOCK_OCARINA,
                 NoteBlockInstrument.Type.BASE_BLOCK
         );
-        BFNoteBlockInstrument.BOUNTIFUL_FARES_BONK = bf_bonk;
-        notesounds.add(bf_bonk);
+        BFNoteBlockInstruments.OCARINA = bf_ocarina;
+        notesounds.add(bf_ocarina);
+        i++;
+        var bf_old_piano = newNoteType(
+                "BOUNTIFUL_FARES_OLD_PIANO",
+                last.ordinal() + i,
+                "bountiful_fares_old_piano",
+                BFSounds.NOTE_BLOCK_OLD_PIANO,
+                NoteBlockInstrument.Type.BASE_BLOCK
+        );
+        BFNoteBlockInstruments.OLD_PIANO = bf_old_piano;
+        notesounds.add(bf_old_piano);
         i++;
 
-        */
 
         // Complete the injection.
         // This must ALWAYS be executed at the end of this method - no more code beyond this.

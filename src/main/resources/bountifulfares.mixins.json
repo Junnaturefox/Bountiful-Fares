@@ -8,8 +8,8 @@
     "BrewingRecipeRegistryMixin",
     "ChickenEntityMixin",
     "GuiMixin",
-    "HandledScreenMixin",
-    "ItemRendererAccessor",
+    "util.HandledScreenMixin",
+    "util.ItemRendererAccessor",
     "ItemRendererMixin",
     "LivingEntityMixin",
     "ModelLoaderMixin",
@@ -24,6 +24,6 @@
   },
   "client": [
     "GuiHeartsMixin",
-    "SplashMixin"
+    "SplashTextMixin"
   ]
 }

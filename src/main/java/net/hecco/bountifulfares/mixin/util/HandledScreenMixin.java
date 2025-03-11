@@ -1,4 +1,4 @@
-package net.hecco.bountifulfares.mixin;
+package net.hecco.bountifulfares.mixin.util;
 
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import org.spongepowered.asm.mixin.Mixin;

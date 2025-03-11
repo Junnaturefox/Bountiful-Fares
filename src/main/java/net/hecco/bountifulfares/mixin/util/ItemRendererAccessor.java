@@ -1,4 +1,4 @@
-package net.hecco.bountifulfares.mixin;
+package net.hecco.bountifulfares.mixin.util;
 
 import net.minecraft.client.render.item.ItemModels;
 import net.minecraft.client.render.item.ItemRenderer;

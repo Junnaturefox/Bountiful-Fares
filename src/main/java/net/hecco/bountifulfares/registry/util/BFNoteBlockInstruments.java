@@ -3,7 +3,7 @@ package net.hecco.bountifulfares.registry.util;
 import net.minecraft.block.enums.NoteBlockInstrument;
 
 // Loads Note Block types
-public class BFNoteBlockInstrument
+public class BFNoteBlockInstruments
 {
     // This solely ensures the class remains loaded.
     static {
@@ -13,7 +13,8 @@ public class BFNoteBlockInstrument
     // Here you can define new note block sound types.
     // When defining .instrument() on a block, you can use one of these instead of a sound from NoteBlockInstrument.
     // "BOUNTIFUL_FARES_BONK" is a commented-out example; see its registry code in NoteBlockInstrumentMixin.
-    public static NoteBlockInstrument BOUNTIFUL_FARES_BONK;
+    public static NoteBlockInstrument OCARINA;
+    public static NoteBlockInstrument OLD_PIANO;
 
     /*
         To add a new Note Block sound, simply create a new 'public static' like the commented out code shows.

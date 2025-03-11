@@ -312,5 +312,17 @@
     "sounds": [
       "bountifulfares:golden_apple/wither1"
     ]
+  },
+  "ocarina": {
+    "sounds": [
+      "bountifulfares:note/ocarina"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
+  "old_piano": {
+    "sounds": [
+      "bountifulfares:note/old_piano"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
   }
 }

@@ -1,6 +1,7 @@
 package net.hecco.bountifulfares.mixin;
 
 import net.hecco.bountifulfares.BountifulFares;
+import net.hecco.bountifulfares.mixin.util.HandledScreenMixin;
 import net.hecco.bountifulfares.registry.content.BFEffects;
 import net.hecco.bountifulfares.registry.tags.BFEffectTags;
 import net.minecraft.client.gui.DrawContext;
