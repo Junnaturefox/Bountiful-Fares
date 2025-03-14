@@ -1019,7 +1019,7 @@
   "bountifulfares.prismarine_propagation": "Prismarine Propagation",
   "config.bountifulfares.acidified_effect_icon_effects": "Status Effects modified by Acidity have visual effects",
   "config.bountifulfares.apple_trees": "Generate Apple Trees",
-  "config.bountifulfares.cake_eat_sounds": "Cakes make eat sounds",
+  "config.bountifulfares.cake_eating_sounds": "Cakes make eating sounds",
   "config.bountifulfares.category.client": "Client",
   "config.bountifulfares.category.compat": "Compatibility",
   "config.bountifulfares.category.dye_depot": "Dye Depot",

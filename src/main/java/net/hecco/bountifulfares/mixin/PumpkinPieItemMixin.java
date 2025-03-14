@@ -4,10 +4,7 @@ import net.hecco.bountifulfares.BountifulFares;
 import net.hecco.bountifulfares.registry.content.BFBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.ActionResult;
@@ -25,7 +22,7 @@ public class PumpkinPieItemMixin {
 
     @Inject(method = "useOnBlock", at = @At("HEAD"), cancellable = true)
     public void bf_useOnBlock(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
-        if (BountifulFares.CONFIG.enablePlaceablePumpkinPie) {
+        if (context.getStack().isOf(Items.PUMPKIN_PIE) && BountifulFares.CONFIG.enablePlaceablePumpkinPie) {
             ActionResult ar = place(new ItemPlacementContext(context));
             cir.setReturnValue(ar);
         }
