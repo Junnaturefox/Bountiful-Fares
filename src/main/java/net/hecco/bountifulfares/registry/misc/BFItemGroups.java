@@ -426,6 +426,8 @@ public class BFItemGroups {
                         entries.add(BFBlocks.LEMON_PIE);
                         entries.add(BFBlocks.PLUM_PIE);
                         entries.add(BFBlocks.HOARY_PIE);
+                        entries.add(Items.PUMPKIN_PIE);
+                        entries.add(BFBlocks.MELON_PIE);
                         entries.add(BFBlocks.PASSION_FRUIT_TART);
                         entries.add(BFBlocks.ELDERBERRY_TART);
                         entries.add(BFBlocks.GLOW_BERRY_TART);

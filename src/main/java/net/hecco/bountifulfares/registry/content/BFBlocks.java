@@ -240,7 +240,10 @@ public class BFBlocks {
     public static final Block LEMON_PIE = registerBlock16StackItem("lemon_pie", new PieBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block PLUM_PIE = registerBlock16StackItem("plum_pie", new PieBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block HOARY_PIE = registerBlock16StackItem("hoary_pie", new PieBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block PUMPKIN_PIE = registerBlockNoItem("pumpkin_pie", new PieBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block MELON_PIE = registerBlock16StackItem("melon_pie", new PieBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block COCOA_CAKE = registerBlockUnstackableItem("cocoa_cake", new NoCandleCakeBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block SPONGE_CAKE = registerBlockUnstackableItem("sponge_cake", new NoCandleCakeBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ARTISAN_BREAD = registerBlock16StackItem("artisan_bread", new ArtisanBreadBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block ARTISAN_COOKIES = registerBlockNoItem("artisan_cookies", new ArtisanCookiesBlock(AbstractBlock.Settings.create().nonOpaque().solid().strength(0.5F).sounds(BlockSoundGroup.WOOL).pistonBehavior(PistonBehavior.DESTROY)));
 

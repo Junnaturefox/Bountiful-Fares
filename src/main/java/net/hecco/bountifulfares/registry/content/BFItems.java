@@ -143,15 +143,9 @@ public class BFItems {
             .build())));
 
 
-
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(BountifulFares.MOD_ID, name), item);
     }
-
-    private static Item registerTempRecipeItem(String name, String id) {
-        return Registry.register(Registries.ITEM, Identifier.of(id, name), new Item(new Item.Settings()));
-    }
     public static void registerModItems() {
-//        BountifulFares.LOGGER.info("Registering Mod Items for " + BountifulFares.MOD_ID);
     }
 }

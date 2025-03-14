@@ -719,6 +719,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerTartAndPieRecipe(exporter, BFBlocks.LEMON_PIE, BFItems.LEMON);
         offerTartAndPieRecipe(exporter, BFBlocks.PLUM_PIE, BFItems.PLUM);
         offerTartAndPieRecipe(exporter, BFBlocks.HOARY_PIE, BFItems.HOARY_APPLE);
+        offerTartAndPieRecipe(exporter, BFBlocks.MELON_PIE, Items.MELON_SLICE);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BFBlocks.FELDSPAR_BLOCK)
                 .pattern("##")

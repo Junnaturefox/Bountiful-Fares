@@ -10,3 +10,5 @@
 - Ceramic tiles desync
 - Add pearfection compat
 - Fix block particle tint for tinted blocks
+- Add ns compat for grass seeds (remove wheat seeds)
+- Add bop compat for grass seeds (remove wheat seeds)
