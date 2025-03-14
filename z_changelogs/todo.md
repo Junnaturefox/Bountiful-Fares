@@ -8,7 +8,5 @@
 - Fix palm and golden trees breaking through blocks when growing
 - Ceramic dish desync
 - Ceramic tiles desync
-- Make second stage of tea shrub drop 3-4 leaves
 - Add pearfection compat
-- change rarity of golden apple tree blocks
 - Fix block particle tint for tinted blocks
