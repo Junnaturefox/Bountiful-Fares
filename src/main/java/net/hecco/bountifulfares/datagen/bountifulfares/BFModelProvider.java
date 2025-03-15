@@ -263,5 +263,7 @@ public class BFModelProvider extends FabricModelProvider {
         itemModelGenerator.register(BFItems.MIRE_MEDLEY, Models.GENERATED);
         itemModelGenerator.register(BFItems.STRANGE_CANDY, Models.GENERATED);
         itemModelGenerator.register(BFItems.COCONUT_MILK_BOTTLE, Models.GENERATED);
+        itemModelGenerator.register(BFBlocks.MELON_PIE.asItem(), Models.GENERATED);
+        itemModelGenerator.register(BFBlocks.SPONGE_CAKE.asItem(), Models.GENERATED);
     }
 }

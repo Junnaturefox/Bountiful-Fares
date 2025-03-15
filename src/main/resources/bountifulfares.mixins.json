@@ -6,18 +6,20 @@
     "AbstractInventoryMixin",
     "BlockItemMixin",
     "BrewingRecipeRegistryMixin",
+    "CakeBlockMixin",
     "ChickenEntityMixin",
     "GuiMixin",
-    "util.HandledScreenMixin",
-    "util.ItemRendererAccessor",
     "ItemRendererMixin",
     "LivingEntityMixin",
     "ModelLoaderMixin",
     "NoteBlockInstrumentMixin",
+    "PumpkinPieItemMixin",
     "SweetBerryBushMixin",
     "WolfEntityMixin",
     "WoodlandMansionFirstFloorMixin",
-    "WoodlandMansionSecondFloorMixin"
+    "WoodlandMansionSecondFloorMixin",
+    "util.HandledScreenMixin",
+    "util.ItemRendererAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

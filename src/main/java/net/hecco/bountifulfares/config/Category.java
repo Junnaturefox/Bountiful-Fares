@@ -28,6 +28,12 @@ public enum Category {
             Entry.booleanEntry("config.bountifulfares.container_foods_eatable_on_dish", () -> BountifulFares.CONFIG.isContainerFoodsEatableOnDish(),
                     newValue -> BountifulFares.CONFIG.setContainerFoodsEatableOnDish(newValue), false),
 
+            Entry.booleanEntry("config.bountifulfares.placeable_pumpkin_pie", () -> BountifulFares.CONFIG.enablePlaceablePumpkinPie,
+                    newValue -> BountifulFares.CONFIG.enablePlaceablePumpkinPie = newValue, true, "config.bountifulfares.restart_warning"),
+
+            Entry.booleanEntry("config.bountifulfares.cake_eating_sounds", () -> BountifulFares.CONFIG.isCakeEatSounds(),
+                    newValue -> BountifulFares.CONFIG.setCakeEatSounds(newValue), true),
+
             Entry.booleanEntry("config.bountifulfares.sweet_berry_pips", () -> BountifulFares.CONFIG.enableSweetBerryPips,
                     newValue -> BountifulFares.CONFIG.enableSweetBerryPips = newValue, true, "config.bountifulfares.restart_warning"),
 

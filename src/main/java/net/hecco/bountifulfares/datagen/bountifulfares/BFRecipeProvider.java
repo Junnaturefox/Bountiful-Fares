@@ -283,6 +283,19 @@ public class BFRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(BFItems.COCONUT_HALF), conditionsFromTag(BFItemTags.C_COCONUT_HALVES))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFBlocks.SPONGE_CAKE)
+                .pattern("PPP")
+                .pattern("SES")
+                .pattern("###")
+                .input('P', Items.WATER_BUCKET)
+                .input('E', Items.EGG)
+                .input('#', BFBlocks.SPONGEKIN)
+                .input('S', Items.SUGAR)
+                .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
+                .criterion(hasItem(Items.SPONGE), conditionsFromItem(Items.SPONGE))
+                .criterion(hasItem(BFBlocks.SPONGEKIN), conditionsFromItem(BFBlocks.SPONGEKIN))
+                .offerTo(exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, BFItems.MAIZE_BREAD)
                 .pattern("###")
                 .input('#', BFItems.MAIZE)
@@ -719,6 +732,7 @@ public class BFRecipeProvider extends FabricRecipeProvider {
         offerTartAndPieRecipe(exporter, BFBlocks.LEMON_PIE, BFItems.LEMON);
         offerTartAndPieRecipe(exporter, BFBlocks.PLUM_PIE, BFItems.PLUM);
         offerTartAndPieRecipe(exporter, BFBlocks.HOARY_PIE, BFItems.HOARY_APPLE);
+        offerTartAndPieRecipe(exporter, BFBlocks.MELON_PIE, Items.MELON_SLICE);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BFBlocks.FELDSPAR_BLOCK)
                 .pattern("##")
